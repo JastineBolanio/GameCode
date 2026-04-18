@@ -26,10 +26,10 @@
  */
 
 // Database configuration
-define('DB_HOST', 'localhost:1456'); // Change if not the same port
+define('DB_HOST', 'localhost:3306'); // Change if not the same port
 define('DB_USER', 'root');  // Change in production
 define('DB_PASS', '');      // Change in production
-define('DB_NAME', 'coding_game');
+define('DB_NAME', 'code_gaming');
 
 // Error reporting for development
 error_reporting(E_ALL);

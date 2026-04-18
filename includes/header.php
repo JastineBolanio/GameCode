@@ -67,45 +67,50 @@ $currentUser = $isLoggedIn ? $auth->getCurrentUser() : null;
     <?php if (isset($additionalStyles)) echo $additionalStyles; ?>  
     <?php echo $csrf->getTokenMeta(); ?>
 <body class="bg-dark text-light">
-    <!-- Enhanced Navigation Bar -->
-    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
-        <div class="container-fluid">
-            <!-- Brand with Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="home_page.php">
-                <img src="assets/images/PTC.png" alt="Code Game Logo" class="navbar-logo me-2" width="40" height="40">
-                <span class="brand-text">Code Gaming</span>
-            </a>
 
-            <!-- Anchor Page Button -->
-            <a href="anchor.php" class="anchor-btn me-3" title="Go to Anchor Page">
-                <i class="fas fa-anchor"></i>
-            </a>
+<!-- RPG Navigation (Game HUD) -->
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
 
-            <!-- Mobile Toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <div class="container-fluid">
 
-            <!-- Navigation Content -->
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <!-- Left Navigation Links -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- Announcements -->
-                    <li class="nav-item">
-                        <a class="nav-link <?php echo $currentPage === 'announcements.php' ? 'active' : ''; ?>" 
-                           href="announcements.php">
-                            <i class="fas fa-bullhorn me-1"></i>Announcements
-                        </a>
-                    </li>
-                    
-                    <!-- Tutorial -->
-                    <li class="nav-item">
-                        <a class="nav-link <?php echo $currentPage === 'tutorial.php' ? 'active' : ''; ?>" 
-                           href="tutorial.php">
-                            <i class="fas fa-book me-1"></i>Tutorial
-                        </a>
-                    </li>
+        <!-- Guild / Game Title -->
+        <a class="navbar-brand d-flex align-items-center" href="home_page.php">
+            <img src="assets/images/PTC.png" alt="Skill Forge Emblem" class="navbar-logo me-2" width="40" height="40">
+            <span class="brand-text">⚒️ Skill Forge</span>
+        </a>
+
+        <!-- World Map / Anchor -->
+        <a href="anchor.php" class="anchor-btn me-3" title="Travel to World Map">
+            🧭
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+
+            <!-- Left Side (Game Menu) -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- Announcements → Town Board -->
+                <li class="nav-item">
+                    <a class="nav-link <?php echo $currentPage === 'announcements.php' ? 'active' : ''; ?>" 
+                       href="announcements.php">
+                        📜 Town Board
+                    </a>
+                </li>
+
+                <!-- Tutorial → Training Grounds -->
+                <li class="nav-item">
+                    <a class="nav-link <?php echo $currentPage === 'tutorial.php' ? 'active' : ''; ?>" 
+                       href="tutorial.php">
+                        ⚔️ Training Grounds
+                    </a>
+                </li>
                     
                     <!-- Game Modes Dropdown -->
                     <li class="nav-item dropdown">

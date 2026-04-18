@@ -1,9 +1,6 @@
 <?php
 /**
  * Database Configuration
- * 
- * This file contains the database connection settings for the application.
- * Update these values to match your database configuration.
  */
 // Set error reporting
 error_reporting(E_ALL);
@@ -15,12 +12,12 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 return [
-    'host' => 'localhost',     // Database host
-    'port' => 1456,            // Default MySQL port (change to 3327 if that's what you're using or default 3306)
-    'dbname' => 'coding_game',  // Database name
-    'username' => 'root',      // Database username
-    'password' => '',          // Empty password (common XAMPP default)
-    'charset' => 'utf8mb4',    // Database charset
+    'host' => 'localhost',  // Database host (leave as localhost for local setup)
+    'port' => 3306,         // Default MySQL port is 3306 (adjust if using a different port)
+    'dbname' => 'code_gaming',  // Your database name
+    'username' => 'root',      // Default XAMPP MySQL username
+    'password' => '',          // Default XAMPP MySQL password is empty
+    'charset' => 'utf8mb4',    // Character set
     'options' => [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

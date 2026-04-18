@@ -281,106 +281,132 @@ if ($showLoginNotification && $currentUser):
         <!-- User Progress Dashboard (Dynamic for logged-in users) -->
         <?php if ($auth->isLoggedIn()): ?>
         <section class="progress-dashboard container py-5" role="region" aria-labelledby="progress-heading">
-            <!-- User Profile Header -->
-            <div class="user-journey-header mb-4">
-                <div class="user-banner" id="userBanner" style="background-image: url('assets/images/default-banner.jpg');">
-                </div>
-                <div class="user-info text-center mt-4">
-                    <h3 class="username" id="userDisplayName">Welcome Back, <?php echo htmlspecialchars($currentUser['username'] ?? 'Coder'); ?>!</h3>
-                    <p class="text-muted" id="userLevel">
-                        <?php 
-                        $level = $currentUser['level'] ?? 1;
-                        $title = match(true) {
-                            $level >= 50 => 'Coding Master',
-                            $level >= 30 => 'Senior Developer',
-                            $level >= 20 => 'Mid-level Developer',
-                            $level >= 10 => 'Junior Developer',
-                            default => 'Coding Enthusiast'
-                        };
-                        echo htmlspecialchars($title);
-                        ?>
-                    </p>
+    
+    <!-- Character Banner -->
+    <div class="user-journey-header mb-4">
+        <div class="user-banner" id="userBanner" style="background-image: url('assets/images/default-banner.jpg');">
+        </div>
+
+        <!-- Character Info -->
+        <div class="user-info text-center mt-4">
+            <h3 class="username" id="userDisplayName">
+                🧙 Welcome, <?php echo htmlspecialchars($currentUser['username'] ?? 'Adventurer'); ?>!
+            </h3>
+
+            <p class="text-muted" id="userLevel">
+                <?php 
+                $level = $currentUser['level'] ?? 1;
+                $title = match(true) {
+                    $level >= 50 => '🧠 Archmage of Code',
+                    $level >= 30 => '⚔️ Code Knight',
+                    $level >= 20 => '🛡️ Script Warrior',
+                    $level >= 10 => '🗡️ Apprentice Coder',
+                    default => '🌱 Code Novice'
+                };
+                echo "Level $level — " . htmlspecialchars($title);
+                ?>
+            </p>
+        </div>
+    </div>
+
+    <!-- Quest Log Title -->
+    <h4 id="progress-heading" class="fw-bold mb-4 text-center">
+        📜 Your Quest Log
+    </h4>
+
+    <div class="row g-4" id="progressContainer">
+
+        <!-- Loading State -->
+        <div class="col-12 text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading quests...</span>
+            </div>
+            <p class="mt-2">🔄 Summoning your progress...</p>
+        </div>
+
+        <!-- No JS fallback -->
+        <noscript>
+            <div class="col-12">
+                <div class="alert alert-warning">
+                    ⚠️ Magic disabled! Enable JavaScript to view your quest progress.
                 </div>
             </div>
-            
-            <h4 id="progress-heading" class="fw-bold mb-4 text-center">Your Coding Journey</h4>
-            <div class="row g-4" id="progressContainer">
-                <!-- Progress cards will be loaded via AJAX -->
-                <div class="col-12 text-center">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading your progress...</span>
-                    </div>
-                </div>
+        </noscript>
+
+    </div>
+</section>
+
+<?php else: ?>
+
+<!-- Guest View (RPG Style) -->
+<section class="progress-dashboard container py-5" role="region" aria-labelledby="guest-progress-heading">
+    
+    <h4 id="guest-progress-heading" class="fw-bold mb-4 text-center">
+        🚀 Begin Your Coding Adventure
+    </h4>
+
+    <div class="row g-4">
+
+        <!-- Tutorial Quest -->
+        <div class="col-md-4">
+            <div class="progress-card" id="tutorial-progress-card">
                 
-                <!-- Fallback content in case JavaScript is disabled -->
-                <noscript>
-                    <div class="col-12">
-                        <div class="alert alert-warning">
-                            <i class="bx bx-error-circle me-2"></i>
-                            Please enable JavaScript to view your progress dashboard.
+                <div class="progress-icon text-primary">
+                    ⚔️
+                </div>
+
+                <div class="progress-details">
+                    <h5 class="mb-3">Main Quest: Tutorials</h5>
+
+                    <div class="progress mb-2" style="height: 10px;">
+                        <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" 
+                            id="tutorial-progress-bar"
+                            role="progressbar"
+                            style="width: 0%">
                         </div>
                     </div>
-                </noscript>
-            </div>
-        </section>
-        <?php else: ?>
-        <!-- Guest Progress Placeholders -->
-        <section class="progress-dashboard container py-5" role="region" aria-labelledby="guest-progress-heading">
-            <h4 id="guest-progress-heading" class="fw-bold mb-4 text-center">Start Your Coding Journey</h4>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="progress-card" id="tutorial-progress-card">
-                    <div class="progress-icon text-primary">
-                        <i class="fas fa-graduation-cap fa-2x"></i>
-                    </div>
-                    <div class="progress-details">
-                        <h5 class="mb-3">Tutorial Progress</h5>
-                        <div class="progress mb-2" style="height: 8px;">
-                            <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" 
-                                 id="tutorial-progress-bar" 
-                                 role="progressbar" 
-                                 style="width: 0%" 
-                                 aria-valuenow="0" 
-                                 aria-valuemin="0" 
-                                 aria-valuemax="100"></div>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="progress-percentage fw-bold" id="tutorial-progress-percentage">0%</span>
-                            <span class="progress-text small" id="tutorial-progress-text">
-                                <?php echo ($currentUser ? 'Loading...' : 'Sign in to track progress'); ?>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="progress-card h-100" id="profile-progress-card">
-                        <div class="progress-icon text-success">
-                            <i class="fas fa-user-circle fa-2x"></i>
-                        </div>
-                        <div class="progress-details">
-                            <h5 class="mb-3">Profile Status</h5>
-                            <div class="progress mb-2" style="height: 8px;">
-                                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
-                                     id="profile-progress-bar" 
-                                     role="progressbar" 
-                                     style="width: 0%" 
-                                     aria-valuenow="0" 
-                                     aria-valuemin="0" 
-                                     aria-valuemax="100"></div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="progress-percentage fw-bold" id="profile-progress-percentage">0%</span>
-                                <span class="progress-text small" id="profile-progress-text">
-                                    <?php echo ($currentUser ? 'Loading profile...' : 'Sign in to complete profile'); ?>
-                                </span>
-                            </div>
-                        </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="progress-percentage fw-bold" id="tutorial-progress-percentage">0%</span>
+                        <span class="progress-text small" id="tutorial-progress-text">
+                            <?php echo ($currentUser ? 'Tracking quest...' : '🔒 Log in to unlock quests'); ?>
+                        </span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- Profile Quest -->
+        <div class="col-md-4">
+            <div class="progress-card h-100" id="profile-progress-card">
+                
+                <div class="progress-icon text-success">
+                    🛡️
+                </div>
+
+                <div class="progress-details">
+                    <h5 class="mb-3">Side Quest: Character Profile</h5>
+
+                    <div class="progress mb-2" style="height: 10px;">
+                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+                            id="profile-progress-bar"
+                            role="progressbar"
+                            style="width: 0%">
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="progress-percentage fw-bold" id="profile-progress-percentage">0%</span>
+                        <span class="progress-text small" id="profile-progress-text">
+                            <?php echo ($currentUser ? 'Updating character...' : '🔒 Create your hero to continue'); ?>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
         <?php endif; ?>
 
         <!-- ===== Dynamic Announcements Section ===== -->
@@ -474,58 +500,66 @@ if ($showLoginNotification && $currentUser):
                 }
                 
                 $quickCards = [
-                    [
-                        'title' => 'Profile',
-                        'icon' => 'fa-user',
-                        'image' => 'assets/images/Profile.png',
-                        'progress' => $currentUser ? 'Level ' . min(floor((($userProgress['challenge']['correct_answers'] ?? 0) * 30) / 100) + 1, 50) : 'Guest',
-                        'text' => $currentUser ? 'Manage your account' : 'Sign up to save progress',
-                        'link' => $currentUser ? 'profile.php' : 'sign_in.php'
-                    ],
-                    [
-                        'title' => 'Tutorials',
-                        'icon' => 'fa-book',
-                        'image' => 'assets/images/Tutorial.png',
-                        'progress' => ($userProgress['tutorial']['completed_topics'] ?? 0) . ' of ' . max($userProgress['tutorial']['total_topics'] ?? 1, 1),
-                        'text' => ($userProgress['tutorial']['completed_topics'] ?? 0) > 0 ? 
-                            'Keep learning!' : 'Start your journey',
-                        'link' => 'tutorial.php'
-                    ],
-                    [
-                        'title' => 'Mini-Game',
-                        'icon' => 'fa-gamepad',
-                        'image' => 'assets/images/icon-mini-game.png',
-                        'progress' => ($userProgress['minigame']['total_games'] ?? 0) . ' games played',
-                        'text' => ($userProgress['minigame']['best_score'] ?? 0) > 0 ? 
-                            'Best: ' . ($userProgress['minigame']['best_score'] ?? 0) : 'New high score awaits',
-                        'link' => 'mini-game.php'
-                    ],
-                    [
-                        'title' => 'Quiz',
-                        'icon' => 'fa-question-circle',
-                        'image' => 'assets/images/icon-quiz.png',
-                        'progress' => ($userProgress['quiz']['correct_answers'] ?? 0) . '/40 correct',
-                        'text' => ($userProgress['quiz']['correct_answers'] ?? 0) > 0 ? 
-                            'Improve your score!' : 'Test your knowledge',
-                        'link' => 'quiz.php'
-                    ],
-                    [
-                        'title' => 'Challenge',
-                        'icon' => 'fa-trophy',
-                        'image' => 'assets/images/icon-challenge.png',
-                        'progress' => ($userProgress['challenge']['correct_answers'] ?? 0) . ' solved',
-                        'text' => ($userProgress['challenge']['correct_answers'] ?? 0) > 0 ? 
-                            'Expert level unlocked!' : 'Master the challenges',
-                        'link' => 'challenges.php'
-                    ],
-                    [
-                        'title' => 'About',
-                        'icon' => 'fa-info-circle',
-                        'image' => 'assets/images/about-us.png',
-                        'text' => 'Learn about Code Game',
-                        'link' => 'about.php'
-                    ]
-                ];
+    [
+        'title' => 'Character',
+        'icon' => 'fa-user',
+        'image' => 'assets/images/Profile.png',
+        'progress' => $currentUser 
+            ? 'Lv. ' . min(floor((($userProgress['challenge']['correct_answers'] ?? 0) * 30) / 100) + 1, 50) 
+            : 'Wanderer',
+        'text' => $currentUser 
+            ? 'Manage your hero' 
+            : 'Create your adventurer',
+        'link' => $currentUser ? 'profile.php' : 'sign_in.php'
+    ],
+    [
+        'title' => 'Training Grounds',
+        'icon' => 'fa-book',
+        'image' => 'assets/images/Tutorial.png',
+        'progress' => ($userProgress['tutorial']['completed_topics'] ?? 0) . ' / ' . max($userProgress['tutorial']['total_topics'] ?? 1, 1),
+        'text' => ($userProgress['tutorial']['completed_topics'] ?? 0) > 0 
+            ? 'Continue your training' 
+            : 'Begin your first lesson',
+        'link' => 'tutorial.php'
+    ],
+    [
+        'title' => 'Arcade Arena',
+        'icon' => 'fa-gamepad',
+        'image' => 'assets/images/icon-mini-game.png',
+        'progress' => ($userProgress['minigame']['total_games'] ?? 0) . ' battles fought',
+        'text' => ($userProgress['minigame']['best_score'] ?? 0) > 0 
+            ? '🏆 High Score: ' . ($userProgress['minigame']['best_score'] ?? 0) 
+            : 'A new record awaits',
+        'link' => 'mini-game.php'
+    ],
+    [
+        'title' => 'Trial of Knowledge',
+        'icon' => 'fa-question-circle',
+        'image' => 'assets/images/icon-quiz.png',
+        'progress' => ($userProgress['quiz']['correct_answers'] ?? 0) . ' / 40 runes solved',
+        'text' => ($userProgress['quiz']['correct_answers'] ?? 0) > 0 
+            ? 'Sharpen your mind' 
+            : 'Face the trial',
+        'link' => 'quiz.php'
+    ],
+    [
+        'title' => 'Heroic Challenges',
+        'icon' => 'fa-trophy',
+        'image' => 'assets/images/icon-challenge.png',
+        'progress' => ($userProgress['challenge']['correct_answers'] ?? 0) . ' quests cleared',
+        'text' => ($userProgress['challenge']['correct_answers'] ?? 0) > 0 
+            ? 'Legend rank within reach' 
+            : 'Prove your worth',
+        'link' => 'challenges.php'
+    ],
+    [
+        'title' => 'Codex',
+        'icon' => 'fa-info-circle',
+        'image' => 'assets/images/about-us.png',
+        'text' => 'Discover the lore of this realm',
+        'link' => 'about.php'
+    ]
+];
 
                 foreach ($quickCards as $card): 
                     $title = htmlspecialchars($card['title']);
@@ -568,164 +602,247 @@ if ($showLoginNotification && $currentUser):
 
         <!-- ===== Quiz Analytics & Leaderboard Section ===== -->
         <section class="container py-5" id="home-quiz-analytics" role="region" aria-labelledby="quiz-analytics-heading">
-            <div class="retro-analytics-window-bg">
-            <!-- Overlapping Stat Cards -->
-            <div class="stat-card stat-card-best" role="img" aria-label="Best quiz score">
-              <div class="stat-card-title">Best Score <span class="stat-x" aria-hidden="true">&#10005;</span></div>
-              <div class="stat-card-value" id="quiz-best-score" aria-live="polite">--</div>
-              <div class="stat-card-desc">Your all-time best</div>
-            </div>
-            <div class="stat-card stat-card-recent" role="img" aria-label="Recent quiz game">
-              <div class="stat-card-title">Recent Game <span class="stat-x" aria-hidden="true">&#10005;</span></div>
-              <div class="stat-card-value" id="quiz-recent-score" aria-live="polite">--</div>
-              <div class="stat-card-desc" id="quiz-recent-time">No recent game</div>
-            </div>
-            <div class="stat-card stat-card-top" role="img" aria-label="Top quiz player">
-              <div class="stat-card-title">Top Player <span class="stat-x" aria-hidden="true">&#10005;</span></div>
-              <div class="stat-card-value" id="quiz-top-player" aria-live="polite">--</div>
-              <div class="stat-card-desc" id="quiz-top-player-desc">No top player</div>
-            </div>
-            <!-- Main Window -->
-            <div class="retro-analytics-window">
-              <div class="window-title-bar">
-                <div class="window-controls" aria-hidden="true">
-                  <span class="window-dot red"></span>
-                  <span class="window-dot yellow"></span>
-                  <span class="window-dot green"></span>
-                </div>
-                <span class="window-title">// QUIZ ANALYTICS & LEADERBOARD</span>
-                <span class="window-x" aria-hidden="true">&#10005;</span>
-              </div>
-              <div class="window-content">
-                <div class="analytics-header">
-                  <div class="analytics-tabs" role="tablist" aria-label="Quiz analytics time period">
-                    <button class="analytics-tab active" data-scope="alltime" role="tab" aria-selected="true" aria-controls="quiz-content">All-Time</button>
-                    <button class="analytics-tab" data-scope="weekly" role="tab" aria-selected="false" aria-controls="quiz-content">Weekly</button>
-                    <button class="analytics-tab" data-scope="monthly" role="tab" aria-selected="false" aria-controls="quiz-content">Monthly</button>
-                  </div>
-                </div>
-                <div class="analytics-body" id="quiz-content" role="tabpanel">
-                  <div class="difficulty-tabs" role="tablist" aria-label="Quiz difficulty level">
-                    <button class="difficulty-tab active" data-difficulty="beginner" role="tab" aria-selected="true" aria-controls="quiz-difficulty-content">Beginner</button>
-                    <button class="difficulty-tab" data-difficulty="intermediate" role="tab" aria-selected="false" aria-controls="quiz-difficulty-content">Intermediate</button>
-                    <button class="difficulty-tab" data-difficulty="expert" role="tab" aria-selected="false" aria-controls="quiz-difficulty-content">Expert</button>
-                  </div>
-                  <div class="user-quiz-stats" aria-live="polite"></div>
-                  <div class="quiz-leaderboard-list" aria-live="polite"></div>
-                  <div class="play-now-section">
-                    <button class="btn-play-now" onclick="window.location.href='quiz.php'" aria-describedby="quiz-play-description">
-                      <span class="btn-text">🎯 PLAY QUIZ NOW</span>
-                    </button>
-                    <div id="quiz-play-description" class="visually-hidden">
-                      Start a new quiz to test your coding knowledge and compete on the leaderboard
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+  <div class="retro-analytics-window-bg quiz-theme">
+
+    <!-- Arcane Stat Cards -->
+    <div class="stat-card stat-card-best quiz-theme" role="img" aria-label="Best knowledge score">
+      <div class="stat-card-title">📚 Arcane Record <span class="stat-x" aria-hidden="true">✖</span></div>
+      <div class="stat-card-value" id="quiz-best-score" aria-live="polite">--</div>
+      <div class="stat-card-desc">Highest knowledge attained</div>
+    </div>
+
+    <div class="stat-card stat-card-recent quiz-theme" role="img" aria-label="Recent quiz attempt">
+      <div class="stat-card-title">🧠 Last Ritual <span class="stat-x" aria-hidden="true">✖</span></div>
+      <div class="stat-card-value" id="quiz-recent-score" aria-live="polite">--</div>
+      <div class="stat-card-desc" id="quiz-recent-time">No recent ritual</div>
+    </div>
+
+    <div class="stat-card stat-card-top quiz-theme" role="img" aria-label="Top quiz scholar">
+      <div class="stat-card-title">👑 Grand Scholar <span class="stat-x" aria-hidden="true">✖</span></div>
+      <div class="stat-card-value" id="quiz-top-player" aria-live="polite">--</div>
+      <div class="stat-card-desc" id="quiz-top-player-desc">No scholar crowned</div>
+    </div>
+
+    <!-- Main Sanctum Window -->
+    <div class="retro-analytics-window quiz-theme">
+
+      <!-- Title Bar -->
+      <div class="window-title-bar quiz-theme">
+        <div class="window-controls" aria-hidden="true">
+          <span class="window-dot red"></span>
+          <span class="window-dot yellow"></span>
+          <span class="window-dot green"></span>
+        </div>
+
+        <span class="window-title">📜 ACADEMY OF KNOWLEDGE (QUIZ SANCTUM)</span>
+
+        <span class="window-x" aria-hidden="true">✖</span>
+      </div>
+
+      <div class="window-content">
+
+        <!-- Time Period Scrolls -->
+        <div class="analytics-header">
+          <div class="analytics-tabs" role="tablist" aria-label="Knowledge time period">
+            <button class="analytics-tab active" data-scope="alltime" role="tab" aria-selected="true">🌌 Eternal Wisdom</button>
+            <button class="analytics-tab" data-scope="weekly" role="tab" aria-selected="false">📖 Weekly Scrolls</button>
+            <button class="analytics-tab" data-scope="monthly" role="tab" aria-selected="false">📜 Monthly Archives</button>
           </div>
-        </section>
+        </div>
+
+        <!-- Difficulty Ranks -->
+        <div class="analytics-body" id="quiz-content" role="tabpanel">
+
+          <div class="difficulty-tabs" role="tablist" aria-label="Arcane difficulty levels">
+            <button class="difficulty-tab active" data-difficulty="beginner" role="tab">🌱 Initiate</button>
+            <button class="difficulty-tab" data-difficulty="intermediate" role="tab">🧙 Adept</button>
+            <button class="difficulty-tab" data-difficulty="expert" role="tab">🔥 Archmage</button>
+          </div>
+
+          <!-- Player Knowledge Stats -->
+          <div class="user-quiz-stats" aria-live="polite"></div>
+
+          <!-- Ranking Scroll -->
+          <div class="quiz-leaderboard-list" aria-live="polite"></div>
+
+          <!-- Enter the Trial -->
+          <div class="play-now-section">
+
+            <button class="btn-play-now quiz-theme"
+                    onclick="window.location.href='quiz.php'"
+                    aria-describedby="quiz-play-description">
+
+              <span class="btn-text">🎯 Enter the Knowledge Trial</span>
+
+            </button>
+
+            <div id="quiz-play-description" class="visually-hidden">
+              Begin a new knowledge trial and compete in the academy rankings
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
         <!-- ===== Mini-Game Leaderboard Section ===== -->
         <div class="retro-bg-container" style="margin-top: 2.5rem;">
-        <section class="container py-5" id="home-minigame-analytics">
-          <div class="retro-analytics-window-bg minigame-theme">
-            <!-- Overlapping Stat Cards -->
-            <div class="stat-card stat-card-best minigame-theme">
-              <div class="stat-card-title">Best Score <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="minigame-best-score">--</div>
-              <div class="stat-card-desc">Your all-time best</div>
-            </div>
-            <div class="stat-card stat-card-recent minigame-theme">
-              <div class="stat-card-title">Recent Game <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="minigame-recent-score">--</div>
-              <div class="stat-card-desc" id="minigame-recent-time">No recent game</div>
-            </div>
-            <div class="stat-card stat-card-top minigame-theme">
-              <div class="stat-card-title">Top Player <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="minigame-top-player">--</div>
-              <div class="stat-card-desc" id="minigame-top-player-desc">No top player</div>
-            </div>
-            <div class="retro-analytics-window minigame-theme">
-              <div class="window-title-bar minigame-theme">
-                <span class="window-controls">
-                  <span class="window-dot blue"></span>
-                  <span class="window-dot blue"></span>
-                  <span class="window-dot green"></span>
-                </span>
-                <span class="window-title">// MINI-GAME LEADERBOARD</span>
-                <span class="window-refresh" title="Refresh">⟳</span>
-                <span class="window-x">&#10005;</span>
-              </div>
-              <div class="window-content">
-                <div class="analytics-tabs">
-                  <span class="analytics-tab active" data-scope="alltime">All-Time</span>
-                  <span class="analytics-tab" data-scope="weekly">Weekly</span>
-                  <span class="analytics-tab" data-scope="monthly">Monthly</span>
-                </div>
-                <div class="user-quiz-stats"></div>
-                <div class="quiz-leaderboard-list"></div>
-                <div class="play-now-section">
-                  <button class="btn-play-now minigame-theme" onclick="window.location.href='mini-game.php'">
-                    <span class="btn-text">🎮 PLAY MINI-GAME NOW</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
+<section class="container py-5" id="home-minigame-analytics">
+
+  <div class="retro-analytics-window-bg minigame-theme">
+
+    <!-- Hero Stats Cards -->
+    <div class="stat-card stat-card-best minigame-theme">
+      <div class="stat-card-title">🏆 Legendary Record <span class="stat-x">✖</span></div>
+      <div class="stat-card-value" id="minigame-best-score">--</div>
+      <div class="stat-card-desc">Highest score ever achieved</div>
+    </div>
+
+    <div class="stat-card stat-card-recent minigame-theme">
+      <div class="stat-card-title">⚔️ Last Battle <span class="stat-x">✖</span></div>
+      <div class="stat-card-value" id="minigame-recent-score">--</div>
+      <div class="stat-card-desc" id="minigame-recent-time">No recent battle</div>
+    </div>
+
+    <div class="stat-card stat-card-top minigame-theme">
+      <div class="stat-card-title">👑 Arena Champion <span class="stat-x">✖</span></div>
+      <div class="stat-card-value" id="minigame-top-player">--</div>
+      <div class="stat-card-desc" id="minigame-top-player-desc">No champion yet</div>
+    </div>
+
+    <!-- Arena Hall Window -->
+    <div class="retro-analytics-window minigame-theme">
+
+      <!-- Title Bar -->
+      <div class="window-title-bar minigame-theme">
+        <span class="window-controls">
+          <span class="window-dot blue"></span>
+          <span class="window-dot blue"></span>
+          <span class="window-dot green"></span>
+        </span>
+
+        <span class="window-title">⚔️ ARENA HALL LEADERBOARD</span>
+
+        <span class="window-refresh" title="Refresh Rankings">🔄</span>
+        <span class="window-x">✖</span>
+      </div>
+
+      <!-- Content -->
+      <div class="window-content">
+
+        <!-- Time Realms -->
+        <div class="analytics-tabs">
+          <span class="analytics-tab active" data-scope="alltime">🌌 Eternal</span>
+          <span class="analytics-tab" data-scope="weekly">📅 This Week</span>
+          <span class="analytics-tab" data-scope="monthly">🗓️ This Month</span>
         </div>
+
+        <!-- Player Stats -->
+        <div class="user-quiz-stats"></div>
+
+        <!-- Leaderboard -->
+        <div class="quiz-leaderboard-list"></div>
+
+        <!-- Enter Arena -->
+        <div class="play-now-section">
+          <button class="btn-play-now minigame-theme" onclick="window.location.href='mini-game.php'">
+            <span class="btn-text">🎮 Enter the Arena</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+</div>
 
         <!-- ===== Challenge Leaderboard Section ===== -->
         <div class="retro-bg-container" style="margin-top: 2.5rem;">
-        <section class="container py-5" id="home-challenge-analytics">
-          <div class="retro-analytics-window-bg challenge-theme">
-            <!-- Overlapping Stat Cards -->
-            <div class="stat-card stat-card-best challenge-theme">
-              <div class="stat-card-title">Best Score <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="challenge-best-score">--</div>
-              <div class="stat-card-desc">Your all-time best</div>
-            </div>
-            <div class="stat-card stat-card-recent challenge-theme">
-              <div class="stat-card-title">Recent Game <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="challenge-recent-score">--</div>
-              <div class="stat-card-desc" id="challenge-recent-time">No recent game</div>
-            </div>
-            <div class="stat-card stat-card-top challenge-theme">
-              <div class="stat-card-title">Top Player <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="challenge-top-player">--</div>
-              <div class="stat-card-desc" id="challenge-top-player-desc">No top player</div>
-            </div>
-            <div class="retro-analytics-window challenge-theme">
-              <div class="window-title-bar challenge-theme">
-                <span class="window-controls">
-                  <span class="window-dot gold"></span>
-                  <span class="window-dot orange"></span>
-                  <span class="window-dot green"></span>
-                </span>
-                <span class="window-title">// CHALLENGE LEADERBOARD (EXPERT ONLY)</span>
-                <span class="window-refresh" title="Refresh">⟳</span>
-                <span class="window-x">&#10005;</span>
-              </div>
-              <div class="window-content">
-                <div class="analytics-tabs">
-                  <span class="analytics-tab active" data-scope="alltime">All-Time</span>
-                  <span class="analytics-tab" data-scope="weekly">Weekly</span>
-                  <span class="analytics-tab" data-scope="monthly">Monthly</span>
-                </div>
-                <div class="user-quiz-stats"></div>
-                <div class="quiz-leaderboard-list"></div>
-                <div class="play-now-section">
-                  <button class="btn-play-now challenge-theme" onclick="window.location.href='challenges.php'">
-                    <span class="btn-text">🚀 PLAY CHALLENGE NOW</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
+<section class="container py-5" id="home-challenge-analytics">
+
+  <div class="retro-analytics-window-bg challenge-theme">
+
+    <!-- Elite Stat Cards -->
+    <div class="stat-card stat-card-best challenge-theme">
+      <div class="stat-card-title">🏆 Mythic Record <span class="stat-x">✖</span></div>
+      <div class="stat-card-value" id="challenge-best-score">--</div>
+      <div class="stat-card-desc">Highest achievement in the realm</div>
+    </div>
+
+    <div class="stat-card stat-card-recent challenge-theme">
+      <div class="stat-card-title">⚔️ Last Trial <span class="stat-x">✖</span></div>
+      <div class="stat-card-value" id="challenge-recent-score">--</div>
+      <div class="stat-card-desc" id="challenge-recent-time">No trial attempted</div>
+    </div>
+
+    <div class="stat-card stat-card-top challenge-theme">
+      <div class="stat-card-title">👑 Grand Champion <span class="stat-x">✖</span></div>
+      <div class="stat-card-value" id="challenge-top-player">--</div>
+      <div class="stat-card-desc" id="challenge-top-player-desc">No champion crowned</div>
+    </div>
+
+    <!-- Dungeon / Trial Hall -->
+    <div class="retro-analytics-window challenge-theme">
+
+      <!-- Title Bar -->
+      <div class="window-title-bar challenge-theme">
+        <span class="window-controls">
+          <span class="window-dot gold"></span>
+          <span class="window-dot orange"></span>
+          <span class="window-dot green"></span>
+        </span>
+
+        <span class="window-title">🔥 ELITE TRIAL HALL (ENDGAME)</span>
+
+        <span class="window-refresh" title="Refresh Trials">🔄</span>
+        <span class="window-x">✖</span>
+      </div>
+
+      <!-- Content -->
+      <div class="window-content">
+
+        <!-- Difficulty Realms -->
+        <div class="analytics-tabs">
+          <span class="analytics-tab active" data-scope="alltime">🌌 Eternal Trials</span>
+          <span class="analytics-tab" data-scope="weekly">⚡ Weekly Trials</span>
+          <span class="analytics-tab" data-scope="monthly">🔥 Monthly Trials</span>
         </div>
-    </main>
+
+        <!-- Player Stats -->
+        <div class="user-quiz-stats"></div>
+
+        <!-- Leaderboard -->
+        <div class="quiz-leaderboard-list"></div>
+
+        <!-- Enter Dungeon -->
+        <div class="play-now-section">
+          <button class="btn-play-now challenge-theme" onclick="window.location.href='challenges.php'">
+            <span class="btn-text">🚀 Enter the Trial</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+</div>
+</main>
 
     <!-- ===== Footer ===== -->
     <?php include 'includes/footer.php'; ?>
