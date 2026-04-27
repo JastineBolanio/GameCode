@@ -1,14 +1,3 @@
-# An Educational Game System for Teaching Coding Skills and Programming Languages for Pateros Technological College 🎮💻
-Welcome to our BSIT Capstone project at Pateros Technological College! This repo hosts "Code Gaming," a web-based system to teach coding skills with fun challenges. Check out our [latest release v0.0.2](https://github.com/Areyzxc/Game-Development/releases/tag/v0.0.2) and join our growing team! 🚀
-
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fcodegaming.gamer.gd&label=Live%20Demo&style=for-the-badge&color=blue)](https://codegaming.gamer.gd)
-
-[![CodeGaming Preview](docs/images/preview_image.png)](https://codegaming.gamer.gd)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues/Areyzxc/Game-Development)](https://github.com/Areyzxc/Game-Development/issues)
-[![GitHub stars](https://img.shields.io/github/stars/Areyzxc/Game-Development)](https://github.com/Areyzxc/Game-Development/stargazers)
-[![GitHub release](https://img.shields.io/github/v/release/Areyzxc/Game-Development)](https://github.com/Areyzxc/Game-Development/releases)
 
 ## Project Overview
 
@@ -111,20 +100,14 @@ For detailed user guides, see the `/docs` folder.
 
 ## Contributors
 
-This capstone project is a collaborative effort by BSIT-4F students at Pateros Technological College:
 
-- **Belza, John Jaylyn**  
-- **Constantino, Alvin Jr.**  
-- **Sabangan, Ybo**  
-- **Santiago, James Aries**  
-- **Silvestre, Jesse Lei**  
-- **Valencia, Paul Dexter**
+
+
 
 We welcome contributions! Fork the repo, create a branch, and submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
