@@ -113,4 +113,4 @@ We welcome contributions! Fork the repo, create a branch, and submit a pull requ
 
 Special thanks to our professor and panelists in Capstone from Pateros Technological College for guidance. Inspired by gamification studies and open-source educational tools.
 
-For questions or collaborations, contact us via GitHub Issues and Discussions (Make sure to have a GitHub account registered) or email us at [jamesariess76@gmail.com].
+For questions or collaborations, contact us via GitHub Issues and Discussions (Make sure to have a GitHub account registered) or email us at 
