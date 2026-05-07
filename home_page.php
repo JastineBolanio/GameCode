@@ -339,68 +339,57 @@ if ($showLoginNotification && $currentUser):
 <?php else: ?>
 
 <!-- Guest View (RPG Style) -->
-<section class="progress-dashboard container py-5" role="region" aria-labelledby="guest-progress-heading">
-    
-    <h4 id="guest-progress-heading" class="fw-bold mb-4 text-center">
+<!-- Put this in your <head> -->
+<link rel="stylesheet" href="assets\css\home-rpg.css">
+
+<!-- Your RPG Dashboard -->
+<section class="progress-dashboard container my-5">
+    <h4 id="guest-progress-heading" class="fw-bold mb-5 text-center">
         🚀 Begin Your Coding Adventure
     </h4>
 
-    <div class="row g-4">
+    <div class="row g-4 justify-content-center">
 
         <!-- Tutorial Quest -->
-        <div class="col-md-4">
+        <div class="col-md-5">
             <div class="progress-card" id="tutorial-progress-card">
-                
-                <div class="progress-icon text-primary">
-                    ⚔️
+                <div class="progress-icon text-primary mb-2" style="font-size: 1.5rem;">⚔️</div>
+                <h5 class="mb-3">Main Quest: Tutorials</h5>
+
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" 
+                         role="progressbar" 
+                         style="width: 75%"> <!-- Adjust width with PHP -->
+                    </div>
                 </div>
 
-                <div class="progress-details">
-                    <h5 class="mb-3">Main Quest: Tutorials</h5>
-
-                    <div class="progress mb-2" style="height: 10px;">
-                        <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" 
-                            id="tutorial-progress-bar"
-                            role="progressbar"
-                            style="width: 0%">
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="progress-percentage fw-bold" id="tutorial-progress-percentage">0%</span>
-                        <span class="progress-text small" id="tutorial-progress-text">
-                            <?php echo ($currentUser ? 'Tracking quest...' : '🔒 Log in to unlock quests'); ?>
-                        </span>
-                    </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-primary fw-bold">75% EXP</span>
+                    <span class="small text-muted">
+                        <?php echo ($currentUser ? 'Quest in progress...' : '🔒 Login to start'); ?>
+                    </span>
                 </div>
             </div>
         </div>
 
         <!-- Profile Quest -->
-        <div class="col-md-4">
-            <div class="progress-card h-100" id="profile-progress-card">
-                
-                <div class="progress-icon text-success">
-                    🛡️
+        <div class="col-md-5">
+            <div class="progress-card" id="profile-progress-card">
+                <div class="progress-icon text-success mb-2" style="font-size: 1.5rem;">🛡️</div>
+                <h5 class="mb-3">Side Quest: Profile</h5>
+
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+                         role="progressbar" 
+                         style="width: 40%"> <!-- Adjust width with PHP -->
+                    </div>
                 </div>
 
-                <div class="progress-details">
-                    <h5 class="mb-3">Side Quest: Character Profile</h5>
-
-                    <div class="progress mb-2" style="height: 10px;">
-                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
-                            id="profile-progress-bar"
-                            role="progressbar"
-                            style="width: 0%">
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="progress-percentage fw-bold" id="profile-progress-percentage">0%</span>
-                        <span class="progress-text small" id="profile-progress-text">
-                            <?php echo ($currentUser ? 'Updating character...' : '🔒 Create your hero to continue'); ?>
-                        </span>
-                    </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-success fw-bold">40% EXP</span>
+                    <span class="small text-muted">
+                        <?php echo ($currentUser ? 'Hero leveling up...' : '🔒 Login to start'); ?>
+                    </span>
                 </div>
             </div>
         </div>
@@ -429,6 +418,7 @@ if ($showLoginNotification && $currentUser):
 
 
         <!-- ===== Quick Access Cards ===== -->
+         <link rel="stylesheet" href="assets\css\QuickAccessCards.css">
         <section class="quick-cards container py-5" aria-label="Quick Access Navigation">
             <div class="row g-4 justify-content-center">
                 <?php
@@ -501,102 +491,103 @@ if ($showLoginNotification && $currentUser):
                 
                 $quickCards = [
     [
-        'title' => 'Character',
-        'icon' => 'fa-user',
-        'image' => 'assets/images/Profile.png',
-        'progress' => $currentUser 
-            ? 'Lv. ' . min(floor((($userProgress['challenge']['correct_answers'] ?? 0) * 30) / 100) + 1, 50) 
-            : 'Wanderer',
-        'text' => $currentUser 
-            ? 'Manage your hero' 
-            : 'Create your adventurer',
-        'link' => $currentUser ? 'profile.php' : 'sign_in.php'
-    ],
-    [
-        'title' => 'Training Grounds',
-        'icon' => 'fa-book',
-        'image' => 'assets/images/Tutorial.png',
-        'progress' => ($userProgress['tutorial']['completed_topics'] ?? 0) . ' / ' . max($userProgress['tutorial']['total_topics'] ?? 1, 1),
-        'text' => ($userProgress['tutorial']['completed_topics'] ?? 0) > 0 
-            ? 'Continue your training' 
-            : 'Begin your first lesson',
-        'link' => 'tutorial.php'
-    ],
-    [
-        'title' => 'Arcade Arena',
-        'icon' => 'fa-gamepad',
-        'image' => 'assets/images/icon-mini-game.png',
-        'progress' => ($userProgress['minigame']['total_games'] ?? 0) . ' battles fought',
-        'text' => ($userProgress['minigame']['best_score'] ?? 0) > 0 
-            ? '🏆 High Score: ' . ($userProgress['minigame']['best_score'] ?? 0) 
-            : 'A new record awaits',
-        'link' => 'mini-game.php'
-    ],
-    [
-        'title' => 'Trial of Knowledge',
-        'icon' => 'fa-question-circle',
-        'image' => 'assets/images/icon-quiz.png',
-        'progress' => ($userProgress['quiz']['correct_answers'] ?? 0) . ' / 40 runes solved',
-        'text' => ($userProgress['quiz']['correct_answers'] ?? 0) > 0 
-            ? 'Sharpen your mind' 
-            : 'Face the trial',
-        'link' => 'quiz.php'
-    ],
-    [
-        'title' => 'Heroic Challenges',
-        'icon' => 'fa-trophy',
-        'image' => 'assets/images/icon-challenge.png',
-        'progress' => ($userProgress['challenge']['correct_answers'] ?? 0) . ' quests cleared',
-        'text' => ($userProgress['challenge']['correct_answers'] ?? 0) > 0 
-            ? 'Legend rank within reach' 
-            : 'Prove your worth',
-        'link' => 'challenges.php'
-    ],
-    [
-        'title' => 'Codex',
-        'icon' => 'fa-info-circle',
-        'image' => 'assets/images/about-us.png',
-        'text' => 'Discover the lore of this realm',
-        'link' => 'about.php'
-    ]
+    'title' => 'Hero Profile',
+    'icon' => 'fa-user-shield',
+    'image' => 'assets/images/Profile.png',
+    'progress' => $currentUser 
+        ? 'Level ' . min(floor((($userProgress['challenge']['correct_answers'] ?? 0) * 30) / 100) + 1, 50) 
+        : 'Unknown Wanderer',
+    'text' => $currentUser 
+        ? 'Manage your hero\'s stats' 
+        : 'Forge your adventurer',
+    'link' => $currentUser ? 'profile.php' : 'sign_in.php'
+],
+[
+    'title' => 'Training Grounds',
+    'icon' => 'fa-khanda',
+    'image' => 'assets/images/Tutorial.png',
+    'progress' => ($userProgress['tutorial']['completed_topics'] ?? 0) . ' / ' . max($userProgress['tutorial']['total_topics'] ?? 1, 1) . ' Mastered',
+    'text' => ($userProgress['tutorial']['completed_topics'] ?? 0) > 0 
+        ? 'Refine your skills' 
+        : 'Begin your first quest',
+    'link' => 'tutorial.php'
+],
+[
+    'title' => 'Arcade Arena',
+    'icon' => 'fa-gamepad',
+    'image' => 'assets/images/icon-mini-game.png',
+    'progress' => ($userProgress['minigame']['total_games'] ?? 0) . ' Skirmishes',
+    'text' => ($userProgress['minigame']['best_score'] ?? 0) > 0 
+        ? '⚔️ High Score: ' . ($userProgress['minigame']['best_score'] ?? 0) 
+        : 'Claim your glory',
+    'link' => 'mini-game.php'
+],
+[
+    'title' => 'Trial of Runes',
+    'icon' => 'fa-scroll',
+    'image' => 'assets/images/icon-quiz.png',
+    'progress' => ($userProgress['quiz']['correct_answers'] ?? 0) . ' / 40 Runes deciphered',
+    'text' => ($userProgress['quiz']['correct_answers'] ?? 0) > 0 
+        ? 'Uncover ancient wisdom' 
+        : 'Face the sage\'s trial',
+    'link' => 'quiz.php'
+],
+[
+    'title' => 'Legendary Quests',
+    'icon' => 'fa-dragon',
+    'image' => 'assets/images/icon-challenge.png',
+    'progress' => ($userProgress['challenge']['correct_answers'] ?? 0) . ' Sagas complete',
+    'text' => ($userProgress['challenge']['correct_answers'] ?? 0) > 0 
+        ? 'Immortality awaits' 
+        : 'Establish your legacy',
+    'link' => 'challenges.php'
+],
+[
+    'title' => 'The Great Codex',
+    'icon' => 'fa-book-dead',
+    'image' => 'assets/images/about-us.png',
+    'progress' => 'Realm Lore',
+    'text' => 'History of the Code Kingdom',
+    'link' => 'about.php'
+]
 ];
 
                 foreach ($quickCards as $card): 
-                    $title = htmlspecialchars($card['title']);
-                    $image = file_exists($card['image']) ? $card['image'] : 'images/default-card.png';
-                    $progress = isset($card['progress']) ? htmlspecialchars($card['progress']) : '';
-                    $text = isset($card['text']) ? htmlspecialchars($card['text']) : '';
-                    $link = htmlspecialchars($card['link']);
-                    $icon = htmlspecialchars($card['icon']);
-                ?>
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-                        <div class="card quick-card drift" role="article">
-                            <img src="<?php echo $image; ?>" 
-                                class="card-img-top" 
-                                alt="<?php echo $title; ?>"
-                                onerror="this.src='images/default-card.png'">
-                            <div class="card-body text-center">
-                                <h6 class="card-title">
-                                    <i class="fas <?php echo $icon; ?> me-2" aria-hidden="true"></i>
-                                    <?php echo $title; ?>
-                                </h6>
-                                <?php if ($progress): ?>
-                                    <p class="progress-text" aria-label="Progress: <?php echo $progress; ?>">
-                                        <?php echo $progress; ?>
-                                    </p>
-                                <?php endif; ?>
-                                <?php if ($text): ?>
-                                    <p class="small text-light"><?php echo $text; ?></p>
-                                <?php endif; ?>
-                                <a href="<?php echo $link; ?>" 
-                                class="btn btn-outline-light btn-sm"
-                                aria-label="Navigate to <?php echo $title; ?>">
-                                    Go to <?php echo $title; ?>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
+    $title = htmlspecialchars($card['title']);
+    $image = file_exists($card['image']) ? $card['image'] : 'images/default-card.png';
+    $progress = isset($card['progress']) ? htmlspecialchars($card['progress']) : '';
+    $text = isset($card['text']) ? htmlspecialchars($card['text']) : '';
+    $link = htmlspecialchars($card['link']);
+    $icon = htmlspecialchars($card['icon']);
+?>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card quick-card drift" role="article">
+            <img src="<?php echo $image; ?>" 
+                class="card-img-top" 
+                alt="<?php echo $title; ?>"
+                onerror="this.src='images/default-card.png'">
+            <div class="card-body text-center">
+                <h6 class="card-title">
+                    <i class="fas <?php echo $icon; ?> me-2" aria-hidden="true"></i>
+                    <?php echo $title; ?>
+                </h6>
+                <?php if ($progress): ?>
+                    <p class="progress-text" aria-label="Progress: <?php echo $progress; ?>">
+                        <?php echo $progress; ?>
+                    </p>
+                <?php endif; ?>
+                <?php if ($text): ?>
+                    <p class="small text-light"><?php echo $text; ?></p>
+                <?php endif; ?>
+                <a href="<?php echo $link; ?>" 
+                class="btn btn-outline-light btn-sm"
+                aria-label="Navigate to <?php echo $title; ?>">
+                    Go to <?php echo $title; ?>
+                </a>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
             </div>
         </section>
 
@@ -625,72 +616,127 @@ if ($showLoginNotification && $currentUser):
     </div>
 
     <!-- Main Sanctum Window -->
-    <div class="retro-analytics-window quiz-theme">
-
-      <!-- Title Bar -->
-      <div class="window-title-bar quiz-theme">
-        <div class="window-controls" aria-hidden="true">
-          <span class="window-dot red"></span>
-          <span class="window-dot yellow"></span>
-          <span class="window-dot green"></span>
-        </div>
-
-        <span class="window-title">📜 ACADEMY OF KNOWLEDGE (QUIZ SANCTUM)</span>
-
-        <span class="window-x" aria-hidden="true">✖</span>
-      </div>
-
-      <div class="window-content">
-
-        <!-- Time Period Scrolls -->
-        <div class="analytics-header">
-          <div class="analytics-tabs" role="tablist" aria-label="Knowledge time period">
-            <button class="analytics-tab active" data-scope="alltime" role="tab" aria-selected="true">🌌 Eternal Wisdom</button>
-            <button class="analytics-tab" data-scope="weekly" role="tab" aria-selected="false">📖 Weekly Scrolls</button>
-            <button class="analytics-tab" data-scope="monthly" role="tab" aria-selected="false">📜 Monthly Archives</button>
-          </div>
-        </div>
-
-        <!-- Difficulty Ranks -->
-        <div class="analytics-body" id="quiz-content" role="tabpanel">
-
-          <div class="difficulty-tabs" role="tablist" aria-label="Arcane difficulty levels">
-            <button class="difficulty-tab active" data-difficulty="beginner" role="tab">🌱 Initiate</button>
-            <button class="difficulty-tab" data-difficulty="intermediate" role="tab">🧙 Adept</button>
-            <button class="difficulty-tab" data-difficulty="expert" role="tab">🔥 Archmage</button>
-          </div>
-
-          <!-- Player Knowledge Stats -->
-          <div class="user-quiz-stats" aria-live="polite"></div>
-
-          <!-- Ranking Scroll -->
-          <div class="quiz-leaderboard-list" aria-live="polite"></div>
-
-          <!-- Enter the Trial -->
-          <div class="play-now-section">
-
-            <button class="btn-play-now quiz-theme"
-                    onclick="window.location.href='quiz.php'"
-                    aria-describedby="quiz-play-description">
-
-              <span class="btn-text">🎯 Enter the Knowledge Trial</span>
-
-            </button>
-
-            <div id="quiz-play-description" class="visually-hidden">
-              Begin a new knowledge trial and compete in the academy rankings
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
+    <!-- Main Battle Sanctum Window -->
+     <link rel="stylesheet" href="assets\css\MainSanctumWindow.css">
+<!-- THE BATTLE SANCTUM: OVERDRIVE EDITION -->
+<div class="rpg-window-container">
+  
+  <!-- Floating Metadata (Top Left) -->
+  <div class="hud-metadata">
+    <span class="system-status"><span class="blink-dot"></span> LINK_ESTABLISHED</span>
+    <span class="system-id">ID: SANTIAGO_ARCHIVES</span>
   </div>
 
+  <div class="retro-analytics-window rpg-hud glass-panel overdrive-aura">
+      
+      <!-- Animated Corner Sensors -->
+      <div class="hud-bracket tl"></div>
+      <div class="hud-bracket tr"></div>
+      <div class="hud-bracket bl"></div>
+      <div class="hud-bracket br"></div>
+
+      <!-- Title Bar with Versioning -->
+      <div class="window-title-bar">
+          <div class="window-controls">
+              <div class="status-orb glow-red"></div>
+              <div class="status-orb glow-yellow"></div>
+              <div class="status-orb glow-cyan"></div>
+          </div>
+
+          <span class="window-title">
+              <i class="fad fa-shield-cross me-2 neon-blue"></i> 
+              WAR_ROOM // <span class="text-gold">HALL OF LEGENDS</span> 
+              <span class="version-tag">v4.0.2</span>
+          </span>
+
+          <span class="window-x"><i class="fad fa-power-off"></i></span>
+      </div>
+
+      <div class="window-content scanline-v2">
+
+          <!-- Navigation: Quest Categories -->
+          <div class="analytics-header">
+    <div class="rpg-tabs-container">
+        <!-- Added onclick logic to handle the 'active' class swap -->
+        <button class="rpg-nav-tab active" data-scope="alltime" onclick="Array.from(this.parentElement.children).forEach(b => b.classList.remove('active')); this.classList.add('active');">
+            <i class="fas fa-crown me-2 tab-icon"></i>
+            <span class="tab-text">ETERNAL SAGAS</span>
+            <div class="tab-indicator"></div>
+        </button>
+
+        <button class="rpg-nav-tab" data-scope="weekly" onclick="Array.from(this.parentElement.children).forEach(b => b.classList.remove('active')); this.classList.add('active');">
+            <i class="fas fa-calendar-week me-2 tab-icon"></i>
+            <span class="tab-text">WEEKLY TRIALS</span>
+            <div class="tab-indicator"></div>
+        </button>
+
+        <button class="rpg-nav-tab" data-scope="monthly" onclick="Array.from(this.parentElement.children).forEach(b => b.classList.remove('active')); this.classList.add('active');">
+            <i class="fas fa-scroll me-2 tab-icon"></i>
+            <span class="tab-text">MONTHLY LORE</span>
+            <div class="tab-indicator"></div>
+        </button>
+    </div>
+</div>
+
+          <div class="analytics-body">
+              
+             <!-- Tier Selector: High-Visibility Combat Ranks -->
+<div class="difficulty-grid">
+    <!-- Initiate: Green / Earth Theme -->
+    <button class="tier-card active" data-difficulty="beginner">
+        <div class="tier-header">
+            <i class="fas fa-shield-halved tier-icon neon-green"></i>
+            <span class="rank-badge">RANK I</span>
+        </div>
+        <div class="tier-label high-contrast-text">INITIATE</div>
+        <div class="tier-progress-container">
+            <div class="bar bar-green" style="width: 100%"></div>
+        </div>
+    </button>
+
+    <!-- Spellblade: Blue / Mana Theme -->
+    <button class="tier-card" data-difficulty="intermediate">
+        <div class="tier-header">
+            <i class="fas fa-khanda tier-icon neon-blue"></i>
+            <span class="rank-badge">RANK II</span>
+        </div>
+        <div class="tier-label high-contrast-text">SPELLBLADE</div>
+        <div class="tier-progress-container">
+            <div class="bar bar-blue" style="width: 65%"></div>
+        </div>
+    </button>
+
+    <!-- Mythic: Red / Chaos Theme -->
+    <button class="tier-card" data-difficulty="expert">
+        <div class="tier-header">
+            <i class="fas fa-dragon tier-icon neon-red mythic-spin"></i>
+            <span class="rank-badge red-badge">RANK III</span>
+        </div>
+        <div class="tier-label high-contrast-text mythic-glimmer">MYTHIC</div>
+        <div class="tier-progress-container">
+            <div class="bar bar-red" style="width: 30%"></div>
+        </div>
+    </button>
+</div>
+              <!-- Leaderboard Area -->
+              <div class="quiz-leaderboard-list hud-scroll-area">
+                  <!-- JS will inject rankings here -->
+                  <div class="loading-shimmer">DECRYPTING ARCHIVES...</div>
+              </div>
+
+              <!-- The "Big One" Button -->
+              <div class="play-now-section">
+                  <button class="overdrive-btn" onclick="window.location.href='quiz.php'">
+                      <div class="btn-scan"></div>
+                      <span class="btn-text">
+                          <i class="fad fa-portal-enter me-2"></i> INITIATE BATTLE SEQUENCER
+                      </span>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 </section>
 
         <!-- ===== Mini-Game Leaderboard Section ===== -->
@@ -720,126 +766,65 @@ if ($showLoginNotification && $currentUser):
     </div>
 
     <!-- Arena Hall Window -->
-    <div class="retro-analytics-window minigame-theme">
+     <link rel="stylesheet" href="assets\css\ArenaHallWindow.css">
+    <div class="retro-analytics-window rpg-hud overdrive-layer">
+  
+  <div class="retro-analytics-window minigame-theme rpg-hud">
 
-      <!-- Title Bar -->
-      <div class="window-title-bar minigame-theme">
-        <span class="window-controls">
-          <span class="window-dot blue"></span>
-          <span class="window-dot blue"></span>
-          <span class="window-dot green"></span>
+  <!-- Title Bar -->
+  <div class="window-title-bar minigame-theme neon-bottom">
+    <div class="window-controls">
+      <span class="window-dot blue glow-blue"></span>
+      <span class="window-dot blue glow-blue"></span>
+      <span class="window-dot green glow-green"></span>
+    </div>
+
+    <span class="window-title text-shadow-bold">
+      <i class="fas fa-swords me-2"></i> ARENA HALL LEADERBOARD
+    </span>
+
+    <span class="window-refresh hover-spin" title="Refresh Rankings">🔄</span>
+    <span class="window-x">✖</span>
+  </div>
+
+  <!-- Content -->
+  <div class="window-content glass-morph scanline">
+
+    <!-- Time Realms: ORIGINAL SPAN STRUCTURE -->
+    <div class="analytics-tabs rpg-tab-container">
+      <span class="analytics-tab active" data-scope="alltime">
+        <i class="fas fa-infinity me-1"></i> ETERNAL
+        <div class="tab-glow-bar cyan"></div>
+      </span>
+      <span class="analytics-tab" data-scope="weekly">
+        <i class="fas fa-bolt me-1"></i> THIS WEEK
+        <div class="tab-glow-bar gold"></div>
+      </span>
+      <span class="analytics-tab" data-scope="monthly">
+        <i class="fas fa-scroll me-1"></i> THIS MONTH
+        <div class="tab-glow-bar purple"></div>
+      </span>
+    </div>
+
+    <!-- Player Stats -->
+    <div class="user-quiz-stats stats-vfx"></div>
+
+    <!-- Leaderboard -->
+    <div class="quiz-leaderboard-list custom-scroll"></div>
+
+    <!-- Enter Arena: ORIGINAL BUTTON STRUCTURE -->
+    <div class="play-now-section">
+      <button class="btn-play-now minigame-theme arena-glow-btn" onclick="window.location.href='mini-game.php'">
+        <span class="btn-text">
+          <i class="fas fa-gamepad-alt me-2"></i> ENTER THE ARENA
         </span>
-
-        <span class="window-title">⚔️ ARENA HALL LEADERBOARD</span>
-
-        <span class="window-refresh" title="Refresh Rankings">🔄</span>
-        <span class="window-x">✖</span>
-      </div>
-
-      <!-- Content -->
-      <div class="window-content">
-
-        <!-- Time Realms -->
-        <div class="analytics-tabs">
-          <span class="analytics-tab active" data-scope="alltime">🌌 Eternal</span>
-          <span class="analytics-tab" data-scope="weekly">📅 This Week</span>
-          <span class="analytics-tab" data-scope="monthly">🗓️ This Month</span>
-        </div>
-
-        <!-- Player Stats -->
-        <div class="user-quiz-stats"></div>
-
-        <!-- Leaderboard -->
-        <div class="quiz-leaderboard-list"></div>
-
-        <!-- Enter Arena -->
-        <div class="play-now-section">
-          <button class="btn-play-now minigame-theme" onclick="window.location.href='mini-game.php'">
-            <span class="btn-text">🎮 Enter the Arena</span>
-          </button>
-        </div>
-
-      </div>
-
+      </button>
     </div>
 
   </div>
-
-</section>
 </div>
 
-        <!-- ===== Challenge Leaderboard Section ===== -->
-        <div class="retro-bg-container" style="margin-top: 2.5rem;">
-
-<section class="container py-5" id="home-challenge-analytics">
-
-  <div class="retro-analytics-window-bg challenge-theme">
-
-    <!-- Elite Stat Cards -->
-    <div class="stat-card stat-card-best challenge-theme">
-      <div class="stat-card-title">🏆 Mythic Record <span class="stat-x">✖</span></div>
-      <div class="stat-card-value" id="challenge-best-score">--</div>
-      <div class="stat-card-desc">Highest achievement in the realm</div>
-    </div>
-
-    <div class="stat-card stat-card-recent challenge-theme">
-      <div class="stat-card-title">⚔️ Last Trial <span class="stat-x">✖</span></div>
-      <div class="stat-card-value" id="challenge-recent-score">--</div>
-      <div class="stat-card-desc" id="challenge-recent-time">No trial attempted</div>
-    </div>
-
-    <div class="stat-card stat-card-top challenge-theme">
-      <div class="stat-card-title">👑 Grand Champion <span class="stat-x">✖</span></div>
-      <div class="stat-card-value" id="challenge-top-player">--</div>
-      <div class="stat-card-desc" id="challenge-top-player-desc">No champion crowned</div>
-    </div>
-
-    <!-- Dungeon / Trial Hall -->
-    <div class="retro-analytics-window challenge-theme">
-
-      <!-- Title Bar -->
-      <div class="window-title-bar challenge-theme">
-        <span class="window-controls">
-          <span class="window-dot gold"></span>
-          <span class="window-dot orange"></span>
-          <span class="window-dot green"></span>
-        </span>
-
-        <span class="window-title">🔥 ELITE TRIAL HALL (ENDGAME)</span>
-
-        <span class="window-refresh" title="Refresh Trials">🔄</span>
-        <span class="window-x">✖</span>
-      </div>
-
-      <!-- Content -->
-      <div class="window-content">
-
-        <!-- Difficulty Realms -->
-        <div class="analytics-tabs">
-          <span class="analytics-tab active" data-scope="alltime">🌌 Eternal Trials</span>
-          <span class="analytics-tab" data-scope="weekly">⚡ Weekly Trials</span>
-          <span class="analytics-tab" data-scope="monthly">🔥 Monthly Trials</span>
-        </div>
-
-        <!-- Player Stats -->
-        <div class="user-quiz-stats"></div>
-
-        <!-- Leaderboard -->
-        <div class="quiz-leaderboard-list"></div>
-
-        <!-- Enter Dungeon -->
-        <div class="play-now-section">
-          <button class="btn-play-now challenge-theme" onclick="window.location.href='challenges.php'">
-            <span class="btn-text">🚀 Enter the Trial</span>
-          </button>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
+        
 </section>
 </div>
 </main>

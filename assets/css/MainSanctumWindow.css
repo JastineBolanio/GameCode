@@ -1,0 +1,239 @@
+/* --- RPG OVERDRIVE STYLES --- */
+:root {
+  --neon-cyan: #00f3ff;
+  --neon-gold: #ffd700;
+  --neon-red: #ff2a6d;
+  --hud-bg: rgba(5, 10, 15, 0.98);
+}
+
+/* 1. HUD Framework */
+.rpg-window-container { position: relative; padding-top: 30px; }
+.hud-metadata {
+  position: absolute; top: 0; left: 10px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px; color: var(--neon-cyan); opacity: 0.7;
+}
+
+.hud-bracket {
+  position: absolute; width: 20px; height: 20px;
+  border: 2px solid var(--neon-cyan); z-index: 100; pointer-events: none;
+}
+.tl { top: -5px; left: -5px; border-right: 0; border-bottom: 0; }
+.tr { top: -5px; right: -5px; border-left: 0; border-bottom: 0; }
+.bl { bottom: -5px; left: -5px; border-right: 0; border-top: 0; }
+.br { bottom: -5px; right: -5px; border-left: 0; border-top: 0; }
+
+/* 2. Elemental Tier Cards */
+.difficulty-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 20px;
+}
+.tier-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+  padding: 15px 5px; text-align: center; transition: 0.3s;
+}
+.tier-card.active {
+  background: rgba(0, 243, 255, 0.1); border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+}
+.tier-progress { height: 3px; background: #222; margin-top: 10px; overflow: hidden; }
+.bar { height: 100%; background: var(--neon-cyan); box-shadow: 0 0 5px var(--neon-cyan); }
+.mythic-bar { background: var(--neon-red); box-shadow: 0 0 5px var(--neon-red); }
+
+/* 3. Mythic Pulsing Text */
+.mythic-text { color: var(--neon-red); font-weight: bold; animation: text-flicker 2s infinite; }
+.mythic-spin { animation: fa-spin 8s infinite linear; color: var(--neon-red); }
+
+/* 4. The Overdrive Button */
+.overdrive-btn {
+  width: 100%; padding: 20px; background: transparent;
+  border: 1px solid var(--neon-gold) !important; color: var(--neon-gold) !important;
+  font-weight: 900; letter-spacing: 4px; position: relative; overflow: hidden;
+}
+.overdrive-btn:hover {
+  background: var(--neon-gold) !important; color: #000 !important;
+  box-shadow: 0 0 40px var(--neon-gold);
+}
+.btn-scan {
+  position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: scan-loop 3s infinite;
+}
+
+/* 5. Animations */
+@keyframes scan-loop { 0% { left: -100%; } 100% { left: 100%; } }
+@keyframes text-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.blink-dot {
+  display: inline-block; width: 6px; height: 6px; background: #0f0;
+  border-radius: 50%; margin-right: 5px; animation: blink 1s infinite;
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+/* --- HIGH VISIBILITY RPG TABS --- */
+.rpg-tabs-container {
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.8); /* Solid dark base so text pops */
+    padding: 8px;
+    border-radius: 4px;
+    border-bottom: 2px solid rgba(0, 243, 255, 0.3);
+}
+
+.rpg-nav-tab {
+    position: relative;
+    background: #1a1a1a; /* Dark solid button */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+/* THE TEXT: Extra Bold and Outlined */
+.tab-text {
+    color: #ffffff !important;
+    font-weight: 900 !important;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 0px #000; /* Black outline for 100% visibility */
+    font-size: 0.95rem;
+}
+
+.tab-icon {
+    color: rgba(255, 255, 255, 0.6);
+    filter: drop-shadow(0 0 5px #000);
+}
+
+/* ACTIVE STATE: Cyan Glow */
+.rpg-nav-tab.active {
+    background: #002b36; /* Dark Cyan tint */
+    border: 1px solid #00f3ff;
+    box-shadow: inset 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+.rpg-nav-tab.active .tab-text {
+    color: #00f3ff !important; /* Cyan text for active */
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.rpg-nav-tab.active .tab-icon {
+    color: #00f3ff;
+}
+
+/* Bottom Glow Line */
+.tab-indicator {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #00f3ff;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #00f3ff;
+}
+
+.rpg-nav-tab.active .tab-indicator {
+    width: 100%;
+}
+
+/* HOVER EFFECT */
+.rpg-nav-tab:hover:not(.active) {
+    background: #333;
+    border-color: #ffffff;
+}
+
+/* --- RPG TIER CARD ENHANCEMENTS --- */
+.difficulty-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.tier-card {
+    background: #0a0a0a !important; /* Solid black background for max contrast */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px 10px;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* THE TEXT: Extra Thick with Black Outline */
+.high-contrast-text {
+    color: #ffffff !important;
+    font-size: 1rem;
+    font-weight: 900 !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #000, 
+                 -2px -2px 0px #000, 
+                 2px -2px 0px #000, 
+                 -2px 2px 0px #000;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Rank Badges: Small clear labels */
+.rank-badge {
+    font-size: 10px;
+    background: #333;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Color Coding Icons */
+.tier-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.8));
+}
+.neon-green { color: #39ff14; }
+.neon-blue { color: #00f3ff; }
+.neon-red { color: #ff3131; }
+
+/* Active States: Brighter Borders */
+.tier-card.active[data-difficulty="beginner"] { border-color: #39ff14; box-shadow: 0 0 15px rgba(57, 255, 20, 0.3); }
+.tier-card.active[data-difficulty="intermediate"] { border-color: #00f3ff; box-shadow: 0 0 15px rgba(0, 243, 255, 0.3); }
+.tier-card.active[data-difficulty="expert"] { border-color: #ff3131; box-shadow: 0 0 15px rgba(255, 49, 49, 0.3); }
+
+/* Progress Bars: Thicker and brighter */
+.tier-progress-container {
+    height: 6px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    margin-top: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.bar { height: 100%; border-radius: 10px; }
+.bar-green { background: #39ff14; box-shadow: 0 0 10px #39ff14; }
+.bar-blue { background: #00f3ff; box-shadow: 0 0 10px #00f3ff; }
+.bar-red { background: #ff3131; box-shadow: 0 0 10px #ff3131; }
+
+/* Mythic Special Effect */
+@keyframes mythic-glimmer {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; transform: scale(1.05); }
+}
+.mythic-glimmer { animation: mythic-glimmer 2s infinite; color: #ff3131 !important; }
+
+/* This is what makes the "active" tab look different */
+.rpg-nav-tab.active {
+    border-color: #ffd700 !important;
+    background: rgba(255, 215, 0, 0.1) !important;
+}
+
+.rpg-nav-tab.active .tab-indicator {
+    width: 100% !important;
+}
+
+.rpg-nav-tab.active .tab-text {
+    color: #ffd700 !important;
+}

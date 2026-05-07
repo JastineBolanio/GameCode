@@ -1,0 +1,97 @@
+/* --- RPG UI & VISIBILITY --- */
+.rpg-hud {
+    background: #080808 !important;
+    border: 2px solid #2a2a2a;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.text-shadow-bold {
+    text-shadow: 2px 2px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* Tabs: Fixed Spacing & Contrast */
+.rpg-tab-container {
+    display: flex;
+    background: #111;
+    border-bottom: 2px solid #222;
+    padding: 0 !important;
+}
+
+.analytics-tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-weight: 800;
+    color: #666;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.3s ease;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.analytics-tab.active {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Tab Underglow */
+.tab-glow-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    transition: 0.3s width ease;
+}
+
+.analytics-tab.active .tab-glow-bar {
+    width: 100%;
+}
+
+.tab-glow-bar.cyan { background: #00f3ff; box-shadow: 0 0 10px #00f3ff; }
+.tab-glow-bar.gold { background: #ffcc00; box-shadow: 0 0 10px #ffcc00; }
+.tab-glow-bar.purple { background: #bc13fe; box-shadow: 0 0 10px #bc13fe; }
+
+/* Arena Button: High Visibility Neon */
+.arena-glow-btn {
+    width: 100%;
+    padding: 18px;
+    background: #000 !important;
+    border: 2px solid #00f3ff !important;
+    color: #00f3ff !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.arena-glow-btn:hover {
+    background: #00f3ff !important;
+    color: #000 !important;
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.6);
+}
+
+/* VFX: Scanlines & Orbs */
+.scanline { position: relative; overflow: hidden; }
+.scanline::after {
+    content: " ";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.glow-blue { background: #00f3ff; box-shadow: 0 0 10px #00f3ff; }
+.glow-green { background: #39ff14; box-shadow: 0 0 10px #39ff14; }
+
+.hover-spin:hover {
+    display: inline-block;
+    animation: fa-spin 2s infinite linear;
+}

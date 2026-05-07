@@ -1,0 +1,134 @@
+/* --- THE HUD CONTAINER --- */
+.rpg-menu-wrapper {
+    background: transparent !important; /* Remove the ugly small box */
+    padding: 0;
+}
+
+/* --- THE NEON FRAME --- */
+.hud-frame {
+    background: linear-gradient(90deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
+    border-top: 1px solid rgba(0, 243, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 243, 255, 0.3);
+    padding: 5px 40px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Add Energy Corners */
+.hud-frame::before, .hud-frame::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    width: 20px;
+    height: calc(100% + 4px);
+    border: 2px solid #00f3ff;
+}
+.hud-frame::before { left: 10%; border-right: none; }
+.hud-frame::after { right: 10%; border-left: none; }
+
+/* --- TEXT & ICONS --- */
+.rpg-nav-item {
+    font-family: 'Rajdhani', sans-serif; /* Gaming font */
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    color: #ffffff !important;
+    letter-spacing: 2px;
+    padding: 10px 25px !important;
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+.rpg-nav-item:hover, .rpg-nav-item.active {
+    opacity: 1;
+    color: #00f3ff !important;
+    text-shadow: 0 0 10px #00f3ff, 0 0 20px rgba(0, 243, 255, 0.4);
+}
+
+/* The Animated Icon */
+.quest-icon {
+    font-size: 1.2rem;
+    margin-right: 8px;
+    filter: drop-shadow(0 0 5px currentColor);
+}
+
+/* The Red Alert Dot */
+.pulse-dot {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 8px;
+    height: 8px;
+    background: #ff0000;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff0000;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { opacity: 0.5; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1.2); }
+}
+
+/* Centering Logic */
+.navbar-nav {
+    gap: 20px;
+}
+/* --- THE DROPDOWN CONTAINER --- */
+.rpg-dropdown-menu {
+    background: rgba(0, 0, 0, 0.95) !important; /* Deep matte black */
+    border: 2px solid #00f3ff !important;      /* Neon cyan border */
+    border-radius: 0px !important;              /* Sharp gaming corners */
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4), inset 0 0 10px rgba(0, 243, 255, 0.2) !important;
+    padding: 0 !important;
+    margin-top: 10px !important;
+    overflow: hidden;
+    min-width: 200px !important;
+}
+
+/* --- DROPDOWN ITEMS --- */
+.rpg-dropdown-item {
+    color: #ffffff !important;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 20px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease-in-out !important;
+    display: flex;
+    align-items: center;
+}
+
+/* Remove border from last item */
+.rpg-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+/* --- HOVER EFFECT (The "Selection" Look) --- */
+.rpg-dropdown-item:hover {
+    background: #00f3ff !important; /* Neon cyan background */
+    color: #000000 !important;      /* Black text on hover */
+    padding-left: 30px !important;  /* "Slide right" animation */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Style icons inside dropdown */
+.rpg-dropdown-item i {
+    width: 25px;
+    font-size: 1.1rem;
+    margin-right: 10px;
+    transition: 0.2s;
+}
+
+/* Make icons turn black on hover too */
+.rpg-dropdown-item:hover i {
+    color: #000000 !important;
+    transform: scale(1.2);
+}
+
+/* --- THE DIVIDER --- */
+.dropdown-divider {
+    margin: 0 !important;
+    border-top: 1px solid #00f3ff !important;
+    opacity: 0.5;
+}

@@ -1,0 +1,102 @@
+:root {
+    --neon-blue: #00f3ff;
+    --neon-green: #39ff14;
+    --bg-dark: #0d0d0d;
+    --card-bg: rgba(15, 15, 15, 0.95);
+}
+
+/* Dashboard Background */
+.progress-dashboard {
+    background-color: var(--bg-dark);
+    color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+/* Neon Title */
+#guest-progress-heading {
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 15px var(--neon-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* RPG Card Styling */
+.progress-card {
+    background: var(--card-bg);
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+/* Card Specific Neon Borders */
+#tutorial-progress-card { border-color: var(--neon-blue); box-shadow: inset 0 0 10px rgba(0, 243, 255, 0.1); }
+#profile-progress-card { border-color: var(--neon-green); box-shadow: inset 0 0 10px rgba(57, 255, 20, 0.1); }
+
+/* Progress Bar Container (The "Slot") */
+.progress {
+    background-color: #000 !important;
+    height: 18px !important;
+    border: 1px solid #444;
+    border-radius: 4px;
+    overflow: visible; /* Allows the glow to spill out */
+}
+
+/* The Animated Progress Bar */
+.progress-bar {
+    position: relative;
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Neon Blue Bar (Tutorial) */
+.bg-primary {
+    background: linear-gradient(90deg, #004e52, var(--neon-blue)) !important;
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 5px #fff;
+}
+
+/* Neon Green Bar (Profile) */
+.bg-success {
+    background: linear-gradient(90deg, #134e13, var(--neon-green)) !important;
+    box-shadow: 0 0 15px var(--neon-green), 0 0 5px #fff;
+}
+
+/* Shimmer Light Effect */
+.progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: sweep 2.5s infinite;
+}
+
+/* Text Glows */
+.text-primary { color: var(--neon-blue) !important; text-shadow: 0 0 10px var(--neon-blue); }
+.text-success { color: var(--neon-green) !important; text-shadow: 0 0 10px var(--neon-green); }
+
+/* Animations */
+@keyframes sweep {
+    0% { left: -100%; }
+    50% { left: 120%; }
+    100% { left: 120%; }
+}
+
+.progress-bar-animated {
+    animation: pulseBrightness 1.5s infinite alternate !important;
+}
+
+@keyframes pulseBrightness {
+    from { filter: brightness(1) saturate(1); }
+    to { filter: brightness(1.4) saturate(1.2); }
+}

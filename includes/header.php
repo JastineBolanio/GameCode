@@ -75,8 +75,8 @@ $currentUser = $isLoggedIn ? $auth->getCurrentUser() : null;
 
         <!-- Guild / Game Title -->
         <a class="navbar-brand d-flex align-items-center" href="home_page.php">
-            <img src="assets/images/PTC.png" alt="Skill Forge Emblem" class="navbar-logo me-2" width="40" height="40">
-            <span class="brand-text">⚒️ Skill Forge</span>
+            <img src="assets/images/LogoSkill.jpg" alt="Skill Forge Emblem" class="navbar-logo me-2" width="40" height="40">
+            <span class="brand-text"> Skill Forge</span>
         </a>
 
         <!-- World Map / Anchor -->
@@ -91,54 +91,62 @@ $currentUser = $isLoggedIn ? $auth->getCurrentUser() : null;
         </button>
 
         <!-- Menu Content -->
-        <div class="collapse navbar-collapse" id="navbarContent">
+         <link rel="stylesheet" href="assets\css\MenuContent.css">
+<div class="collapse navbar-collapse rpg-menu-wrapper justify-content-center" id="navbarContent">
+    <!-- mx-auto centers the list within the flex container -->
+    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
 
-            <!-- Left Side (Game Menu) -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Town Board with Pulse Notification -->
+        <li class="nav-item">
+            <a class="nav-link rpg-nav-item <?php echo $currentPage === 'announcements.php' ? 'active' : ''; ?>" 
+               href="announcements.php">
+                <div class="nav-icon-wrapper">
+                    <span class="pulse-dot"></span>
+                </div>
+                <span class="nav-text">TownBoard</span>
+            </a>
+        </li>
 
-                <!-- Announcements → Town Board -->
-                <li class="nav-item">
-                    <a class="nav-link <?php echo $currentPage === 'announcements.php' ? 'active' : ''; ?>" 
-                       href="announcements.php">
-                        📜 Town Board
+        <!-- Training Grounds -->
+        <li class="nav-item">
+            <a class="nav-link rpg-nav-item <?php echo $currentPage === 'tutorial.php' ? 'active' : ''; ?>" 
+               href="tutorial.php">
+                <i class="fas fa-swords me-2 quest-icon"></i>
+                <span class="nav-text">Training Grounds</span>
+            </a>
+        </li>
+            
+        <!-- Game Modes Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle rpg-nav-item <?php echo in_array($currentPage, ['mini-game.php', 'quiz.php', 'challenges.php']) ? 'active' : ''; ?>" 
+               href="#" id="gameModesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-dragon me-2 quest-icon"></i>
+                <span class="nav-text">Adventures</span>
+            </a>
+            <ul class="dropdown-menu rpg-dropdown-menu shadow-lg" aria-labelledby="gameModesDropdown">
+                <li>
+                    <a class="dropdown-item rpg-dropdown-item <?php echo $currentPage === 'mini-game.php' ? 'active' : ''; ?>" 
+                       href="mini-game.php">
+                        <i class="fas fa-dungeon me-2"></i>Mini-Game
                     </a>
                 </li>
-
-                <!-- Tutorial → Training Grounds -->
-                <li class="nav-item">
-                    <a class="nav-link <?php echo $currentPage === 'tutorial.php' ? 'active' : ''; ?>" 
-                       href="tutorial.php">
-                        ⚔️ Training Grounds
+                <li>
+                    <a class="dropdown-item rpg-dropdown-item <?php echo $currentPage === 'quiz.php' ? 'active' : ''; ?>" 
+                       href="quiz.php">
+                        <i class="fas fa-flask me-2"></i>Lore Quiz
                     </a>
                 </li>
-                    
-                    <!-- Game Modes Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle <?php echo in_array($currentPage, ['mini-game.php', 'quiz.php', 'challenges.php']) ? 'active' : ''; ?>" 
-                           href="#" id="gameModesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-gamepad me-1"></i>Game
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="gameModesDropdown">
-                            <li>
-                                <a class="dropdown-item <?php echo $currentPage === 'mini-game.php' ? 'active' : ''; ?>" 
-                                   href="mini-game.php">
-                                    <i class="fas fa-puzzle-piece me-2"></i>Mini-Game
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item <?php echo $currentPage === 'quiz.php' ? 'active' : ''; ?>" 
-                                   href="quiz.php">
-                                    <i class="fas fa-question-circle me-2"></i>Quiz
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item <?php echo $currentPage === 'challenges.php' ? 'active' : ''; ?>" 
-                                   href="challenges.php">
-                                    <i class="fas fa-trophy me-2"></i>Challenges
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                <li><hr class="dropdown-divider border-secondary opacity-25"></li>
+                <li>
+                    <a class="dropdown-item rpg-dropdown-item <?php echo $currentPage === 'challenges.php' ? 'active' : ''; ?>" 
+                       href="challenges.php">
+                        <i class="fas fa-trophy-alt me-2 text-warning"></i>Elite Challenges
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
                     
                             <!-- Toast Container -->
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
@@ -235,17 +243,17 @@ $currentUser = $isLoggedIn ? $auth->getCurrentUser() : null;
             <?php endif; ?>
             
             <ul class="mobile-nav-list">
-                <li><a href="announcements.php"><i class="fas fa-bullhorn"></i>Announcements</a></li>
-                <li><a href="tutorial.php"><i class="fas fa-book"></i>Tutorial</a></li>
+                <li><a href="announcements.php"><i class="fas fa-bullhorn"></i>TownBoard</a></li>
+                <li><a href="tutorial.php"><i class="fas fa-book"></i>TRAINING GROUNDS</a></li>
                 <li class="mobile-dropdown">
                     <a href="#" class="mobile-dropdown-toggle">
-                        <i class="fas fa-gamepad"></i>Game Modes
+                        <i class="fas fa-gamepad"></i>ADVENTURES
                         <i class="fas fa-chevron-down ms-auto"></i>
                     </a>
                     <ul class="mobile-dropdown-menu">
                         <li><a href="mini-game.php"><i class="fas fa-puzzle-piece"></i>Mini-Game</a></li>
-                        <li><a href="quiz.php"><i class="fas fa-question-circle"></i>Quiz</a></li>
-                        <li><a href="challenges.php"><i class="fas fa-trophy"></i>Challenges</a></li>
+                        <li><a href="quiz.php"><i class="fas fa-question-circle"></i>LORE</a></li>
+                        <li><a href="challenges.php"><i class="fas fa-trophy"></i>ELITE CHALLENGE</a></li>
                     </ul>
                 </li>
                 <?php if ($isLoggedIn): ?>
