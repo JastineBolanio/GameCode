@@ -960,3 +960,82 @@ a:hover {
         gap: 8px;
     }
 }}
+/* --- LEADERBOARD CARD STYLING --- */
+.leaderboard-container {
+    background: rgba(5, 5, 5, 0.9);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    padding: 15px;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%);
+}
+
+.leaderboard-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* Individual Player Row */
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+    border-left: 3px solid #333;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.leaderboard-item:hover {
+    background: rgba(0, 243, 255, 0.1);
+    transform: scale(1.02);
+}
+
+/* Rank Number HUD */
+.rank-pos {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    width: 45px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Top 3 Glow Effects */
+.rank-1 { border-left-color: #ffd700 !important; }
+.rank-1 .rank-pos { color: #ffd700; text-shadow: 0 0 10px #ffd700; }
+
+.rank-2 { border-left-color: #c0c0c0 !important; }
+.rank-2 .rank-pos { color: #c0c0c0; text-shadow: 0 0 10px #c0c0c0; }
+
+.rank-3 { border-left-color: #cd7f32 !important; }
+.rank-3 .rank-pos { color: #cd7f32; text-shadow: 0 0 10px #cd7f32; }
+
+/* Player Avatar Simulation */
+.player-avatar {
+    width: 40px;
+    height: 40px;
+    background: #222;
+    border: 1px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+.player-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.player-score {
+    margin-left: auto;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 800;
+    color: var(--neon-cyan);
+}

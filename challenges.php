@@ -87,31 +87,33 @@ $xss = XSSProtection::getInstance();
             </div>
         </div>
         <!-- Main Content Area -->
+         <link rel="stylesheet" href="assets/css/ChallengesV2.css">
         <div class="window-content">
-            <!-- Welcome Screen -->
-            <div id="challenge-welcome" class="challenge-screen active" role="main" aria-labelledby="challenge-title">
-                <div class="welcome-content">
-                    <div class="welcome-icon" aria-hidden="true">🚀</div>
-                    <h1 id="challenge-title" class="welcome-title">EXPERT CHALLENGE</h1>
-                    <p class="welcome-subtitle">The Ultimate Programming Test</p>
-                    <div class="welcome-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Questions:</span>
-                            <span class="stat-value">20</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Time Limit:</span>
-                            <span class="stat-value">2:30</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Points per Question:</span>
-                            <span class="stat-value">30</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Difficulty:</span>
-                            <span class="stat-value">EXPERT ONLY</span>
-                        </div>
-                    </div>
+    <div id="challenge-welcome" class="challenge-screen active">
+        <div class="welcome-content text-center">
+            <div class="welcome-icon mb-2" style="font-size: 3rem; filter: drop-shadow(0 0 10px #ff2a6d);">🚀</div>
+            
+            <h1 id="challenge-title" class="welcome-title">TERMINAL_OVERRIDE</h1>
+            <p class="welcome-subtitle">SYSTEM STATUS: READY FOR UPLOAD</p>
+            
+            <div class="welcome-stats">
+                <div class="stat-item">
+                    <span class="stat-label">DATA_UNITS</span>
+                    <span class="stat-value">20_ITEMS</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">SYNC_LIMIT</span>
+                    <span class="stat-value">02:30_SEC</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">REWARD_YIELD</span>
+                    <span class="stat-value">30_XP</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">THREAT_LEVEL</span>
+                    <span class="stat-value">EXPERT_ONLY</span>
+                </div>
+            </div>
                     <?php if (!$isLoggedIn): ?>
                     <div class="guest-input-section">
                         <label for="guest-nickname" class="input-label">Enter Your Nickname:</label>

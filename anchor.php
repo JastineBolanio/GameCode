@@ -107,20 +107,14 @@ $currentUser = $auth->isLoggedIn() ? $auth->getCurrentUser() : null;
   <?php include 'api/track-visitor.php'; ?>
   
   <!-- School Logo -->
-  <a href="https://www.paterostechnologicalcollege.edu.ph/" target="_blank" rel="noopener noreferrer" aria-label="Visit Pateros Technological College website">
-    <div class="school-logo" tabindex="0" aria-label="School logo">
-      <img src="assets/images/PTC.png" alt="Pateros Technological College Logo" class="logo-img">
-    </div>
-  </a>
+  <
 
   <!-- Three.js Background Container -->
   <div id="three-container"></div>
 
   <!-- GitHub Icon in Header -->
   <div class="github-corner">
-    <a href="https://github.com/Areyzxc/Game-Development" target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub">
-      <i class="fab fa-github"></i>
-    </a>
+
   </div>
 
   <!-- Main Content -->
@@ -134,7 +128,7 @@ $currentUser = $auth->isLoggedIn() ? $auth->getCurrentUser() : null;
                 <video autoplay loop muted playsinline class="video-bg">
                   <source src="videos/code-bg-1.mp4" type="video/mp4">
                 </video>
-                <span>CODE GAMING</span>
+                <span>SKILL FORGE</span>
               </div>
             </div>
           </section>
@@ -200,9 +194,9 @@ $currentUser = $auth->isLoggedIn() ? $auth->getCurrentUser() : null;
   <div class="container">
     <div class="row justify-content-center text-center">
       <div class="col-md-8">
-        <h2 class="mb-3">What is a <span class="text-warning">Coding Game</span>?</h2>
+        <h2 class="mb-3">What is a <span class="text-warning">Skill Forge</span>?</h2>
         <p class="lead">
-          <strong>Coding Game</strong> is a web-based gamified educational platform designed to teach programming fundamentals through interactive challenges, real-time feedback, and engaging visuals. Whether you're a beginner or a curious learner, embark on coding adventures where logic becomes your superpower.
+          <strong>Skill Forge</strong> is a gamified web platform that transforms programming fundamentals into an interactive learning experience. By combining real-time feedback with immersive visuals, it empowers beginners to master logic and code through structured, engaging adventures.
         </p>
         <hr class="border-light my-4">
         <div class="row">

@@ -1803,62 +1803,71 @@ function getDifficultyBadgeClass($difficulty) {
 
             <!-- Main Content: Only one language at a time -->
             <div class="col-lg-9">
-                <!-- Restore Game Mode Tutorials Section -->
-                <section class="tutorial-window mb-4" id="game-modes">
-                    <div class="window-header">
-                        <div class="window-title">
-                            <i class='bx bx-game'></i>
-                            Game Mode Tutorials
+              <link href="assets\css\RestoreGame.css" rel="stylesheet">
+    <!-- Game Mode Tutorials Section with HUD styling -->
+    <section class="tutorial-window mb-4 hud-container" id="game-modes">
+        <div class="window-header gaming-header">
+            <div class="window-title">
+                <i class='bx bx-game neon-text'></i>
+                <span class="header-main-text">Game Mode Tutorials</span>
+            </div>
+            <div class="window-controls">
+                <span class="window-control close"></span>
+                <span class="window-control minimize"></span>
+                <span class="window-control maximize"></span>
+            </div>
+        </div>
+        
+        <div class="window-content gaming-body">
+            <div class="row g-4">
+                <!-- Mini-Game Tutorial -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="game-mode-card quest-card" id="mini-game">
+                        <div class="card-glow"></div>
+                        <div class="game-mode-icon icon-cyan">
+                            <i class='bx bx-joystick'></i>
                         </div>
-                        <div class="window-controls">
-                            <span class="window-control close"></span>
-                            <span class="window-control minimize"></span>
-                            <span class="window-control maximize"></span>
-                        </div>
+                        <h5 class="game-title">Mini-Game Mode</h5>
+                        <p class="game-desc">Learn through interactive mini-games. Master coding concepts while having fun!</p>
+                        <button class="rpg-btn tutorial-trigger" data-mode="mini-game">
+                            <span class="btn-text">Start Tutorial</span>
+                        </button>
                     </div>
-                    <div class="window-content">
-                        <div class="row g-4">
-                            <!-- Mini-Game Tutorial -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="game-mode-card" id="mini-game">
-                                    <div class="game-mode-icon">
-                                        <i class='bx bx-joystick'></i>
-                                    </div>
-                                    <h5>Mini-Game Mode</h5>
-                                    <p>Learn through interactive mini-games. Master coding concepts while having fun!</p>
-                                    <button class="nav-button tutorial-trigger" data-mode="mini-game">
-                                        Start Tutorial
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- Quiz Tutorial -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="game-mode-card" id="quiz">
-                                    <div class="game-mode-icon">
-                                        <i class='bx bx-question-mark'></i>
-                                    </div>
-                                    <h5>Quiz Mode</h5>
-                                    <p>Test your knowledge with our comprehensive quizzes on various programming topics.</p>
-                                    <button class="nav-button tutorial-trigger" data-mode="quiz">
-                                        Start Tutorial
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- Challenge Tutorial -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="game-mode-card" id="challenge">
-                                    <div class="game-mode-icon">
-                                        <i class='bx bx-trophy'></i>
-                                    </div>
-                                    <h5>Challenge Mode</h5>
-                                    <p>Take on coding challenges and prove your skills in real-world scenarios.</p>
-                                    <button class="nav-button tutorial-trigger" data-mode="challenge">
-                                        Start Tutorial
-                                    </button>
-                                </div>
-                            </div>
+                </div>
+
+                <!-- Quiz Tutorial -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="game-mode-card quest-card" id="quiz">
+                        <div class="card-glow"></div>
+                        <div class="game-mode-icon icon-purple">
+                            <i class='bx bx-question-mark'></i>
                         </div>
+                        <h5 class="game-title">Quiz Mode</h5>
+                        <p class="game-desc">Test your knowledge with our comprehensive quizzes on various programming topics.</p>
+                        <button class="rpg-btn tutorial-trigger" data-mode="quiz">
+                            <span class="btn-text">Start Tutorial</span>
+                        </button>
                     </div>
+                </div>
+
+                <!-- Challenge Tutorial -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="game-mode-card quest-card" id="challenge">
+                        <div class="card-glow"></div>
+                        <div class="game-mode-icon icon-gold">
+                            <i class='bx bx-trophy'></i>
+                        </div>
+                        <h5 class="game-title">Challenge Mode</h5>
+                        <p class="game-desc">Take on coding challenges and prove your skills in real-world scenarios.</p>
+                        <button class="rpg-btn tutorial-trigger" data-mode="challenge">
+                            <span class="btn-text">Start Tutorial</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
                 </section>
                 <!-- End Game Mode Tutorials Section -->
 

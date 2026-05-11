@@ -248,37 +248,76 @@ include 'includes/header.php';
 
         <!-- Leaderboard Sidebar -->
         <div class="col-lg-4">
-            <div class="leaderboard-container">
-                <div class="card bg-secondary text-light leaderboard-card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0">Leaderboard</h5>
-                            <button class="btn btn-outline-light btn-sm" id="reloadLeaderboardBtn" title="Refresh Leaderboard">
-                                <i class="fas fa-sync-alt"></i>
-                            </button>
-                        </div>
-                        <div class="game-mode-selectors mt-2">
-                            <button class="game-mode-selector active" data-game-type="guess">Guess</button>
-                            <button class="game-mode-selector" data-game-type="typing">Typing</button>
-                        </div>
-                        <div class="time-scope-selectors mt-2">
-                            <button class="time-scope-selector active" data-scope="alltime">All-Time</button>
-                            <button class="time-scope-selector" data-scope="weekly">Weekly</button>
-                            <button class="time-scope-selector" data-scope="monthly">Monthly</button>
-                        </div>
+    <div class="leaderboard-container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="hud-title mb-0">
+                <i class="fa-solid fa-trophy text-warning me-2"></i>HALL OF FAME
+            </h5>
+            <button class="btn-pixel btn-sm" id="reloadLeaderboardBtn">
+                <i class="fa-solid fa-rotate"></i>
+            </button>
+        </div>
+
+        <div class="game-mode-selectors mb-2">
+            <button class="game-mode-selector active" data-game-type="guess">
+                <i class="fa-solid fa-puzzle-piece"></i> GUESS
+            </button>
+            <button class="game-mode-selector" data-game-type="typing">
+                <i class="fa-solid fa-keyboard"></i> TYPING
+            </button>
+        </div>
+
+        <div class="time-scope-selectors mb-3">
+            <button class="time-scope-selector active" data-scope="alltime">ALL-TIME</button>
+            <button class="time-scope-selector" data-scope="weekly">WEEKLY</button>
+        </div>
+
+        <div class="leaderboard-body">
+            <ul class="leaderboard-list" id="leaderboardList">
+                
+                <li class="leaderboard-item rank-1">
+                    <span class="rank-pos">01</span>
+                    <div class="player-avatar">
+                        <i class="fa-solid fa-user-ninja text-warning"></i>
                     </div>
-                    <div class="card-body p-0">
-                        <ul class="leaderboard-list" id="leaderboardList">
-                            <!-- Leaderboard items will be populated by JavaScript -->
-                        </ul>
+                    <div class="player-info">
+                        <div class="player-name">CyberGhost_99</div>
+                        <div class="small text-muted">MASTER RANK</div>
                     </div>
-                    <div class="card-footer bg-transparent border-secondary">
-                        <div class="leaderboard-pagination" id="leaderboardPagination">
-                            <!-- Pagination will be populated by JavaScript -->
-                        </div>
+                    <div class="player-score">25,400 XP</div>
+                </li>
+
+                <li class="leaderboard-item rank-2">
+                    <span class="rank-pos">02</span>
+                    <div class="player-avatar">
+                        <i class="fa-solid fa-user-shield text-light"></i>
                     </div>
-                </div>
+                    <div class="player-info">
+                        <div class="player-name">Root_User</div>
+                        <div class="small text-muted">ELITE</div>
+                    </div>
+                    <div class="player-score">21,200 XP</div>
+                </li>
+
+                <li class="leaderboard-item rank-3">
+                    <span class="rank-pos">03</span>
+                    <div class="player-avatar">
+                        <i class="fa-solid fa-user-gear text-secondary"></i>
+                    </div>
+                    <div class="player-info">
+                        <div class="player-name">Bit_Crusher</div>
+                        <div class="small text-muted">VETERAN</div>
+                    </div>
+                    <div class="player-score">18,900 XP</div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="mt-3" id="leaderboardPagination">
             </div>
+    </div>
+</div>
         </div>
     </div>
 </div>

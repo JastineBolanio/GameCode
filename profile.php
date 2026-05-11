@@ -514,239 +514,260 @@ $stats['last_month_progress'] = min(100, $stats['overall_progress'] * 0.9); // E
         </div>
 
         <div class="row">
+            <link rel="stylesheet" href="assets/css/MainContent.css">
             <!-- Main Content -->
             <div class="col-lg-8">
                 <!-- Progress Ring Section -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="card-title mb-0">Learning Progress</h5>
-                            <div class="user-email">
-                                <i class="fas fa-user-circle me-1"></i>
-                                <?php echo htmlspecialchars($currentUser['email']); ?>
-                            </div>
+                <div class="card gaming-hud-card mb-4">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h5 class="hud-header mb-0" style="letter-spacing: 2px;">
+                <i class="fa-solid fa-gauge-high me-2 text-info"></i>LEARNING_PROGRESS
+            </h5>
+            <div class="user-email text-info small">
+                <i class="fa-solid fa-id-card-clip me-1"></i>
+                <?php echo htmlspecialchars($currentUser['email']); ?>
+            </div>
+        </div>
+        
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <div class="progress-ring-container position-relative d-inline-block">
+                    <?php 
+                        $circumference = 2 * M_PI * 54;
+                        $offset = $circumference * (1 - $stats['overall_progress'] / 100);
+                    ?>
+                    <svg class="progress-ring__circle" width="150" height="150" viewBox="0 0 120 120">
+                        <circle class="progress-ring__circle-bg" cx="60" cy="60" r="54" stroke-width="6" />
+                        <circle class="progress-ring__circle-fill" 
+                                cx="60" cy="60" r="54" stroke-width="6" 
+                                stroke-dasharray="<?php echo $circumference; ?>" 
+                                stroke-dashoffset="<?php echo $offset; ?>" />
+                    </svg>
+                    <div class="position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="progress-ring__percent" style="font-size: 2rem; font-weight: 800; color: #fff; text-shadow: 0 0 10px var(--neon-cyan);">
+                            <?php echo $stats['overall_progress']; ?>%
                         </div>
-                        
-                        <div class="progress-ring-container">
-                            <div class="progress-ring">
-                                <?php 
-                                $circumference = 2 * M_PI * 54;
-                                $offset = $circumference * (1 - $stats['overall_progress'] / 100);
-                                ?>
-                                <svg class="progress-ring__circle" width="120" height="120" viewBox="0 0 120 120">
-                                    <circle class="progress-ring__circle-bg" cx="60" cy="60" r="54" stroke-width="6" />
-                                    <circle class="progress-ring__circle-fill" 
-                                            cx="60" 
-                                            cy="60" 
-                                            r="54" 
-                                            stroke-width="6" 
-                                            stroke-dasharray="<?php echo $circumference; ?>" 
-                                            stroke-dashoffset="<?php echo $offset; ?>" />
-                                </svg>
-                                <div class="progress-ring__content">
-                                    <div class="progress-ring__percent"><?php echo $stats['overall_progress']; ?>%</div>
-                                    <div class="progress-ring__label">Complete</div>
-                                </div>
-                            </div>
-                            
-                            <div class="progress-stats">
-                                <div class="stat-item">
-                                    <div class="stat-value"><?php echo $stats['last_week_progress']; ?>%</div>
-                                    <div class="stat-label">Last Week</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value"><?php echo $stats['last_month_progress']; ?>%</div>
-                                    <div class="stat-label">Last Month</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value"><?php echo $stats['points']; ?></div>
-                                    <div class="stat-label">Points</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value">#<?php echo $stats['rank']; ?></div>
-                                    <div class="stat-label">Global Rank</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value"><?php echo $stats['challenges_completed']; ?></div>
-                                    <div class="stat-label">Challenges</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value"><?php echo $stats['quizzes_passed']; ?></div>
-                                    <div class="stat-label">Quizzes</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value"><?php echo $stats['mini_games_completed']; ?>/2</div>
-                                    <div class="stat-label">Mini-Games</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value"><?php echo $stats['tutorials_completed']; ?>/<?php echo $stats['total_topics']; ?></div>
-                                    <div class="stat-label">Tutorials</div>
-                                    <div class="stats-overview-progress">
-                                        <div class="stats-overview-progress-bar" style="width: <?php echo $stats['tutorial_progress_percentage']; ?>%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="stat-label" style="font-size: 0.6rem;">INTEGRATED</div>
                     </div>
                 </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="progress-stats">
+                    <div class="stat-item">
+                        <span class="stat-label"><i class="fa-solid fa-trophy me-1"></i> Global Rank</span>
+                        <span class="stat-value text-white">#<?php echo $stats['rank']; ?></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label"><i class="fa-solid fa-star me-1"></i> Total Points</span>
+                        <span class="stat-value"><?php echo $stats['points']; ?></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Last Week</span>
+                        <span class="stat-value" style="font-size: 1.1rem;"><?php echo $stats['last_week_progress']; ?>%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Last Month</span>
+                        <span class="stat-value" style="font-size: 1.1rem;"><?php echo $stats['last_month_progress']; ?>%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr style="border-color: rgba(0,243,255,0.1); margin: 25px 0;">
+
+        <div class="progress-stats">
+            <div class="stat-item">
+                <div class="stat-value" style="font-size: 1.2rem;"><?php echo $stats['challenges_completed']; ?></div>
+                <div class="stat-label">Challenges</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" style="font-size: 1.2rem;"><?php echo $stats['quizzes_passed']; ?></div>
+                <div class="stat-label">Quizzes</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" style="font-size: 1.2rem;"><?php echo $stats['mini_games_completed']; ?>/2</div>
+                <div class="stat-label">Mini-Games</div>
+            </div>
+            
+            <div class="stat-item" style="flex-grow: 2;">
+                <div class="d-flex justify-content-between mb-1">
+                    <span class="stat-label">Tutorial Sync</span>
+                    <span class="text-info small fw-bold"><?php echo $stats['tutorials_completed']; ?>/<?php echo $stats['total_topics']; ?></span>
+                </div>
+                <div class="stats-overview-progress" style="height: 4px; background: #222;">
+                    <div class="stats-overview-progress-bar" style="height: 100%; background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); width: <?php echo $stats['tutorial_progress_percentage']; ?>%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
                 
                 <!-- About Me Section -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="card-title mb-0">About Me</h5>
-                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">
-                                <i class="fas fa-edit me-1"></i> Edit
-                            </button>
-                        </div>
-                        <div class="about-content">
-                            <p id="userBio"><?php echo nl2br(htmlspecialchars($currentUser['bio'] ?? 'No bio added yet. Click edit to add one.')); ?></p>
-                            <a href="#" class="read-more" id="readMoreBtn">Read More</a>
-                        </div>
-                        
-                        <!-- Profile Completeness -->
-                        <div class="profile-completeness mt-4">
-                            <?php 
-                            // Calculate profile completeness
-                            $completeness = 20; // Base 20% for having an account
-                            $completeness += !empty($currentUser['profile_picture']) ? 20 : 0;
-                            $completeness += !empty($currentUser['bio']) ? 20 : 0;
-                            $completeness += !empty($currentUser['location']) ? 20 : 0;
-                            $completeness = min($completeness, 100); // Cap at 100%
-                            ?>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Profile Completeness</span>
-                                <span class="text-primary fw-bold"><?php echo $completeness; ?>%</span>
-                            </div>
-                            <div class="progress" style="height: 6px;">
-                                <div class="progress-bar bg-primary" role="progressbar" 
-                                    style="width: <?php echo $completeness; ?>%;" 
-                                    aria-valuenow="<?php echo $completeness; ?>" 
-                                    aria-valuemin="0" 
-                                    aria-valuemax="100">
-                                </div>
-                            </div>
-                            <div class="form-text mt-2">
-                                Complete your profile to unlock all features
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="card dossier-card mb-4">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="hud-header mb-0">
+                <i class="fa-solid fa-address-card me-2 text-info"></i>USER_DOSSIER
+            </h5>
+            <button class="btn-pixel py-1 px-3" style="font-size: 10px;" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                <i class="fas fa-edit me-1"></i> UPDATE
+            </button>
+        </div>
+
+        <div class="about-content">
+            <div class="bio-terminal">
+                <p id="userBio" class="mb-0">
+                    <span class="text-info font-monospace small d-block mb-1">> DATA_STREAM:</span>
+                    <?php echo nl2br(htmlspecialchars($currentUser['bio'] ?? 'Biological data not yet recorded. Update profile to sync.')); ?>
+                </p>
+            </div>
+            <a href="#" class="read-more-btn d-inline-block mt-2" id="readMoreBtn">[ RECOVER FULL DATA ]</a>
+        </div>
+        
+        <div class="profile-completeness mt-4">
+            <?php 
+                $completeness = 20; 
+                $completeness += !empty($currentUser['profile_picture']) ? 20 : 0;
+                $completeness += !empty($currentUser['bio']) ? 20 : 0;
+                $completeness += !empty($currentUser['location']) ? 20 : 0;
+                $completeness = min($completeness, 100);
+            ?>
+            
+            <div class="d-flex justify-content-between align-items-end mb-2">
+                <div class="stat-label">Neural Sync Completion</div>
+                <div class="text-info fw-bold" style="font-size: 1.2rem;"><?php echo $completeness; ?>%</div>
+            </div>
+
+            <div class="xp-meter-container">
+                <div class="xp-meter-fill" style="width: <?php echo $completeness; ?>%;"></div>
+            </div>
+
+            <div class="form-text mt-2 text-muted" style="font-size: 0.7rem; text-transform: uppercase;">
+                <i class="fa-solid fa-triangle-exclamation me-1"></i> 
+                Achieve 100% sync to unlock advanced player titles
+            </div>
+        </div>
+    </div>
+    </div>
                 
                 <!-- Recent Activity -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title mb-3">Recent Activity</h5>
-                        <div class="activity-feed">
-                            <div class="activity-item d-flex align-items-start">
-                                <div class="activity-icon bg-primary bg-opacity-10 text-primary rounded-circle p-2 me-3">
-                                    <i class="fas fa-trophy"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold">Completed Python Basics</div>
-                                    <div class="text-muted small">2 hours ago</div>
-                                </div>
-                            </div>
-                            <div class="activity-item d-flex align-items-start">
-                                <div class="activity-icon bg-success bg-opacity-10 text-success rounded-circle p-2 me-3">
-                                    <i class="fas fa-flag-checkered"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold">Challenge Completed: Web Security</div>
-                                    <div class="text-muted small">1 day ago</div>
-                                </div>
-                            </div>
-                            <div class="activity-item d-flex align-items-start">
-                                <div class="activity-icon bg-info bg-opacity-10 text-info rounded-circle p-2 me-3">
-                                    <i class="fas fa-book"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold">Started new tutorial: JavaScript ES6+</div>
-                                    <div class="text-muted small">3 days ago</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="card activity-feed-card mb-4">
+    <div class="card-body">
+        <h5 class="card-title mb-4" style="color: #00f3ff; font-weight: 800; letter-spacing: 2px;">
+            <i class="fa-solid fa-bolt me-2"></i> RECENT_ACTIVITY_STREAM
+        </h5>
+        
+        <div class="activity-feed">
+            <div class="activity-item d-flex align-items-center">
+                <div class="activity-icon rounded-circle me-3">
+                    <i class="fas fa-trophy text-primary"></i>
                 </div>
+                <div>
+                    <span class="activity-title">Completed Python Basics</span>
+                    <span class="activity-time">> 2 HOURS AGO</span>
+                </div>
+            </div>
+
+            <div class="activity-item d-flex align-items-center">
+                <div class="activity-icon rounded-circle me-3">
+                    <i class="fas fa-flag-checkered text-success"></i>
+                </div>
+                <div>
+                    <span class="activity-title">Challenge: Web Security</span>
+                    <span class="activity-time">> 1 DAY AGO</span>
+                </div>
+            </div>
+
+            <div class="activity-item d-flex align-items-center">
+                <div class="activity-icon rounded-circle me-3">
+                    <i class="fas fa-book text-info"></i>
+                </div>
+                <div>
+                    <span class="activity-title">Tutorial: JavaScript ES6+</span>
+                    <span class="activity-time">> 3 DAYS AGO</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
             </div>
             
             <!-- Sidebar -->
             <div class="col-lg-4">
                 <!-- Connect With Me -->
-<div class="card mb-4">
-    <div class="card-header d-flex justify-content-between align-items-center">
+<div class="card comms-card mb-4">
+    <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center pt-3">
         <div class="d-flex align-items-center">
-            <h5 class="mb-0 text-black me-3">Connect With Me</h5>
-            <div id="socialMediaMessage" class="text-success" style="display: none;">
-                <i class="fas fa-check-circle me-1"></i>
-                <span id="socialMediaMessageText"></span>
+            <h5 class="mb-0 text-white hud-header" style="letter-spacing: 2px;">
+                <i class="fa-solid fa-satellite-dish me-2 text-info"></i>NETWORK_LINKS
+            </h5>
+            <div id="socialMediaMessage" class="ms-3 small text-success" style="display: none;">
+                <i class="fas fa-check-circle"></i> <span id="socialMediaMessageText"></span>
             </div>
         </div>
-        <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#socialMediaModal">
-            <i class="fas fa-edit me-1"></i> Edit
+        <button type="button" class="btn-pixel py-1 px-3" style="font-size: 10px;" data-bs-toggle="modal" data-bs-target="#socialMediaModal">
+            <i class="fas fa-edit me-1"></i> MODIFY
         </button>
     </div>
+
     <div class="card-body">
         <div class="social-links">
-                <a href="<?php echo !empty($currentUser['social_instagram']) ? 'https://instagram.com/' . htmlspecialchars($currentUser['social_instagram']) : '#'; ?>" 
-                    class="social-link" target="_blank">
-                    <i class="fab fa-instagram me-2"></i> 
-                    <?php if (!empty($currentUser['social_instagram'])): ?>
-                        <?php echo htmlspecialchars($currentUser['social_instagram']); ?>
-                    <?php else: ?>
-                        <span class="text-muted">Not set</span>
-                    <?php endif; ?>
-                </a>
-                <a href="<?php echo !empty($currentUser['social_facebook']) ? 'https://facebook.com/' . htmlspecialchars($currentUser['social_facebook']) : '#'; ?>" 
-                    class="social-link" target="_blank">
-                    <i class="fab fa-facebook me-2"></i> 
-                    <?php if (!empty($currentUser['social_facebook'])): ?>
-                        <?php echo htmlspecialchars($currentUser['social_facebook']); ?>
-                    <?php else: ?>
-                        <span class="text-muted">Not set</span>
-                    <?php endif; ?>
-                </a>
-                <a href="<?php echo !empty($currentUser['social_twitter']) ? 'https://twitter.com/' . htmlspecialchars($currentUser['social_twitter']) : '#'; ?>" 
-                    class="social-link" target="_blank">
-                    <i class="fab fa-twitter me-2"></i> 
-                    <?php if (!empty($currentUser['social_twitter'])): ?>
-                        <?php echo htmlspecialchars($currentUser['social_twitter']); ?>
-                    <?php else: ?>
-                        <span class="text-muted">Not set</span>
-                    <?php endif; ?>
-                </a>
-                <a href="<?php echo !empty($currentUser['social_pinterest']) ? 'https://pinterest.com/' . htmlspecialchars($currentUser['social_pinterest']) : '#'; ?>" 
-                    class="social-link" target="_blank">
-                    <i class="fab fa-pinterest me-2"></i> 
-                    <?php if (!empty($currentUser['social_pinterest'])): ?>
-                        <?php echo htmlspecialchars($currentUser['social_pinterest']); ?>
-                    <?php else: ?>
-                        <span class="text-muted">Not set</span>
-                    <?php endif; ?>
-                </a>
+            <a href="<?php echo !empty($currentUser['social_instagram']) ? 'https://instagram.com/' . htmlspecialchars($currentUser['social_instagram']) : '#'; ?>" 
+               class="social-link link-ig <?php echo empty($currentUser['social_instagram']) ? 'opacity-50' : ''; ?>" target="_blank">
+                <i class="fab fa-instagram me-2"></i> 
+                <span><?php echo !empty($currentUser['social_instagram']) ? htmlspecialchars($currentUser['social_instagram']) : 'OFFLINE'; ?></span>
+            </a>
+
+            <a href="<?php echo !empty($currentUser['social_facebook']) ? 'https://facebook.com/' . htmlspecialchars($currentUser['social_facebook']) : '#'; ?>" 
+               class="social-link link-fb <?php echo empty($currentUser['social_facebook']) ? 'opacity-50' : ''; ?>" target="_blank">
+                <i class="fab fa-facebook me-2"></i> 
+                <span><?php echo !empty($currentUser['social_facebook']) ? htmlspecialchars($currentUser['social_facebook']) : 'OFFLINE'; ?></span>
+            </a>
+
+            <a href="<?php echo !empty($currentUser['social_twitter']) ? 'https://twitter.com/' . htmlspecialchars($currentUser['social_twitter']) : '#'; ?>" 
+               class="social-link link-tw <?php echo empty($currentUser['social_twitter']) ? 'opacity-50' : ''; ?>" target="_blank">
+                <i class="fab fa-twitter me-2"></i> 
+                <span><?php echo !empty($currentUser['social_twitter']) ? htmlspecialchars($currentUser['social_twitter']) : 'OFFLINE'; ?></span>
+            </a>
+
+            <a href="<?php echo !empty($currentUser['social_pinterest']) ? 'https://pinterest.com/' . htmlspecialchars($currentUser['social_pinterest']) : '#'; ?>" 
+               class="social-link link-pin <?php echo empty($currentUser['social_pinterest']) ? 'opacity-50' : ''; ?>" target="_blank">
+                <i class="fab fa-pinterest me-2"></i> 
+                <span><?php echo !empty($currentUser['social_pinterest']) ? htmlspecialchars($currentUser['social_pinterest']) : 'OFFLINE'; ?></span>
+            </a>
         </div>
     </div>
 </div>
                 
                 <!-- Danger Zone -->
-                <div class="card border-danger">
-                    <div class="card-header bg-danger bg-opacity-10 text-danger">
-                        <i class="fas fa-exclamation-triangle me-2"></i> Danger Zone
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text small text-muted mb-3">
-                            These actions are irreversible. Please proceed with caution.
-                        </p>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-outline-danger" id="btnDeactivate">
-                                <i class="fas fa-user-slash me-2"></i>Deactivate Account
-                            </button>
-                            <button class="btn btn-outline-danger" id="btnDelete">
-                                <i class="fas fa-trash-alt me-2"></i>Delete Account
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <div class="card danger-zone-card mb-4">
+    <div class="card-header danger-header d-flex align-items-center py-3">
+        <i class="fas fa-radiation-alt me-2 pulse-red"></i> 
+        CRITICAL_TERMINATION_ZONE
+    </div>
+    
+    <div class="card-body">
+        <p class="danger-text mb-4">
+            <span class="text-danger fw-bold">WARNING:</span> 
+            Initiating these protocols will result in permanent data erasure. 
+            Recovery of player stats, rank, and inventory is impossible after execution.
+        </p>
+        
+        <div class="d-grid gap-3">
+            <button class="btn-destruct" id="btnDeactivate">
+                <i class="fas fa-power-off me-2"></i> Suspend Neural Link
+            </button>
+            
+            <button class="btn-destruct" id="btnDelete" style="border-style: double; border-width: 3px;">
+                <i class="fas fa-skull me-2"></i> Wipe Core Database
+            </button>
+        </div>
+    </div>
+    
+    <div style="height: 5px; background: #ff2a6d; width: 100%; opacity: 0.3;"></div>
+</div>
             </div>
         </div>
     </div>

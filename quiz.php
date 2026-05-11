@@ -51,110 +51,134 @@ $pageTitle = "Quiz";
   </div>
 
   <!-- Quiz Container -->
-  <section class="quiz-container">
-    <!-- Welcome Intro Screen -->
+<section class="quiz-container">
     <div class="quiz-welcome-screen">
-      <div class="welcome-content">
-        <div class="welcome-icon">🚀</div>
-        <h2 class="welcome-title">Ready to take the quiz?</h2>
-        <p class="welcome-message">
-          Embark on an epic journey through the world of programming! 
-          Choose your difficulty, test your skills, and climb the leaderboard.
-        </p>
-        <div class="welcome-features">
-          <div class="feature-item">
-            <span class="feature-icon">🎯</span>
-            <span class="feature-text">3 Difficulty Levels</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-icon">💖</span>
-            <span class="feature-text">7 Lives System</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-icon">⏰</span>
-            <span class="feature-text">Expert Timer Mode</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-icon">🏆</span>
-            <span class="feature-text">Leaderboards</span>
-          </div>
+        <div class="welcome-content text-center">
+            <div class="welcome-icon mb-4">
+                <i class="fa-solid fa-microchip glow-pulse"></i>
+            </div>
+            
+            <h2 class="welcome-title">INITIALIZING SYNC...</h2>
+            <p class="welcome-message mx-auto">
+                Embark on an epic journey through the world of programming! 
+                Choose your difficulty, test your skills, and climb the leaderboard.
+            </p>
+
+            <div class="welcome-features">
+                <div class="feature-item">
+                    <i class="fa-solid fa-layer-group feature-icon"></i>
+                    <span class="feature-text">3 Difficulty Tiers</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-heart-pulse feature-icon" style="color: var(--neon-red)"></i>
+                    <span class="feature-text">7 Lives System</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-stopwatch feature-icon"></i>
+                    <span class="feature-text">Expert Timer Mode</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-ranking-star feature-icon"></i>
+                    <span class="feature-text">Global Rankings</span>
+                </div>
+            </div>
+
+            <button class="btn-pixel welcome-start-btn" id="startQuizBtn" 
+                    onclick="document.querySelector('.quiz-welcome-screen').style.display='none'; 
+                             document.querySelector('.quiz-start-screen').style.display='block';
+                             if(window.initDifficultySelection) initDifficultySelection();">
+                TAKE THE QUIZ
+            </button>
         </div>
-        <button class="btn-pixel welcome-start-btn" id="startQuizBtn" 
-        onclick="document.querySelector('.quiz-welcome-screen').style.display='none'; 
-                document.querySelector('.quiz-start-screen').style.display='block';
-                if(window.initDifficultySelection) initDifficultySelection();">
-  Take the Quiz
-</button>
-      </div>
     </div>
 
     <!-- Start Screen -->
     <div class="quiz-start-screen" style="display:none;">
-      <h2 class="quiz-section-title">Select Your Challenge</h2>
-      
-      <div class="difficulty-options">
+    <h2 class="quiz-section-title text-center mb-4 hud-header">SELECT CHALLENGE TIER</h2>
+    
+    <div class="difficulty-options">
+        <!-- Beginner Tier -->
         <button class="btn-pixel difficulty-btn" data-difficulty="beginner">
-          <div class="difficulty-icon">🎯</div>
-          <div class="difficulty-info">
-            <div class="difficulty-name">Beginner</div>
-            <div class="difficulty-desc">Perfect for newcomers</div>
-          </div>
+            <div class="difficulty-icon" style="color: #00ff88;"><i class="fa-solid fa-seedling"></i></div>
+            <div class="difficulty-info">
+                <div class="difficulty-name">Beginner</div>
+                <div class="difficulty-desc">Standard syntax & basics</div>
+            </div>
         </button>
-        <button class="btn-pixel difficulty-btn" data-difficulty="intermediate">
-          <div class="difficulty-icon">⚡</div>
-          <div class="difficulty-info">
-            <div class="difficulty-name">Intermediate</div>
-            <div class="difficulty-desc">For experienced coders</div>
-          </div>
-        </button>
-        <button class="btn-pixel difficulty-btn" data-difficulty="expert">
-          <div class="difficulty-icon">🚀</div>
-          <div class="difficulty-info">
-            <div class="difficulty-name">Expert</div>
-            <div class="difficulty-desc">Ultimate challenge</div>
-          </div>
-        </button>
-      </div>
-      
-      <div class="quiz-intro">
-        <p>Ready to test your programming knowledge? Choose your difficulty level and start the challenge!</p>
-        <p>Each quiz contains 40 questions covering HTML, CSS, JavaScript, Python, Bootstrap, C++, and Java.</p>
-      </div>
-      
-      <?php if (!$auth->isLoggedIn()): ?>
-      <div class="nickname-input">
-        <label for="guest-nickname">Enter Your Nickname:</label>
-        <input type="text" id="guest-nickname" maxlength="20" placeholder="Choose a cool nickname" />
-        <span id="nickname-status" class="nickname-status"></span>
-      </div>
-      <?php endif; ?>
-      
-      <div class="start-controls">
-        <button class="btn-pixel instructions-btn" title="View Instructions">❓</button>
-        <button class="btn-pixel start-quiz-btn">Start Quiz</button>
-      </div>
-    </div>
 
-    <!-- Quiz In-Progress (hidden until quiz starts) -->
-    <div class="quiz-in-progress" style="display:none;">
-      <div class="quiz-status-bar">
-        <div class="quiz-hearts"><!-- ♥♥♥♥♥♥♥ --></div>
-        <div class="quiz-progress">Q1/40</div>
-        <div class="quiz-timer" style="display:none;">00:30</div>
-      </div>
-      
-      <div class="quiz-game-area">
-        <div class="quiz-spaceship">
-          <!-- Spaceship sprite/animation placeholder -->
-        </div>
-        <div class="quiz-question-box">
-          <!-- Question text (pixel-art styled) -->
-        </div>
-        <div class="quiz-choices">
-          <!-- Multiple-choice or True/False buttons -->
-        </div>
-      </div>
+        <!-- Intermediate Tier -->
+        <button class="btn-pixel difficulty-btn" data-difficulty="intermediate">
+            <div class="difficulty-icon" style="color: #bc13fe;"><i class="fa-solid fa-bolt-lightning"></i></div>
+            <div class="difficulty-info">
+                <div class="difficulty-name">Intermediate</div>
+                <div class="difficulty-desc">Logic & complex structures</div>
+            </div>
+        </button>
+
+        <!-- Expert Tier -->
+        <button class="btn-pixel difficulty-btn" data-difficulty="expert">
+            <div class="difficulty-icon" style="color: #ff2a6d;"><i class="fa-solid fa-skull-crossbones"></i></div>
+            <div class="difficulty-info">
+                <div class="difficulty-name">Expert</div>
+                <div class="difficulty-desc">Architecture & optimization</div>
+            </div>
+        </button>
     </div>
+    
+    <div class="quiz-intro gaming-panel text-center p-3 mb-4">
+        <p class="mb-1 fw-bold text-uppercase" style="letter-spacing: 2px; color: #fff;">Mission Objectives:</p>
+        <p class="small text-secondary">
+            Analyze 40 core data fragments across 
+            <span class="text-white">HTML, CSS, JS, Python, Bootstrap, C++, and Java</span>.
+        </p>
+    </div>
+    
+    <?php if (!$auth->isLoggedIn()): ?>
+    <div class="nickname-input text-center mb-4">
+        <label for="guest-nickname" class="d-block small text-uppercase fw-bold mb-2">Assign Callsign:</label>
+        <input type="text" id="guest-nickname" maxlength="20" placeholder="ENTER NICKNAME" />
+        <span id="nickname-status" class="nickname-status"></span>
+    </div>
+    <?php endif; ?>
+    
+    <div class="start-controls d-flex justify-content-center gap-3">
+        <button class="btn-pixel instructions-btn" title="View Instructions">
+            <i class="fa-solid fa-circle-info"></i>
+        </button>
+        <button class="btn-pixel start-quiz-btn" style="flex-grow: 1; max-width: 300px;">
+            START MISSION
+        </button>
+    </div>
+</div>
+
+<!-- IN-PROGRESS HUD (Cleaned up) -->
+<div class="quiz-in-progress" style="display:none;">
+    <div class="quiz-status-bar d-flex justify-content-between align-items-center">
+        <div class="quiz-hearts d-flex gap-1 text-danger">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-heart"></i>
+            <!-- Hearts rendered by JS -->
+        </div>
+        <div class="quiz-progress fw-bold">FRAG: 01/40</div>
+        <div class="quiz-timer neon-text fw-bold" style="display:none;">
+            <i class="fa-solid fa-clock me-1"></i> 00:30
+        </div>
+    </div>
+    
+    <div class="quiz-game-area mt-5">
+        <div class="quiz-spaceship text-center mb-4">
+            <i class="fa-solid fa-jet-fighter fa-3x neon-text"></i>
+        </div>
+        <div class="quiz-question-box p-4 border border-secondary bg-black text-center mb-4">
+            <p class="hud-header small mb-2 text-info">Incoming Data Stream...</p>
+            <h4 class="question-text fw-bold"></h4>
+        </div>
+        <div class="quiz-choices d-grid gap-3">
+            <!-- Choice buttons injected by JS -->
+        </div>
+    </div>
+</div>
   </section>
 
   <!-- Feedback Modal (Correct/Wrong) -->

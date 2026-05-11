@@ -64,7 +64,7 @@ $currentUser = $isLoggedIn ? $auth->getCurrentUser() : null;
     <script src="assets/js/home-init.js"></script>
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/audio-player.css" rel="stylesheet">
-    <?php if (isset($additionalStyles)) echo $additionalStyles; ?>  
+    <?php if (isset($additionalStyles)) echo $additionalStyles; ?> 
     <?php echo $csrf->getTokenMeta(); ?>
 <body class="bg-dark text-light">
 
@@ -75,7 +75,7 @@ $currentUser = $isLoggedIn ? $auth->getCurrentUser() : null;
 
         <!-- Guild / Game Title -->
         <a class="navbar-brand d-flex align-items-center" href="home_page.php">
-            <img src="assets/images/LogoSkill.jpg" alt="Skill Forge Emblem" class="navbar-logo me-2" width="40" height="40">
+            <img src="assets/images/MainLogo.png" alt="Skill Forge Emblem" class="navbar-logo me-2" width="40" height="40">
             <span class="brand-text"> Skill Forge</span>
         </a>
 
@@ -91,8 +91,8 @@ $currentUser = $isLoggedIn ? $auth->getCurrentUser() : null;
         </button>
 
         <!-- Menu Content -->
-         <link rel="stylesheet" href="assets\css\MenuContent.css">
-<div class="collapse navbar-collapse rpg-menu-wrapper justify-content-center" id="navbarContent">
+        <link rel="stylesheet" href="assets\css\MenuContent.css">
+    <div class="collapse navbar-collapse rpg-menu-wrapper justify-content-center" id="navbarContent">
     <!-- mx-auto centers the list within the flex container -->
     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
 

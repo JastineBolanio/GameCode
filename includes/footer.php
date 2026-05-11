@@ -54,7 +54,7 @@
                         <i class="fab fa-discord"></i>
                     </a>
                 </div>
-                <p class="mt-3 mb-0 footer-copy">&copy; 2025 Code Game. All rights reserved.</p>
+                <p class="mt-3 mb-0 footer-copy">&copy; 2026 GAME BY CODE. All rights reserved.</p>
             </div>
         </div>
     </div>
@@ -86,7 +86,7 @@
                 <div class="col-md-4 d-flex align-items-center justify-content-end">
                     <input type="range" id="volumeSlider" class="form-range me-3" min="0" max="1" step="0.01">
                     <select id="trackSelect" class="form-select form-select-sm track-select-scroll">
-                        <option value="audio/vhs.mp3">VHS Dreams</option>
+                        <option value="audio/Since Day One.mp3">Since Day One</option>
                         <option value="audio/flying.m4a">Flying'n'Stuff</option>
                         <option value="audio/gateway.m4a">Gateway</option>
                         <option value="audio/h4.mp3">H4</option>
@@ -312,10 +312,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             <input class="form-check-input" type="radio" name="role" id="roleUser" value="user" checked>
                             <label class="form-check-label" for="roleUser">Player</label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="role" id="roleAdmin" value="admin">
-                            <label class="form-check-label" for="roleAdmin">Admin</label>
-                        </div>
+                        <div class="form-check" style="display:none;">
+    <input class="form-check-input" type="radio" name="role" id="roleAdmin" value="admin">
+    <label class="form-check-label" for="roleAdmin">Admin</label>
+</div>
                     </div>
                     <div id="adminAcceptanceContainer" class="mb-3 d-none">
                         <div class="form-check">
@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content retro-modal">
             <div class="modal-title-bar">
-                <span class="title-text">C:\\DOS\\LOGIN.EXE</span>
+                <span class="title-text">LOGIN.EXE</span>
                 <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
                     <i class="fas fa-times"></i>
                 </button>

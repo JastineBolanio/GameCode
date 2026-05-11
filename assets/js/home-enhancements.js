@@ -13,131 +13,131 @@ let slideshowInterval = null;
 // Coding quotes collection
 const motivationalQuotes = [
     {
-        text: "Code is poetry.",
-        author: "WordPress"
+        "text": "Learning to code is learning to think. It's the ultimate superpower of the 21st century.",
+        "author": "Inspired by Steve Jobs"
     },
     {
-        text: "Programming is thinking, not typing.",
-        author: "Casey Patton"
+        "text": "Studying computer science is not about memorizing syntax; it's about mastering the logic of the world.",
+        "author": "Inspired by Casey Patton"
     },
     {
-        text: "The best error message is the one that never shows up.",
-        author: "Thomas Fuchs"
+        "text": "The greatest breakthrough in learning isn't getting the code right—it's finally understanding why it was wrong.",
+        "author": "Modern Proverb"
     },
     {
-        text: "Clean code is simple and direct. Clean code reads like well-written prose. Clean code never obscures the designers’ intent but rather is full of crisp abstractions and straightforward lines of control.",
-        author: "Grady Booch"
+        "text": "A great student of code doesn't just make things work; they seek to understand how the machine breathes.",
+        "author": "Inspired by Grady Booch"
     },
     {
-        text: "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
-        author: "John Woods"
+        "text": "Learn to comment your code as if the person reading it tomorrow is you—and you’ve forgotten everything you did today.",
+        "author": "Coding Wisdom"
     },
     {
-        text: "A long descriptive name is better than a short enigmatic name. A long descriptive name is better than a long descriptive comment.",
-        author: "Robert C. Martin"
+        "text": "Don't just learn the language; learn the architecture. A builder knows more than just how to hold a hammer.",
+        "author": "Inspired by Robert C. Martin"
     },
     {
-        text: "Talk is cheap. Show me the code.",
-        author: "Linus Torvalds"
+        "text": "Watching tutorials is cheap. Opening the IDE and breaking things is where the real learning happens.",
+        "author": "Inspired by Linus Torvalds"
     },
     {
-        text: "First, solve the problem. Then, write the code.",
-        author: "John Johnson"
+        "text": "First, understand the logic. Then, translate it into code.",
+        "author": "Inspired by John Johnson"
     },
     {
-        text: "Experience is the name everyone gives to their mistakes.",
-        author: "Oscar Wilde"
+        "text": "Every 'Syntax Error' is just a lesson in disguise. Experience is the sum of every bug you've ever fixed.",
+        "author": "Inspired by Oscar Wilde"
     },
     {
-        text: "In order to be irreplaceable, one must always be different.",
-        author: "Coco Chanel"
+        "text": "To be a great developer, don't just copy-paste; understand the 'why' behind every line.",
+        "author": "Inspired by Coco Chanel"
     },
     {
-        text: "Java is to JavaScript what car is to Carpet.",
-        author: "Chris Heilmann"
+        "text": "Learning the basics of hardware is to software what roots are to a tree.",
+        "author": "Computer Science Logic"
     },
     {
-        text: "The most important property of a program is whether it accomplishes the intention of its user.",
-        author: "C.A.R. Hoare"
+        "text": "The goal of learning isn't to finish the course, but to gain the power to build whatever you imagine.",
+        "author": "Inspired by C.A.R. Hoare"
     },
     {
-        text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
-        author: "Martin Fowler"
+        "text": "Any student can learn to speak to a computer. The best students learn to speak to the people who will maintain it.",
+        "author": "Inspired by Martin Fowler"
     },
     {
-        text: "Programming isn't about what you know; it's about what you can figure out.",
-        author: "Chris Pine"
+        "text": "Learning to code isn't about what you know today; it's about having the grit to figure out what you'll need tomorrow.",
+        "author": "Inspired by Chris Pine"
     },
     {
-        text: "The only way to learn a new programming language is by writing programs in it.",
-        author: "Dennis Ritchie"
+        "text": "You cannot learn a language by reading about it. You learn it by building something that didn't exist before.",
+        "author": "Inspired by Dennis Ritchie"
     },
     {
-        text: "Code never lies, comments sometimes do.",
-        author: "Ron Jeffries"
+        "text": "Documentation tells you what should happen; the debugger tells you what is actually happening. Trust the debugger.",
+        "author": "Inspired by Ron Jeffries"
     },
     {
-        text: "Simplicity is the ultimate sophistication.",
-        author: "Leonardo da Vinci"
+        "text": "Master the fundamentals. Sophisticated systems are just simple ideas stacked perfectly together.",
+        "author": "Inspired by Leonardo da Vinci"
     },
     {
-        text: "Make it work, make it right, make it fast.",
-        author: "Kent Beck"
+        "text": "In the beginning, just make it work. As you learn, make it right. As you master, make it fast.",
+        "author": "Inspired by Kent Beck"
     },
-    {  
-        text: "The most damaging phrase in the language is, It's always been done this way.",
-        author: "Grace Hopper"
+    {
+        "text": "The most dangerous mindset in tech is: 'I don't need to know how it works, I just need it to run.'",
+        "author": "Inspired by Grace Hopper"
     },
-    {  
-        text: "Coding like poetry should be short and concise.",
-        author: "Santosh Kalwar"
+    {
+        "text": "Learning to write clean code is like learning to write clear thoughts.",
+        "author": "Inspired by Santosh Kalwar"
     },
-    {  
-        text: "C++ is designed to allow you to express ideas, but if you don't have ideas or don't have any clue about how to express them, C++ doesn't offer much help.",
-        author: "Bjarne Stroustrup"
+    {
+        "text": "A language is just a tool for your ideas. If you don't learn how to think, the tool won't help you.",
+        "author": "Inspired by Bjarne Stroustrup"
     },
-    {  
-        text: "Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away.",
-        author: "Antoine de Saint-Exupéry"
+    {
+        "text": "You know you're learning when you start removing unnecessary lines of code rather than adding new ones.",
+        "author": "Inspired by Antoine de Saint-Exupéry"
     },
-    {  
-        text: "Good code is its own best documentation.",
-        author: "Steve McConnell"
+    {
+        "text": "The best way to document your progress is to write code that explains itself.",
+        "author": "Inspired by Steve McConnell"
     },
-    {  
-        text: "Programs must be written for people to read, and only incidentally for machines to execute.",
-        author: "Harold Abelson"
-    },
+    {
+        "text": "When you learn to code, remember: you are writing for humans first, and machines second.",
+        "author": "Inspired by Harold Abelson"
+    }
 ];
 
 
 // Actual background images (add these files to assets/images/ directory)
 const backgroundImages = [
-    'assets/images/background-1.jpg',
-    'assets/images/background-2.jpg', 
-    'assets/images/background-3.jpg',
-    'assets/images/background-4.jpg',
-    'assets/images/background-5.jpg',
-    'assets/images/background-6.jpg',
-    'assets/images/background-7.jpg',
-    'assets/images/background-8.jpg',
-    'assets/images/background-9.gif',
-    'assets/images/background-110.gif',
-    'assets/images/background-11.gif',
-    'assets/images/background-12.jpg',
-    'assets/images/background-13.jpg',
-    'assets/images/background-14.gif',
-    'assets/images/background-15.gif',
-    'assets/images/background-16.gif',
-    'assets/images/background-17.gif',
-    'assets/images/background-18.gif',
-    'assets/images/background-19.gif',
-    'assets/images/background-20.jpg',
-    'assets/images/bg-coding-1.jpg',
-    'assets/images/bg-coding-2.jpg',
-    'assets/images/bg-coding-3.jpg',
-    'assets/images/bg-programming-1.jpg',
-    'assets/images/bg-tech-1.jpg'
+    'assets/images/Abackground-1.jpg',
+    'assets/images/Abackground-2.jpg',
+    'assets/images/Abackground-3.jpg',
+    'assets/images/Abackground-4.jpg',
+    'assets/images/Abackground-5.jpg',
+    'assets/images/Abackground-6.jpg',
+    'assets/images/Abackground-7.jpg',
+    'assets/images/Abackground-8.jpg',
+    'assets/images/Abackground-9.gif',
+    'assets/images/Abackground-10.gif',
+    'assets/images/Abackground-11.gif',
+   // 'assets/images/background-12.jpg',
+   ///// 'assets/images/background-13.jpg',
+    'assets/images/Abackground-14.gif',
+    'assets/images/Abackground-15.gif',
+    'assets/images/Abackground-16.gif',
+    'assets/images/Abackground-17.gif',
+    'assets/images/Abackground-18.gif',
+    'assets/images/Abackground-19.gif',
+    //'assets/images/background-20.jpg',
+    //'assets/images/bg-coding-1.jpg',
+    //'assets/images/bg-coding-2.jpg',
+    //'assets/images/bg-coding-3.jpg',
+    //'assets/images/bg-programming-1.jpg',
+    //'assets/images/bg-tech-1.jpg'
 ];
 
 let currentSlideIndex = 0;

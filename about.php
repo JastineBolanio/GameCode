@@ -65,7 +65,7 @@ $pageTitle = "About Us";
       </div>
       <div class="col-md-4 text-end">
         <a href="home_page.php" class="home-btn"><i class="fas fa-home"></i></a>
-        <img src="assets/images/PTC.png" alt="PTC Logo" class="header-logo">
+        <img src="assets/images/MainLogo.png" alt="SkillForge" class="header-logo">
       </div>
     </div>
   </div>
@@ -527,8 +527,8 @@ $pageTitle = "About Us";
       <div class="col-md-6">
         <div class="footer-info">
           <img src="assets/images/PTC.png" alt="PTC Logo" class="footer-logo">
-          <h4>Code Gaming</h4>
-          <p>Built with <span class="heart">❤️</span> by the Code Gaming Team</p>
+          <h4>SkillForge</h4>
+          <p>Built with <span class="heart">❤️</span> by the SkillForge Team</p>
           <p>Pateros Technological College</p>
         </div>
       </div>
@@ -542,7 +542,7 @@ $pageTitle = "About Us";
             <a href="#" class="social-link"><i class="fab fa-github"></i></a>
           </div>
           <div class="footer-credits">
-            <p>&copy; 2025 Code Gaming Team. All rights reserved.</p>
+            <p>&copy; 2025 SkillForge Team. All rights reserved.</p>
             <p>Inspired by Northside festival 2013 design</p>
           </div>
         </div>

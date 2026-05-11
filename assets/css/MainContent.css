@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;800&display=swap');
+
+:root {
+    --neon-cyan: #00f3ff;
+    --hud-bg: rgba(10, 10, 10, 0.85);
+    --hud-border: rgba(0, 243, 255, 0.2);
+}
+
+/* --- THE DASHBOARD PANEL --- */
+.gaming-hud-card {
+    background: var(--hud-bg);
+    border: 1px solid var(--hud-border);
+    border-top: 4px solid var(--neon-cyan);
+    font-family: 'Rajdhani', sans-serif;
+    color: #fff;
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 98% 100%, 0 100%);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* --- THE GLOWING RING --- */
+.progress-ring__circle-bg {
+    stroke: rgba(255, 255, 255, 0.05);
+    fill: transparent;
+}
+
+.progress-ring__circle-fill {
+    stroke: var(--neon-cyan);
+    fill: transparent;
+    filter: drop-shadow(0 0 8px var(--neon-cyan));
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease-in-out;
+}
+
+/* --- STAT TILES --- */
+.progress-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.stat-item:hover {
+    background: rgba(0, 243, 255, 0.1);
+    border-color: var(--neon-cyan);
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--neon-cyan);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+}
+
+/* --- COMMS LINK PANEL --- */
+.comms-card {
+    background: rgba(10, 10, 10, 0.9);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 0;
+    clip-path: polygon(0 0, 95% 0, 100% 10%, 100% 100%, 5% 100%, 0 90%);
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+.social-link {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    color: #888 !important;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: 0.3s all ease;
+    position: relative;
+}
+
+/* --- BRAND SPECIFIC HOVERS --- */
+/* Instagram */
+.link-ig:hover { 
+    color: #fff !important; 
+    background: rgba(225, 48, 108, 0.2); 
+    border-color: #e1306c;
+    box-shadow: 0 0 15px rgba(225, 48, 108, 0.4);
+}
+/* Facebook */
+.link-fb:hover { 
+    color: #fff !important; 
+    background: rgba(24, 119, 242, 0.2); 
+    border-color: #1877f2;
+    box-shadow: 0 0 15px rgba(24, 119, 242, 0.4);
+}
+/* Twitter/x */
+.link-tw:hover { 
+    color: #fff !important; 
+    background: rgba(29, 161, 242, 0.2); 
+    border-color: #1da1f2; /* No space here */
+    box-shadow: 0 0 15px rgba(29, 161, 242, 0.4);
+}
+
+/* Pinterest */
+.link-pin:hover { 
+    color: #fff !important; 
+    background: rgba(189, 8, 28, 0.2); 
+    border-color: #bd081c;
+    box-shadow: 0 0 15px rgba(189, 8, 28, 0.4);
+}
+
+.social-link i {
+    font-size: 1.1rem;
+}
+
+/* --- DANGER ZONE HUD --- */
+.danger-zone-card {
+    background: rgba(20, 5, 5, 0.95);
+    border: 1px solid #ff2a6d;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hazard Stripe Header */
+.danger-header {
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 42, 109, 0.1),
+        rgba(255, 42, 109, 0.1) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    border-bottom: 1px solid #ff2a6d;
+    color: #ff2a6d;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.danger-text {
+    font-family: 'Rajdhani', sans-serif;
+    color: #cecece;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Destruction Buttons */
+.btn-destruct {
+    background: transparent;
+    border: 1px solid #ff2a6d;
+    color: #ff2a6d;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-destruct:hover {
+    background: #ff2a6d;
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 42, 109, 0.6);
+}
+
+/* Warning Pulse Animation */
+.pulse-red {
+    animation: danger-pulse 2s infinite;
+}
+
+@keyframes danger-pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* --- CHARACTER DOSSIER SECTION --- */
+.dossier-card {
+    background: rgba(10, 10, 10, 0.9);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-left: 4px solid var(--neon-cyan);
+    color: #fff;
+    border-radius: 0;
+    position: relative;
+}
+
+.bio-terminal {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    font-family: 'monospace'; /* Or 'Rajdhani' */
+    font-size: 0.9rem;
+    color: #cecece;
+    border-radius: 4px;
+    position: relative;
+}
+
+/* Character EXP Bar */
+.xp-meter-container {
+    background: #111;
+    height: 10px;
+    border: 1px solid #333;
+    padding: 1px;
+    position: relative;
+}
+
+.xp-meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-cyan), #bc13fe);
+    box-shadow: 0 0 10px var(--neon-cyan);
+    transition: width 1.5s cubic-bezier(0.1, 0, 0.2, 1);
+}
+
+.read-more-btn {
+    color: var(--neon-cyan) !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- MISSION LOG FEED --- */
+.mission-log-card {
+    background: rgba(10, 10, 10, 0.9);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 0;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.activity-feed {
+    position: relative;
+    padding-left: 10px;
+}
+
+/* The vertical timeline line */
+.activity-feed::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--neon-cyan) 0%, rgba(0, 243, 255, 0) 100%);
+    opacity: 0.3;
+}
+
+.activity-item {
+    position: relative;
+    padding-bottom: 25px;
+    transition: 0.3s;
+}
+
+.activity-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Glowing Icon Hexagon/Circle */
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+.activity-item:hover .activity-icon {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+.activity-title {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.activity-time {
+    font-family: 'monospace';
+    font-size: 0.7rem;
+    color: var(--neon-cyan);
+    opacity: 0.7;
+}
+
+/* --- FIXED RECENT ACTIVITY HUD --- */
+.activity-feed-card {
+    background: rgba(15, 15, 15, 0.98) !important;
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 0;
+}
+
+.activity-item {
+    /* Critical Fix: Removes the white background from your image */
+    background: rgba(255, 255, 255, 0.04) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+.activity-item:hover {
+    background: rgba(0, 243, 255, 0.08) !important;
+    border-color: #00f3ff;
+    transform: scale(1.01);
+}
+
+/* Text Visibility Fixes */
+.activity-title {
+    color: #ffffff !important; /* Force Pure White */
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.activity-time {
+    color: #00f3ff !important; /* Neon Cyan */
+    font-family: 'monospace';
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+.activity-icon {
+    width: 42px;
+    height: 42px;
+    background: #000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
