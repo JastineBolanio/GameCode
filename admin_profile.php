@@ -7,8 +7,6 @@
  *   - Update profile picture
  *   - Change password
  *   - View account statistics
- * Author: CodeGaming Team
- * Last Updated: October 21, 2025
  */
 
 session_start();
@@ -73,7 +71,7 @@ $stats = $stmt->fetch(PDO::FETCH_ASSOC);
                     <div class="profile-header">
                         <div class="profile-avatar-container">
                             <img id="profileAvatar" 
-                                 src="<?php echo $admin['profile_picture'] ? 'uploads/avatars/' . htmlspecialchars($admin['profile_picture']) : 'assets/images/PTC.png'; ?>" 
+                                 src="<?php echo $admin['profile_picture'] ? 'uploads/avatars/' . htmlspecialchars($admin['profile_picture']) : 'assets/images/MainLogos.png'; ?>" 
                                  alt="Profile Picture" 
                                  class="profile-avatar">
                             <button class="avatar-edit-btn" id="changeAvatarBtn">

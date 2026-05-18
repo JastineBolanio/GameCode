@@ -5,7 +5,7 @@
  * File: admin_users.php
  * 
  * Description:
- *   - Admin User Management page for Code Gaming platform
+ *   - Admin User Management page for SkillForge platform
  *   - Features:
  *       • Quick search for users, admins, and content
  *       • Bulk actions: ban, unban, assign badge
@@ -24,10 +24,6 @@
  *   - assets/js/admin_global.js
  *   - assets/js/admin_users.js
  *   - includes/admin_header.php, includes/admin_footer.php
- * 
- * Author: [Santiago]
- * Last Updated: [July 22, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 require_once 'includes/Auth.php';
@@ -152,69 +148,91 @@ $currentRole = $auth->getCurrentRole();
         </div>
 
         <!-- Players Table -->
-        <section class="admin-card mb-5">
-            <div class="card-body">
-                <h5 class="card-title">Registered Users (Players)</h5>
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle">
-                        <thead>
-                            <tr>
-                                <th class="text-center"><input type="checkbox" id="selectAllUsers"></th>
-                                <th class="text-center">Avatar</th>
-                                <th>ID</th>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Joined On</th>
-                                <th>Status</th>
-                                <th>Last Seen</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="usersTableBody">
-                            <!-- User rows will be injected by JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+         <link rel="stylesheet" href="assets/css/AdminUserV2.css">
+        <section class="card admin-card mb-5 gaming-roster-panel border-cyan">
+  <div class="card-body">
+    
+    <h5 class="card-title gaming-panel-title">
+      <i class="fas fa-id-card-clip icon-cyan"></i> ROSTER REGISTRY (OPERATIVES)
+    </h5>
+    
+    <div class="table-responsive gaming-roster-container">
+      <table class="table align-middle mb-0 gaming-roster-table">
+        <thead class="roster-terminal-header">
+          <tr>
+            <th class="text-center select-column">
+              <input type="checkbox" id="selectAllUsers" class="gaming-checkbox">
+            </th>
+            <th class="text-center"><i class="fas fa-user-gear"></i> AVATAR</th>
+            <th><i class="fas fa-fingerprint"></i> UID</th>
+            <th><i class="fas fa-terminal"></i> CALLSIGN</th>
+            <th><i class="fas fa-envelope-open-text"></i> NET ADDR</th>
+            <th><i class="fas fa-calendar-check"></i> DEPLOYED ON</th>
+            <th><i class="fas fa-wave-square"></i> STATE</th>
+            <th><i class="fas fa-eye"></i> LAST DETECTED</th>
+            <th class="text-end"><i class="fas fa-sliders"></i> OVERRIDES</th>
+          </tr>
+        </thead>
+        <tbody id="usersTableBody" class="gaming-dynamic-roster-target">
+          </tbody>
+      </table>
+    </div>
+    
+  </div>
+</section>
 
         <!-- Admins Table -->
-        <section class="admin-card">
-            <div class="card-body">
-                <h5 class="card-title">Administrators</h5>
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle">
-                        <thead>
-                            <tr>
-                                <th class="text-center"><input type="checkbox" id="selectAllAdmins"></th>
-                                <th class="text-center">Avatar</th>
-                                <th>ID</th>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Joined On</th>
-                                <th>Status</th>
-                                <th>Last Seen</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="adminsTableBody">
-                            <!-- Admin rows will be injected by JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+        <section class="card admin-card mb-5 gaming-roster-panel border-amber">
+  <div class="card-body">
+    
+    <h5 class="card-title gaming-panel-title">
+      <i class="fas fa-user-shield icon-amber"></i> SYSTEM DIRECTORY (CORE OVERLORDS)
+    </h5>
+    
+    <div class="table-responsive gaming-roster-container">
+      <table class="table align-middle mb-0 gaming-roster-table">
+        <thead class="roster-terminal-header-admin">
+          <tr>
+            <th class="text-center select-column">
+              <input type="checkbox" id="selectAllAdmins" class="gaming-checkbox-admin">
+            </th>
+            <th class="text-center"><i class="fas fa-crown"></i> AVATAR</th>
+            <th><i class="fas fa-key"></i> ROOT_ID</th>
+            <th><i class="fas fa-terminal"></i> CALLSIGN</th>
+            <th><i class="fas fa-network-wired"></i> SECURE_EMAIL</th>
+            <th><i class="fas fa-shield-halved"></i> PERM_LEVEL</th>
+            <th><i class="fas fa-calendar-check"></i> INITIALIZED</th>
+            <th><i class="fas fa-heartbeat"></i> NODE_STATE</th>
+            <th><i class="fas fa-eye"></i> LAST DETECTED</th>
+            <th class="text-end"><i class="fas fa-sliders"></i> MASTER_OVERRIDES</th>
+          </tr>
+        </thead>
+        <tbody id="adminsTableBody" class="gaming-dynamic-admin-target">
+          </tbody>
+      </table>
+    </div>
+    
+  </div>
+</section>
 
         <!-- Recent Admin Actions Log -->
-        <section class="admin-card mt-5">
-            <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-history me-2 text-secondary"></i>Recent Admin Actions</h5>
-                <ul class="list-group list-group-flush" id="adminActionsLog">
-                    <li class="list-group-item text-muted">Loading recent actions...</li>
-                </ul>
-            </div>
-        </section>
+        <section class="card admin-card mt-5 gaming-roster-panel border-purple">
+  <div class="card-body">
+    
+    <h5 class="card-title gaming-panel-title">
+      <i class="fas fa-shield-halved icon-purple"></i> SECURITY AUDIT TRAIL (OVERLORD LOGS)
+    </h5>
+    
+    <div class="gaming-action-log-container">
+      <ul class="list-group list-group-flush gaming-action-log-list" id="adminActionsLog">
+        <li class="list-group-item streaming-placeholder">
+          <span class="terminal-prompt">root@system:~$</span> FETCHING RECENT NETWORK ENCRYPTIONS...
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
     </div>
 </main>
 
@@ -242,7 +260,7 @@ $currentRole = $auth->getCurrentRole();
         </div>
         <div class="retro-modal-content">
             <div class="profile-picture-container">
-                <img src="assets/images/PTC.png" alt="Profile Picture" id="modalProfilePic">
+                <img src="assets/images/MainLogos.png" alt="Profile Picture" id="modalProfilePic">
                 <!-- Profile picture upload, hidden unless in edit mode -->
                 <input type="file" accept="image/*" id="modalProfilePicInput" class="form-control d-none mt-2" style="max-width:180px;">
             </div>

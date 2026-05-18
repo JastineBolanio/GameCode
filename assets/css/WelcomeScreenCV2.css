@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Press+Start+2P&display=swap');
+
+:root {
+  --bg-dark-arena: #0a060f;
+  --panel-boss: #140d1a;
+  --neon-danger: #ff0055;       /* Toxic Crimson */
+  --neon-cyan: #00f0ff;         /* Cyber Blue */
+  --text-light: #ffffff;
+  --text-dark-gray: #756a85;
+}
+
+/* Outer Window Context Wrapper */
+.window-content {
+  background-color: var(--bg-dark-arena);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#challenge-welcome {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Main Gaming Panel Box */
+.welcome-content {
+  background: var(--panel-boss);
+  padding: 40px;
+  border: 3px solid var(--neon-danger);
+  box-shadow: 0 0 30px rgba(255, 0, 85, 0.25), inset 0 0 20px rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+/* Threat Level Pulsing Icon */
+.welcome-icon {
+  margin-bottom: 15px;
+}
+
+.challenge-boss-icon {
+  font-size: 3.5rem;
+  color: var(--neon-danger);
+  text-shadow: 0 0 15px var(--neon-danger);
+  animation: menacePulse 2s infinite alternate;
+}
+
+/* Typography Styles */
+.welcome-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.6rem;
+  color: var(--neon-danger);
+  margin: 10px 0;
+  text-shadow: 3px 3px 0px #000;
+  letter-spacing: -1px;
+}
+
+.welcome-subtitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  color: var(--neon-cyan);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 35px;
+}
+
+/* RPG Stat Grid Dashboard */
+.welcome-stats {
+  font-family: 'Orbitron', sans-serif;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-left: 4px solid var(--neon-cyan);
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-dark-gray);
+  text-transform: uppercase;
+}
+
+.stat-label i {
+  color: var(--neon-cyan);
+  margin-right: 8px;
+}
+
+.stat-value {
+  font-weight: 900;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+/* Threat Alert Modifier */
+.danger-stat .stat-label i,
+.danger-stat .stat-value {
+  color: var(--neon-danger);
+  text-shadow: 0 0 5px var(--neon-danger);
+}
+
+/* Keyframe Animations */
+@keyframes menacePulse {
+  0% { 
+    transform: scale(1); 
+    filter: drop-shadow(0 0 2px var(--neon-danger)); 
+  }
+  100% { 
+    transform: scale(1.08); 
+    filter: drop-shadow(0 0 15px var(--neon-danger)); 
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --neon-danger: #ff0055;       /* Toxic Crimson for Start */
+  --neon-cyan: #00f0ff;         /* Cyber Blue for UI highlights */
+  --btn-bg: #1c1524;            /* Deep purple arcade casing */
+  --text-light: #ffffff;
+  --text-dark-gray: #756a85;
+}
+
+/* Button Layout Menu Container */
+.welcome-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Base Style for Retro/Gaming Buttons */
+.btn-retro {
+  cursor: pointer;
+  padding: 16px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid var(--text-dark-gray);
+  background: var(--btn-bg);
+  color: var(--text-light);
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  
+  /* Hard 8-bit Isometric Shadow */
+  box-shadow: 4px 4px 0px #000;
+  transition: all 0.1s ease-in-out;
+}
+
+/* Button Pressed Animation */
+.btn-retro:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+.btn-retro i {
+  margin-right: 10px;
+}
+
+/* Primary "Start" Button Accent */
+.btn-start {
+  background: var(--neon-danger);
+  border-color: #ffffff;
+  color: #000000; /* Dark text against glowing red for contrast */
+}
+
+.btn-start:hover {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 4px 4px 0px #000;
+}
+
+/* Secondary Button Custom Hover Mechanics */
+.btn-instructions:hover, 
+.btn-leaderboard:hover {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), 4px 4px 0px #000;
+}

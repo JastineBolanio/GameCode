@@ -4,7 +4,7 @@
  * File: admin_api.php
  * 
  * Description:
- *   - Admin API endpoint for Code Gaming platform
+ *   - Admin API endpoint for SkillForge platform
  *   - Features:
  *       • Handles dashboard stats, user management, and announcements via RESTful actions
  *       • Supports GET, POST, PUT, DELETE methods with CORS headers
@@ -18,10 +18,6 @@
  * 
  * Files Included:
  *   - db_connection.php
- * 
- * Author: [Santiago]
- * Last Updated: [July 22, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 session_start();

@@ -13,131 +13,57 @@ let slideshowInterval = null;
 // Coding quotes collection
 const motivationalQuotes = [
     {
-        text: "Code is poetry.",
-        author: "WordPress"
+        text: "Nag code ako buong gabi. Yung bug pala nasa semicolon lang.",
     },
     {
-        text: "Programming is thinking, not typing.",
-        author: "Casey Patton"
+        text: "IT student starter pack: Kape,Puya’t eyebags,Ctrl + C / Ctrl + V.",
     },
     {
-        text: "The best error message is the one that never shows up.",
-        author: "Thomas Fuchs"
+        text: "Kapag gumana yung code:Ayos genius,Kapag error:Computer may kasalanan.",
     },
     {
-        text: "Clean code is simple and direct. Clean code reads like well-written prose. Clean code never obscures the designers’ intent but rather is full of crisp abstractions and straightforward lines of control.",
-        author: "Grady Booch"
+        text: "Mama: Marunong ka mag-IT diba? Paki-hack nga WiFi ng kapitbahay.",
     },
     {
-        text: "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
-        author: "John Woods"
+        text: "Hindi kami tamad. Naka dark mode lang buhay namin.",
     },
     {
-        text: "A long descriptive name is better than a short enigmatic name. A long descriptive name is better than a long descriptive comment.",
-        author: "Robert C. Martin"
+        text: "Expectation:Magiging hacker. Reality:Nag-aayos printer.",
     },
     {
-        text: "Talk is cheap. Show me the code.",
-        author: "Linus Torvalds"
+        text: "Yung thesis namin:90% stress:10% documentation.",
     },
     {
-        text: "First, solve the problem. Then, write the code.",
-        author: "John Johnson"
+        text: "Kapag may group project:Leader: ‘Sino marunong mag code?’Lahat: ‘Ikaw.",
     },
     {
-        text: "Experience is the name everyone gives to their mistakes.",
-        author: "Oscar Wilde"
+        text: "IT life:Fix one bug.Create three new bugs.",
     },
     {
-        text: "In order to be irreplaceable, one must always be different.",
-        author: "Coco Chanel"
+        text: "Nag aral ako ng programming para yumaman  Ngayon nagde-debug nalang ako hanggang madaling araw.",
     },
     {
-        text: "Java is to JavaScript what car is to Carpet.",
-        author: "Chris Heilmann"
+        text: "IT student kapag defense:‘Gumana po yan kagabi.",
     },
     {
-        text: "The most important property of a program is whether it accomplishes the intention of its user.",
-        author: "C.A.R. Hoare"
-    },
-    {
-        text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
-        author: "Martin Fowler"
-    },
-    {
-        text: "Programming isn't about what you know; it's about what you can figure out.",
-        author: "Chris Pine"
-    },
-    {
-        text: "The only way to learn a new programming language is by writing programs in it.",
-        author: "Dennis Ritchie"
-    },
-    {
-        text: "Code never lies, comments sometimes do.",
-        author: "Ron Jeffries"
-    },
-    {
-        text: "Simplicity is the ultimate sophistication.",
-        author: "Leonardo da Vinci"
-    },
-    {
-        text: "Make it work, make it right, make it fast.",
-        author: "Kent Beck"
-    },
-    {  
-        text: "The most damaging phrase in the language is, It's always been done this way.",
-        author: "Grace Hopper"
-    },
-    {  
-        text: "Coding like poetry should be short and concise.",
-        author: "Santosh Kalwar"
-    },
-    {  
-        text: "C++ is designed to allow you to express ideas, but if you don't have ideas or don't have any clue about how to express them, C++ doesn't offer much help.",
-        author: "Bjarne Stroustrup"
-    },
-    {  
-        text: "Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away.",
-        author: "Antoine de Saint-Exupéry"
-    },
-    {  
-        text: "Good code is its own best documentation.",
-        author: "Steve McConnell"
-    },
-    {  
-        text: "Programs must be written for people to read, and only incidentally for machines to execute.",
-        author: "Harold Abelson"
-    },
+        text: "Ctrl + S.Pinaka-importanteng shortcut sa buhayv.",
+    }
 ];
 
 
 // Actual background images (add these files to assets/images/ directory)
 const backgroundImages = [
-    'assets/images/background-1.jpg',
-    'assets/images/background-2.jpg', 
-    'assets/images/background-3.jpg',
-    'assets/images/background-4.jpg',
-    'assets/images/background-5.jpg',
-    'assets/images/background-6.jpg',
-    'assets/images/background-7.jpg',
-    'assets/images/background-8.jpg',
-    'assets/images/background-9.gif',
-    'assets/images/background-110.gif',
-    'assets/images/background-11.gif',
-    'assets/images/background-12.jpg',
-    'assets/images/background-13.jpg',
-    'assets/images/background-14.gif',
-    'assets/images/background-15.gif',
-    'assets/images/background-16.gif',
-    'assets/images/background-17.gif',
-    'assets/images/background-18.gif',
-    'assets/images/background-19.gif',
-    'assets/images/background-20.jpg',
-    'assets/images/bg-coding-1.jpg',
-    'assets/images/bg-coding-2.jpg',
-    'assets/images/bg-coding-3.jpg',
-    'assets/images/bg-programming-1.jpg',
-    'assets/images/bg-tech-1.jpg'
+    'assets/images/Abackground-1.jpg',
+    'assets/images/Abackground-2.jpg', 
+    'assets/images/Abackground-3.jpg',
+    'assets/images/Abackground-4.jpg',
+    'assets/images/Abackground-5.jpg',
+    'assets/images/Abackground-6.jpg',
+    'assets/images/Abackground-7.jpg',
+    'assets/images/Abackground-8.jpg',
+    'assets/images/Abackground-9.gif',
+    'assets/images/Abackground-10.gif',
+    'assets/images/Abackground-11.gif',
 ];
 
 let currentSlideIndex = 0;
@@ -600,7 +526,7 @@ function renderProgressCards(progressData) {
         
         // Update user profile section if elements exist
         if (userAvatar) {
-            const defaultAvatar = '/CodeGaming/assets/images/default-avatar.gif';
+            const defaultAvatar = '/CodeGaming/assets/images/Avatar.gif';
             const avatarPath = userData.profile_picture || defaultAvatar;
             userAvatar.src = processImagePath(avatarPath, defaultAvatar);
             
@@ -720,7 +646,7 @@ function renderProgressCards(progressData) {
             const baseUrl = window.location.origin;
             const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
             const basePath = isLocal ? '/CodeGaming' : '';
-            const defaultAvatar = `${basePath}/assets/images/default-avatar.gif`;
+            const defaultAvatar = `${basePath}/assets/images/Avatar.gif`;
             
             console.log('Base URL:', baseUrl);
             console.log('Default avatar path:', defaultAvatar);
@@ -811,7 +737,7 @@ function renderProgressCards(progressData) {
             }
         } catch (error) {
             console.error('Error updating avatar:', error);
-            userAvatar.src = '/CodeGaming/assets/images/default-avatar.gif';
+            userAvatar.src = '/CodeGaming/assets/images/Avatar.gif';
             userAvatar.alt = 'Default Profile Picture';
             userAvatar.style.opacity = '1';
             userAvatar.style.visibility = 'visible';

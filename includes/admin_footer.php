@@ -15,8 +15,6 @@
  * * Usage:
  *   - Included in admin pages to provide a consistent footer.
  * 
- * Author: CodeGaming Team
- * Last Updated: July 24, 2025
  * 
  */
 ?>
@@ -27,7 +25,7 @@
       <div class="col-md-6">
         <p class="mb-0">
           <i class="fas fa-code me-2"></i>
-          Code Gaming Admin Panel &copy; <?php echo date('Y'); ?>
+          SkillForge Admin Panel &copy; <?php echo date('Y'); ?>
         </p>
       </div>
       <div class="col-md-6 text-end">

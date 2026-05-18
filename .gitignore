@@ -1,0 +1,13 @@
+audio/
+.env
+assets/audio/
+# Ignore local environment or large zip archives
+*.zip
+*.rar
+# Ignore vendor or cache folders if you use composer/npm
+vendor/
+node_modules/
+*.zip
+*.rar
+*.exe
+*.mp4

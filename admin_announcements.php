@@ -4,7 +4,7 @@
  * File: admin_announcements.php
  * 
  * Description:
- *   - Admin Announcements management page for Code Gaming platform
+ *   - Admin Announcements management page for SkillForge platform
  *   - Features:
  *       • Add, edit, filter, and search announcements
  *       • Category and status filters (system, event, update; published, draft)
@@ -23,10 +23,6 @@
  *   - assets/js/admin_global.js
  *   - assets/js/admin_announcements.js
  *   - includes/admin_header.php, includes/admin_footer.php
- * 
- * Author: [Santiago]
- * Last Updated: [July 22, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 require_once 'includes/Auth.php';
@@ -54,51 +50,91 @@ $pageTitle = 'Admin Announcements';
 <main class="admin-announcements-main container-fluid py-4">
     <div class="row g-4">
         <!-- Main Content -->
-        <div class="col-lg-8">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h1 class="magazine-title mb-0">ANNOUNCEMENTS</h1>
-                <button class="btn btn-warning btn-lg" id="addAnnouncementBtn"><i class="fas fa-plus me-2"></i>Add Announcement</button>
-            </div>
-            <!-- Filters/Search -->
-            <div class="d-flex flex-wrap gap-2 mb-3 align-items-center">
-                <input type="text" class="form-control" id="announcementSearch" placeholder="Search announcements..." style="max-width:260px;">
-                <select class="form-select" id="announcementStatusFilter" style="max-width:180px;">
-                    <option value="">All Statuses</option>
-                    <option value="published">Published</option>
-                    <option value="draft">Draft</option>
-                </select>
-                <select class="form-select" id="announcementCategoryFilter" style="max-width:180px;">
-                    <option value="">All Categories</option>
-                    <option value="system">System</option>
-                    <option value="event">Event</option>
-                    <option value="update">Update</option>
-                </select>
-            </div>
-            <!-- Announcement Cards List -->
-            <div id="announcementCardsList"></div>
-            <!-- Pagination -->
-            <nav id="announcementPagination" class="mt-4"></nav>
-        </div>
+         <link rel="stylesheet" href="assets/css/AnnounceMantContent.css">
+        <div class="col-lg-8 gaming-hub-container">
+  
+  <!-- HUB HEADER SECTION -->
+  <div class="d-flex justify-content-between align-items-center mb-4 panel-header-block">
+    <h1 class="terminal-hub-title-forced">
+    <span class="pulse-node-forced"></span> 
+    <span class="title-text-forced">BROADCAST LOGS</span>
+  </h1>
+    <button class="btn btn-gaming-lg" id="addAnnouncementBtn">
+      <i class="fas fa-tower-broadcast"></i> INJECT NEW LOG
+    </button>
+  </div>
+  
+  <!-- TELEMETRY FILTERS / SEARCH TOOLBAR -->
+  <div class="d-flex flex-wrap gap-2 mb-4 align-items-center terminal-filter-bar">
+    
+    <!-- Retro Styled Search Field -->
+    <div class="search-input-wrapper">
+      <i class="fas fa-magnifying-glass search-icon-accent"></i>
+      <input type="text" class="form-control gaming-input" id="announcementSearch" placeholder="Query transmission keyword...">
+    </div>
+    
+    <!-- State Dropdown Filter -->
+    <div class="select-input-wrapper">
+      <select class="form-select gaming-select" id="announcementStatusFilter">
+        <option value="">[ ALL EMISSION STATES ]</option>
+        <option value="published">LIVE SIGNAL (PUBLISHED)</option>
+        <option value="draft">STAGED ENCRYPT (DRAFT)</option>
+      </select>
+    </div>
+    
+    <!-- Category Dropdown Filter -->
+    <div class="select-input-wrapper">
+      <select class="form-select gaming-select" id="announcementCategoryFilter">
+        <option value="">[ ALL CATEGORIES ]</option>
+        <option value="system">CORE SYSTEM</option>
+        <option value="event">GLOBAL RAID / EVENT</option>
+        <option value="update">PATCH INJECTION</option>
+      </select>
+    </div>
+    
+  </div>
+  
+  <!-- DYNAMIC RENDER TARGETS -->
+  <!-- Announcement Cards List Target -->
+  <div id="announcementCardsList" class="gaming-card-deck"></div>
+  
+  <!-- Pagination Target Container -->
+  <nav id="announcementPagination" class="mt-4 gaming-nav-pagination"></nav>
+  
+</div>
         <!-- Sidebar -->
         <div class="col-lg-4">
-            <div class="magazine-sidebar">
-                <div class="sidebar-section mb-4">
-                    <h5 class="sidebar-title"><i class="fas fa-bolt me-2"></i>Recent Announcements</h5>
-                    <ul class="list-group" id="recentAnnouncementsList"></ul>
-                </div>
-                <div class="sidebar-section mb-4">
-                    <h5 class="sidebar-title"><i class="fas fa-chart-bar me-2"></i>Stats</h5>
-                    <div id="announcementStats"></div>
-                </div>
-                <div class="sidebar-section mb-4">
-                    <h5 class="sidebar-title"><i class="fas fa-thumbtack me-2"></i>Pinned/Featured</h5>
-                    <div id="featuredAnnouncement"></div>
-                </div>
-                <div class="sidebar-section">
-                    <button class="btn btn-success w-100" id="shareOnTwitterBtn"><i class="fab fa-twitter me-2"></i>Share on Twitter</button>
-                </div>
-            </div>
-        </div>
+  <div class="magazine-sidebar gaming-sidebar-console">
+    
+    <div class="sidebar-section mb-4 terminal-section border-sub-purple">
+      <h5 class="sidebar-title gaming-sidebar-header">
+        <i class="fas fa-rss icon-purple"></i> SUB-SIGNALS
+      </h5>
+      <ul class="list-group gaming-terminal-list" id="recentAnnouncementsList"></ul>
+    </div>
+    
+    <div class="sidebar-section mb-4 terminal-section border-sub-matrix">
+      <h5 class="sidebar-title gaming-sidebar-header">
+        <i class="fas fa-chart-simple icon-matrix"></i> MATRIX TELEMETRY
+      </h5>
+      <div id="announcementStats" class="dynamic-visibility-wrapper"></div>
+    </div>
+    
+    <div class="sidebar-section mb-4 terminal-section border-sub-amber">
+      <h5 class="sidebar-title gaming-sidebar-header">
+        <i class="fas fa-thumbtack icon-amber"></i> PRIORITY NODE
+      </h5>
+      <div id="featuredAnnouncement" class="dynamic-visibility-wrapper"></div>
+    </div>
+    
+    <div class="sidebar-section">
+      <button class="btn btn-gaming-share w-100" id="shareOnTwitterBtn">
+        <i class="fab fa-x-twitter"></i> RELAY TO NET (X)
+      </button>
+    </div>
+    
+  </div>
+</div>
     </div>
     <!-- Add/Edit Announcement Modal (hidden by default) -->
     <div class="modal fade" id="announcementModal" tabindex="-1" aria-labelledby="announcementModalLabel" aria-hidden="true">

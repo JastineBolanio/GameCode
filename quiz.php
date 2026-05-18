@@ -7,7 +7,7 @@ require_once 'includes/track_visitor.php';
  * File: quiz.php
  * 
  * Description:
- *   - Interactive Quiz page for Code Gaming platform
+ *   - Interactive Quiz page for SkillForge platform
  *   - Features:
  *       • Welcome and difficulty selection screens with instructions
  *       • Multiple-choice questions with pixel-art styled UI
@@ -22,10 +22,6 @@ require_once 'includes/track_visitor.php';
  *   - Accessible to all users and guests
  *   - Allows users to test programming knowledge and compete for high scores
  * 
- * @author [Santiago]
- * @version 1.0.0
- * @last_updated 2025-07-22
- * -- Code Gaming Team --
  * ==========================================================
  */
 
@@ -46,94 +42,143 @@ $pageTitle = "Quiz";
 <main class="quiz-main-bg">
   <!-- Pixel Font Title Banner -->
   <div class="quiz-title-banner">
-    <h1 class="quiz-title">QUIZ CODE GAMING</h1>
+    <h1 class="quiz-title">QUIZ SkillForge</h1>
     <div class="quiz-subtitle">Test Your Programming Knowledge!</div>
   </div>
 
   <!-- Quiz Container -->
   <section class="quiz-container">
     <!-- Welcome Intro Screen -->
+     <link rel="stylesheet" href="assets/css/WelcomeIntro.css">
     <div class="quiz-welcome-screen">
-      <div class="welcome-content">
-        <div class="welcome-icon">🚀</div>
-        <h2 class="welcome-title">Ready to take the quiz?</h2>
-        <p class="welcome-message">
-          Embark on an epic journey through the world of programming! 
-          Choose your difficulty, test your skills, and climb the leaderboard.
-        </p>
-        <div class="welcome-features">
-          <div class="feature-item">
-            <span class="feature-icon">🎯</span>
-            <span class="feature-text">3 Difficulty Levels</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-icon">💖</span>
-            <span class="feature-text">7 Lives System</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-icon">⏰</span>
-            <span class="feature-text">Expert Timer Mode</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-icon">🏆</span>
-            <span class="feature-text">Leaderboards</span>
-          </div>
+    <div class="hud-analytics-terminal-bg initialization-terminal-wrapper">
+        <div class="hud-main-terminal-window quiz-primary-window">
+            
+            <div class="hud-terminal-title-bar d-flex justify-content-between align-items-center w-100">
+                <div class="hud-terminal-glitch-text">
+                    <span class="hud-terminal-prefix">⚡</span> SYSTEM_INITIALIZATION: KNOWLEDGE_EVALUATION
+                </div>
+                <div class="hud-terminal-deco-lines" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            
+            <div class="hud-terminal-content p-4 p-md-5">
+                <div class="welcome-content mb-4 text-center">
+                    <div class="welcome-icon-wrapper mb-3">
+                        <i class='bx bx-rocket game-icon-pulse'></i>
+                    </div>
+                    <h2 class="hud-terminal-main-title text-uppercase">Ready to take the quiz?</h2>
+                    <p class="hud-terminal-subtitle">
+                        Embark on an elite assessment matrix through compiled logic segments. 
+                        Calibrate your syntax compiler core, verify execution blocks, and secure your index log on the network mainframe.
+                    </p>
+                </div>
+                
+                <div class="welcome-features hud-feature-grid mb-5">
+                    <div class="feature-item">
+                        <span class="feature-icon">🎯</span>
+                        <div class="feature-meta">
+                            <span class="feature-label text-uppercase">Vector Tuning</span>
+                            <span class="feature-text">3 Difficulty Tiers</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">💖</span>
+                        <div class="feature-meta">
+                            <span class="feature-label text-uppercase">Integrity Shield</span>
+                            <span class="feature-text">7 Lives System</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⏰</span>
+                        <div class="feature-meta">
+                            <span class="feature-label text-uppercase">Chronometer</span>
+                            <span class="feature-text">Expert Timer Mode</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🏆</span>
+                        <div class="feature-meta">
+                            <span class="feature-label text-uppercase">Mainframe Log</span>
+                            <span class="feature-text">Leaderboards</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-center w-100">
+                    <button class="btn btn-game-action trigger-cyan welcome-start-btn text-uppercase" id="startQuizBtn" 
+                            onclick="document.querySelector('.quiz-welcome-screen').style.display='none'; 
+                                     document.querySelector('.quiz-start-screen').style.display='block';
+                                     if(window.initDifficultySelection) window.initDifficultySelection();">
+                        Initialize Evaluation Mode
+                    </button>
+                </div>
+            </div>
+            
         </div>
-        <button class="btn-pixel welcome-start-btn" id="startQuizBtn" 
-        onclick="document.querySelector('.quiz-welcome-screen').style.display='none'; 
-                document.querySelector('.quiz-start-screen').style.display='block';
-                if(window.initDifficultySelection) initDifficultySelection();">
-  Take the Quiz
-</button>
-      </div>
     </div>
+</div>
 
     <!-- Start Screen -->
     <div class="quiz-start-screen" style="display:none;">
-      <h2 class="quiz-section-title">Select Your Challenge</h2>
-      
-      <div class="difficulty-options">
-        <button class="btn-pixel difficulty-btn" data-difficulty="beginner">
-          <div class="difficulty-icon">🎯</div>
-          <div class="difficulty-info">
-            <div class="difficulty-name">Beginner</div>
-            <div class="difficulty-desc">Perfect for newcomers</div>
-          </div>
-        </button>
-        <button class="btn-pixel difficulty-btn" data-difficulty="intermediate">
-          <div class="difficulty-icon">⚡</div>
-          <div class="difficulty-info">
-            <div class="difficulty-name">Intermediate</div>
-            <div class="difficulty-desc">For experienced coders</div>
-          </div>
-        </button>
-        <button class="btn-pixel difficulty-btn" data-difficulty="expert">
-          <div class="difficulty-icon">🚀</div>
-          <div class="difficulty-info">
-            <div class="difficulty-name">Expert</div>
-            <div class="difficulty-desc">Ultimate challenge</div>
-          </div>
-        </button>
+  <!-- Gaming-style Header -->
+  <h2 class="quiz-section-title"><i class="fas fa-gamepad"></i> Select Your Mission</h2>
+  
+  <div class="difficulty-options">
+    <!-- Beginner / Easy Mode -->
+    <button class="btn-pixel difficulty-btn" data-difficulty="beginner">
+      <div class="difficulty-icon"><i class="fas fa-shield-halved"></i></div>
+      <div class="difficulty-info">
+        <div class="difficulty-name">Beginner [LVL 1]</div>
+        <div class="difficulty-desc">Perfect for new recruits</div>
       </div>
-      
-      <div class="quiz-intro">
-        <p>Ready to test your programming knowledge? Choose your difficulty level and start the challenge!</p>
-        <p>Each quiz contains 40 questions covering HTML, CSS, JavaScript, Python, Bootstrap, C++, and Java.</p>
+    </button>
+    
+    <!-- Intermediate / Normal Mode -->
+    <button class="btn-pixel difficulty-btn" data-difficulty="intermediate">
+      <div class="difficulty-icon"><i class="fas fa-sword"></i></div>
+      <div class="difficulty-info">
+        <div class="difficulty-name">Intermediate [LVL 50]</div>
+        <div class="difficulty-desc">For seasoned code warriors</div>
       </div>
-      
-      <?php if (!$auth->isLoggedIn()): ?>
-      <div class="nickname-input">
-        <label for="guest-nickname">Enter Your Nickname:</label>
-        <input type="text" id="guest-nickname" maxlength="20" placeholder="Choose a cool nickname" />
-        <span id="nickname-status" class="nickname-status"></span>
+    </button>
+    
+    <!-- Expert / Hardcore Mode -->
+    <button class="btn-pixel difficulty-btn" data-difficulty="expert">
+      <div class="difficulty-icon"><i class="fas fa-dragon"></i></div>
+      <div class="difficulty-info">
+        <div class="difficulty-name">Expert [NIGHTMARE]</div>
+        <div class="difficulty-desc">The ultimate boss battle</div>
       </div>
-      <?php endif; ?>
-      
-      <div class="start-controls">
-        <button class="btn-pixel instructions-btn" title="View Instructions">❓</button>
-        <button class="btn-pixel start-quiz-btn">Start Quiz</button>
-      </div>
-    </div>
+    </button>
+  </div>
+  
+  <!-- Gaming-style Quest Intro -->
+  <div class="quiz-intro">
+    <p><i class="fas fa-scroll"></i> Ready to test your programming build? Choose your difficulty level and enter the arena!</p>
+    <p><i class="fas fa-trophy"></i> This campaign contains 40 trials covering HTML, CSS, JavaScript, Python, Bootstrap, C++, and Java.</p>
+  </div>
+  
+  <?php if (!$auth->isLoggedIn()): ?>
+  <!-- Guest Player Registration -->
+  <div class="nickname-input">
+    <label for="guest-nickname"><i class="fas fa-user-tag"></i> Enter Player 1 Name:</label>
+    <input type="text" id="guest-nickname" maxlength="20" placeholder="INSERT COOL NICKNAME..." />
+    <span id="nickname-status" class="nickname-status"></span>
+  </div>
+  <?php endif; ?>
+  
+  <!-- Control Buttons -->
+  <div class="start-controls">
+    <button class="btn-pixel instructions-btn" title="View Quest Rules">
+      <i class="fas fa-circle-question"></i>
+    </button>
+    <button class="btn-pixel start-quiz-btn">
+      <i class="fas fa-play"></i> START GAME
+    </button>
+  </div>
+</div>
 
     <!-- Quiz In-Progress (hidden until quiz starts) -->
     <div class="quiz-in-progress" style="display:none;">

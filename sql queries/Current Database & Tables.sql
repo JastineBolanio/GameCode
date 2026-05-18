@@ -1,11 +1,11 @@
 -- =================================================================
 -- Filename: Current Database & Tables.sql
--- Description: The complete database schema for the Code Gaming application.
+-- Description: The complete database schema for the coding_game application.
 -- This script creates the database, all necessary tables, and defines their relationships.
 -- Some insertion samples are added here too.
 -- It is designed to be the single source of truth for the database structure.
 -- Last Updated: [10/22/25]
--- Code Gaming Team
+-- coding_game Team
 -- =================================================================
 
 -- Create the database if it doesn't exist

@@ -17,8 +17,6 @@
  *   - Bootstrap (modals)
  *   - anime.js (animations)
  *   - sign_in.php, login.php, api/reset-password.php (AJAX endpoints)
- * Author: CodeGaming Team
- * Last Updated: July 22, 2025
  */
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -16,8 +16,6 @@
  * Dependencies:
  *   - Database.php for database access
  * 
- * Author: CodeGaming Team
- * Last Updated: July 26, 2025
  */
 require_once __DIR__ . '/Database.php';
 $db = Database::getInstance();

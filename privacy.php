@@ -17,8 +17,6 @@
  *   - Public page accessible to all users and visitors
  *   - Displays comprehensive privacy policy with engaging UI
  * 
- * Author: [Santiago]
- * Last Updated: [October 24, 2025]
  */
 
 // Start session if not already started
@@ -55,27 +53,33 @@ include 'includes/header.php';
 ?>
 
 <!-- Privacy Policy Hero Section -->
-<section class="privacy-hero">
+ <link rel="stylesheet" href="assets/css/PrivacyV2.css">
+<section class="privacy-hero gaming-privacy-wrapper py-5">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center">
-                <div class="back-button-wrapper">
-                    <a href="anchor.php" class="btn btn-outline-light back-btn">
-                        <i class="fas fa-arrow-left"></i> Back to Home
+            <div class="col-12 text-center privacy-content-alignment">
+                
+                <div class="back-button-wrapper mb-4">
+                    <a href="anchor.php" class="btn console-back-trigger">
+                        <i class="fas fa-terminal me-2"></i> RETURN_TO_CORE
                     </a>
                 </div>
-                <h1 class="privacy-title">
-                    <span class="privacy-icon">🔒</span>
-                    Your Privacy Matters
-                    <span class="privacy-icon">🔒</span>
+                
+                <h1 class="privacy-title crypto-header-title">
+                    <span class="privacy-icon crypto-icon-glow">🔒</span>
+                    PRIVACY_PROTOCOLS
+                    <span class="privacy-icon crypto-icon-glow">🔒</span>
                 </h1>
-                <p class="privacy-subtitle">We're committed to protecting your data and ensuring transparency in how we handle your information.</p>
+                
+                <p class="privacy-subtitle crypto-meta-body">
+                    We are strictly committed to data insulation, continuous encryption optimization, and total architecture transparency.
+                </p>
+                
             </div>
         </div>
     </div>
     
-    <!-- Floating Privacy Elements (Rellax) -->
-    <div class="floating-elements">
+    <div class="floating-elements telemetry-floating-nodes">
         <div class="privacy-element" data-rellax-speed="2">🔐</div>
         <div class="privacy-element" data-rellax-speed="-1">🛡️</div>
         <div class="privacy-element" data-rellax-speed="3">✅</div>
@@ -90,237 +94,336 @@ include 'includes/header.php';
 <!-- Privacy Policy Content -->
 <section class="privacy-content">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                
-                <!-- Progress Indicator -->
-                <div class="reading-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
-                    </div>
-                    <span class="progress-text">Reading Progress: <span class="progress-percentage">0%</span></span>
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            
+            <div class="reading-progress terminal-progress-wrapper mb-4">
+                <div class="progress-bar terminal-bar-bg">
+                    <div class="progress-fill terminal-fill-cyan"></div>
                 </div>
+                <span class="progress-text matrix-progress-label">
+                    TELEMETRY_READ_PROGRESS: <span class="progress-percentage terminal-highlight-cyan">0%</span>
+                </span>
+            </div>
 
-                <!-- Introduction Section -->
-                <div class="policy-section active" id="introduction">
-                    <div class="section-header" data-section="introduction">
-                        <h2><i class="fas fa-info-circle"></i> Introduction</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <p>Welcome to Code Gaming! We respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our platform.</p>
-                        <p>By using Code Gaming, you agree to the collection and use of information in accordance with this policy. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
-                        <div class="policy-highlight">
-                            <i class="fas fa-shield-alt"></i>
-                            <strong>Our Commitment:</strong> Your privacy is our priority. We implement industry-standard security measures to protect your data.
-                        </div>
-                    </div>
-                </div>
+            <div class="policy-section terminal-secure-card fully-expanded" id="introduction">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('introduction')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-biohazard icon-alert-glow me-2"></i> 01 // PRIVACY SECURE NODE
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-introduction"></i>
+    </div>
+    
+    <div class="section-content terminal-box-body red-alert-body" id="body-introduction">
+        <p class="policy-body-text red-contrast-text">Welcome to SkillForge! We respect your privacy and are completely committed to insulating your personal data footprints. This master architecture file defines how we isolate, track, and encrypt your processing metrics.</p>
+        <p class="policy-body-text red-contrast-text">By establishing active sessions with SkillForge, you grant temporary clearance tokens in accordance with this strict protective doctrine. We do not channel, distribute, or leak database contents to third-party assets.</p>
+        
+        <div class="policy-highlight terminal-danger-well-box">
+            <i class="fas fa-shield-alt icon-alert-glow me-2"></i>
+            <strong class="danger-strong-text">SYSTEM_COMMITMENT:</strong> 
+            <span class="danger-body-text">Your privacy is our priority. We implement industry-standard cryptographic security measures to protect your data pools.</span>
+        </div>
+    </div>
+</div>
 
                 <!-- Information We Collect -->
-                <div class="policy-section" id="data-collection">
-                    <div class="section-header" data-section="data-collection">
-                        <h2><i class="fas fa-database"></i> Information We Collect</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <h4>Personal Information</h4>
-                        <ul>
-                            <li><strong>Account Data:</strong> Username, email address, and profile information</li>
-                            <li><strong>Usage Data:</strong> Game progress, scores, achievements, and learning patterns</li>
-                            <li><strong>Technical Data:</strong> IP address, browser type, device information, and cookies</li>
-                        </ul>
-                        
-                        <h4>How We Collect Information</h4>
-                        <div class="collection-methods">
-                            <div class="method-card">
-                                <i class="fas fa-user-plus"></i>
-                                <h5>Registration</h5>
-                                <p>When you create an account</p>
-                            </div>
-                            <div class="method-card">
-                                <i class="fas fa-gamepad"></i>
-                                <h5>Gameplay</h5>
-                                <p>During your learning sessions</p>
-                            </div>
-                            <div class="method-card">
-                                <i class="fas fa-cookie-bite"></i>
-                                <h5>Cookies</h5>
-                                <p>To enhance your experience</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="policy-section terminal-secure-card mb-3" id="data-collection">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('data-collection')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-database icon-alert-glow me-2"></i> 02 // INFORMATION WE COLLECT
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-data-collection"></i>
+    </div>
+    
+    <div class="section-content terminal-box-body red-alert-body" id="body-data-collection">
+        
+        <h4 class="terminal-body-subtitle"><i class="fas fa-angle-right me-1"></i> PERSONAL_DATA_MATRICES</h4>
+        <ul class="terminal-protocol-list">
+            <li><strong class="danger-strong-text">Account Data:</strong> <span class="list-body-text">Username, email address, and core security profile metrics.</span></li>
+            <li><strong class="danger-strong-text">Usage Data:</strong> <span class="list-body-text">Game progress, execution speeds, achievements, and telemetry learning patterns.</span></li>
+            <li><strong class="danger-strong-text">Technical Data:</strong> <span class="list-body-text">Masked IP parameters, browser environment tokens, device footprints, and essential cookies.</span></li>
+        </ul>
+        
+        <h4 class="terminal-body-subtitle mt-4"><i class="fas fa-angle-right me-1"></i> INGESTION_METHODOLOGY</h4>
+        <div class="collection-methods terminal-method-grid">
+            
+            <div class="method-card terminal-sub-well">
+                <i class="fas fa-user-plus icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">REGISTRATION</h5>
+                <p class="sub-well-text">During profile token creation</p>
+            </div>
+            
+            <div class="method-card terminal-sub-well">
+                <i class="fas fa-gamepad icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">GAMEPLAY</h5>
+                <p class="sub-well-text">During live engine sessions</p>
+            </div>
+            
+            <div class="method-card terminal-sub-well">
+                <i class="fas fa-cookie-bite icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">COOKIES</h5>
+                <p class="sub-well-text">To persist environment states</p>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
 
                 <!-- How We Use Information -->
-                <div class="policy-section" id="data-usage">
-                    <div class="section-header" data-section="data-usage">
-                        <h2><i class="fas fa-cogs"></i> How We Use Your Information</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="usage-grid">
-                            <div class="usage-item">
-                                <i class="fas fa-chart-line"></i>
-                                <h5>Improve Learning</h5>
-                                <p>Personalize your coding journey and track progress</p>
-                            </div>
-                            <div class="usage-item">
-                                <i class="fas fa-trophy"></i>
-                                <h5>Achievements</h5>
-                                <p>Track and display your accomplishments</p>
-                            </div>
-                            <div class="usage-item">
-                                <i class="fas fa-users"></i>
-                                <h5>Community</h5>
-                                <p>Enable leaderboards and social features</p>
-                            </div>
-                            <div class="usage-item">
-                                <i class="fas fa-tools"></i>
-                                <h5>Platform</h5>
-                                <p>Maintain and improve our services</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               <div class="policy-section terminal-secure-card mb-3" id="data-usage">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('data-usage')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-cogs icon-alert-glow me-2"></i> 03 // HOW WE USE YOUR INFORMATION
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-data-usage"></i>
+    </div>
+    
+    <div class="section-content terminal-box-body red-alert-body" id="body-data-usage">
+        
+        <h4 class="terminal-body-subtitle mb-3"><i class="fas fa-terminal me-1"></i> ACTIVE_PROCESSING_PIPELINES</h4>
+        <div class="usage-grid terminal-usage-grid">
+            
+            <div class="usage-item terminal-sub-well-dark">
+                <i class="fas fa-chart-line icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">OPTIMIZE_LEARNING</h5>
+                <p class="sub-well-text-bright">Personalize your unique coding journey and dynamically adapt tracking metrics.</p>
+            </div>
+            
+            <div class="usage-item terminal-sub-well-dark">
+                <i class="fas fa-trophy icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">ACHIEVEMENTS_ENGINE</h5>
+                <p class="sub-well-text-bright">Calculate, verify, and output profile cryptographic accomplishments.</p>
+            </div>
+            
+            <div class="usage-item terminal-sub-well-dark">
+                <i class="fas fa-users icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">COMMUNITY_MATRIX</h5>
+                <p class="sub-well-text-bright">Deploy live system leaderboards, rank nodes, and safe interactive social instances.</p>
+            </div>
+            
+            <div class="usage-item terminal-sub-well-dark">
+                <i class="fas fa-tools icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">CORE_INFRASTRUCTURE</h5>
+                <p class="sub-well-text-bright">Maintain backend processing structures and eliminate environmental vulnerabilities.</p>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
 
                 <!-- Data Sharing -->
-                <div class="policy-section" id="data-sharing">
-                    <div class="section-header" data-section="data-sharing">
-                        <h2><i class="fas fa-share-alt"></i> Data Sharing & Third Parties</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <p>We do not sell, trade, or rent your personal information to third parties. We may share information in the following circumstances:</p>
-                        
-                        <div class="sharing-scenarios">
-                            <div class="scenario">
-                                <i class="fas fa-check-circle text-success"></i>
-                                <span><strong>With Your Consent:</strong> When you explicitly agree to share</span>
-                            </div>
-                            <div class="scenario">
-                                <i class="fas fa-gavel text-warning"></i>
-                                <span><strong>Legal Requirements:</strong> When required by law</span>
-                            </div>
-                            <div class="scenario">
-                                <i class="fas fa-shield-alt text-info"></i>
-                                <span><strong>Service Providers:</strong> Trusted partners who help us operate</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="policy-section terminal-secure-card mb-3" id="data-sharing">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('data-sharing')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-share-alt icon-alert-glow me-2"></i> 04 // DATA SHARING &amp; THIRD PARTIES
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-data-sharing"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-data-sharing">
+        
+        <p class="policy-body-text red-contrast-text">
+            We operate under a zero-monetization database protocol: your metric tokens are never sold, traded, or rented to external corporate nodes. Information distribution is blocked unless forced by the following critical systemic conditions:
+        </p>
+        
+        <div class="sharing-scenarios terminal-scenario-stack mt-3">
+            
+            <div class="scenario terminal-list-row">
+                <div class="row-icon-housing">
+                    <i class="fas fa-check-circle icon-alert-glow"></i>
                 </div>
+                <span class="row-text-content">
+                    <strong class="danger-strong-text">EXPLICIT_USER_CONSENT:</strong> 
+                    <span class="list-body-text">When you manually authorize connection interfaces or public gateway integrations.</span>
+                </span>
+            </div>
+            
+            <div class="scenario terminal-list-row">
+                <div class="row-icon-housing">
+                    <i class="fas fa-gavel icon-alert-glow"></i>
+                </div>
+                <span class="row-text-content">
+                    <strong class="danger-strong-text">STATUTORY_LEGAL_MANDATE:</strong> 
+                    <span class="list-body-text">When verification is demanded by verified legal jurisdiction infrastructure orders.</span>
+                </span>
+            </div>
+            
+            <div class="scenario terminal-list-row">
+                <div class="row-icon-housing">
+                    <i class="fas fa-shield-alt icon-alert-glow"></i>
+                </div>
+                <span class="row-text-content">
+                    <strong class="danger-strong-text">ISOLATED_SERVICE_PROVIDERS:</strong> 
+                    <span class="list-body-text">Trusted database maintenance nodes bound strictly by non-disclosure encryption clauses.</span>
+                </span>
+            </div>
+            
+        </div>
+    </div>
+</div>
 
                 <!-- User Rights -->
-                <div class="policy-section" id="user-rights">
-                    <div class="section-header" data-section="user-rights">
-                        <h2><i class="fas fa-user-shield"></i> Your Rights & Control</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="rights-grid">
-                            <div class="right-item">
-                                <i class="fas fa-eye"></i>
-                                <h5>Access</h5>
-                                <p>View your personal data</p>
-                            </div>
-                            <div class="right-item">
-                                <i class="fas fa-edit"></i>
-                                <h5>Update</h5>
-                                <p>Modify your information</p>
-                            </div>
-                            <div class="right-item">
-                                <i class="fas fa-trash"></i>
-                                <h5>Delete</h5>
-                                <p>Remove your account</p>
-                            </div>
-                            <div class="right-item">
-                                <i class="fas fa-download"></i>
-                                <h5>Export</h5>
-                                <p>Download your data</p>
-                            </div>
-                        </div>
-                        
-                        <div class="control-panel">
-                            <h4>Quick Actions</h4>
-                            <div class="action-buttons">
-                                <button class="btn btn-outline-primary" onclick="exportData()">
-                                    <i class="fas fa-download"></i> Export My Data
-                                </button>
-                                <button class="btn btn-outline-warning" onclick="requestDeletion()">
-                                    <i class="fas fa-trash"></i> Request Deletion
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="policy-section terminal-secure-card mb-3" id="user-rights">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('user-rights')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-user-shield icon-alert-glow me-2"></i> 05 // YOUR RIGHTS &amp; CONTROL
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-user-rights"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-user-rights">
+        
+        <h4 class="terminal-body-subtitle mb-3"><i class="fas fa-terminal me-1"></i> USER_PRIVILEGE_MATRICES</h4>
+        <div class="rights-grid terminal-rights-grid">
+            
+            <div class="right-item terminal-sub-well-dark">
+                <i class="fas fa-eye icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">ACCESS_RECORDS</h5>
+                <p class="sub-well-text-bright">Request and review all raw personal footprint logs linked to your active profile node.</p>
+            </div>
+            
+            <div class="right-item terminal-sub-well-dark">
+                <i class="fas fa-edit icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">UPDATE_METRICS</h5>
+                <p class="sub-well-text-bright">Modify or rectify inaccurate data parameters registered inside our live directory pools.</p>
+            </div>
+            
+            <div class="right-item terminal-sub-well-dark">
+                <i class="fas fa-trash icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">PURGE_DATA</h5>
+                <p class="sub-well-text-bright">Completely wipe, drop, and decouple your historical account tables from the main engine.</p>
+            </div>
+            
+            <div class="right-item terminal-sub-well-dark">
+                <i class="fas fa-download icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">EXPORT_SCHEMA</h5>
+                <p class="sub-well-text-bright">Extract a structured download file containing your platform runtime configuration variables.</p>
+            </div>
+            
+        </div>
+        
+        <div class="control-panel terminal-action-well mt-4">
+            <h4 class="terminal-body-subtitle menu-header-border"><i class="fas fa-sliders-h me-2 text-alert-neon"></i> OVERRIDE_CONTROLS</h4>
+            
+            <div class="action-buttons terminal-button-cluster">
+                <button class="btn console-action-trigger trigger-blue-glow" onclick="exportData()">
+                    <i class="fas fa-download me-2"></i> EXPORT_SESSION_DATA
+                </button>
+                <button class="btn console-action-trigger trigger-red-flash" onclick="requestDeletion()">
+                    <i class="fas fa-trash me-2"></i> TERMINATE_ACCOUNT_NODE
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
                 <!-- Security Measures -->
-                <div class="policy-section" id="security">
-                    <div class="section-header" data-section="security">
-                        <h2><i class="fas fa-lock"></i> Security Measures</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="security-features">
-                            <div class="security-item">
-                                <i class="fas fa-key"></i>
-                                <h5>Encryption</h5>
-                                <p>All data is encrypted in transit and at rest</p>
-                            </div>
-                            <div class="security-item">
-                                <i class="fas fa-server"></i>
-                                <h5>Secure Servers</h5>
-                                <p>Hosted on industry-standard secure infrastructure</p>
-                            </div>
-                            <div class="security-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <h5>Access Control</h5>
-                                <p>Strict access controls and authentication</p>
-                            </div>
-                            <div class="security-item">
-                                <i class="fas fa-sync"></i>
-                                <h5>Regular Updates</h5>
-                                <p>Continuous security monitoring and updates</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <div class="policy-section terminal-secure-card mb-3" id="security">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('security')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-lock icon-alert-glow me-2"></i> 06 // SECURITY MEASURES
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-security"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-security">
+        
+        <h4 class="terminal-body-subtitle mb-3"><i class="fas fa-shield-alt me-1"></i> ACTIVE_DEFENSE_PROTOCOLS</h4>
+        <div class="security-features terminal-security-grid">
+            
+            <div class="security-item terminal-sub-well-dark">
+                <i class="fas fa-key icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">ENCRYPTION_LAYER</h5>
+                <p class="sub-well-text-bright">All data payloads are strictly encrypted during network transit and database rest states.</p>
+            </div>
+            
+            <div class="security-item terminal-sub-well-dark">
+                <i class="fas fa-server icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">SECURE_INFRASTRUCTURE</h5>
+                <p class="sub-well-text-bright">Hosted exclusively on decentralized, industry-standard hardened processing clusters.</p>
+            </div>
+            
+            <div class="security-item terminal-sub-well-dark">
+                <i class="fas fa-fingerprint icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">ACCESS_RESTRICITONS</h5>
+                <p class="sub-well-text-bright">Enforced zero-trust validation mechanisms and continuous session authentication checks.</p>
+            </div>
+            
+            <div class="security-item terminal-sub-well-dark">
+                <i class="fas fa-sync icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">PATCH_DEPLOYMENT</h5>
+                <p class="sub-well-text-bright">Continuous automated telemetry monitoring, integrity evaluation, and threat mitigation updates.</p>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
                 <!-- Interactive Privacy Quiz -->
-                <div class="policy-section" id="privacy-quiz">
-                    <div class="section-header" data-section="privacy-quiz">
-                        <h2><i class="fas fa-question-circle"></i> Privacy Knowledge Quiz</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="quiz-container">
-                            <div class="quiz-question" data-question="1">
-                                <h4>Question 1: What data do we collect when you play games?</h4>
-                                <div class="quiz-options">
-                                    <button class="quiz-option" data-correct="true">Game progress and scores</button>
-                                    <button class="quiz-option" data-correct="false">Your personal photos</button>
-                                    <button class="quiz-option" data-correct="false">Your bank account details</button>
-                                </div>
-                            </div>
-                            
-                            <div class="quiz-question" data-question="2" style="display: none;">
-                                <h4>Question 2: Do we sell your personal information?</h4>
-                                <div class="quiz-options">
-                                    <button class="quiz-option" data-correct="false">Yes, to advertisers</button>
-                                    <button class="quiz-option" data-correct="true">No, we never sell your data</button>
-                                    <button class="quiz-option" data-correct="false">Only with your permission</button>
-                                </div>
-                            </div>
-                            
-                            <div class="quiz-result" style="display: none;">
-                                <h4>Quiz Complete!</h4>
-                                <p>You got <span class="quiz-score">0</span> out of 2 questions correct.</p>
-                                <button class="btn btn-primary" onclick="restartQuiz()">Try Again</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="policy-section terminal-secure-card mb-3" id="privacy-quiz">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('privacy-quiz')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-question-circle icon-alert-glow me-2"></i> 07 // PRIVACY KNOWLEDGE QUIZ
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-privacy-quiz"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-privacy-quiz">
+        <div class="quiz-container terminal-quiz-wrapper">
+            
+            <div class="quiz-question active-question" data-question="1">
+                <h4 class="terminal-quiz-heading">QUESTION_01 // What data do we log when you run learning nodes?</h4>
+                <div class="quiz-options terminal-option-stack">
+                    <button class="quiz-option terminal-quiz-btn" data-correct="true">
+                        <span class="btn-matrix-tag">[A]</span> Game progress and session scores
+                    </button>
+                    <button class="quiz-option terminal-quiz-btn" data-correct="false">
+                        <span class="btn-matrix-tag">[B]</span> Your localized personal photo directories
+                    </button>
+                    <button class="quiz-option terminal-quiz-btn" data-correct="false">
+                        <span class="btn-matrix-tag">[C]</span> Raw unencrypted bank account details
+                    </button>
                 </div>
-
+            </div>
+            
+            <div class="quiz-question" data-question="2" style="display: none;">
+                <h4 class="terminal-quiz-heading">QUESTION_02 // Do we monetize or transmit your personal info records?</h4>
+                <div class="quiz-options terminal-option-stack">
+                    <button class="quiz-option terminal-quiz-btn" data-correct="false">
+                        <span class="btn-matrix-tag">[A]</span> Affirmative, shared with third-party advertisers
+                    </button>
+                    <button class="quiz-option terminal-quiz-btn" data-correct="true">
+                        <span class="btn-matrix-tag">[B]</span> Negative, data is insulated and never sold
+                    </button>
+                    <button class="quiz-option terminal-quiz-btn" data-correct="false">
+                        <span class="btn-matrix-tag">[C]</span> Exclusively under localized permission tokens
+                    </button>
+                </div>
+            </div>
+            
+            <div class="quiz-result terminal-quiz-final" style="display: none;">
+                <h4 class="terminal-quiz-heading text-alert-neon"><i class="fas fa-flag-checkered me-2"></i> EVALUATION_COMPLETE!</h4>
+                <p class="policy-body-text red-contrast-text">
+                    System Diagnostic Results: You successfully verified <span class="quiz-score terminal-score-highlight">0</span> out of 2 privacy protocols.
+                </p>
+                <button class="btn console-action-trigger trigger-red-flash mt-2" onclick="restartQuiz()">
+                    <i class="fas fa-sync-alt me-2"></i> RE-RUN_DIAGNOSTICS
+                </button>
+            </div>
+            
+        </div>
+    </div>
+</div>
                 <!-- Action Buttons -->
                 <div class="policy-actions">
                     <button class="btn btn-primary" onclick="printPolicy()">
@@ -609,7 +712,7 @@ include 'includes/header.php';
 
 .quiz-option.correct {
     background: rgba(76, 175, 80, 0.3);
-    border-color: #4CAF50;
+    border-color: #e04917;
 }
 
 .quiz-option.incorrect {
@@ -780,7 +883,7 @@ function downloadPDF() {
 function sharePolicy() {
     if (navigator.share) {
         navigator.share({
-            title: 'Code Gaming Privacy Policy',
+            title: 'SkillForge Privacy Policy',
             url: window.location.href
         });
     } else {

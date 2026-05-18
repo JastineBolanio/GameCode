@@ -4,7 +4,7 @@
  * File: challenges.php
  * 
  * Description:
- *   - Expert Challenge page for Code Gaming platform
+ *   - Expert Challenge page for SkillForge platform
  *   - Features:
  *       • Interactive challenge mode with 20 expert-level questions
  *       • Multiple question types: fill-in-the-blank, output prediction, case study, code writing
@@ -23,9 +23,6 @@
  *   - includes/header.php, includes/footer.php
  *   - External: Bootstrap, Font Awesome, Google Fonts
  * 
- * Author: [Santiago]
- * Last Updated: [July 22, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 
@@ -53,7 +50,7 @@ $xss = XSSProtection::getInstance();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert Challenge - Code Gaming</title>
+    <title>Expert Challenge - SkillForge</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -87,31 +84,42 @@ $xss = XSSProtection::getInstance();
             </div>
         </div>
         <!-- Main Content Area -->
+         <link rel="stylesheet" href="assets/css/WelcomeScreenCV2.css">
         <div class="window-content">
-            <!-- Welcome Screen -->
-            <div id="challenge-welcome" class="challenge-screen active" role="main" aria-labelledby="challenge-title">
-                <div class="welcome-content">
-                    <div class="welcome-icon" aria-hidden="true">🚀</div>
-                    <h1 id="challenge-title" class="welcome-title">EXPERT CHALLENGE</h1>
-                    <p class="welcome-subtitle">The Ultimate Programming Test</p>
-                    <div class="welcome-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Questions:</span>
-                            <span class="stat-value">20</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Time Limit:</span>
-                            <span class="stat-value">2:30</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Points per Question:</span>
-                            <span class="stat-value">30</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Difficulty:</span>
-                            <span class="stat-value">EXPERT ONLY</span>
-                        </div>
-                    </div>
+  <!-- Welcome Screen -->
+  <div id="challenge-welcome" class="challenge-screen active" role="main" aria-labelledby="challenge-title">
+    <div class="welcome-content">
+      
+      <!-- Gaming Threat Level Icon (Font Awesome) -->
+      <div class="welcome-icon" aria-hidden="true">
+        <i class="fas fa-skull-crossbones challenge-boss-icon"></i>
+      </div>
+      
+      <h1 id="challenge-title" class="welcome-title">NIGHTMARE MODE</h1>
+      <p class="welcome-subtitle">The Ultimate Boss Battle for Code Warriors</p>
+      
+      <!-- RPG / Matchmaking Stat Grid -->
+      <div class="welcome-stats">
+        <div class="stat-item">
+          <span class="stat-label"><i class="fas fa-crosshairs"></i> Trials:</span>
+          <span class="stat-value">20 Qs</span>
+        </div>
+        
+        <div class="stat-item">
+          <span class="stat-label"><i class="fas fa-hourglass-start"></i> Doom Timer:</span>
+          <span class="stat-value">2:30</span>
+        </div>
+        
+        <div class="stat-item">
+          <span class="stat-label"><i class="fas fa-gem"></i> Bounty:</span>
+          <span class="stat-value">+30 XP</span>
+        </div>
+        
+        <div class="stat-item danger-stat">
+          <span class="stat-label"><i class="fas fa-radiation"></i> Threat Level:</span>
+          <span class="stat-value">EXPERT ONLY</span>
+        </div>
+      </div>
                     <?php if (!$isLoggedIn): ?>
                     <div class="guest-input-section">
                         <label for="guest-nickname" class="input-label">Enter Your Nickname:</label>
@@ -120,16 +128,21 @@ $xss = XSSProtection::getInstance();
                     </div>
                     <?php endif; ?>
                     <div class="welcome-buttons">
-                        <button class="btn-retro btn-start" aria-describedby="start-description">
-                            <span class="btn-text">START CHALLENGE</span>
-                        </button>
-                        <button class="btn-retro btn-instructions" aria-describedby="instructions-description">
-                            <span class="btn-text">📖 INSTRUCTIONS</span>
-                        </button>
-                        <button class="btn-retro btn-leaderboard" aria-describedby="leaderboard-description">
-                            <span class="btn-text">🏆 LEADERBOARD</span>
-                        </button>
-                    </div>
+  <!-- Primary Action: Start Button -->
+  <button class="btn-retro btn-start" aria-describedby="start-description">
+    <span class="btn-text"><i class="fas fa-play"></i> ENGAGE MOTHERBOARD</span>
+  </button>
+  
+  <!-- Secondary Action: Instructions -->
+  <button class="btn-retro btn-instructions" aria-describedby="instructions-description">
+    <span class="btn-text"><i class="fas fa-scroll"></i> QUEST LOG</span>
+  </button>
+  
+  <!-- Secondary Action: Leaderboard -->
+  <button class="btn-retro btn-leaderboard" aria-describedby="leaderboard-description">
+    <span class="btn-text"><i class="fas fa-trophy"></i> HALL OF FAME</span>
+  </button>
+</div>
                     <div class="visually-hidden">
                         <div id="start-description">Begin the expert challenge with 20 questions and 2:30 time limit</div>
                         <div id="instructions-description">View detailed instructions about challenge rules and question types</div>

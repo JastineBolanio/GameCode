@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --arcade-bg-card: #140d24;
+  --terminal-darkwell: #0a0512;
+  --panel-border-dark: #2c1a42;
+  --text-bright: #ffffff;
+  --text-slate: #756a85;
+  
+  /* System Accents */
+  --neon-cyan: #00f0ff;
+  --neon-purple: #bd00ff;
+}
+
+/* Base Hero Background Setup */
+.gaming-hero-wrapper {
+  background-color: transparent;
+  position: relative;
+}
+
+/* ==========================================================================
+   ANTI-GHOST TEXT PARAMETERS: FORCING VISIBILITY FOR HERO ELEMENT STRINGS
+   ========================================================================== */
+
+/* Main Brand Header Title */
+.forge-glitch-title {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 3.5rem !important;
+  letter-spacing: 3px;
+  color: var(--text-bright) !important;
+  -webkit-text-fill-color: var(--text-bright) !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.1), 3px 3px 0px #000000;
+  margin-bottom: 15px;
+}
+
+/* Hero Descriptive Summary text string wrapper */
+.forge-meta-body {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  color: #e2dbe8 !important; /* High contrast bright gray-tint override */
+  -webkit-text-fill-color: #e2dbe8 !important;
+  max-width: 540px;
+  margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   STATS FLEX ROW NODES ENGINE
+   ========================================================================== */
+.forge-stats-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.forge-stat-node {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--terminal-darkwell) !important;
+  border: 1px solid var(--panel-border-dark) !important;
+  padding: 12px 20px !important;
+  min-width: 130px;
+  box-shadow: 3px 3px 0px #000000;
+}
+
+/* Icon Tints */
+.stat-node-icon {
+  color: var(--neon-cyan) !important;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 0 3px var(--neon-cyan));
+}
+
+/* Metric Numeric Counts string */
+.forge-stat-count {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1.4rem !important;
+  color: var(--text-bright) !important;
+  -webkit-text-fill-color: var(--text-bright) !important;
+  letter-spacing: 0.5px;
+}
+
+/* Metric Informative labels string descriptions */
+.forge-stat-desc {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+  color: var(--text-slate) !important;
+  -webkit-text-fill-color: var(--text-slate) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   RIGHT GRAPHIC WINDOW FX
+   ========================================================================== */
+.tactical-hero-frame {
+  position: relative;
+  border: 2px solid var(--panel-border-dark);
+  background-color: var(--arcade-bg-card);
+  padding: 15px;
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.custom-hero-img {
+  filter: drop-shadow(0 0 10px rgba(189, 0, 255, 0.15));
+}
+
+.hero-scanline-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(rgba(189, 0, 255, 0.03) 50%, rgba(0, 0, 0, 0.1) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+}

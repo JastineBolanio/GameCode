@@ -11,8 +11,6 @@
  *   - Optional parameters: limit, offset, filter
  * Included Files/Dependencies:
  *   - includes/Database.php
- * Author: CodeGaming Team
- * Last Updated: September 29, 2025
  */
 header('Content-Type: application/json');
 require_once __DIR__ . '/../includes/Database.php';

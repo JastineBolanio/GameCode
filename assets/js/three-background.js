@@ -16,9 +16,6 @@
  *   - Requires Three.js and a loaded font (window.codeGameFont).
  *   - Designed for Code Game's landing/anchor experience.
  * 
- * Author: [Santiago]
- * Last Updated: [June 17, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 

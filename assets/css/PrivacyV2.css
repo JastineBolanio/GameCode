@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --arcade-bg-card: #140d24;
+  --terminal-darkwell: #0a0512;
+  --panel-border-dark: #2c1a42;
+  --text-bright: #ffffff;
+  --text-slate: #756a85;
+  
+  /* Cyber System Colors */
+  --neon-cyan: #00f0ff;
+  --neon-purple: #bd00ff;
+}
+
+/* Base Wrapper Matrix */
+.gaming-privacy-wrapper {
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.privacy-content-alignment {
+  z-index: 10;
+  position: relative;
+}
+
+/* ==========================================================================
+   ANTI-GHOST TEXT PARAMETERS: FORCING VISIBILITY FOR PRIVACY SUBSTRINGS
+   ========================================================================== */
+
+/* 1. Main Core Page Title Display Styling */
+.crypto-header-title {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 2.5rem !important;
+  letter-spacing: 3px;
+  color: var(--text-bright) !important;
+  -webkit-text-fill-color: var(--text-bright) !important;
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.2), 3px 3px 0px #000000 !important;
+  margin-bottom: 20px !important;
+}
+
+/* Header Emojis Core Shadowing */
+.crypto-icon-glow {
+  filter: drop-shadow(0 0 8px var(--neon-cyan));
+  margin: 0 10px;
+}
+
+/* 2. Privacy Policy Detailed Summary Subtitle (Breaks out of the background) */
+.crypto-meta-body {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 1.1rem !important;
+  line-height: 1.5 !important;
+  color: #e2dbe8 !important; /* Forces solid bright silver contrast override */
+  -webkit-text-fill-color: #e2dbe8 !important;
+  max-width: 680px;
+  margin: 0 auto 30px auto !important;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+/* ==========================================================================
+   TACTICAL NAVIGATION CONTROL MODULES
+   ========================================================================== */
+.console-back-trigger.btn {
+  background-color: var(--terminal-darkwell) !important;
+  background: var(--terminal-darkwell) !important;
+  border: 1px solid var(--panel-border-dark) !important;
+  color: var(--text-slate) !important;
+  -webkit-text-fill-color: var(--text-slate) !important;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 0.75rem !important;
+  border-radius: 0px !important;
+  padding: 8px 16px !important;
+  letter-spacing: 1px;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 3px 3px 0px #000000;
+}
+
+.console-back-trigger.btn:hover {
+  border-color: var(--neon-cyan) !important;
+  color: var(--neon-cyan) !important;
+  -webkit-text-fill-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3), 3px 3px 0px #000000;
+}
+
+/* Rellax Floating Indicator Opacities */
+.telemetry-floating-nodes .privacy-element {
+  opacity: 0.25;
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.5));
+  transition: opacity 0.3s ease;
+}
+
+.telemetry-floating-nodes .privacy-element:hover {
+  opacity: 0.6;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --arcade-bg-card: #140d24;
+  --terminal-darkwell: #0a0512;
+  --panel-border-dark: #2c1a42;
+  --text-bright: #ffffff;
+  --text-slate: #756a85;
+  
+  /* System Neon Shades */
+  --neon-cyan: #00f0ff;
+  --neon-matrix: #7e310a;
+}
+
+/* ==========================================================================
+   PROGRESS INDICATOR MECHANICS
+   ========================================================================== */
+.terminal-progress-wrapper {
+  background-color: var(--arcade-bg-card);
+  border: 1px solid var(--panel-border-dark);
+  padding: 12px 15px;
+  box-shadow: 3px 3px 0px #000000;
+}
+
+.terminal-bar-bg {
+  background-color: var(--terminal-darkwell) !important;
+  height: 6px;
+  border-radius: 0px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  border: 1px solid rgba(117, 106, 133, 0.2);
+}
+
+.terminal-fill-cyan {
+  background-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 8px var(--neon-cyan);
+  height: 100%;
+  width: 0%; /* Alter dynamically with JS */
+  transition: width 0.2s ease;
+}
+
+/* Progress indicator text anchor tracking string */
+.matrix-progress-label {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+  color: var(--text-slate) !important;
+  -webkit-text-fill-color: var(--text-slate) !important;
+  letter-spacing: 1px;
+}
+
+.terminal-highlight-cyan {
+  color: var(--neon-cyan) !important;
+  -webkit-text-fill-color: var(--neon-cyan) !important;
+}
+
+/* ==========================================================================
+   MAIN ACCORDION BODY STRUCTURES
+   ========================================================================== */
+.terminal-policy-box {
+  background-color: var(--arcade-bg-card) !important;
+  border: 2px solid var(--panel-border-dark) !important;
+  box-shadow: 4px 4px 0px #000000;
+  margin-bottom: 15px;
+}
+
+.terminal-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px !important;
+  border-bottom: 1px solid var(--panel-border-dark);
+  cursor: pointer;
+}
+
+.terminal-box-title {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1rem !important;
+  letter-spacing: 1px;
+  color: var(--text-bright) !important;
+  -webkit-text-fill-color: var(--text-bright) !important;
+  margin-bottom: 0px;
+}
+
+.terminal-box-body {
+  background-color: var(--terminal-darkwell) !important;
+  padding: 20px 15px !important;
+}
+
+/* Tint helpers */
+.icon-cyan { color: var(--neon-cyan) !important; filter: drop-shadow(0 0 3px var(--neon-cyan)); }
+.icon-matrix { color: var(--neon-matrix) !important; filter: drop-shadow(0 0 3px var(--neon-matrix)); }
+.text-slate { color: var(--text-slate) !important; }
+
+/* ==========================================================================
+   ANTI-GHOST TEXT PARAMETERS: SECURING POLICY PARAGRAPHS
+   ========================================================================== */
+
+/* Core descriptive reading paragraphs */
+.terminal-box-body .policy-body-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  color: #e2dbe8 !important; /* Forced bright contrast terminal text tint */
+  -webkit-text-fill-color: #e2dbe8 !important;
+  margin-bottom: 15px;
+}
+.terminal-box-body .policy-body-text:last-of-type {
+  margin-bottom: 20px;
+}
+
+/* Special High-visibility Summary Banner Well Box */
+.terminal-alert-well {
+  background-color: rgba(57, 255, 20, 0.03) !important;
+  border: 1px solid rgba(57, 255, 20, 0.2) !important;
+  padding: 12px 15px !important;
+  border-radius: 0px !important;
+}
+
+/* Strong Header inside Callouts */
+.terminal-alert-well .alert-strong-text {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.8rem !important;
+  color: var(--neon-matrix) !important;
+  -webkit-text-fill-color: var(--neon-matrix) !important;
+  letter-spacing: 0.5px;
+}
+
+/* Normal inner callout descriptive strings */
+.terminal-alert-well .alert-body-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --terminal-darkwell: #0a0512;
+  --panel-border-dark: #2c1a42;
+  --text-bright: #ffffff;
+  
+  /* Cyber Crimson Color Space */
+  --neon-danger: #ff3131;
+  --dark-crimson: #4a0d17;
+  --alert-bg-dim: #1e090c;
+  --soft-pink-contrast: #ffb3b3;
+}
+
+/* Master Container Framework */
+.terminal-policy-box.secure-red-alert {
+  background-color: var(--alert-bg-dim) !important;
+  background: var(--alert-bg-dim) !important;
+  border: 2px solid var(--neon-danger) !important;
+  box-shadow: 0 0 15px rgba(255, 49, 49, 0.15), 4px 4px 0px #000000 !important;
+  margin-bottom: 20px;
+}
+
+/* Header Grid Formatting */
+.red-alert-header {
+  background-color: rgba(74, 13, 23, 0.4) !important;
+  border-bottom: 1px solid var(--neon-danger) !important;
+  padding: 15px !important;
+}
+
+.alert-title-force {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 2px;
+  color: var(--text-bright) !important;
+  -webkit-text-fill-color: var(--text-bright) !important;
+  text-shadow: 0 0 8px rgba(255, 49, 49, 0.6) !important;
+  margin-bottom: 0px;
+}
+
+.text-alert-crimson {
+  color: var(--neon-danger) !important;
+}
+
+/* Pulse Animation Context Hook */
+.icon-danger-pulse {
+  color: var(--neon-danger) !important;
+  animation: dangerPulseGlow 2s infinite alternate;
+}
+
+@keyframes dangerPulseGlow {
+  0% { filter: drop-shadow(0 0 2px var(--neon-danger)); opacity: 0.8; }
+  100% { filter: drop-shadow(0 0 8px var(--neon-danger)); opacity: 1; }
+}
+
+/* Inner Layout Body Well */
+.red-alert-body {
+  background-color: #0d0305 !important; /* Extremely dark crimson hue */
+  background: #0d0305 !important;
+}
+
+/* ==========================================================================
+   ANTI-GHOST TEXT PARAMETERS: CRYPTO CRIMSON SPACE
+   ========================================================================== */
+
+/* Main informative reading blocks */
+.red-alert-body .red-contrast-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  color: var(--soft-pink-contrast) !important; /* Soft high-contrast tone cuts through dark background */
+  -webkit-text-fill-color: var(--soft-pink-contrast) !important;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+/* Core Highlight Banner Callout box */
+.terminal-danger-well-box {
+  background-color: rgba(74, 13, 23, 0.3) !important;
+  border: 1px dashed var(--neon-danger) !important;
+  padding: 14px 16px !important;
+  border-radius: 0px !important;
+  margin-top: 20px;
+}
+
+/* Bold Title string inside Callout */
+.terminal-danger-well-box .danger-strong-text {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.85rem !important;
+  color: var(--neon-danger) !important;
+  -webkit-text-fill-color: var(--neon-danger) !important;
+  letter-spacing: 1px;
+}
+
+/* Explanatory text description within callout */
+.terminal-danger-well-box .danger-body-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: var(--text-bright) !important;
+  -webkit-text-fill-color: var(--text-bright) !important;
+}
+
+/* ==========================================================================
+   ACCORDION ANIMATION RULES FOR RED ALERT OVERRIDES
+   ========================================================================== */
+.secure-red-alert .terminal-box-body {
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.25s cubic-bezier(0, 1, 0, 1), opacity 0.2s ease;
+}
+
+.secure-red-alert.fully-expanded .terminal-box-body {
+  max-height: 2000px;
+  opacity: 1;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  visibility: visible !important;
+}
+
+.secure-red-alert .toggle-icon {
+  transition: transform 0.2s ease;
+}
+
+.secure-red-alert.fully-expanded .toggle-icon {
+  transform: rotate(180deg);
+}
+/* Ensure these typography and layout anchors are available */
+.red-alert-body {
+  background-color: #0d0305 !important;
+  padding: 20px 20px !important;
+}
+
+.red-alert-body .red-contrast-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  color: #ffb3b3 !important; /* Soft contrast coral pink tone targets readability */
+  -webkit-text-fill-color: #ffb3b3 !important;
+  margin-bottom: 15px;
+}
+
+.terminal-danger-well-box {
+  background-color: rgba(74, 13, 23, 0.3) !important;
+  border: 1px dashed #ff3131 !important;
+  padding: 14px 16px !important;
+  margin-top: 20px;
+}
+
+.terminal-danger-well-box .danger-strong-text {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.85rem !important;
+  color: #ff3131 !important;
+  letter-spacing: 1px;
+}
+
+.terminal-danger-well-box .danger-body-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+/* Subheadings inside the content wells */
+.terminal-body-subtitle {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 1px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  margin-bottom: 12px;
+}
+
+/* Lists styling */
+.terminal-protocol-list {
+  list-style-type: square;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.terminal-protocol-list li {
+  margin-bottom: 8px;
+  color: #ff3131; /* bullet point indicator tint */
+}
+
+.terminal-protocol-list .list-body-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: #ffb3b3 !important;
+  -webkit-text-fill-color: #ffb3b3 !important;
+}
+
+/* Inner Method Grid Layout Rules */
+.terminal-method-grid {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.terminal-sub-well {
+  flex: 1;
+  min-width: 160px;
+  background-color: #140d1a !important;
+  border: 1px solid rgba(255, 49, 49, 0.2) !important;
+  padding: 15px 10px !important;
+  text-align: center;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out;
+}
+
+.terminal-sub-well:hover {
+  border-color: #ff3131 !important;
+}
+
+.sub-well-title {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.75rem !important;
+  color: #ffffff !important;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.sub-well-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.8rem !important;
+  color: #756a85 !important;
+  -webkit-text-fill-color: #756a85 !important;
+  margin-bottom: 0px;
+}
+/* Custom 4-Column Utility Grid Setup */
+.terminal-usage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Insulated Sub-Well Container for Usage Items */
+.terminal-sub-well-dark {
+  background-color: #140d1a !important;
+  border: 1px solid rgba(255, 49, 49, 0.2) !important;
+  padding: 20px 15px !important;
+  text-align: center;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Accentuation */
+.terminal-sub-well-dark:hover {
+  border-color: #ff3131 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 49, 49, 0.15);
+}
+
+/* Explicit Anti-Ghost Text Forcing for Inner Grid Paragraphs */
+.terminal-sub-well-dark .sub-well-text-bright {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.85rem !important;
+  line-height: 1.4 !important;
+  color: #ffb3b3 !important; /* Soft contrast pinkish coral overrides browser default anchors/paragraphs */
+  -webkit-text-fill-color: #ffb3b3 !important;
+  margin-bottom: 0px !important;
+  margin-top: 6px;
+}
+/* Stack Layout for Row Scenarios */
+.terminal-scenario-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual Inline Scenario Nodes */
+.terminal-list-row {
+  display: flex;
+  align-items: flex-start;
+  background-color: #140d1a !important;
+  border-left: 3px solid #ff3131 !important; /* Crimson accent tag on the left */
+  padding: 12px 16px !important;
+  border-radius: 0px 4px 4px 0px;
+}
+
+/* Fixed alignment spacing for row icons */
+.row-icon-housing {
+  min-width: 25px;
+  margin-top: 2px;
+}
+
+/* Structural span containment spacing */
+.row-text-content {
+  display: inline-block;
+  line-height: 1.4;
+}
+/* Multi-column grid interface for user permissions */
+.terminal-rights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+/* Master Box containment for bottom control components */
+.terminal-action-well {
+  background-color: #140d1a !important;
+  border: 1px solid rgba(255, 49, 49, 0.15);
+  padding: 20px !important;
+  border-radius: 4px;
+}
+
+.menu-header-border {
+  border-bottom: 1px dashed rgba(255, 49, 49, 0.2);
+  padding-bottom: 10px;
+  margin-bottom: 20px !important;
+}
+
+/* Layout arrangement of buttons */
+.terminal-button-cluster {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Base Terminal Button Architecture styling overrides */
+.console-action-trigger.btn {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 1px;
+  padding: 12px 20px !important;
+  border-radius: 4px !important;
+  background-color: #0d0305 !important;
+  background: #0d0305 !important;
+  box-shadow: 3px 3px 0px #000000;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+/* Variant Action 1: Blue Data Export */
+.console-action-trigger.trigger-blue-glow {
+  border: 1px solid rgba(0, 240, 255, 0.4) !important;
+  color: #00f0ff !important;
+}
+.console-action-trigger.trigger-blue-glow:hover {
+  border-color: #00f0ff !important;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.3), 3px 3px 0px #000000;
+}
+
+/* Variant Action 2: Heavy Red Node Terminate */
+.console-action-trigger.trigger-red-flash {
+  border: 1px solid rgba(255, 49, 49, 0.4) !important;
+  color: #ff3131 !important;
+}
+.console-action-trigger.trigger-red-flash:hover {
+  border-color: #ff3131 !important;
+  box-shadow: 0 0 12px rgba(255, 49, 49, 0.4), 3px 3px 0px #000000;
+  background-color: #1e090c !important;
+}
+/* Custom 4-Column Grid Layout for Security Module Components */
+.terminal-security-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Inherits style behaviors smoothly from your core panel engine */
+.terminal-security-grid .terminal-sub-well-dark {
+  background-color: #140d1a !important;
+  border: 1px solid rgba(255, 49, 49, 0.2) !important;
+  padding: 20px 15px !important;
+  text-align: center;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Micro-interaction Hover Shimmer Hook */
+.terminal-security-grid .terminal-sub-well-dark:hover {
+  border-color: #ff3131 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 49, 49, 0.15);
+}
+/* Container padding alignment within the quiz box */
+.terminal-quiz-wrapper {
+  padding: 5px;
+}
+
+/* Question Header Layout Formatting */
+.terminal-quiz-heading {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 1px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  margin-bottom: 20px !important;
+  line-height: 1.4;
+}
+
+/* Stacking structural container for option layout arrays */
+.terminal-option-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Interactive Quiz Choice Buttons */
+.quiz-option.terminal-quiz-btn {
+  width: 100%;
+  text-align: left;
+  background-color: #140d1a !important;
+  background: #140d1a !important;
+  border: 1px solid rgba(255, 49, 49, 0.2) !important;
+  padding: 14px 18px !important;
+  border-radius: 4px !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.95rem !important;
+  color: #ffb3b3 !important;
+  -webkit-text-fill-color: #ffb3b3 !important;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  outline: none !important;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Terminal Bracket Prefix Tag */
+.terminal-quiz-btn .btn-matrix-tag {
+  color: #ff3131 !important;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+/* Interactive Option Hover Parameter Bounds */
+.quiz-option.terminal-quiz-btn:hover {
+  border-color: #ff3131 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-color: #1d1124 !important;
+  background: #1d1124 !important;
+  box-shadow: 0 0 10px rgba(255, 49, 49, 0.2);
+  transform: translateX(4px);
+}
+
+/* Dynamic Class Hooks for JavaScript Engine Integrations */
+/* (Add these to your logic if you have colored states on answer feedback) */
+.quiz-option.terminal-quiz-btn.selected-correct {
+  border-color: #00ff66 !important;
+  color: #00ff66 !important;
+  background-color: rgba(0, 255, 102, 0.05) !important;
+}
+
+.quiz-option.terminal-quiz-btn.selected-incorrect {
+  border-color: #ff3131 !important;
+  color: #ff3131 !important;
+  background-color: rgba(255, 49, 49, 0.05) !important;
+}
+
+/* Score highlight variant styling metrics */
+.terminal-score-highlight {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900;
+  color: #ff3131;
+  padding: 0 4px;
+  font-size: 1.1rem;
+}

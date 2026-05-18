@@ -2,8 +2,6 @@
 /**
  * File: api/admin_update_avatar.php
  * Purpose: Update admin profile picture
- * Author: CodeGaming Team
- * Last Updated: October 21, 2025
  */
 
 session_start();

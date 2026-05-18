@@ -15,8 +15,6 @@
  *   - includes/Auth.php
  *   - includes/Database.php
  * 
- * Author: CodeGaming Team
- * Last Updated: July 26, 2025
  */
 require_once '../includes/Database.php';
 require_once '../includes/Auth.php';

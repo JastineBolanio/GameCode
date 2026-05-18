@@ -17,9 +17,6 @@
  *   - Accessible only to logged-in admins
  *   - Used to bulk import quiz questions and choices
  * 
- * Author: [Santiago]
- * Last Updated: [July 22, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 require_once 'includes/Database.php';

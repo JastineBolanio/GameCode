@@ -4,7 +4,7 @@
  * File: logout.php
  * 
  * Description:
- *   - Handles user logout for Code Gaming platform
+ *   - Handles user logout for SkillForge platform
  *   - Features:
  *       • Logs logout action to login_logs table (user, role, IP, session)
  *       • Uses Auth class for secure session termination
@@ -13,11 +13,7 @@
  * Usage:
  *   - Called when a user chooses to log out
  *   - Ensures session is properly cleared and activity is logged
- * 
- * Author: [Santiago]
- * Last Updated: [July 22, 2025]
- * -- Code Gaming Team --
- * ==========================================================
+ * =================================
  */
 
 require_once 'includes/Auth.php';

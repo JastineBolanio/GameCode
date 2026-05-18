@@ -225,7 +225,7 @@
         function computeCompleteness() {
             const checklist = {
                 setup: true, // logged in
-                photo: !!(avatarImg && avatarImg.src && !avatarImg.src.includes('PTC.png')),
+                photo: !!(avatarImg && avatarImg.src && !avatarImg.src.includes('MainLogos.png')),
                 personal: !!(usernameInput && usernameInput.value && emailInput && emailInput.value),
                 location: !!document.getElementById('location') && document.getElementById('location').value,
                 bio: !!document.getElementById('bio') && document.getElementById('bio').value,

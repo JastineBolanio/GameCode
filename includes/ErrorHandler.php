@@ -17,8 +17,6 @@
  *  - Uses PHP's built-in error handling functions.
  *  - Can be included in any script to handle errors consistently.
  * 
- * Author: CodeGaming Team
- * Last Updated: July 26, 2025
  */
 class ErrorHandler {
     private static $instance = null;

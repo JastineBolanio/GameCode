@@ -1,12 +1,12 @@
 attributes:
-  value: "⚠️ Uh-oh, a bug in Code Gaming? Let’s fix it together! ⚙️"
+  value: "⚠️ Uh-oh, a bug in coding_game? Let’s fix it together! ⚙️"
 name: Bug Report
 description: Report a bug in the system
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
-      value: "Thanks for reporting a bug in Code Gaming!"
+      value: "Thanks for reporting a bug in coding_game!"
   - type: textarea
     id: description
     attributes:

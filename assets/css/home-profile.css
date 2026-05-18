@@ -54,9 +54,9 @@
 /* Fallback for when the image fails to load */
 #userAvatar.user-avatar.rounded-circle:not([src]), 
 #userAvatar.user-avatar.rounded-circle[src=""],
-#userAvatar.user-avatar.rounded-circle[src*="default-avatar.gif"] {
+#userAvatar.user-avatar.rounded-circle[src*="Avatar.gif"] {
     background-color: #f0f2f5 !important;
-    background-image: url('/assets/images/default-avatar.gif') !important;
+    background-image: url('/assets/images/Avatar.gif') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;

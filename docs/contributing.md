@@ -1,4 +1,4 @@
-# Contributing to Code Gaming
+# Contributing to coding_game
 
 We welcome contributions from our team and the community! Follow these steps:
 

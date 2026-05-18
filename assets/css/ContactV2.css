@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap');
+
+/* --- Terminal Main Container --- */
+.comms-card-ui {
+    background: linear-gradient(145deg, #0b0c10 0%, #12141c 100%) !important;
+    border: 1px solid #1a2233 !important;
+    border-top: 3px solid #ff0055 !important; /* Hot neon warning bar top */
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255, 0, 85, 0.03) !important;
+    font-family: 'Rajdhani', sans-serif;
+    overflow: hidden;
+}
+
+/* --- HUD Aesthetic Brackets --- */
+.hud-bracket {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #00f0ff;
+    opacity: 0.4;
+    pointer-events: none;
+}
+.top-left { top: 12px; left: 12px; border-right: 0; border-bottom: 0; }
+.top-right { top: 12px; right: 12px; border-left: 0; border-bottom: 0; }
+.bottom-left { bottom: 12px; left: 12px; border-right: 0; border-top: 0; }
+.bottom-right { bottom: 12px; right: 12px; border-left: 0; border-top: 0; }
+
+/* --- Terminal Title Block --- */
+.comms-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+    padding-bottom: 12px;
+}
+.comms-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+.comms-header .header-glow-icon {
+    color: #ff0055;
+    filter: drop-shadow(0 0 5px #ff0055);
+}
+.comms-header .sub-title {
+    font-size: 0.75rem;
+    color: #00f0ff;
+    margin-left: 8px;
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+}
+.terminal-status {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    color: #56637a;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #00f0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #00f0ff;
+}
+
+/* --- Immersive Inputs --- */
+.gaming-input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.input-tag {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    color: #00f0ff;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    text-shadow: 0 0 3px rgba(0, 240, 255, 0.3);
+}
+.gaming-control {
+    background: rgba(26, 34, 51, 0.4) !important;
+    border: 1px solid #1a2233 !important;
+    border-radius: 0px !important; /* Sharp gaming edges */
+    color: #fff !important;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 12px 15px !important;
+    transition: all 0.25s ease-in-out;
+}
+.gaming-control::placeholder {
+    color: #404d66 !important;
+}
+.gaming-control:focus {
+    background: rgba(26, 34, 51, 0.7) !important;
+    border-color: #00f0ff !important;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.15) !important;
+    outline: none;
+}
+
+/* --- Checkbox Styling --- */
+.custom-gaming-check {
+    padding-left: 2em;
+}
+.gaming-checkbox {
+    background-color: #12141c !important;
+    border: 1px solid #ff0055 !important;
+    border-radius: 0px !important;
+    cursor: pointer;
+}
+.gaming-checkbox:checked {
+    background-color: #ff0055 !important;
+    box-shadow: 0 0 8px #ff0055 !important;
+}
+.data-protocol-label {
+    color: #788a9e !important;
+    font-size: 0.9rem;
+}
+.protocol-link {
+    color: #00f0ff;
+    text-decoration: none;
+    transition: text-shadow 0.2s;
+}
+.protocol-link:hover {
+    text-shadow: 0 0 5px #00f0ff;
+    color: #00f0ff;
+}
+
+/* --- Animated Broadcast Tactical Button --- */
+.btn-gaming-broadcast {
+    position: relative;
+    background: #ff0055;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    padding: 14px 35px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+    transition: all 0.3s ease;
+}
+.btn-gaming-broadcast:hover {
+    background: #00f0ff;
+    color: #000;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
+}
+.btn-gaming-broadcast:active {
+    transform: scale(0.97);
+}
+.btn-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- UI Animation Systems --- */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+.pulse-anim {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    80% { opacity: 0.6; }
+}
+.flash-anim {
+    animation: flash 1s infinite steps(2);
+}
+/* --- Info Terminal Specific Container --- */
+.info-card-ui {
+    background: linear-gradient(145deg, #0b0c10 0%, #12141c 100%) !important;
+    border: 1px solid #1a2233 !important;
+    border-top: 3px solid #00f0ff !important; /* Cyan warning bar top to offset the form's pink */
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(0, 240, 255, 0.03) !important;
+}
+
+.terminal-title {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+/* --- Futuristic Icon Boxes --- */
+.icon-frame {
+    background: rgba(0, 240, 255, 0.05) !important;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px !important; /* Pure angular */
+}
+
+.icon-glow {
+    color: #00f0ff;
+    font-size: 1.1rem;
+    filter: drop-shadow(0 0 4px #00f0ff);
+}
+
+/* --- Typography Overrides --- */
+.intel-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    color: #ff0055;
+    text-shadow: 0 0 4px rgba(255, 0, 85, 0.3);
+}
+
+.intel-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.05rem;
+    color: #a4b3c6 !important;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* --- Squad/Email Matrix Grid --- */
+.proponent-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.proponent-link {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 6px 12px;
+    color: #cbd5e1 !important;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.proponent-link:hover {
+    background: rgba(0, 240, 255, 0.05);
+    border-color: rgba(0, 240, 255, 0.2);
+    color: #fff !important;
+    padding-left: 16px; /* Interactive nudge on hover */
+}
+
+.unit-id {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    color: #00f0ff;
+    margin-right: 6px;
+}
+
+/* --- Interactive Status Pips --- */
+.squad-pip {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+.status-online {
+    background-color: #39ff14; /* Neon green active indicator */
+    box-shadow: 0 0 6px #39ff14;
+}
+
+/* --- Telephone Frequency styling --- */
+.phone-link {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    color: #fff !important;
+    text-decoration: none !important;
+    letter-spacing: 1px;
+    transition: text-shadow 0.2s;
+}
+
+.phone-link:hover {
+    color: #00f0ff !important;
+    text-shadow: 0 0 8px #00f0ff;
+}
+
+/* --- Micro animations --- */
+@keyframes frequencyGlow {
+    0%, 100% { text-shadow: 0 0 2px rgba(255,255,255,0.1); }
+    50% { text-shadow: 0 0 6px rgba(0, 240, 255, 0.4); }
+}
+.freq-anim {
+    animation: frequencyGlow 3s infinite ease-in-out;
+}

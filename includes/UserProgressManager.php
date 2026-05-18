@@ -12,8 +12,6 @@
  *   - Provides consistent data formatting across the application
  * Included Files/Dependencies:
  *   - includes/Database.php
- * Author: CodeGaming Team
- * Last Updated: July 26, 2025
  */
 
 class UserProgressManager {

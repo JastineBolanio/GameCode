@@ -1,7 +1,7 @@
 
 ## Project Overview
 
-**Code Gaming** is an interactive web-based educational game system designed to teach coding skills and programming languages in an engaging, gamified manner. Developed as a Capstone Project for BSIT/CSS Students and IT Experts at Pateros Technological College, this platform transforms traditional coding learning into fun challenges, tutorials, topics to read, and mini-games. It targets beginners, intermediate, and expert learners, focusing on languages such as HTML, CSS, Bootstrap, JavaScript, Python, Java, and C++. The platform incorporates points, progress tracking, motivational quotes from famous coding experts, and leaderboards to boost motivation.
+**coding_game** is an interactive web-based educational game system designed to teach coding skills and programming languages in an engaging, gamified manner. Developed as a Capstone Project for BSIT/CSS Students and IT Experts at Institute of Creative Computer Technology, this platform transforms traditional coding learning into fun challenges, tutorials, topics to read, and mini-games. It targets beginners, intermediate, and expert learners, focusing on languages such as HTML, CSS, Bootstrap, JavaScript, Python, Java, and C++. The platform incorporates points, progress tracking, motivational quotes from famous coding experts, and leaderboards to boost motivation.
 
 The system was evaluated using the ISO/IEC 25010 quality model, with an emphasis on aspects such as functional suitability, performance efficiency, compatibility, maintainability, reliability, usability, portability, and security. This project aims to address common challenges in coding education, such as low engagement, demotivation, and struggles, by making learning feel like an adventure and with comfort.
 

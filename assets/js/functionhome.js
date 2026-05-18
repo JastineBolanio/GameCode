@@ -15,8 +15,6 @@
  * Included Files/Dependencies:
  *   - Bootstrap (modals)
  *   - Typed.js, Rellax.js, anime.js, ScrollReveal.js
- * Author: CodeGaming Team
- * Last Updated: July 22, 2025
  */
 
 document.addEventListener('DOMContentLoaded', () => {

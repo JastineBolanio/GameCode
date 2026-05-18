@@ -1,8 +1,6 @@
 /**
  * File: admin_settings.js
  * Purpose: Handles admin settings page functionality
- * Author: CodeGaming Team
- * Last Updated: October 21, 2025
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -206,7 +204,7 @@ function requestNotificationPermission() {
                 showToast('Desktop notifications enabled!', 'success');
                 new Notification('CodeGaming Admin', {
                     body: 'You will now receive desktop notifications',
-                    icon: 'assets/images/PTC.png'
+                    icon: 'assets/images/MainLogos.png'
                 });
             } else {
                 showToast('Notification permission denied', 'error');

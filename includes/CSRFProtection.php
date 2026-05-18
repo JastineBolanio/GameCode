@@ -12,8 +12,6 @@
  *   - Validate tokens on POST/PUT/DELETE requests
  * Included Files/Dependencies:
  *   - PHP sessions
- * Author: CodeGaming Team
- * Last Updated: July 26, 2025
  */
 
 class CSRFProtection {

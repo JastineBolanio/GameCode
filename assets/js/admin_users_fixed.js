@@ -1,7 +1,6 @@
 /**
  * File: admin_users.js
  * Purpose: Handles admin user management logic for CodeGaming
- * Last Updated: October 2, 2025
  */
 
 // Update user avatar in the UI
@@ -15,7 +14,7 @@ function updateUserAvatar(userId, userType, newPic) {
     const timestamp = new Date().getTime();
     const newPicWithTimestamp = newPic ? 
         `${basePath}/uploads/avatars/${newPic}?t=${timestamp}` : 
-        'assets/images/PTC.png';
+        'assets/images/MainLogos.png';
 
     // Update avatar in the table
     const rows = tableBody.querySelectorAll('tr');

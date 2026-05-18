@@ -9,8 +9,7 @@
  *   - Ensure the HTML structure matches the class names used in this CSS.
  * Dependencies: 
  *   -  Font: 'Times New Roman' or similar serif font for retro effect.
- * Author: CodeGaming Team
- * Last Updated: July 26, 2025
+
  */
 
 /*===================================
@@ -2554,7 +2553,7 @@ main {
 .btn-play-now:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
-  background: linear-gradient(135deg, #27ae60, #229954);
+  background: linear-gradient(135deg, #d52700, #ff2e2e);
 }
 
 .btn-play-now:active {

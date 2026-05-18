@@ -7,7 +7,7 @@ require_once 'includes/track_visitor.php';
  * File: home_page.php
  * 
  * Description:
- *   - Main landing page for Code Gaming platform
+ *   - Main landing page for SkillForge platform
  *   - Features:
  *       • Animated hero section with parallax and floating code icons
  *       • Latest announcements carousel
@@ -27,9 +27,6 @@ require_once 'includes/track_visitor.php';
  *   - images/background-1.jpg, images/icon-tutorial.png, etc.
  *   - External: Bootstrap, Font Awesome, Anime.js, Typed.js, Rellax, ScrollReveal, Chart.js
  * 
- * Author: [Santiago]
- * Last Updated: [July 22, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 
@@ -280,107 +277,143 @@ if ($showLoginNotification && $currentUser):
 
         <!-- User Progress Dashboard (Dynamic for logged-in users) -->
         <?php if ($auth->isLoggedIn()): ?>
-        <section class="progress-dashboard container py-5" role="region" aria-labelledby="progress-heading">
-            <!-- User Profile Header -->
-            <div class="user-journey-header mb-4">
-                <div class="user-banner" id="userBanner" style="background-image: url('assets/images/default-banner.jpg');">
-                </div>
-                <div class="user-info text-center mt-4">
-                    <h3 class="username" id="userDisplayName">Welcome Back, <?php echo htmlspecialchars($currentUser['username'] ?? 'Coder'); ?>!</h3>
-                    <p class="text-muted" id="userLevel">
-                        <?php 
-                        $level = $currentUser['level'] ?? 1;
-                        $title = match(true) {
-                            $level >= 50 => 'Coding Master',
-                            $level >= 30 => 'Senior Developer',
-                            $level >= 20 => 'Mid-level Developer',
-                            $level >= 10 => 'Junior Developer',
-                            default => 'Coding Enthusiast'
-                        };
-                        echo htmlspecialchars($title);
-                        ?>
-                    </p>
-                </div>
-            </div>
+            <link rel="stylesheet" href="assets/css/Home_pageV2.css">
+        <section class="progress-dashboard gaming-dashboard-container container py-5" role="region" aria-labelledby="progress-heading">
+    
+    <div class="user-journey-header mb-5 terminal-banner-wrapper">
+        <div class="user-banner gaming-cyber-banner" id="userBanner" style="background-image: url('assets/images/default-banner.jpg');">
+            <div class="banner-grid-overlay"></div>
+        </div>
+        
+        <div class="user-info terminal-identity-block mt-4">
+            <h3 class="username dynamic-username-text" id="userDisplayName">
+                WELCOME_BACK_ // <?php echo htmlspecialchars($currentUser['username'] ?? 'OPERATIVE'); ?>
+            </h3>
             
-            <h4 id="progress-heading" class="fw-bold mb-4 text-center">Your Coding Journey</h4>
-            <div class="row g-4" id="progressContainer">
-                <!-- Progress cards will be loaded via AJAX -->
-                <div class="col-12 text-center">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading your progress...</span>
-                    </div>
-                </div>
-                
-                <!-- Fallback content in case JavaScript is disabled -->
-                <noscript>
-                    <div class="col-12">
-                        <div class="alert alert-warning">
-                            <i class="bx bx-error-circle me-2"></i>
-                            Please enable JavaScript to view your progress dashboard.
-                        </div>
-                    </div>
-                </noscript>
+            <p class="dynamic-rank-badge" id="userLevel">
+                STATUS: <span class="rank-highlight-tint"><?php 
+                $level = $currentUser['level'] ?? 1;
+                $title = match(true) {
+                    $level >= 50 => 'CODING MASTER [MAX_LEVEL]',
+                    $level >= 30 => 'SENIOR DEVELOPER',
+                    $level >= 20 => 'MID-LEVEL DEVELOPER',
+                    $level >= 10 => 'JUNIOR DEVELOPER',
+                    default => 'CODING ENTHUSIAST [RANK_01]'
+                };
+                echo htmlspecialchars($title);
+                ?></span>
+            </p>
+        </div>
+    </div>
+    
+    <div class="journey-title-container mb-4">
+        <h4 id="progress-heading" class="gaming-journey-heading">[ MATRIX_OBJECTIVES_MANIFEST ]</h4>
+        <div class="heading-laser-line"></div>
+    </div>
+    
+    <div class="row g-4" id="progressContainer">
+        <div class="col-12 text-center streaming-loader-slot">
+            <div class="spinner-border terminal-spinner-cyan" role="status">
+                <span class="visually-hidden">Syncing telemetry data...</span>
             </div>
-        </section>
+            <div class="loader-terminal-text mt-2">INITIALIZING DATAFEED SYNC...</div>
+        </div>
+        
+        <noscript>
+            <div class="col-12">
+                <div class="alert terminal-noscript-alert">
+                    <i class="fas fa-triangle-exclamation me-2 text-danger-neon"></i>
+                    CRITICAL EXCEPTION: JAVASCRIPT SUBSYSTEM OFFLINE. ENABLE ENGINE TO DECRYPT MANIFEST.
+                </div>
+            </div>
+        </noscript>
+    </div>
+</section>
         <?php else: ?>
         <!-- Guest Progress Placeholders -->
+         <link href="assets/css/GuestV2.css" rel="stylesheet">
         <section class="progress-dashboard container py-5" role="region" aria-labelledby="guest-progress-heading">
-            <h4 id="guest-progress-heading" class="fw-bold mb-4 text-center">Start Your Coding Journey</h4>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="progress-card" id="tutorial-progress-card">
-                    <div class="progress-icon text-primary">
-                        <i class="fas fa-graduation-cap fa-2x"></i>
+    <div class="game-header-wrapper mb-5 text-center">
+        <h4 id="guest-progress-heading" class="fw-bold game-title-text text-uppercase">
+            <i class="fas fa-terminal me-2 neon-cyan"></i>Initialize Coding Journey
+        </h4>
+        <div class="hud-divider mx-auto"></div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-5">
+            <div class="gamer-card" id="tutorial-progress-card">
+                <div class="hud-corner top-left"></div>
+                <div class="hud-corner bottom-right"></div>
+                
+                <div class="d-flex align-items-start">
+                    <div class="gamer-icon-container cyan-glow">
+                        <i class="fas fa-book-intellect fa-2x"></i>
                     </div>
-                    <div class="progress-details">
-                        <h5 class="mb-3">Tutorial Progress</h5>
-                        <div class="progress mb-2" style="height: 8px;">
-                            <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" 
-                                 id="tutorial-progress-bar" 
-                                 role="progressbar" 
-                                 style="width: 0%" 
-                                 aria-valuenow="0" 
-                                 aria-valuemin="0" 
-                                 aria-valuemax="100"></div>
+                    <div class="progress-details w-100 ms-3">
+                        <span class="hud-badge-label">Main Campaign</span>
+                        <h5 class="mb-3 text-uppercase font-heading text-white">Quest Progression</h5>
+                        
+                        <div class="game-progress-wrapper mb-2">
+                            <div class="progress custom-hud-bar" style="height: 12px;">
+                                <div class="progress-bar bg-cyan progress-bar-striped progress-bar-animated" 
+                                     id="tutorial-progress-bar" 
+                                     role="progressbar" 
+                                     style="width: 45%" aria-valuenow="45" 
+                                     aria-valuemin="0" 
+                                     aria-valuemax="100"></div>
+                            </div>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="progress-percentage fw-bold" id="tutorial-progress-percentage">0%</span>
-                            <span class="progress-text small" id="tutorial-progress-text">
-                                <?php echo ($currentUser ? 'Loading...' : 'Sign in to track progress'); ?>
+                        
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="progress-percentage fw-bold text-cyan" id="tutorial-progress-percentage">45%</span>
+                            <span class="progress-text small text-muted text-uppercase tracking-status" id="tutorial-progress-text">
+                                <i class="fas fa-sync-alt fa-spin me-1 text-cyan"></i>
+                                <?php echo ($currentUser ? 'Syncing Quest Data...' : 'AUTHENTICATION REQUIRED'); ?>
                             </span>
                         </div>
                     </div>
                 </div>
-                </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="progress-card h-100" id="profile-progress-card">
-                        <div class="progress-icon text-success">
-                            <i class="fas fa-user-circle fa-2x"></i>
-                        </div>
-                        <div class="progress-details">
-                            <h5 class="mb-3">Profile Status</h5>
-                            <div class="progress mb-2" style="height: 8px;">
-                                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="gamer-card" id="profile-progress-card">
+                <div class="hud-corner top-left"></div>
+                <div class="hud-corner bottom-right"></div>
+                
+                <div class="d-flex align-items-start">
+                    <div class="gamer-icon-container purple-glow">
+                        <i class="fas fa-user-shield fa-2x"></i>
+                    </div>
+                    <div class="progress-details w-100 ms-3">
+                        <span class="hud-badge-label purple-badge">User Registry</span>
+                        <h5 class="mb-3 text-uppercase font-heading text-white">Player Profile</h5>
+                        
+                        <div class="game-progress-wrapper mb-2">
+                            <div class="progress custom-hud-bar" style="height: 12px;">
+                                <div class="progress-bar bg-purple progress-bar-striped progress-bar-animated" 
                                      id="profile-progress-bar" 
                                      role="progressbar" 
-                                     style="width: 0%" 
-                                     aria-valuenow="0" 
+                                     style="width: 70%" aria-valuenow="70" 
                                      aria-valuemin="0" 
                                      aria-valuemax="100"></div>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="progress-percentage fw-bold" id="profile-progress-percentage">0%</span>
-                                <span class="progress-text small" id="profile-progress-text">
-                                    <?php echo ($currentUser ? 'Loading profile...' : 'Sign in to complete profile'); ?>
-                                </span>
-                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="progress-percentage fw-bold text-purple" id="profile-progress-percentage">70%</span>
+                            <span class="progress-text small text-muted text-uppercase tracking-status" id="profile-progress-text">
+                                <i class="fas fa-check-circle me-1 text-purple"></i>
+                                <?php echo ($currentUser ? 'Profile Optimized' : 'LINK ACCOUNT'); ?>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
         <?php endif; ?>
 
         <!-- ===== Dynamic Announcements Section ===== -->
@@ -403,328 +436,388 @@ if ($showLoginNotification && $currentUser):
 
 
         <!-- ===== Quick Access Cards ===== -->
+         <link href="assets/css/QuickCardV2.css" rel="stylesheet">
         <section class="quick-cards container py-5" aria-label="Quick Access Navigation">
-            <div class="row g-4 justify-content-center">
-                <?php
-                // Get user progress data for quick cards
+    <div class="row g-4 justify-content-center">
+        <?php
+        // Initialize structural fallbacks
+        $userProgress = [
+            'tutorial' => ['total_topics' => 0, 'completed_topics' => 0],
+            'quiz' => ['total_attempts' => 0, 'correct_answers' => 0],
+            'challenge' => ['total_attempts' => 0, 'correct_answers' => 0],
+            'minigame' => ['total_games' => 0, 'best_score' => 0]
+        ];
+        
+        if ($currentUser) {
+            try {
+                // Get tutorial progress
+                $stmt = $conn->prepare("
+                    SELECT COUNT(*) as total_topics, 
+                        SUM(CASE WHEN status = 'done_reading' THEN 1 ELSE 0 END) as completed_topics
+                    FROM user_progress 
+                    WHERE user_id = ?
+                ");
+                $stmt->execute([$currentUser['id']]);
+                $tutorialProgress = $stmt->fetch(PDO::FETCH_ASSOC);
+                
+                // Get quiz stats
+                $stmt = $conn->prepare("
+                    SELECT COUNT(*) as total_attempts,
+                        SUM(CASE WHEN is_correct = 1 THEN 1 ELSE 0 END) as correct_answers
+                    FROM user_quiz_attempts 
+                    WHERE user_id = ?
+                ");
+                $stmt->execute([$currentUser['id']]);
+                $quizProgress = $stmt->fetch(PDO::FETCH_ASSOC);
+                
+                // Get challenge stats
+                $stmt = $conn->prepare("
+                    SELECT COUNT(*) as total_attempts,
+                        SUM(CASE WHEN is_correct = 1 THEN 1 ELSE 0 END) as correct_answers
+                    FROM user_challenge_attempts 
+                    WHERE user_id = ?
+                ");
+                $stmt->execute([$currentUser['id']]);
+                $challengeProgress = $stmt->fetch(PDO::FETCH_ASSOC);
+                
+                // Get mini-game stats
+                $stmt = $conn->prepare("
+                    SELECT COUNT(*) as total_games,
+                        MAX(score) as best_score
+                    FROM mini_game_results 
+                    WHERE user_id = ?
+                ");
+                $stmt->execute([$currentUser['id']]);
+                $minigameProgress = $stmt->fetch(PDO::FETCH_ASSOC);
+                
                 $userProgress = [
-                    'tutorial' => ['total_topics' => 0, 'completed_topics' => 0],
-                    'quiz' => ['total_attempts' => 0, 'correct_answers' => 0],
-                    'challenge' => ['total_attempts' => 0, 'correct_answers' => 0],
-                    'minigame' => ['total_games' => 0, 'best_score' => 0]
+                    'tutorial' => $tutorialProgress ?: ['total_topics' => 0, 'completed_topics' => 0],
+                    'quiz' => $quizProgress ?: ['total_attempts' => 0, 'correct_answers' => 0],
+                    'challenge' => $challengeProgress ?: ['total_attempts' => 0, 'correct_answers' => 0],
+                    'minigame' => $minigameProgress ?: ['total_games' => 0, 'best_score' => 0]
                 ];
-                
-                if ($currentUser) {
-                    try {
-                        // Get tutorial progress
-                        $stmt = $conn->prepare("
-                            SELECT COUNT(*) as total_topics, 
-                                SUM(CASE WHEN status = 'done_reading' THEN 1 ELSE 0 END) as completed_topics
-                            FROM user_progress 
-                            WHERE user_id = ?
-                        ");
-                        $stmt->execute([$currentUser['id']]);
-                        $tutorialProgress = $stmt->fetch(PDO::FETCH_ASSOC);
-                        
-                        // Get quiz stats
-                        $stmt = $conn->prepare("
-                            SELECT COUNT(*) as total_attempts,
-                                SUM(CASE WHEN is_correct = 1 THEN 1 ELSE 0 END) as correct_answers
-                            FROM user_quiz_attempts 
-                            WHERE user_id = ?
-                        ");
-                        $stmt->execute([$currentUser['id']]);
-                        $quizProgress = $stmt->fetch(PDO::FETCH_ASSOC);
-                        
-                        // Get challenge stats
-                        $stmt = $conn->prepare("
-                            SELECT COUNT(*) as total_attempts,
-                                SUM(CASE WHEN is_correct = 1 THEN 1 ELSE 0 END) as correct_answers
-                            FROM user_challenge_attempts 
-                            WHERE user_id = ?
-                        ");
-                        $stmt->execute([$currentUser['id']]);
-                        $challengeProgress = $stmt->fetch(PDO::FETCH_ASSOC);
-                        
-                        // Get mini-game stats
-                        $stmt = $conn->prepare("
-                            SELECT COUNT(*) as total_games,
-                                MAX(score) as best_score
-                            FROM mini_game_results 
-                            WHERE user_id = ?
-                        ");
-                        $stmt->execute([$currentUser['id']]);
-                        $minigameProgress = $stmt->fetch(PDO::FETCH_ASSOC);
-                        
-                        $userProgress = [
-                            'tutorial' => $tutorialProgress ?: ['total_topics' => 0, 'completed_topics' => 0],
-                            'quiz' => $quizProgress ?: ['total_attempts' => 0, 'correct_answers' => 0],
-                            'challenge' => $challengeProgress ?: ['total_attempts' => 0, 'correct_answers' => 0],
-                            'minigame' => $minigameProgress ?: ['total_games' => 0, 'best_score' => 0]
-                        ];
-                    } catch (Exception $e) {
-                        // Fallback to default progress
-                        $userProgress = [
-                            'tutorial' => ['total_topics' => 0, 'completed_topics' => 0],
-                            'quiz' => ['total_attempts' => 0, 'correct_answers' => 0],
-                            'challenge' => ['total_attempts' => 0, 'correct_answers' => 0],
-                            'minigame' => ['total_games' => 0, 'best_score' => 0]
-                        ];
-                    }
-                }
-                
-                $quickCards = [
-                    [
-                        'title' => 'Profile',
-                        'icon' => 'fa-user',
-                        'image' => 'assets/images/Profile.png',
-                        'progress' => $currentUser ? 'Level ' . min(floor((($userProgress['challenge']['correct_answers'] ?? 0) * 30) / 100) + 1, 50) : 'Guest',
-                        'text' => $currentUser ? 'Manage your account' : 'Sign up to save progress',
-                        'link' => $currentUser ? 'profile.php' : 'sign_in.php'
-                    ],
-                    [
-                        'title' => 'Tutorials',
-                        'icon' => 'fa-book',
-                        'image' => 'assets/images/Tutorial.png',
-                        'progress' => ($userProgress['tutorial']['completed_topics'] ?? 0) . ' of ' . max($userProgress['tutorial']['total_topics'] ?? 1, 1),
-                        'text' => ($userProgress['tutorial']['completed_topics'] ?? 0) > 0 ? 
-                            'Keep learning!' : 'Start your journey',
-                        'link' => 'tutorial.php'
-                    ],
-                    [
-                        'title' => 'Mini-Game',
-                        'icon' => 'fa-gamepad',
-                        'image' => 'assets/images/icon-mini-game.png',
-                        'progress' => ($userProgress['minigame']['total_games'] ?? 0) . ' games played',
-                        'text' => ($userProgress['minigame']['best_score'] ?? 0) > 0 ? 
-                            'Best: ' . ($userProgress['minigame']['best_score'] ?? 0) : 'New high score awaits',
-                        'link' => 'mini-game.php'
-                    ],
-                    [
-                        'title' => 'Quiz',
-                        'icon' => 'fa-question-circle',
-                        'image' => 'assets/images/icon-quiz.png',
-                        'progress' => ($userProgress['quiz']['correct_answers'] ?? 0) . '/40 correct',
-                        'text' => ($userProgress['quiz']['correct_answers'] ?? 0) > 0 ? 
-                            'Improve your score!' : 'Test your knowledge',
-                        'link' => 'quiz.php'
-                    ],
-                    [
-                        'title' => 'Challenge',
-                        'icon' => 'fa-trophy',
-                        'image' => 'assets/images/icon-challenge.png',
-                        'progress' => ($userProgress['challenge']['correct_answers'] ?? 0) . ' solved',
-                        'text' => ($userProgress['challenge']['correct_answers'] ?? 0) > 0 ? 
-                            'Expert level unlocked!' : 'Master the challenges',
-                        'link' => 'challenges.php'
-                    ],
-                    [
-                        'title' => 'About',
-                        'icon' => 'fa-info-circle',
-                        'image' => 'assets/images/about-us.png',
-                        'text' => 'Learn about Code Game',
-                        'link' => 'about.php'
-                    ]
-                ];
+            } catch (Exception $e) {
+                // Graceful fallback string map parameters
+            }
+        }
+        
+        // Gamified Array Engine Mapping
+        $quickCards = [
+            [
+                'title' => 'Profile',
+                'icon' => 'fa-user-shield',
+                'image' => 'assets/images/Profile.png',
+                'theme' => 'theme-cyan',
+                'progress' => $currentUser ? 'LVL ' . min(floor((($userProgress['challenge']['correct_answers'] ?? 0) * 30) / 100) + 1, 50) : 'GUEST_ID',
+                'text' => $currentUser ? 'Manage your operative account' : 'Sync data matrix to save progress',
+                'link' => $currentUser ? 'profile.php' : 'sign_in.php'
+            ],
+            [
+                'title' => 'Tutorials',
+                'icon' => 'fa-terminal',
+                'image' => 'assets/images/Tutorial.png',
+                'theme' => 'theme-cyan',
+                'progress' => 'ARCHIVE: ' . ($userProgress['tutorial']['completed_topics'] ?? 0) . ' / ' . max($userProgress['tutorial']['total_topics'] ?? 1, 1),
+                'text' => ($userProgress['tutorial']['completed_topics'] ?? 0) > 0 ? 'Load next data sector' : 'Initialize system core training',
+                'link' => 'tutorial.php'
+            ],
+            [
+                'title' => 'Mini-Game',
+                'icon' => 'fa-gamepad',
+                'image' => 'assets/images/icon-mini-game.png',
+                'theme' => 'theme-purple',
+                'progress' => ($userProgress['minigame']['total_games'] ?? 0) . ' Runs Logged',
+                'text' => ($userProgress['minigame']['best_score'] ?? 0) > 0 ? 'RECORD: ' . ($userProgress['minigame']['best_score'] ?? 0) : 'Sector arcade challenge waiting',
+                'link' => 'mini-game.php'
+            ],
+            [
+                'title' => 'Quiz',
+                'icon' => 'fa-crosshairs',
+                'image' => 'assets/images/icon-quiz.png',
+                'theme' => 'theme-purple',
+                'progress' => 'NODES: ' . ($userProgress['quiz']['correct_answers'] ?? 0) . ' / 40 COMPILED',
+                'text' => ($userProgress['quiz']['correct_answers'] ?? 0) > 0 ? 'Optimize node runtime output' : 'Scan live terminal knowledge',
+                'link' => 'quiz.php'
+            ],
+            [
+                'title' => 'Challenge',
+                'icon' => 'fa-trophy',
+                'image' => 'assets/images/icon-challenge.png',
+                'theme' => 'theme-amber',
+                'progress' => ($userProgress['challenge']['correct_answers'] ?? 0) . ' Cleared',
+                'text' => ($userProgress['challenge']['correct_answers'] ?? 0) > 0 ? 'EXPERT COMPILER UNLOCKED' : 'Overclock scripts on elite tasks',
+                'link' => 'challenges.php'
+            ],
+            [
+                'title' => 'About',
+                'icon' => 'fa-info-circle',
+                'image' => 'assets/images/about-us.png',
+                'theme' => 'theme-cyan',
+                'progress' => 'SYS_VER_3.2.6',
+                'text' => 'Access system architecture logs',
+                'link' => 'about.php'
+            ]
+        ];
 
-                foreach ($quickCards as $card): 
-                    $title = htmlspecialchars($card['title']);
-                    $image = file_exists($card['image']) ? $card['image'] : 'images/default-card.png';
-                    $progress = isset($card['progress']) ? htmlspecialchars($card['progress']) : '';
-                    $text = isset($card['text']) ? htmlspecialchars($card['text']) : '';
-                    $link = htmlspecialchars($card['link']);
-                    $icon = htmlspecialchars($card['icon']);
-                ?>
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-                        <div class="card quick-card drift" role="article">
+        foreach ($quickCards as $card): 
+            $title = htmlspecialchars($card['title']);
+            $image = file_exists($card['image']) ? $card['image'] : 'images/default-card.png';
+            $progress = isset($card['progress']) ? htmlspecialchars($card['progress']) : '';
+            $text = isset($card['text']) ? htmlspecialchars($card['text']) : '';
+            $link = htmlspecialchars($card['link']);
+            $icon = htmlspecialchars($card['icon']);
+            $themeClass = $card['theme'];
+        ?>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                <a href="<?php echo $link; ?>" class="game-card-anchor text-decoration-none d-block h-100" aria-label="Launch <?php echo $title; ?>">
+                    <div class="card game-style-card <?php echo $themeClass; ?>" role="article">
+                        
+                        <div class="hud-corner corner-tl"></div>
+                        <div class="hud-corner corner-br"></div>
+                        
+                        <div class="game-card-img-wrapper">
                             <img src="<?php echo $image; ?>" 
                                 class="card-img-top" 
                                 alt="<?php echo $title; ?>"
                                 onerror="this.src='images/default-card.png'">
-                            <div class="card-body text-center">
-                                <h6 class="card-title">
-                                    <i class="fas <?php echo $icon; ?> me-2" aria-hidden="true"></i>
+                            <div class="hud-laser-scanline"></div>
+                        </div>
+
+                        <div class="card-body text-center d-flex flex-column justify-content-between">
+                            <div>
+                                <h6 class="card-title text-uppercase">
+                                    <i class="fas <?php echo $icon; ?> me-2 game-icon-pulse" aria-hidden="true"></i>
                                     <?php echo $title; ?>
                                 </h6>
+                                
                                 <?php if ($progress): ?>
-                                    <p class="progress-text" aria-label="Progress: <?php echo $progress; ?>">
+                                    <div class="game-stat-strip text-uppercase">
                                         <?php echo $progress; ?>
-                                    </p>
+                                    </div>
                                 <?php endif; ?>
+                                
                                 <?php if ($text): ?>
-                                    <p class="small text-light"><?php echo $text; ?></p>
+                                    <p class="game-meta-text"><?php echo $text; ?></p>
                                 <?php endif; ?>
-                                <a href="<?php echo $link; ?>" 
-                                class="btn btn-outline-light btn-sm"
-                                aria-label="Navigate to <?php echo $title; ?>">
-                                    Go to <?php echo $title; ?>
-                                </a>
+                            </div>
+
+                            <div class="btn btn-game-action text-uppercase btn-sm w-100 mt-2">
+                                Launch
                             </div>
                         </div>
                     </div>
-                <?php endforeach; ?>
+                </a>
             </div>
-        </section>
+        <?php endforeach; ?>
+    </div>
+</section>
 
         <!-- ===== Quiz Analytics & Leaderboard Section ===== -->
+         <link href="assets/css/QuizAnalyticsV2.css" rel="stylesheet">
         <section class="container py-5" id="home-quiz-analytics" role="region" aria-labelledby="quiz-analytics-heading">
-            <div class="retro-analytics-window-bg">
-            <!-- Overlapping Stat Cards -->
-            <div class="stat-card stat-card-best" role="img" aria-label="Best quiz score">
-              <div class="stat-card-title">Best Score <span class="stat-x" aria-hidden="true">&#10005;</span></div>
-              <div class="stat-card-value" id="quiz-best-score" aria-live="polite">--</div>
-              <div class="stat-card-desc">Your all-time best</div>
-            </div>
-            <div class="stat-card stat-card-recent" role="img" aria-label="Recent quiz game">
-              <div class="stat-card-title">Recent Game <span class="stat-x" aria-hidden="true">&#10005;</span></div>
-              <div class="stat-card-value" id="quiz-recent-score" aria-live="polite">--</div>
-              <div class="stat-card-desc" id="quiz-recent-time">No recent game</div>
-            </div>
-            <div class="stat-card stat-card-top" role="img" aria-label="Top quiz player">
-              <div class="stat-card-title">Top Player <span class="stat-x" aria-hidden="true">&#10005;</span></div>
-              <div class="stat-card-value" id="quiz-top-player" aria-live="polite">--</div>
-              <div class="stat-card-desc" id="quiz-top-player-desc">No top player</div>
-            </div>
-            <!-- Main Window -->
-            <div class="retro-analytics-window">
-              <div class="window-title-bar">
-                <div class="window-controls" aria-hidden="true">
-                  <span class="window-dot red"></span>
-                  <span class="window-dot yellow"></span>
-                  <span class="window-dot green"></span>
+    <div class="hud-analytics-terminal-bg">
+        
+        <div class="hud-stat-panel diagnostic-best" role="img" aria-label="Best quiz score">
+            <div class="hud-panel-edge-line"></div>
+            <div class="hud-panel-header">BEST_SCORE <span class="hud-panel-status-dot" aria-hidden="true"></span></div>
+            <div class="hud-panel-value" id="quiz-best-score" aria-live="polite">--</div>
+            <div class="hud-panel-desc">All-time maximum threshold</div>
+        </div>
+        
+        <div class="hud-stat-panel diagnostic-recent" role="img" aria-label="Recent quiz game">
+            <div class="hud-panel-edge-line"></div>
+            <div class="hud-panel-header">RECENT_LOG <span class="hud-panel-status-dot" aria-hidden="true"></span></div>
+            <div class="hud-panel-value" id="quiz-recent-score" aria-live="polite">--</div>
+            <div class="hud-panel-desc" id="quiz-recent-time">No active session data</div>
+        </div>
+        
+        <div class="hud-stat-panel diagnostic-top" role="img" aria-label="Top quiz player">
+            <div class="hud-panel-edge-line"></div>
+            <div class="hud-panel-header">TOP_OPERATIVE <span class="hud-panel-status-dot" aria-hidden="true"></span></div>
+            <div class="hud-panel-value" id="quiz-top-player" aria-live="polite">--</div>
+            <div class="hud-panel-desc" id="quiz-top-player-desc">No network leader found</div>
+        </div>
+        
+        <div class="hud-main-terminal-window">
+            
+            <div class="hud-terminal-title-bar d-flex justify-content-between align-items-center">
+                <div class="hud-terminal-glitch-text" id="quiz-analytics-heading">
+                    <span class="hud-terminal-prefix">⚡</span> MODULE: SECURE_QUIZ_ANALYTICS_MATRIX
                 </div>
-                <span class="window-title">// QUIZ ANALYTICS & LEADERBOARD</span>
-                <span class="window-x" aria-hidden="true">&#10005;</span>
-              </div>
-              <div class="window-content">
+                <div class="hud-terminal-deco-lines" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            
+            <div class="hud-terminal-content">
                 <div class="analytics-header">
-                  <div class="analytics-tabs" role="tablist" aria-label="Quiz analytics time period">
-                    <button class="analytics-tab active" data-scope="alltime" role="tab" aria-selected="true" aria-controls="quiz-content">All-Time</button>
-                    <button class="analytics-tab" data-scope="weekly" role="tab" aria-selected="false" aria-controls="quiz-content">Weekly</button>
-                    <button class="analytics-tab" data-scope="monthly" role="tab" aria-selected="false" aria-controls="quiz-content">Monthly</button>
-                  </div>
-                </div>
-                <div class="analytics-body" id="quiz-content" role="tabpanel">
-                  <div class="difficulty-tabs" role="tablist" aria-label="Quiz difficulty level">
-                    <button class="difficulty-tab active" data-difficulty="beginner" role="tab" aria-selected="true" aria-controls="quiz-difficulty-content">Beginner</button>
-                    <button class="difficulty-tab" data-difficulty="intermediate" role="tab" aria-selected="false" aria-controls="quiz-difficulty-content">Intermediate</button>
-                    <button class="difficulty-tab" data-difficulty="expert" role="tab" aria-selected="false" aria-controls="quiz-difficulty-content">Expert</button>
-                  </div>
-                  <div class="user-quiz-stats" aria-live="polite"></div>
-                  <div class="quiz-leaderboard-list" aria-live="polite"></div>
-                  <div class="play-now-section">
-                    <button class="btn-play-now" onclick="window.location.href='quiz.php'" aria-describedby="quiz-play-description">
-                      <span class="btn-text">🎯 PLAY QUIZ NOW</span>
-                    </button>
-                    <div id="quiz-play-description" class="visually-hidden">
-                      Start a new quiz to test your coding knowledge and compete on the leaderboard
+                    <div class="analytics-tabs hud-terminal-tabs" role="tablist" aria-label="Quiz analytics time period">
+                        <button class="analytics-tab active" data-scope="alltime" role="tab" aria-selected="true" aria-controls="quiz-content">ALL-TIME LOGS</button>
+                        <button class="analytics-tab" data-scope="weekly" role="tab" aria-selected="false" aria-controls="quiz-content">WEEKLY RESET</button>
+                        <button class="analytics-tab" data-scope="monthly" role="tab" aria-selected="false" aria-controls="quiz-content">MONTHLY BATCH</button>
                     </div>
-                  </div>
                 </div>
-              </div>
+                
+                <div class="analytics-body" id="quiz-content" role="tabpanel">
+                    
+                    <div class="difficulty-tabs hud-sub-tabs" role="tablist" aria-label="Quiz difficulty level">
+                        <button class="difficulty-tab active" data-difficulty="beginner" role="tab" aria-selected="true" aria-controls="quiz-difficulty-content">RANK_01: BEGINNER</button>
+                        <button class="difficulty-tab" data-difficulty="intermediate" role="tab" aria-selected="false" aria-controls="quiz-difficulty-content">RANK_02: INTERMEDIATE</button>
+                        <button class="difficulty-tab" data-difficulty="expert" role="tab" aria-selected="false" aria-controls="quiz-difficulty-content">RANK_03: EXPERT_LEVEL</button>
+                    </div>
+                    
+                    <div class="user-quiz-stats hud-terminal-data-feed" aria-live="polite"></div>
+                    <div class="quiz-leaderboard-list hud-terminal-leader-matrix" aria-live="polite"></div>
+                    
+                    <div class="play-now-section text-center pt-3">
+                        <button class="btn-play-now btn-hud-terminal-action" onclick="window.location.href='quiz.php'" aria-describedby="quiz-play-description">
+                            <span class="btn-text">INITIALIZE RUN</span>
+                        </button>
+                        <div id="quiz-play-description" class="visually-hidden">
+                            Start a new quiz to test your coding knowledge and compete on the leaderboard
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
-          </div>
-        </section>
+            
+        </div>
+    </div>
+</section>
 
         <!-- ===== Mini-Game Leaderboard Section ===== -->
-        <div class="retro-bg-container" style="margin-top: 2.5rem;">
-        <section class="container py-5" id="home-minigame-analytics">
-          <div class="retro-analytics-window-bg minigame-theme">
-            <!-- Overlapping Stat Cards -->
-            <div class="stat-card stat-card-best minigame-theme">
-              <div class="stat-card-title">Best Score <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="minigame-best-score">--</div>
-              <div class="stat-card-desc">Your all-time best</div>
+         <link href="assets/css/MiniGameV2.css" rel="stylesheet">
+        <div class="hud-game-matrix-container" style="margin-top: 2.5rem;">
+    <section class="container py-5" id="home-minigame-analytics" role="region" aria-labelledby="minigame-analytics-heading">
+        <div class="hud-analytics-terminal-bg minigame-theme">
+            
+            <div class="hud-stat-panel diagnostic-mg-best" role="img" aria-label="Best minigame score">
+                <div class="hud-panel-edge-line"></div>
+                <div class="hud-panel-header">HIGH_SCORE <span class="hud-panel-status-dot" aria-hidden="true"></span></div>
+                <div class="hud-panel-value" id="minigame-best-score" aria-live="polite">--</div>
+                <div class="hud-panel-desc">Personal record threshold</div>
             </div>
-            <div class="stat-card stat-card-recent minigame-theme">
-              <div class="stat-card-title">Recent Game <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="minigame-recent-score">--</div>
-              <div class="stat-card-desc" id="minigame-recent-time">No recent game</div>
+            
+            <div class="hud-stat-panel diagnostic-mg-recent" role="img" aria-label="Recent minigame session">
+                <div class="hud-panel-edge-line"></div>
+                <div class="hud-panel-header">LAST_RUN <span class="hud-panel-status-dot" aria-hidden="true"></span></div>
+                <div class="hud-panel-value" id="minigame-recent-score" aria-live="polite">--</div>
+                <div class="hud-panel-desc" id="minigame-recent-time">No active session logs</div>
             </div>
-            <div class="stat-card stat-card-top minigame-theme">
-              <div class="stat-card-title">Top Player <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="minigame-top-player">--</div>
-              <div class="stat-card-desc" id="minigame-top-player-desc">No top player</div>
+            
+            <div class="hud-stat-panel diagnostic-mg-top" role="img" aria-label="Top player score">
+                <div class="hud-panel-edge-line"></div>
+                <div class="hud-panel-header">RANK_01_LEADER <span class="hud-panel-status-dot" aria-hidden="true"></span></div>
+                <div class="hud-panel-value" id="minigame-top-player" aria-live="polite">--</div>
+                <div class="hud-panel-desc" id="minigame-top-player-desc">Global lobby leader</div>
             </div>
-            <div class="retro-analytics-window minigame-theme">
-              <div class="window-title-bar minigame-theme">
-                <span class="window-controls">
-                  <span class="window-dot blue"></span>
-                  <span class="window-dot blue"></span>
-                  <span class="window-dot green"></span>
-                </span>
-                <span class="window-title">// MINI-GAME LEADERBOARD</span>
-                <span class="window-refresh" title="Refresh">⟳</span>
-                <span class="window-x">&#10005;</span>
-              </div>
-              <div class="window-content">
-                <div class="analytics-tabs">
-                  <span class="analytics-tab active" data-scope="alltime">All-Time</span>
-                  <span class="analytics-tab" data-scope="weekly">Weekly</span>
-                  <span class="analytics-tab" data-scope="monthly">Monthly</span>
+            
+            <div class="hud-main-terminal-window minigame-theme">
+                
+                <div class="hud-terminal-title-bar d-flex justify-content-between align-items-center">
+                    <div class="hud-terminal-glitch-text" id="minigame-analytics-heading">
+                        <span class="hud-terminal-prefix">🎮</span> MODULE: MINI_GAME_LEADERBOARD_MATRIX
+                    </div>
+                    <div class="hud-terminal-controls d-flex align-items-center gap-3">
+                        <button class="window-refresh-btn" title="Re-sync data feed" aria-label="Refresh stats">⟳</button>
+                        <div class="hud-terminal-deco-lines" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="user-quiz-stats"></div>
-                <div class="quiz-leaderboard-list"></div>
-                <div class="play-now-section">
-                  <button class="btn-play-now minigame-theme" onclick="window.location.href='mini-game.php'">
-                    <span class="btn-text">🎮 PLAY MINI-GAME NOW</span>
-                  </button>
+                
+                <div class="hud-terminal-content">
+                    <div class="analytics-header">
+                        <div class="analytics-tabs hud-terminal-tabs" role="tablist" aria-label="Mini-game analytics time period">
+                            <button class="analytics-tab active" data-scope="alltime" role="tab" aria-selected="true" aria-controls="minigame-content">ALL-TIME DATA</button>
+                            <button class="analytics-tab" data-scope="weekly" role="tab" aria-selected="false" aria-controls="minigame-content">WEEKLY RESET</button>
+                            <button class="analytics-tab" data-scope="monthly" role="tab" aria-selected="false" aria-controls="minigame-content">MONTHLY BATCH</button>
+                        </div>
+                    </div>
+                    
+                    <div class="analytics-body" id="minigame-content" role="tabpanel">
+                        <div class="user-quiz-stats hud-terminal-data-feed"></div>
+                        <div class="quiz-leaderboard-list hud-terminal-leader-matrix"></div>
+                        
+                        <div class="play-now-section text-center pt-3">
+                            <button class="btn-play-now btn-hud-terminal-action minigame-theme" onclick="window.location.href='mini-game.php'">
+                                <span class="btn-text">START ARCADE RUN</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                
             </div>
-          </div>
-        </section>
         </div>
+    </section>
+</div>  
 
         <!-- ===== Challenge Leaderboard Section ===== -->
-        <div class="retro-bg-container" style="margin-top: 2.5rem;">
-        <section class="container py-5" id="home-challenge-analytics">
-          <div class="retro-analytics-window-bg challenge-theme">
-            <!-- Overlapping Stat Cards -->
-            <div class="stat-card stat-card-best challenge-theme">
-              <div class="stat-card-title">Best Score <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="challenge-best-score">--</div>
-              <div class="stat-card-desc">Your all-time best</div>
+         <link href="assets/css/ChallengeLBV2.css" rel="stylesheet">    
+        <div class="hud-game-matrix-container" style="margin-top: 2.5rem;">
+    <section class="container py-5" id="home-challenge-analytics" role="region" aria-labelledby="challenge-analytics-heading">
+        <div class="hud-analytics-terminal-bg challenge-theme">
+            
+            <div class="hud-stat-panel diagnostic-ch-best" role="img" aria-label="Best challenge score">
+                <div class="hud-panel-edge-line"></div>
+                <div class="hud-panel-header">ELITE_RECORD <span class="hud-panel-status-dot" aria-hidden="true"></span></div>
+                <div class="hud-panel-value" id="challenge-best-score" aria-live="polite">--</div>
+                <div class="hud-panel-desc">All-time peak capacity</div>
             </div>
-            <div class="stat-card stat-card-recent challenge-theme">
-              <div class="stat-card-title">Recent Game <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="challenge-recent-score">--</div>
-              <div class="stat-card-desc" id="challenge-recent-time">No recent game</div>
+            
+            <div class="hud-stat-panel diagnostic-ch-recent" role="img" aria-label="Recent challenge trial">
+                <div class="hud-panel-edge-line"></div>
+                <div class="hud-panel-header">LAST_TRIAL <span class="hud-panel-status-dot" aria-hidden="true"></span></div>
+                <div class="hud-panel-value" id="challenge-recent-score" aria-live="polite">--</div>
+                <div class="hud-panel-desc" id="challenge-recent-time">No recent terminal link</div>
             </div>
-            <div class="stat-card stat-card-top challenge-theme">
-              <div class="stat-card-title">Top Player <span class="stat-x">&#10005;</span></div>
-              <div class="stat-card-value" id="challenge-top-player">--</div>
-              <div class="stat-card-desc" id="challenge-top-player-desc">No top player</div>
+            
+            <div class="hud-stat-panel diagnostic-ch-top" role="img" aria-label="Top challenger player">
+                <div class="hud-panel-edge-line"></div>
+                <div class="hud-panel-header">APEX_OPERATIVE <span class="hud-panel-status-dot" aria-hidden="true"></span></div>
+                <div class="hud-panel-value" id="challenge-top-player" aria-live="polite">--</div>
+                <div class="hud-panel-desc" id="challenge-top-player-desc">Lobby champion matrix</div>
             </div>
-            <div class="retro-analytics-window challenge-theme">
-              <div class="window-title-bar challenge-theme">
-                <span class="window-controls">
-                  <span class="window-dot gold"></span>
-                  <span class="window-dot orange"></span>
-                  <span class="window-dot green"></span>
-                </span>
-                <span class="window-title">// CHALLENGE LEADERBOARD (EXPERT ONLY)</span>
-                <span class="window-refresh" title="Refresh">⟳</span>
-                <span class="window-x">&#10005;</span>
-              </div>
-              <div class="window-content">
-                <div class="analytics-tabs">
-                  <span class="analytics-tab active" data-scope="alltime">All-Time</span>
-                  <span class="analytics-tab" data-scope="weekly">Weekly</span>
-                  <span class="analytics-tab" data-scope="monthly">Monthly</span>
+            
+            <div class="hud-main-terminal-window challenge-theme">
+                
+                <div class="hud-terminal-title-bar d-flex justify-content-between align-items-center">
+                    <div class="hud-terminal-glitch-text" id="challenge-analytics-heading">
+                        <span class="hud-terminal-prefix">🚀</span> CRITICAL: CHALLENGE_LEADERBOARD // EXPERT_ONLY
+                    </div>
+                    <div class="hud-terminal-controls d-flex align-items-center gap-3">
+                        <button class="window-refresh-btn" title="Re-sync lobby logs" aria-label="Refresh stats">⟳</button>
+                        <div class="hud-terminal-deco-lines" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="user-quiz-stats"></div>
-                <div class="quiz-leaderboard-list"></div>
-                <div class="play-now-section">
-                  <button class="btn-play-now challenge-theme" onclick="window.location.href='challenges.php'">
-                    <span class="btn-text">🚀 PLAY CHALLENGE NOW</span>
-                  </button>
+                
+                <div class="hud-terminal-content">
+                    <div class="analytics-header">
+                        <div class="analytics-tabs hud-terminal-tabs" role="tablist" aria-label="Challenge analytics window frame">
+                            <button class="analytics-tab active" data-scope="alltime" role="tab" aria-selected="true" aria-controls="challenge-content">ALL-TIME INDEX</button>
+                            <button class="analytics-tab" data-scope="weekly" role="tab" aria-selected="false" aria-controls="challenge-content">WEEKLY RANK</button>
+                            <button class="analytics-tab" data-scope="monthly" role="tab" aria-selected="false" aria-controls="challenge-content">MONTHLY PHASE</button>
+                        </div>
+                    </div>
+                    
+                    <div class="analytics-body" id="challenge-content" role="tabpanel">
+                        <div class="user-quiz-stats hud-terminal-data-feed"></div>
+                        <div class="quiz-leaderboard-list hud-terminal-leader-matrix"></div>
+                        
+                        <div class="play-now-section text-center pt-3">
+                            <button class="btn-play-now btn-hud-terminal-action challenge-theme" onclick="window.location.href='challenges.php'">
+                                <span class="btn-text">ENGAGE OVERCLOCK OVERRIDE</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                
             </div>
-          </div>
-        </section>
         </div>
+    </section>
+</div>
     </main>
 
     <!-- ===== Footer ===== -->

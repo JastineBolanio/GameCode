@@ -11,8 +11,6 @@
  *   - Requires Database.php for DB access.
  * Included Files/Dependencies:
  *   - includes/Database.php
- * Author: CodeGaming Team
- * Last Updated: July 24, 2025
  */
 require_once '../includes/Database.php';
 header('Content-Type: application/json');
@@ -50,8 +48,8 @@ try {
                 (strpos($row['author_avatar'], 'http') === 0 ? $row['author_avatar'] : 
                 (file_exists($_SERVER['DOCUMENT_ROOT'] . '/uploads/avatars/' . $row['author_avatar']) ? 
                     '/uploads/avatars/' . $row['author_avatar'] : 
-                    '/assets/images/PTC.png')) : 
-                '/assets/images/PTC.png'
+                    '/assets/images/MainLogos.png')) : 
+                '/assets/images/MainLogos.png'
         ];
     }
     // Total count for pagination

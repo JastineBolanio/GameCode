@@ -11,8 +11,6 @@
  *   - Required parameter: track_id
  * Included Files/Dependencies:
  *   - includes/Database.php
- * Author: CodeGaming Team
- * Last Updated: September 29, 2025
  */
 header('Content-Type: application/json');
 session_start();

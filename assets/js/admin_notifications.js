@@ -1,8 +1,6 @@
 /**
  * File: admin_notifications.js
  * Purpose: Handles notification bell in admin header
- * Author: CodeGaming Team
- * Last Updated: October 21, 2025
  */
 
 // Load notifications for header bell

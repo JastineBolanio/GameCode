@@ -13,8 +13,6 @@
  * Included Files/Dependencies:
  *   - includes/Auth.php
  *   - includes/Database.php
- * Author: CodeGaming Team
- * Last Updated: July 24, 2025
  */
 require_once '../includes/Auth.php';
 require_once '../includes/Database.php';

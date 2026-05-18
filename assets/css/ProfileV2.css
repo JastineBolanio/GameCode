@@ -1,0 +1,634 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --arcade-bg-card: #140d24;
+  --terminal-darkwell: #0a0512;
+  --panel-border-dark: #2c1a42;
+  --text-bright: #ffffff;
+  --text-slate: #756a85;
+  
+  /* System Diagnostic Accents */
+  --neon-cyan: #00f0ff;
+  --neon-amber: #ffaa00;
+  --neon-matrix: #39ff14;
+  --neon-purple: #bd00ff;
+}
+
+/* Master Panel Setup */
+.gaming-sync-panel.card {
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--arcade-bg-card) !important;
+  border: 2px solid var(--panel-border-dark) !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.gaming-panel-title {
+  font-size: 0.95rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 2px;
+  color: var(--text-bright);
+}
+
+.icon-cyan {
+  color: var(--neon-cyan) !important;
+  filter: drop-shadow(0 0 4px var(--neon-cyan));
+}
+
+/* User Identity Tag Alignments */
+.user-email-tag {
+  font-family: 'Share Tech Mono', monospace;
+  background-color: var(--terminal-darkwell);
+  border: 1px solid rgba(117, 106, 133, 0.2);
+  color: var(--neon-cyan);
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+.user-email-tag i {
+  margin-right: 6px;
+}
+
+/* Layout Architecture For Display Sync Controls */
+.telemetry-core-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* SVG Vector Progress Circle Adjustments */
+.gaming-vector-ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gaming-vector-ring svg {
+  transform: rotate(-90deg); /* Standard rotation alignment for tracking radial points */
+}
+
+.terminal-circle-track {
+  fill: transparent;
+  stroke: var(--terminal-darkwell);
+}
+
+.terminal-circle-glowing-fill {
+  fill: transparent;
+  stroke: var(--neon-cyan);
+  stroke-linecap: square;
+  filter: drop-shadow(0 0 6px var(--neon-cyan));
+}
+
+/* Text alignment layout configurations directly inside the vector frame ring */
+.terminal-ring-readout {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.dynamic-sync-value {
+  color: var(--text-bright) !important;
+  font-size: 1.3rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.dynamic-sync-label {
+  color: var(--text-slate);
+  font-size: 0.6rem;
+  letter-spacing: 1.5px;
+  font-weight: 900;
+}
+
+/* Telemetry Grid Configuration Block */
+.gaming-telemetry-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 11fr));
+  gap: 10px;
+  width: 100%;
+}
+
+/* Individual Metric System Matrix Cells */
+.telemetry-cell {
+  background-color: var(--terminal-darkwell);
+  border: 1px solid rgba(117, 106, 133, 0.15);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cell-title {
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--text-slate);
+}
+
+/* Linear Grid Module spanning full columns widths */
+.linear-progress-cell {
+  grid-column: span 2;
+}
+
+@media (max-width: 576px) {
+  .linear-progress-cell { grid-column: span 1; }
+  .telemetry-core-wrapper { justify-content: center; }
+}
+
+/* ==========================================================================
+   ANTI-GHOSTING DATA COLORS ENGINE (FORCING RAW PHP VALUES TO STAND OUT)
+   ========================================================================== */
+.telemetry-cell .stat-value {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 1.15rem !important;
+  font-weight: bold !important;
+  margin-bottom: 2px;
+}
+
+.text-muted-data { color: #a395b8 !important; }
+.text-white-data { color: var(--text-bright) !important; }
+.text-cyan-data  { color: var(--neon-cyan) !important; text-shadow: 0 0 4px rgba(0,240,255,0.3); }
+.text-amber-data { color: var(--neon-amber) !important; text-shadow: 0 0 4px rgba(255,170,0,0.3); }
+.text-matrix-data { color: var(--neon-matrix) !important; text-shadow: 0 0 4px rgba(57,255,20,0.3); }
+.text-purple-data { color: var(--neon-purple) !important; text-shadow: 0 0 4px rgba(189,0,255,0.3); }
+
+/* Horizontal Linear Target Bar styling elements */
+.terminal-linear-bar-frame {
+  background-color: #1a0f2e !important;
+  border: 1px solid rgba(117, 106, 133, 0.3) !important;
+  height: 6px !important;
+  border-radius: 0px !important;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.terminal-linear-bar-fill {
+  background-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 8px var(--neon-cyan);
+  border-radius: 0px !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --arcade-bg-card: #140d24;
+  --terminal-darkwell: #0a0512;
+  --panel-border-dark: #2c1a42;
+  --text-bright: #ffffff;
+  --text-slate: #756a85;
+  
+  /* Cyber Profile Accents */
+  --neon-purple: #bd00ff;
+  --neon-cyan: #00f0ff;
+  --neon-amber: #ffaa00;
+}
+
+/* Base Panel Rules */
+.gaming-profile-card.card {
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--arcade-bg-card) !important;
+  border: 2px solid var(--panel-border-dark) !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.border-purple:hover {
+  border-color: var(--neon-purple) !important;
+}
+
+.icon-purple {
+  color: var(--neon-purple) !important;
+  filter: drop-shadow(0 0 4px var(--neon-purple));
+}
+
+/* Mini Action Buttons Overrides */
+.btn-gaming-edit {
+  background-color: transparent !important;
+  border: 1px solid var(--neon-cyan) !important;
+  color: var(--neon-cyan) !important;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 0.7rem !important;
+  border-radius: 0px !important;
+  padding: 4px 10px !important;
+  letter-spacing: 0.5px;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-gaming-edit:hover {
+  background-color: var(--neon-cyan) !important;
+  color: #000000 !important;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+/* User Text Container Well Boxes */
+.terminal-bio-well {
+  background-color: var(--terminal-darkwell);
+  border: 1px dashed rgba(117, 106, 133, 0.25);
+  padding: 14px;
+  position: relative;
+}
+
+/* ==========================================================================
+   ANTI-GHOSTING PARAGRAPH FILTERS (PREVENTS PHP BLOCKS FROM TURNING DARK)
+   ========================================================================== */
+.bio-text-forced {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.95rem !important;
+  color: #e2dbe8 !important; /* Forces crisp off-white contrast to reveal text */
+  line-height: 1.6 !important;
+  margin-bottom: 12px !important;
+}
+
+.read-more-link {
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--neon-cyan) !important;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.read-more-link:hover {
+  color: var(--text-bright) !important;
+  text-shadow: 0 0 6px var(--neon-cyan);
+}
+
+/* Metric Display Typographies */
+.layout-metric-titles .matrix-label {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--text-slate);
+}
+
+.text-purple-data {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--neon-purple) !important;
+  text-shadow: 0 0 4px rgba(189, 0, 255, 0.3);
+}
+
+/* Horizontal Progress Elements styling overlays */
+.terminal-linear-bar-frame {
+  background-color: #08030f !important;
+  border: 1px solid rgba(117, 106, 133, 0.3) !important;
+  height: 6px !important;
+  border-radius: 0px !important;
+  overflow: hidden;
+}
+
+.terminal-linear-bar-fill-purple {
+  background-color: var(--neon-purple) !important;
+  box-shadow: 0 0 8px var(--neon-purple);
+  border-radius: 0px !important;
+}
+
+/* Secondary Notification Descriptions text properties */
+.system-warning-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  color: var(--text-slate) !important;
+  font-size: 0.75rem !important;
+  line-height: 1.3;
+}
+
+.text-amber-warn {
+  color: var(--neon-amber) !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+/* ==========================================================================
+   ISOLATED MATRIX COMPONENT THEME
+   ========================================================================== */
+
+/* 1. Rigid container styling & background force definitions */
+.gaming-activity-panel.card {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #140d24 !important; /* Force panel base dark color */
+  background: #140d24 !important;
+  border: 2px solid #2c1a42 !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.border-matrix:hover {
+  border-color: #39ff14 !important; /* Matrix Green neon border glow */
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.15), 4px 4px 0px #000000;
+}
+
+.icon-matrix {
+  color: #39ff14 !important;
+  filter: drop-shadow(0 0 4px #39ff14);
+}
+
+/* Inner Well Container Box */
+.terminal-activity-stream {
+  background-color: #0a0512 !important; /* Deep dark inner background well */
+  background: #0a0512 !important;
+  border: 1px solid rgba(117, 106, 133, 0.2) !important;
+  padding: 15px !important;
+}
+
+.stream-row {
+  margin-bottom: 20px !important;
+}
+
+/* 2. Tactical Icon Display Slots */
+.slot-icon {
+  background-color: transparent !important;
+  border-radius: 0px !important;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-glow-cyan   { border: 1px solid #00f0ff !important; box-shadow: inset 0 0 6px rgba(0, 240, 255, 0.2); }
+.icon-glow-matrix { border: 1px solid #39ff14 !important; box-shadow: inset 0 0 6px rgba(57, 255, 20, 0.2); }
+.icon-glow-purple { border: 1px solid #bd00ff !important; box-shadow: inset 0 0 6px rgba(189, 0, 255, 0.2); }
+
+.text-cyan   { color: #00f0ff !important; }
+.text-matrix { color: #39ff14 !important; }
+.text-purple { color: #bd00ff !important; }
+
+/* ==========================================================================
+   ANTI-GHOST TEXT OVERRIDES: FORCING VISIBILITY FOR INNER DATA LABELS
+   ========================================================================== */
+
+/* Force headers to high-visibility, luminous solid white */
+.gaming-activity-panel .gaming-panel-title,
+.gaming-activity-panel .stream-header-text {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important; /* Bypasses external browser styling layers */
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px #000000 !important; /* Dark drop border ensures text clarity */
+}
+
+/* Force timelines and details to clear, distinct neon-gray terminal format */
+.gaming-activity-panel .stream-timestamp-text {
+  color: #a395b8 !important;
+  -webkit-text-fill-color: #a395b8 !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.75rem !important;
+  font-weight: bold !important;
+  letter-spacing: 1px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --arcade-bg-card: #140d24;
+  --terminal-darkwell: #0a0512;
+  --panel-border-dark: #2c1a42;
+  --text-bright: #ffffff;
+  --text-slate: #756a85;
+  
+  /* Cyber Core Accents */
+  --neon-cyan: #00f0ff;
+  --neon-matrix: #39ff14;
+  --neon-danger: #ff3131;
+}
+
+/* Master Panel Setup */
+.gaming-social-panel.card {
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--arcade-bg-card) !important;
+  border: 2px solid var(--panel-border-dark) !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.terminal-social-header {
+  background-color: rgba(44, 26, 66, 0.3) !important;
+  border-bottom: 1px solid var(--panel-border-dark) !important;
+  padding: 12px 15px !important;
+}
+
+.gaming-panel-title {
+  font-size: 0.95rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 2px;
+  color: var(--text-bright) !important;
+}
+
+.icon-cyan {
+  color: var(--neon-cyan) !important;
+  filter: drop-shadow(0 0 4px var(--neon-cyan));
+}
+
+/* Interactive Edit Trigger */
+.btn-gaming-edit {
+  background-color: transparent !important;
+  border: 1px solid var(--neon-cyan) !important;
+  color: var(--neon-cyan) !important;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 0.7rem !important;
+  border-radius: 0px !important;
+  padding: 4px 10px !important;
+  letter-spacing: 0.5px;
+}
+
+.btn-gaming-edit:hover {
+  background-color: var(--neon-cyan) !important;
+  color: #000000 !important;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+/* Grid Alignment Architecture for Social Frequencies */
+.terminal-social-body {
+  background-color: var(--terminal-darkwell) !important;
+  padding: 15px !important;
+}
+
+.social-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+/* Individual Interactive Grid Links */
+.social-link-node {
+  background-color: rgba(20, 13, 36, 0.6) !important;
+  border: 1px solid rgba(117, 106, 133, 0.2) !important;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  text-decoration: none !important;
+  transition: all 0.15s ease-in-out;
+}
+
+.social-link-node:hover {
+  border-color: var(--neon-cyan) !important;
+  background-color: rgba(0, 240, 255, 0.03) !important;
+  box-shadow: inset 0 0 8px rgba(0, 240, 255, 0.1);
+}
+
+.node-icon {
+  font-size: 1.1rem;
+  margin-right: 12px;
+  color: var(--neon-cyan);
+  width: 20px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   ANTI-GHOST TEXT PARAMETERS: FORCING VISIBILITY IN DYNAMIC PHP LOOPS
+   ========================================================================== */
+.node-data-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.95rem !important;
+  font-weight: bold !important;
+  color: #ffffff !important; /* Force explicit illumination */
+  -webkit-text-fill-color: #ffffff !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Gray styling override for unset fields */
+.node-unset-label {
+  color: var(--text-slate) !important;
+  -webkit-text-fill-color: var(--text-slate) !important;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* JavaScript Alert Status Message Fix */
+.terminal-alert-success {
+  background-color: rgba(57, 255, 20, 0.1);
+  border: 1px solid var(--neon-matrix);
+  padding: 2px 8px;
+  margin-left: 10px;
+}
+
+.terminal-alert-success i {
+  color: var(--neon-matrix) !important;
+}
+
+.alert-matrix-text {
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--neon-matrix) !important;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --arcade-bg-card: #140d24;
+  --terminal-darkwell: #0a0512;
+  --panel-border-dark: #2c1a42;
+  --text-bright: #ffffff;
+  
+  /* Danger Theme Accents */
+  --neon-danger: #ff3131;
+  --danger-glow: rgba(255, 49, 49, 0.2);
+}
+
+/* Master Danger Panel Core */
+.gaming-danger-panel.card {
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--arcade-bg-card) !important;
+  border: 2px solid var(--panel-border-dark) !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+/* Header Alignment */
+.terminal-danger-header {
+  background-color: rgba(255, 49, 49, 0.05) !important;
+  border-bottom: 1px solid rgba(255, 49, 49, 0.2) !important;
+  padding: 12px 15px !important;
+  border-radius: 0px !important;
+}
+
+.gaming-danger-panel .gaming-panel-title {
+  font-size: 0.95rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 2px;
+  color: var(--text-bright) !important;
+}
+
+.icon-danger-neon {
+  color: var(--neon-danger) !important;
+  filter: drop-shadow(0 0 4px var(--neon-danger));
+}
+
+/* Container Box Inner Well */
+.terminal-danger-body {
+  background-color: var(--terminal-darkwell) !important;
+  padding: 20px 15px !important;
+}
+
+/* ==========================================================================
+   ANTI-GHOST TEXT PARAMETER: FORCING WARNING PARAGRAPH OUT OF THE DARK
+   ========================================================================== */
+.danger-warning-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.85rem !important;
+  font-weight: bold !important;
+  color: #ff9999 !important; /* High contrast warning-red hue to prevent ghost text */
+  -webkit-text-fill-color: #ff9999 !important;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   TACTICAL DESTRUCTIVE BUTTON ACTIONS
+   ========================================================================== */
+
+/* Tier 1 Danger: Deactivate Account */
+.btn-danger-action {
+  background-color: transparent !important;
+  border: 1px solid var(--neon-danger) !important;
+  color: var(--neon-danger) !important;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 0.8rem !important;
+  border-radius: 0px !important;
+  padding: 10px !important;
+  letter-spacing: 1px;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-danger-action:hover {
+  background-color: var(--neon-danger) !important;
+  color: #000000 !important;
+  box-shadow: 0 0 12px var(--danger-glow);
+}
+
+/* Tier 2 Ultimate Danger: Purge Core Data */
+.btn-danger-destructive {
+  background-color: rgba(255, 49, 49, 0.1) !important;
+  border: 1px dashed var(--neon-danger) !important;
+  color: var(--text-bright) !important;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 0.8rem !important;
+  border-radius: 0px !important;
+  padding: 10px !important;
+  letter-spacing: 1px;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-danger-destructive:hover {
+  background-color: var(--neon-danger) !important;
+  border-style: solid !important;
+  color: #000000 !important;
+  box-shadow: 0 0 20px rgba(255, 49, 49, 0.5);
+}
+
+/* Border Glow Animation for Container States */
+.border-danger-neon:hover {
+  border-color: var(--neon-danger) !important;
+  box-shadow: 0 0 15px rgba(255, 49, 49, 0.15), 4px 4px 0px #000000;
+}

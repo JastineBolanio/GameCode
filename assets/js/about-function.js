@@ -14,9 +14,7 @@
  *   - Bootstrap 5 (modals, carousel, accordion)
  *   - ScrollReveal.js (animations)
  *   - FontAwesome (icons)
- * Author: Code Gaming Team
- * Last Updated: September 28, 2025
- */
+ *
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {

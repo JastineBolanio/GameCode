@@ -15,9 +15,6 @@
  *   - Included globally via footer.php on all pages with the audio toolbar.
  *   - Requires the footer HTML structure and element IDs/classes to match.
  * 
- * Author: [Santiago]
- * Last Updated: [June 13, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 

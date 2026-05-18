@@ -1,8 +1,6 @@
 /**
  * File: admin_profile.js
  * Purpose: Handles admin profile management functionality
- * Author: CodeGaming Team
- * Last Updated: October 21, 2025
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -127,13 +125,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     showToast(data.error || 'Failed to update profile picture', 'error');
                     // Revert preview on error
-                    profileAvatar.src = profileAvatar.dataset.original || 'assets/images/PTC.png';
+                    profileAvatar.src = profileAvatar.dataset.original || 'assets/images/MainLogos.png';
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
                 showToast('An error occurred while uploading image', 'error');
-                profileAvatar.src = profileAvatar.dataset.original || 'assets/images/PTC.png';
+                profileAvatar.src = profileAvatar.dataset.original || 'assets/images/MainLogos.png';
             });
         });
     }

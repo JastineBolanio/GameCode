@@ -19,8 +19,6 @@
  *   - Included at the top of all main pages (excluding anchor page) for consistent navigation and branding.
  *   - Relies on session/auth variables to display user-specific links.
  * 
- * Author: [Santiago]
- * Last Updated: [October 13, 2025]
  * ==========================================================
  */
 
@@ -72,8 +70,8 @@ $currentUser = $isLoggedIn ? $auth->getCurrentUser() : null;
         <div class="container-fluid">
             <!-- Brand with Logo -->
             <a class="navbar-brand d-flex align-items-center" href="home_page.php">
-                <img src="assets/images/PTC.png" alt="Code Game Logo" class="navbar-logo me-2" width="40" height="40">
-                <span class="brand-text">Code Gaming</span>
+                <img src="assets/images/MainLogos.png" alt="Code Game Logo" class="navbar-logo me-2" width="40" height="40">
+                <span class="brand-text">SKillForge</span>
             </a>
 
             <!-- Anchor Page Button -->
@@ -88,52 +86,54 @@ $currentUser = $isLoggedIn ? $auth->getCurrentUser() : null;
             </button>
 
             <!-- Navigation Content -->
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <!-- Left Navigation Links -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- Announcements -->
-                    <li class="nav-item">
-                        <a class="nav-link <?php echo $currentPage === 'announcements.php' ? 'active' : ''; ?>" 
-                           href="announcements.php">
-                            <i class="fas fa-bullhorn me-1"></i>Announcements
-                        </a>
-                    </li>
-                    
-                    <!-- Tutorial -->
-                    <li class="nav-item">
-                        <a class="nav-link <?php echo $currentPage === 'tutorial.php' ? 'active' : ''; ?>" 
-                           href="tutorial.php">
-                            <i class="fas fa-book me-1"></i>Tutorial
-                        </a>
-                    </li>
-                    
-                    <!-- Game Modes Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle <?php echo in_array($currentPage, ['mini-game.php', 'quiz.php', 'challenges.php']) ? 'active' : ''; ?>" 
-                           href="#" id="gameModesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-gamepad me-1"></i>Game
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="gameModesDropdown">
-                            <li>
-                                <a class="dropdown-item <?php echo $currentPage === 'mini-game.php' ? 'active' : ''; ?>" 
-                                   href="mini-game.php">
-                                    <i class="fas fa-puzzle-piece me-2"></i>Mini-Game
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item <?php echo $currentPage === 'quiz.php' ? 'active' : ''; ?>" 
-                                   href="quiz.php">
-                                    <i class="fas fa-question-circle me-2"></i>Quiz
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item <?php echo $currentPage === 'challenges.php' ? 'active' : ''; ?>" 
-                                   href="challenges.php">
-                                    <i class="fas fa-trophy me-2"></i>Challenges
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+             <link href="assets/css/NavigationV2.css" rel="stylesheet">
+<div class="collapse navbar-collapse gamer-nav" id="navbarContent">
+    <!-- Center Navigation Links -->
+    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <!-- Announcements -->
+        <li class="nav-item">
+            <a class="nav-link <?php echo $currentPage === 'announcements.php' ? 'active' : ''; ?>" 
+               href="announcements.php">
+                <i class="fas fa-bullhorn me-1"></i> Announcements
+            </a>
+        </li>
+        <!-- Tutorial -->
+        <li class="nav-item">
+            <a class="nav-link <?php echo $currentPage === 'tutorial.php' ? 'active' : ''; ?>" 
+               href="tutorial.php">
+                <i class="fas fa-book me-1"></i> Tutorial
+            </a>
+        </li>
+        
+        <!-- Game Modes Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle <?php echo in_array($currentPage, ['mini-game.php', 'quiz.php', 'challenges.php']) ? 'active' : ''; ?>" 
+               href="#" id="gameModesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-gamepad me-1"></i> Game Modes
+            </a>
+<ul class="dropdown-menu gamer-dropdown" aria-labelledby="gameModesDropdown">
+    <li>
+        <a class="dropdown-item <?php echo $currentPage === 'mini-game.php' ? 'active' : ''; ?>" 
+           href="mini-game.php">
+            <i class="fas fa-puzzle-piece me-2"></i> Mini-Game
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item <?php echo $currentPage === 'quiz.php' ? 'active' : ''; ?>" 
+           href="quiz.php">
+            <i class="fas fa-question-circle me-2"></i> Quiz
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-item <?php echo $currentPage === 'challenges.php' ? 'active' : ''; ?>" 
+           href="challenges.php">
+            <i class="fas fa-trophy me-2"></i> Challenges
+        </a>
+    </li>
+</ul>
+        </li>
+    </ul>
+</div>
                     
                             <!-- Toast Container -->
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
@@ -167,14 +167,14 @@ $currentUser = $isLoggedIn ? $auth->getCurrentUser() : null;
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="<?php echo !empty($currentUser['profile_picture']) ? htmlspecialchars($currentUser['profile_picture']) : 'assets/images/default-avatar.gif'; ?>"
+                                <img src="<?php echo !empty($currentUser['profile_picture']) ? htmlspecialchars($currentUser['profile_picture']) : 'assets/images/Avatar.gif'; ?>"
                                     alt="Avatar" class="rounded-circle me-2" width="35" height="35" id="userAvatar"/>
                                 <span id="usernameDisplay"><?php echo htmlspecialchars($currentUser['username']); ?></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                                 <li class="dropdown-header">
                                     <div class="d-flex align-items-center">
-                                        <img src="<?php echo !empty($currentUser['profile_picture']) ? htmlspecialchars($currentUser['profile_picture']) : 'assets/images/default-avatar.gif'; ?>"
+                                        <img src="<?php echo !empty($currentUser['profile_picture']) ? htmlspecialchars($currentUser['profile_picture']) : 'assets/images/Avatar.gif'; ?>"
                                             alt="Avatar" class="rounded-circle me-2" width="30" height="30"/>
                                         <div>
                                             <div class="fw-bold"><?php echo htmlspecialchars($currentUser['username']); ?></div>
@@ -220,7 +220,7 @@ $currentUser = $isLoggedIn ? $auth->getCurrentUser() : null;
             <?php if ($isLoggedIn): ?>
                 <!-- Logged-in User Mobile Menu -->
                 <div class="mobile-user-info">
-                    <img src="<?php echo !empty($currentUser['profile_picture']) ? htmlspecialchars($currentUser['profile_picture']) : 'assets/images/default-avatar.gif'; ?>"
+                    <img src="<?php echo !empty($currentUser['profile_picture']) ? htmlspecialchars($currentUser['profile_picture']) : 'assets/images/Avatar.gif'; ?>"
                          alt="Avatar" class="mobile-avatar"/>
                     <div class="mobile-user-details">
                         <h6 class="mb-0"><?php echo htmlspecialchars($currentUser['username']); ?></h6>

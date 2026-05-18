@@ -11,8 +11,6 @@
  *   - Called by frontend and home page for leaderboard display
  *   - Supports query parameters: scope, user_id, guest_session_id, nickname
  * 
- * Author: CodeGaming Team
- * Last Updated: September 29, 2025
  */
 
 header('Content-Type: application/json');

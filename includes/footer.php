@@ -18,8 +18,6 @@
  *   - Included at the bottom of all main pages for consistent footer, audio, and modal functionality.
  *   - All global scripts and styles for the footer/audio/modal are managed here.
  * 
- * Author: [Santiago]
- * Last Updated: [June 13, 2025]
  * ==========================================================
  */
 ?>
@@ -29,7 +27,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-4 mb-md-0">
-                <h5>Code Gaming</h5>
+                <h5>SkillForge</h5>
                 <p class="mb-0">Master coding through interactive gameplay and challenges.</p>
             </div>
             <div class="col-md-4 mb-4 mb-md-0">
@@ -86,19 +84,14 @@
                 <div class="col-md-4 d-flex align-items-center justify-content-end">
                     <input type="range" id="volumeSlider" class="form-range me-3" min="0" max="1" step="0.01">
                     <select id="trackSelect" class="form-select form-select-sm track-select-scroll">
-                        <option value="audio/vhs.mp3">VHS Dreams</option>
-                        <option value="audio/flying.m4a">Flying'n'Stuff</option>
-                        <option value="audio/gateway.m4a">Gateway</option>
-                        <option value="audio/h4.mp3">H4</option>
-                        <option value="audio/apricot.mp3">Apricot</option>
-                        <option value="audio/just.m4a">Just</option>
-                        <option value="audio/binary.mp3">Binary</option>
-                        <option value="audio/SleeperMKUltra4.mp3">Sleeper MK Ultra 4</option>
-                        <option value="audio/Virtuality.mp3">Virtuality</option>
-                        <option value="audio/come_to_life.mp3">Come to Life</option>
-                        <option value="audio/Andromeda_Sunsets.mp3">Andromeda Sunsets</option>
-                        <option value="audio/rainsdef.mp3">Rainsdef</option>
-                        <option value="audio/crystalsettings.mp3">Crystal Settings</option>
+                        <option value="audio/1096 Gang - PAJAMA PARTY (Cypher1).mp3">1096 Gang - PAJAMA PARTY (Cypher1)</option>
+                        <option value="audio/Abra ft. Chito Miranda - Diwata (Official Music Video).mp3">Abra ft. Chito Miranda - Diwata (Official Music Video)</option>
+                        <option value="audio/Dance With You - Skusta Clee ft. Yuri Dope (Prod. by Flip-D) (Official Music Video).mp3">Dance With You - Skusta Clee ft. Yuri Dope (Prod. by Flip-D) (Official Music Video)</option>
+                        <option value="audio/Guddhist Gunatita - SULITIN (Official Music Video) prod. by Luna.mp3">Guddhist Gunatita - SULITIN (Official Music Video) prod. by Luna</option>
+                        <option value="audio/Materyal.mp3">Materyal</option>
+                        <option value="audio/Loonie feat. Quest - Tao Lang (Official Music Video).mp3">Loonie feat. Quest - Tao Lang (Official Music Video)</option>
+                        <option value="audio/Shanti Dope ft. Gloc-9 - Shantidope (Official Music Video).mp3">Shanti Dope ft. Gloc-9 - Shantidope (Official Music Video)</option>
+                        <option value="audio/Since Day One.mp3">Since Day One</option>
                     </select>
                 </div>
             </div>
@@ -312,10 +305,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             <input class="form-check-input" type="radio" name="role" id="roleUser" value="user" checked>
                             <label class="form-check-label" for="roleUser">Player</label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="role" id="roleAdmin" value="admin">
-                            <label class="form-check-label" for="roleAdmin">Admin</label>
-                        </div>
+                        <div class="form-check d-none">
+    <input class="form-check-input" type="radio" name="role" id="roleAdmin" value="admin">
+    <label class="form-check-label" for="roleAdmin">Admin</label>
+</div>
                     </div>
                     <div id="adminAcceptanceContainer" class="mb-3 d-none">
                         <div class="form-check">

@@ -7,7 +7,7 @@ require_once 'includes/track_visitor.php';
  * File: tutorial.php
  * 
  * Description:
- *   - Tutorial page for Code Gaming platform
+ *   - Tutorial page for SkillForge platform
  *   - Features:
  *       • Sidebar navigation for tutorial categories
  *       • Main content area for tutorial display
@@ -21,9 +21,6 @@ require_once 'includes/track_visitor.php';
  * - includes/header.php: Centralized header for consistent navigation and styling.
  * - includes/footer.php: Centralized footer for consistent layout.
  * 
- * @author [Santiago]
- * @version 1.0.0
- * @last_updated 2025-07-22
  */
 
 // Include required files
@@ -1802,64 +1799,98 @@ function getDifficultyBadgeClass($difficulty) {
             </div>
 
             <!-- Main Content: Only one language at a time -->
+             <link rel="stylesheet" href="assets/css/MainContent.css">
             <div class="col-lg-9">
                 <!-- Restore Game Mode Tutorials Section -->
-                <section class="tutorial-window mb-4" id="game-modes">
-                    <div class="window-header">
-                        <div class="window-title">
-                            <i class='bx bx-game'></i>
-                            Game Mode Tutorials
-                        </div>
-                        <div class="window-controls">
-                            <span class="window-control close"></span>
-                            <span class="window-control minimize"></span>
-                            <span class="window-control maximize"></span>
-                        </div>
-                    </div>
-                    <div class="window-content">
-                        <div class="row g-4">
-                            <!-- Mini-Game Tutorial -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="game-mode-card" id="mini-game">
-                                    <div class="game-mode-icon">
-                                        <i class='bx bx-joystick'></i>
+                <section class="tutorial-window mb-4" id="game-modes" role="region" aria-labelledby="game-modes-heading">
+    <div class="hud-analytics-terminal-bg tutorial-main-container">
+        
+        <div class="hud-main-terminal-window info-terminal-wrapper">
+            
+            <div class="hud-terminal-title-bar d-flex justify-content-between align-items-center">
+                <div class="hud-terminal-glitch-text" id="game-modes-heading">
+                    <span class="hud-terminal-prefix"><i class='bx bx-game'></i></span> DIRECTORY: CORE_GAME_MODE_TUTORIALS
+                </div>
+                <div class="hud-terminal-deco-lines" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            
+            <div class="hud-terminal-content">
+                <div class="row g-4 justify-content-center">
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card game-style-card theme-mg h-100" id="mini-game">
+                            <div class="hud-corner corner-tl"></div>
+                            <div class="hud-corner corner-br"></div>
+                            
+                            <div class="card-body d-flex flex-column justify-content-between text-center p-4">
+                                <div>
+                                    <div class="game-mode-icon-wrapper mb-3">
+                                        <i class='bx bx-joystick game-icon-pulse'></i>
                                     </div>
-                                    <h5>Mini-Game Mode</h5>
-                                    <p>Learn through interactive mini-games. Master coding concepts while having fun!</p>
-                                    <button class="nav-button tutorial-trigger" data-mode="mini-game">
-                                        Start Tutorial
-                                    </button>
+                                    <h5 class="card-title text-uppercase">Mini-Game Mode</h5>
+                                    <div class="game-stat-strip text-uppercase">ARCADE_SECTOR</div>
+                                    <p class="game-meta-text">Learn through interactive mini-games. Master coding concepts while having fun!</p>
                                 </div>
-                            </div>
-                            <!-- Quiz Tutorial -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="game-mode-card" id="quiz">
-                                    <div class="game-mode-icon">
-                                        <i class='bx bx-question-mark'></i>
-                                    </div>
-                                    <h5>Quiz Mode</h5>
-                                    <p>Test your knowledge with our comprehensive quizzes on various programming topics.</p>
-                                    <button class="nav-button tutorial-trigger" data-mode="quiz">
-                                        Start Tutorial
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- Challenge Tutorial -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="game-mode-card" id="challenge">
-                                    <div class="game-mode-icon">
-                                        <i class='bx bx-trophy'></i>
-                                    </div>
-                                    <h5>Challenge Mode</h5>
-                                    <p>Take on coding challenges and prove your skills in real-world scenarios.</p>
-                                    <button class="nav-button tutorial-trigger" data-mode="challenge">
-                                        Start Tutorial
-                                    </button>
-                                </div>
+                                
+                                <button class="btn btn-game-action tutorial-trigger text-uppercase w-100 mt-3" data-mode="mini-game">
+                                    Start Tutorial
+                                </button>
                             </div>
                         </div>
                     </div>
-                </section>
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card game-style-card theme-qz h-100" id="quiz">
+                            <div class="hud-corner corner-tl"></div>
+                            <div class="hud-corner corner-br"></div>
+                            
+                            <div class="card-body d-flex flex-column justify-content-between text-center p-4">
+                                <div>
+                                    <div class="game-mode-icon-wrapper mb-3">
+                                        <i class='bx bx-question-mark game-icon-pulse'></i>
+                                    </div>
+                                    <h5 class="card-title text-uppercase">Quiz Mode</h5>
+                                    <div class="game-stat-strip text-uppercase">KNOWLEDGE_NODE</div>
+                                    <p class="game-meta-text">Test your knowledge with our comprehensive quizzes on various programming topics.</p>
+                                </div>
+                                
+                                <button class="btn btn-game-action tutorial-trigger text-uppercase w-100 mt-3" data-mode="quiz">
+                                    Start Tutorial
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card game-style-card theme-ch h-100" id="challenge">
+                            <div class="hud-corner corner-tl"></div>
+                            <div class="hud-corner corner-br"></div>
+                            
+                            <div class="card-body d-flex flex-column justify-content-between text-center p-4">
+                                <div>
+                                    <div class="game-mode-icon-wrapper mb-3">
+                                        <i class='bx bx-trophy game-icon-pulse'></i>
+                                    </div>
+                                    <h5 class="card-title text-uppercase">Challenge Mode</h5>
+                                    <div class="game-stat-strip text-uppercase">OVERCLOCK_LOG</div>
+                                    <p class="game-meta-text">Take on coding challenges and prove your skills in real-world scenarios.</p>
+                                </div>
+                                
+                                <button class="btn btn-game-action tutorial-trigger text-uppercase w-100 mt-3" data-mode="challenge">
+                                    Start Tutorial
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
                 <!-- End Game Mode Tutorials Section -->
 
                 <section class="tutorial-window" id="programming-language-section">

@@ -1,4 +1,4 @@
-# Pull Request Template for Code Gaming
+# Pull Request Template for coding_game
 
 ## Description
 Please include a summary of the changes and the related issue. Please also include relevant motivation and context.

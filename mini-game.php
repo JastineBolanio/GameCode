@@ -7,7 +7,7 @@ require_once 'includes/track_visitor.php';
  * File: mini-game.php
  * 
  * Description:
- *   - Enhanced Mini-Game page for Code Gaming platform
+ *   - Enhanced Mini-Game page for SkillForge platform
  *   - Features:
  *       • Simple screen-based game flow (following challenges.js pattern)
  *       • Interactive card-based mode selection with direct start buttons
@@ -20,10 +20,7 @@ require_once 'includes/track_visitor.php';
  * Usage:
  *   - Accessible to all users and guests
  *   - Allows users to play interactive coding mini-games
- * 
- * Author: [Santiago] - Enhanced by Cascade AI
- * Last Updated: [September 29, 2025]
- * -- Code Gaming Team --
+
  * ==========================================================
  */
 
@@ -101,63 +98,86 @@ include 'includes/header.php';
             </div>
             
             <!-- Mini-Game Welcome Screen -->
+             <link rel="stylesheet" href="assets/css/MiniGamesV2.css">
             <div class="mini-game-screen active" id="mini-game-welcome">
-                <div class="welcome-content text-center">
-                    <div class="welcome-header mb-4">
-                        <h2>🎮 Choose Your Challenge</h2>
-                        <p class="text-muted">Test your coding skills with interactive mini-games</p>
-                    </div>
-                    
-                    <!-- Game Mode Selection -->
-                    <div class="row mb-4">
-                        <?php foreach ($gameTypes as $gameType): ?>
-                        <div class="col-md-6 mb-3">
-                            <div class="game-mode-card h-100" 
-                                 data-mode="<?php echo htmlspecialchars($gameType['mode_key']); ?>"
-                                 data-name="<?php echo htmlspecialchars($gameType['name']); ?>"
-                                 data-description="<?php echo htmlspecialchars($gameType['description']); ?>">
-                                <div class="card-body text-center">
-                                    <div class="game-mode-icon mb-3">
-                                        <i class="<?php echo htmlspecialchars($gameType['icon']); ?> fa-3x"></i>
-                                    </div>
-                                    <h5 class="card-title"><?php echo htmlspecialchars($gameType['name']); ?></h5>
-                                    <p class="card-text text-light"><?php echo htmlspecialchars($gameType['description']); ?></p>
-                                    <button class="btn btn-primary btn-start-mode" 
-                                            data-mode="<?php echo htmlspecialchars($gameType['mode_key']); ?>">
-                                        <span class="btn-text">START <?php echo strtoupper($gameType['name']); ?></span>
-                                    </button>
+    <div class="hud-analytics-terminal-bg welcome-terminal-wrapper">
+        <div class="hud-main-terminal-window welcome-primary-window">
+            
+            <div class="hud-terminal-title-bar d-flex justify-content-between align-items-center">
+                <div class="hud-terminal-glitch-text">
+                    <span class="hud-terminal-prefix">🎮</span> SYSTEM_INITIALIZATION: SELECT_MISSION_PARAMETER
+                </div>
+                <div class="hud-terminal-deco-lines" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            
+            <div class="hud-terminal-content p-4 p-md-5">
+                <div class="welcome-header mb-5 text-center">
+                    <h2 class="hud-terminal-main-title text-uppercase">Choose Your Challenge</h2>
+                    <p class="hud-terminal-subtitle">Test your tactical coding syntax execution within live interactive simulations</p>
+                </div>
+                
+                <div class="row mb-5 g-4 justify-content-center">
+                    <?php foreach ($gameTypes as $gameType): ?>
+                    <div class="col-12 col-md-6">
+                        <div class="card game-style-card matrix-mode-card h-100" 
+                             data-mode="<?php echo htmlspecialchars($gameType['mode_key']); ?>"
+                             data-name="<?php echo htmlspecialchars($gameType['name']); ?>"
+                             data-description="<?php echo htmlspecialchars($gameType['description']); ?>">
+                            
+                            <div class="hud-corner corner-tl"></div>
+                            <div class="hud-corner corner-br"></div>
+                            
+                            <div class="card-body">
+                                <div class="game-mode-icon-wrapper mb-3">
+                                    <i class="<?php echo htmlspecialchars($gameType['icon']); ?> game-icon-pulse"></i>
                                 </div>
+                                <h5 class="card-title text-uppercase"><?php echo htmlspecialchars($gameType['name']); ?></h5>
+                                <div class="game-stat-strip text-uppercase">DEPLOYABLE_SECTOR</div>
+                                <p class="game-meta-text mb-4"><?php echo htmlspecialchars($gameType['description']); ?></p>
+                                
+                                <button class="btn btn-game-action btn-start-mode text-uppercase w-100 mt-auto" 
+                                        data-mode="<?php echo htmlspecialchars($gameType['mode_key']); ?>">
+                                    <span class="btn-text">START <?php echo htmlspecialchars($gameType['name']); ?></span>
+                                </button>
                             </div>
                         </div>
-                        <?php endforeach; ?>
                     </div>
-                    
-                    <!-- Settings -->
-                    <div class="game-settings mb-4">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="languageSelect" class="form-label">Language:</label>
-                                <select class="form-select" id="languageSelect">
-                                    <option value="javascript">JavaScript</option>
-                                    <option value="python">Python</option>
-                                    <option value="java">Java</option>
-                                    <option value="cpp">C++</option>
-                                    <option value="css">CSS</option>
-                                    <option value="html">HTML</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="difficultySelect" class="form-label">Difficulty:</label>
-                                <select class="form-select" id="difficultySelect">
-                                    <option value="beginner">Beginner</option>
-                                    <option value="intermediate">Intermediate</option>
-                                    <option value="expert">Expert</option>
-                                </select>
-                            </div>
+                    <?php endforeach; ?>
+                </div>
+                
+                <div class="game-settings-panel p-4">
+                    <div class="settings-panel-header mb-3 text-uppercase">
+                        <i class='bx bx-cog'></i> Environment Tuning Profile
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6">
+                            <label for="languageSelect" class="form-label hud-input-label text-uppercase">Compiler Core Language</label>
+                            <select class="form-select hud-terminal-dropdown" id="languageSelect">
+                                <option value="javascript">JavaScript (V8 Engine)</option>
+                                <option value="python">Python (CPython Interpreted)</option>
+                                <option value="java">Java (JVM Bytecode)</option>
+                                <option value="cpp">C++ (ISO Native Compilation)</option>
+                                <option value="css">CSS (Cascading Layout Matrix)</option>
+                                <option value="html">HTML (DOM Parser Structural)</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="difficultySelect" class="form-label hud-input-label text-uppercase">Threat Vector Difficulty</label>
+                            <select class="form-select hud-terminal-dropdown" id="difficultySelect">
+                                <option value="beginner">Beginner [Tier_01]</option>
+                                <option value="intermediate">Intermediate [Tier_02]</option>
+                                <option value="expert">Expert [Tier_03 // Overclocked]</option>
+                            </select>
                         </div>
                     </div>
                 </div>
+                
             </div>
+        </div>
+    </div>
+</div>
             
             <!-- Mini-Game Progress Screen -->
             <div class="mini-game-screen" id="mini-game-progress">
@@ -248,38 +268,44 @@ include 'includes/header.php';
 
         <!-- Leaderboard Sidebar -->
         <div class="col-lg-4">
-            <div class="leaderboard-container">
-                <div class="card bg-secondary text-light leaderboard-card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0">Leaderboard</h5>
-                            <button class="btn btn-outline-light btn-sm" id="reloadLeaderboardBtn" title="Refresh Leaderboard">
-                                <i class="fas fa-sync-alt"></i>
-                            </button>
-                        </div>
-                        <div class="game-mode-selectors mt-2">
-                            <button class="game-mode-selector active" data-game-type="guess">Guess</button>
-                            <button class="game-mode-selector" data-game-type="typing">Typing</button>
-                        </div>
-                        <div class="time-scope-selectors mt-2">
-                            <button class="time-scope-selector active" data-scope="alltime">All-Time</button>
-                            <button class="time-scope-selector" data-scope="weekly">Weekly</button>
-                            <button class="time-scope-selector" data-scope="monthly">Monthly</button>
-                        </div>
+    <div class="leaderboard-container hud-sidebar-matrix">
+        <div class="card hud-main-terminal-window arcade-sidebar-window h-100">
+            
+            <div class="card-header hud-terminal-title-bar">
+                <div class="d-flex justify-content-between align-items-center w-100 mb-3">
+                    <div class="hud-terminal-glitch-text">
+                        <span class="hud-terminal-prefix">🏆</span> RANK: APEX_LOG
                     </div>
-                    <div class="card-body p-0">
-                        <ul class="leaderboard-list" id="leaderboardList">
-                            <!-- Leaderboard items will be populated by JavaScript -->
-                        </ul>
-                    </div>
-                    <div class="card-footer bg-transparent border-secondary">
-                        <div class="leaderboard-pagination" id="leaderboardPagination">
-                            <!-- Pagination will be populated by JavaScript -->
-                        </div>
-                    </div>
+                    <button class="window-refresh-btn" id="reloadLeaderboardBtn" title="Re-sync terminal logs" aria-label="Refresh Leaderboard">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                
+                <div class="game-mode-selectors hud-filter-row d-flex justify-content-center gap-1 mb-2">
+                    <button class="game-mode-selector active text-uppercase flex-grow-1" data-game-type="guess">Guess_Mode</button>
+                    <button class="game-mode-selector text-uppercase flex-grow-1" data-game-type="typing">Typing_Mode</button>
+                </div>
+                
+                <div class="time-scope-selectors hud-filter-row sub-filters d-flex justify-content-center gap-1">
+                    <button class="time-scope-selector active text-uppercase" data-scope="alltime">All-Time</button>
+                    <button class="time-scope-selector text-uppercase" data-scope="weekly">Weekly</button>
+                    <button class="time-scope-selector text-uppercase" data-scope="monthly">Monthly</button>
                 </div>
             </div>
+            
+            <div class="card-body p-0 hud-terminal-content">
+                <ul class="leaderboard-list hud-terminal-feed-list p-0 m-0" id="leaderboardList" role="log" aria-live="polite">
+                    </ul>
+            </div>
+            
+            <div class="card-footer bg-transparent border-0 pt-3">
+                <div class="leaderboard-pagination hud-terminal-pagination-matrix d-flex justify-content-center gap-1" id="leaderboardPagination">
+                    </div>
+            </div>
+            
         </div>
+    </div>
+</div>
     </div>
 </div>
 

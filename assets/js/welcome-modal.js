@@ -9,8 +9,6 @@
  * Usage:
  *   - Include this file on the home page
  *   - Requires Bootstrap modal functionality
- * Author: CodeGaming Team
- * Last Updated: September 27, 2025
  */
 
 // Only initialize if not already initialized

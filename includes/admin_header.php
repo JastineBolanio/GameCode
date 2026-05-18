@@ -20,8 +20,6 @@
  *   - Database.php for database access
  *   - CSRFProtection.php for CSRF protection
  * 
- * Author: CodeGaming Team
- * Last Updated: <?php echo date('F j, Y'); ?>
  */
 require_once 'Auth.php';
 require_once 'CSRFProtection.php';
@@ -37,7 +35,7 @@ $username = $currentUser['username'] ?? ($_SESSION['username'] ?? 'Admin');
 $userId = $currentUser['id'] ?? ($_SESSION['user_id'] ?? '0');
 
 // Handle profile picture with proper path and fallback
-$profilePicture = 'assets/images/PTC.png'; // Default fallback
+$profilePicture = 'assets/images/MainLogos.png'; // Default fallback
 if (!empty($currentUser['profile_picture'])) {
     $profilePicture = (strpos($currentUser['profile_picture'], 'http') === 0) 
         ? $currentUser['profile_picture'] 
@@ -68,7 +66,6 @@ $profilePicture = htmlspecialchars($profilePicture);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="admin-panel">
-
 <header class="admin-header">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -83,7 +80,7 @@ $profilePicture = htmlspecialchars($profilePicture);
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="admin_dashboard.php"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="admin_announcements.php"><i class="fas fa-bullhorn me-1"></i>Announcements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin_announcements.php">Announcements</a></li>
                     <li class="nav-item"><a class="nav-link" href="admin_users.php"><i class="fas fa-users me-1"></i>Users</a></li>
                     <li class="nav-item"><a class="nav-link" href="admin_analytics.php"><i class="fas fa-chart-line me-1"></i>Analytics</a></li>
                 </ul>

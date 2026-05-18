@@ -20,8 +20,6 @@
  *   - error: string (if any)
  *   - data: updated user info (optional)
  *
- * Author: CodeGaming Team
- * Last Updated: July 24, 2025
  * ==========================================================
  */
 require_once '../includes/Auth.php';

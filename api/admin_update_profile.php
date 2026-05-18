@@ -2,8 +2,6 @@
 /**
  * File: api/admin_update_profile.php
  * Purpose: Update admin profile information
- * Author: CodeGaming Team
- * Last Updated: October 21, 2025
  */
 
 session_start();

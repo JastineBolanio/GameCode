@@ -1,15 +1,15 @@
 <?php
 /**
  * File: includes/Database.php
- * 
+ *
  * Purpose: Provides a singleton database connection for CodeGaming, handling all database operations.
- * 
+ *
  * Features:
  *  - Implements singleton pattern for a single database connection instance.
  *  - Provides methods for user authentication, session management, and CRUD operations.
  *  - Includes error handling and logging for database operations.
  *  - Supports prepared statements for secure database queries.
- * 
+ *
  * @package CodeGaming
  * @subpackage Core
  * @version 1.0.0

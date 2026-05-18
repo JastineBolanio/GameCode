@@ -7,7 +7,6 @@
  *   - Simple state management
  *   - AJAX-based challenge loading
  * 
- * Author: CodeGaming Team
  */
 // Test if script is loading
 console.log('🔥 mini-game-simple.js loaded successfully!');

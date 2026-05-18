@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@600;700&family=Share+Tech+Mono&display=swap');
+
+/* Main Canvas Terminal Outer Wrapper Frame Container */
+.welcome-terminal-wrapper {
+    position: relative;
+    background: rgba(6, 10, 18, 0.96);
+    border: 1px solid rgba(176, 38, 255, 0.12);
+    padding: 30px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.9);
+}
+
+/* Primary Core Inner Window Wrapper Element Box */
+.welcome-primary-window {
+    width: 100%;
+    background: rgba(11, 17, 28, 0.95);
+    border: 1px solid rgba(176, 38, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-primary-window .hud-terminal-title-bar {
+    background: rgba(20, 14, 32, 0.98);
+    border-bottom: 1px solid rgba(176, 38, 255, 0.2);
+    padding: 12px 20px;
+}
+
+.welcome-primary-window .hud-terminal-glitch-text {
+    font-family: 'Orbitron', sans-serif;
+    color: #b026ff;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(176, 38, 255, 0.4);
+}
+
+.welcome-primary-window .hud-terminal-deco-lines span {
+    display: inline-block;
+    width: 15px; height: 2px;
+    background: #b026ff;
+    margin-left: 4px;
+    opacity: 0.3;
+}
+.welcome-primary-window .hud-terminal-deco-lines span:last-child { opacity: 0.7; width: 30px; background: #39ff14; }
+
+/* Main Header Typography Elements Rules */
+.hud-terminal-main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.75rem;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+.hud-terminal-subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #8fa0b5;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   CRITICAL FIX: Absolute Centering & Card Matrix Structural Assembly 
+   ========================================================================== */
+.matrix-mode-card {
+    background: rgba(14, 20, 32, 0.9) !important;
+    border: 1px solid rgba(176, 38, 255, 0.15) !important;
+    border-radius: 0px !important;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6);
+    clip-path: polygon(0 0, 90% 0, 100% 12%, 100% 100%, 10% 100%, 0 88%);
+}
+
+.matrix-mode-card .card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;     /* Forces card content horizontally centered safely */
+    justify-content: flex-start !important;
+    text-align: center !important;        /* Forces textual assets to match center grid layout rules */
+    padding: 30px !important;
+}
+
+.matrix-mode-card:hover {
+    transform: translateY(-4px);
+    background: rgba(22, 17, 38, 0.95) !important;
+    border-color: rgba(176, 38, 255, 0.4) !important;
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.15);
+}
+
+/* Internal Custom Typography and Elements */
+.matrix-mode-card .game-mode-icon-wrapper {
+    font-size: 2.5rem;
+    line-height: 1;
+    color: #b026ff;
+    display: inline-block;
+}
+
+.matrix-mode-card .card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.15rem;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.4rem;
+    width: 100%;
+    text-align: center !important;
+}
+
+.matrix-mode-card .game-stat-strip {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: #39ff14;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 3px 10px;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    border-left: 2px solid #39ff14;
+}
+
+.matrix-mode-card .game-meta-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #8fa0b5;
+    line-height: 1.45;
+}
+
+/* Operational Simulation Launch Trigger Element */
+.matrix-mode-card .btn-game-action {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    background: transparent;
+    border-radius: 0px !important;
+    padding: 10px 20px;
+    color: #b026ff !important;
+    border: 1px solid #b026ff !important;
+    transition: all 0.25s ease;
+    clip-path: polygon(0 0, 94% 0, 100% 35%, 100% 100%, 6% 100%, 0% 65%);
+    cursor: pointer;
+}
+
+.matrix-mode-card:hover .btn-game-action {
+    background: #b026ff !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.4);
+}
+
+/* ==========================================================================
+   Environment Configuration Control Panel Tuning Sub-System
+   ========================================================================== */
+.game-settings-panel {
+    background: rgba(10, 14, 23, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.game-settings-panel::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: #00f0ff;
+}
+
+.settings-panel-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: #00f0ff;
+    letter-spacing: 1.5px;
+}
+
+.hud-input-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: #566c86;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+/* High-Tech Terminal Select Asset Dropdowns Overrides */
+.hud-terminal-dropdown {
+    background-color: rgba(14, 20, 32, 0.95) !important;
+    border: 1px solid rgba(0, 240, 255, 0.15) !important;
+    color: #c4d1e2 !important;
+    font-family: 'Share Tech Mono', monospace !important;
+    font-size: 0.9rem !important;
+    border-radius: 0px !important;
+    padding: 10px 15px !important;
+    transition: all 0.3s ease !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2300f0ff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+.hud-terminal-dropdown:focus {
+    border-color: #00f0ff !important;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+/* Geometric Peripheral Layout Elements */
+.matrix-mode-card .hud-corner {
+    position: absolute; width: 6px; height: 6px; border: 1px solid transparent; opacity: 0.3; transition: opacity 0.3s ease;
+}
+.matrix-mode-card .corner-tl { top: 4px; left: 4px; border-right: none; border-bottom: none; border-color: #b026ff; }
+.matrix-mode-card .corner-br { bottom: 4px; right: 4px; border-left: none; border-top: none; border-color: #b026ff; }
+.matrix-mode-card:hover .hud-corner { opacity: 1; }
+
+@keyframes iconGlowPulse {
+    0% { transform: scale(1); filter: drop-shadow(0 0 0px transparent); }
+    50% { transform: scale(1.05); filter: drop-shadow(0 0 4px currentColor); }
+    100% { transform: scale(1); filter: drop-shadow(0 0px transparent); }
+}
+.matrix-mode-card:hover .game-icon-pulse {
+    display: inline-block;
+    animation: iconGlowPulse 1.6s infinite ease-in-out;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@600;700&family=Share+Tech+Mono&display=swap');
+
+/* ==========================================================================
+   Tactical Sidebar Leaderboard Structural Framework
+   ========================================================================== */
+.arcade-sidebar-window {
+    background: rgba(8, 15, 10, 0.95) !important;
+    border: 1px solid rgba(57, 255, 20, 0.15) !important;
+    border-radius: 0px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(57, 255, 20, 0.02);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Element Decoupled Terminal Ribbon */
+.arcade-sidebar-window .hud-terminal-title-bar {
+    background: rgba(12, 24, 15, 0.98) !important;
+    border-bottom: 1px solid rgba(57, 255, 20, 0.2) !important;
+    border-radius: 0px !important;
+    padding: 15px 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Guarantees centering across full header space */
+}
+
+.arcade-sidebar-window .hud-terminal-glitch-text {
+    font-family: 'Orbitron', sans-serif;
+    color: #39ff14;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.4);
+}
+
+/* Sidebar Sync Interactive Asset */
+.arcade-sidebar-window .window-refresh-btn {
+    background: transparent;
+    border: none;
+    color: #8fa590;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.3s ease;
+}
+.arcade-sidebar-window .window-refresh-btn:hover {
+    color: #39ff14;
+    transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   CRITICAL FIX: Centered Filter Arrays & Control Modules
+   ========================================================================== */
+.hud-filter-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Primary Game Mode Selection Arrays */
+.hud-filter-row .game-mode-selector {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #8fa590;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    padding: 6px 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+.hud-filter-row .game-mode-selector.active,
+.hud-filter-row .game-mode-selector:hover {
+    color: #000000;
+    background: #39ff14;
+    border-color: #39ff14;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+    font-weight: 700;
+}
+
+/* Secondary Time Scope Filtering Array */
+.sub-filters .time-scope-selector {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #687e6a;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.sub-filters .time-scope-selector.active,
+.sub-filters .time-scope-selector:hover {
+    color: #39ff14;
+    border-bottom-color: #39ff14;
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+}
+
+/* ==========================================================================
+   Dynamic Data Output List View Nodes
+   ========================================================================== */
+.arcade-sidebar-window .hud-terminal-content {
+    background: rgba(4, 8, 5, 0.5);
+    padding: 10px;
+}
+
+.arcade-sidebar-window .hud-terminal-feed-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Programmatic Log Entries injected by JavaScript */
+.arcade-sidebar-window .hud-terminal-feed-list li,
+.leaderboard-item {
+    background: rgba(12, 22, 14, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-left: 2px solid #39ff14;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    color: #ccd6cc;
+    transition: all 0.2s ease;
+}
+
+.arcade-sidebar-window .hud-terminal-feed-list li:hover,
+.leaderboard-item:hover {
+    background: rgba(18, 33, 21, 0.85);
+    border-color: rgba(57, 255, 20, 0.25);
+    border-left-color: #39ff14;
+    transform: translateX(2px);
+}
+
+/* Text Assets Layout inside Injected Elements */
+.leaderboard-item .rank-number {
+    font-family: 'Orbitron', sans-serif;
+    color: #39ff14;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.leaderboard-item .player-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.leaderboard-item .player-score {
+    color: #39ff14;
+    text-shadow: 0 0 4px rgba(57, 255, 20, 0.3);
+}
+
+/* ==========================================================================
+   Pagination Control Systems Arrays
+   ========================================================================== */
+.arcade-sidebar-window .hud-terminal-pagination-matrix button {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #687e6a;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.arcade-sidebar-window .hud-terminal-pagination-matrix button.active,
+.arcade-sidebar-window .hud-terminal-pagination-matrix button:hover {
+    color: #39ff14;
+    border-color: #39ff14;
+    background: rgba(57, 255, 20, 0.04);
+}

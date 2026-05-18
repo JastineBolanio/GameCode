@@ -14,8 +14,6 @@
  *   - includes/Database.php
  *   - includes/Auth.php
  *   - includes/ErrorHandler.php
- * Author: CodeGaming Team
- * Last Updated: July 24, 2025
  */
 
 require_once '../includes/Database.php';

@@ -15,8 +15,6 @@
  * Included Files/Dependencies:
  *   - Bootstrap (modals)
  *   - HTML/CSS for challenge UI
- * Author: CodeGaming Team
- * Last Updated: July 22, 2025
  */
 
 // Challenge Page - Interactive Logic

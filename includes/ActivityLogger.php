@@ -2,8 +2,6 @@
 /**
  * File: ActivityLogger.php
  * Purpose: Centralized activity logging system for CodeGaming
- * Author: CodeGaming Team
- * Last Updated: October 21, 2025
  */
 
 class ActivityLogger {

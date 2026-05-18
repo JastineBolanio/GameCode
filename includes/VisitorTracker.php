@@ -7,7 +7,6 @@
  * @package CodeGaming
  * @subpackage Core
  * @version 1.0.0
- * @author CodeGaming Team
  */
 
 require_once __DIR__ . '/Database.php';

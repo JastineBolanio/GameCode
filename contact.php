@@ -1,13 +1,11 @@
 <?php
 /**
- * Contact Page - Code Gaming
+ * Contact Page - SkillForge
  * 
  * Description:
- *   - Contact form and information page for users to reach out to the Code Gaming team
+ *   - Contact form and information page for users to reach out to the SkillForge team
  *   - Includes a contact form, location map, and contact information
  * 
- * Author: [Santiago]
- * Last Updated: [October 24, 2025]
  */
 
 // Start session if not already started
@@ -53,115 +51,171 @@ include 'includes/header.php';
 
     <div class="row g-5">
         <!-- Contact Form -->
+         <link rel="stylesheet" href="assets/css/ContactV2.css">
         <div class="col-lg-7">
-            <div class="card shadow-sm border-0 rounded-3">
-                <div class="card-body p-4 p-md-5">
-                    <h2 class="h4 mb-4">Send us a Message</h2>
-                    
-                    <form id="contactForm" action="/contact/submit" method="POST">
-                        <input type="hidden" name="csrf_token" value="<?php echo $csrf->getToken(); ?>">
-                        
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                                    <label for="email">Email Address</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px;" required></textarea>
-                                    <label for="message">Your Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
-                                    <label class="form-check-label small text-muted" for="privacyPolicy">
-                                        I agree to the <a href="privacy.php" class="text-decoration-none">Privacy Policy</a> and <a href="terms.php" class="text-decoration-none">Terms of Service</a>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-lg px-4">
-                                    <i class="fas fa-paper-plane me-2"></i> Send Message
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <div class="card comms-card-ui gaming-ui">
+        <!-- Tech corner brackets for HUD aesthetics -->
+        <div class="hud-bracket top-left"></div>
+        <div class="hud-bracket top-right"></div>
+        <div class="hud-bracket bottom-left"></div>
+        <div class="hud-bracket bottom-right"></div>
+
+        <div class="card-body p-4 p-md-5">
+            <div class="comms-header">
+                <h2 class="h4 mb-1">
+                    <i class="fas fa-satellite-dish header-glow-icon"></i> 
+                    <span>COMMS_TERMINAL <span class="sub-title">// ESTABLISH_LINK</span></span>
+                </h2>
+                <div class="terminal-status"><span class="status-dot pulse-anim"></span> SECURE_LINE</div>
             </div>
+            
+            <form id="contactForm" action="/contact/submit" method="POST" class="mt-4">
+                <input type="hidden" name="csrf_token" value="<?php echo $csrf->getToken(); ?>">
+                
+                <div class="row g-4">
+                    <!-- Operator Name Input -->
+                    <div class="col-md-6">
+                        <div class="gaming-input-group">
+                            <label for="name" class="input-tag">[OPERATOR_ID]</label>
+                            <input type="text" class="gaming-control" id="name" name="name" placeholder="ENTER NAME..." required>
+                            <span class="input-bar"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Operator Email Input -->
+                    <div class="col-md-6">
+                        <div class="gaming-input-group">
+                            <label for="email" class="input-tag">[NET_ADDRESS]</label>
+                            <input type="email" class="gaming-control" id="email" name="email" placeholder="ENTER EMAIL..." required>
+                            <span class="input-bar"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Transmission Subject Input -->
+                    <div class="col-12">
+                        <div class="gaming-input-group">
+                            <label for="subject" class="input-tag">[SIGNAL_HEADER]</label>
+                            <input type="text" class="gaming-control" id="subject" name="subject" placeholder="TRANSMISSION SUBJECT..." required>
+                            <span class="input-bar"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Encrypted Message Body -->
+                    <div class="col-12">
+                        <div class="gaming-input-group">
+                            <label for="message" class="input-tag">[ENCRYPTED_DATA_PACKET]</label>
+                            <textarea class="gaming-control" id="message" name="message" placeholder="COMPILE MESSAGE DATA HERE..." style="height: 140px;" required></textarea>
+                            <span class="input-bar"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Protocol Authorization -->
+                    <div class="col-12">
+                        <div class="form-check custom-gaming-check">
+                            <input class="form-check-input gaming-checkbox" type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                            <label class="form-check-label data-protocol-label" for="privacyPolicy">
+                                AUTHORIZE: Data sync matches <a href="privacy.php" class="protocol-link">Core Privacy Protocol</a> & <a href="terms.php" class="protocol-link">Terms of Engagement</a>.
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Broadcast Submit Button -->
+                    <div class="col-12 text-end">
+                        <button type="submit" class="btn btn-gaming-broadcast">
+                            <span class="btn-grid-bg"></span>
+                            <span class="btn-content">
+                                <i class="fas fa-rss-square me-2 flash-anim"></i> BROADCAST SIGNAL
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
+    </div>
+</div>
 
         <!-- Contact Information -->
         <div class="col-lg-5">
-            <div class="card shadow-sm border-0 rounded-3 mb-4">
-                <div class="card-body p-4">
-                    <h2 class="h4 mb-4">Contact Information</h2>
-                    
-                    <div class="d-flex mb-4">
-                        <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-3 me-3">
-                            <i class="fas fa-map-marker-alt text-primary"></i>
-                        </div>
-                        <div>
-                            <h3 class="h6 mb-1">Our Location:</h3>
-                            <p class="mb-0 text-muted">College St.<br>Pateros, Metro Manila, Philippines</p>
-                        </div>
-                    </div>
+    <div class="card info-card-ui gaming-ui mb-4">
+        <!-- Tech corner brackets for HUD consistency -->
+        <div class="hud-bracket top-left"></div>
+        <div class="hud-bracket top-right"></div>
+        <div class="hud-bracket bottom-left"></div>
+        <div class="hud-bracket bottom-right"></div>
 
-                    <div class="d-flex mb-4">
-                        <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-3 me-3">
-                            <i class="fas fa-envelope text-primary"></i>
-                        </div>
-                        <div>
-                            <h3 class="h6 mb-1">Email Us:</h3>
-                            <p class="mb-0">
-                                <a href="mailto:jgsantiago@paterostechnologicalcollege.edu.ph" class="text-decoration-none">Proponent No. 1: jgsantiago@paterostechnologicalcollege.edu.ph</a>
-                                <a href="mailto:jibelza@paterostechnologicalcollege.edu.ph" class="text-decoration-none">Proponent No. 2: jibelza@paterostechnologicalcollege.edu.ph</a>
-                                <a href="mailto:ajbconstantino@paterostechnologicalcollege.edu.ph" class="text-decoration-none">Proponent No. 3: ajbconstantino@paterostechnologicalcollege.edu.ph</a>
-                                <a href="mailto:ytsabangan@paterostechnologicalcollege.edu.ph" class="text-decoration-none">Proponent No. 4: ytsabangan@paterostechnologicalcollege.edu.ph</a>
-                                <a href="mailto:jcsilvestre@paterostechnologicalcollege.edu.ph" class="text-decoration-none">Proponent No. 5: jcsilvestre@paterostechnologicalcollege.edu.ph</a>
-                                <a href="mailto:psvalencia@paterostechnologicalcollege.edu.ph" class="text-decoration-none">Proponent No. 6: psvalencia@paterostechnologicalcollege.edu.ph</a>
-                            </p>
-                        </div>
-                    </div>
+        <div class="card-body p-4">
+            <h2 class="h4 mb-4 terminal-title">
+                <i class="fas fa-network-wired header-glow-icon"></i> 
+                <span>INTEL_DATA <span class="sub-title">// CONTACT</span></span>
+            </h2>
+            
+            <!-- Location Block -->
+            <div class="d-flex mb-4 intel-block">
+                <div class="flex-shrink-0 icon-frame me-3">
+                    <i class="fas fa-map-marked-alt icon-glow"></i>
+                </div>
+                <div>
+                    <h3 class="h6 mb-1 intel-header">[HQ_COORDINATES]</h3>
+                    <p class="mb-0 intel-text">ICCT Colleges.<br>Institute of Creative Computer Technology</p>
+                </div>
+            </div>
 
-                    <div class="d-flex">
-                        <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-3 me-3">
-                            <i class="fas fa-phone-alt text-primary"></i>
-                        </div>
-                        <div>
-                            <h3 class="h6 mb-1">Call Us</h3>
-                            <p class="mb-0">
-                                <a href="tel:+639605876574" class="text-decoration-none">+63 9605876574</a>
-                            </p>
-                        </div>
+            <!-- Squad Network (Emails) -->
+            <div class="d-flex mb-4 intel-block">
+                <div class="flex-shrink-0 icon-frame me-3">
+                    <i class="fas fa-users-cog icon-glow"></i>
+                </div>
+                <div class="w-100">
+                    <h3 class="h6 mb-2 intel-header">[SQUAD_NETWORK]</h3>
+                    <div class="proponent-grid">
+                        <a href="mailto:jastinebolanio2023@gmail.com" class="proponent-link">
+                            <span class="squad-pip status-online"></span> <span class="unit-id">UNIT_01:</span> jastinebolanio2023
+                        </a>
+                        <a href="mailto:jastinebolanio2023@gmail.com" class="proponent-link">
+                            <span class="squad-pip status-online"></span> <span class="unit-id">UNIT_02:</span> jastinebolanio2023
+                        </a>
+                        <a href="mailto:jastinebolanio2023@gmail.comjastinebolanio2023@gmail.com" class="proponent-link">
+                            <span class="squad-pip status-online"></span> <span class="unit-id">UNIT_03:</span> jastinebolanio2023
+                        </a>
+                        <a href="mailto:jastinebolanio2023@gmail.com" class="proponent-link">
+                            <span class="squad-pip status-online"></span> <span class="unit-id">UNIT_04:</span> jastinebolanio2023
+                        </a>
+                        <a href="mailto:jastinebolanio2023@gmail.com" class="proponent-link">
+                            <span class="squad-pip status-online"></span> <span class="unit-id">UNIT_05:</span> jastinebolanio2023
+                        </a>
+                        <a href="mailto:jastinebolanio2023@gmail.com" class="proponent-link">
+                            <span class="squad-pip status-online"></span> <span class="unit-id">UNIT_06:</span> jastinebolanio2023
+                        </a>
                     </div>
                 </div>
             </div>
+
+            <!-- Call/Phone Block -->
+            <div class="d-flex intel-block">
+                <div class="flex-shrink-0 icon-frame me-3">
+                    <i class="fas fa-headset icon-glow"></i>
+                </div>
+                <div>
+                    <h3 class="h6 mb-1 intel-header">[COMMS_CHANNEL]</h3>
+                    <p class="mb-0">
+                        <a href="tel:+6369696767<" class="phone-link freq-anim">+63 69696767</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
             <!-- Map -->
             <div class="card shadow-sm border-0 rounded-3 overflow-hidden">
                 <div class="ratio ratio-16x9">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215209179128!2d121.0656666!3d14.5656666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1623456789012!5m2!1sen!2sus" 
-                        width="600" 
-                        height="450" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
+                    <iframe
+                    src="https://www.google.com/maps?q=14.6177068,121.1026223&z=17&output=embed"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
                     </iframe>
                 </div>
             </div>

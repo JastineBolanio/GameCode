@@ -8,7 +8,6 @@
  * @package CodeGaming
  * @subpackage Core
  * @version 1.0.0
- * @author CodeGaming Team
  */
 
 // Only track if not in admin area to avoid inflating stats

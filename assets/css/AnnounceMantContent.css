@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --arcade-bg: #0a0512;
+  --panel-fill: #140d24;
+  --neon-cyan: #00f0ff;
+  --neon-amber: #ffaa00;
+  --text-bright: #ffffff;
+  --text-muted: #625375;
+  --border-dim: #2f1d47;
+}
+
+/* Base Terminal Context Rules */
+.gaming-hub-container {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Header Context Group styling */
+.terminal-hub-title {
+  font-size: 1.6rem !important;
+  font-weight: 900 !important;
+  color: var(--text-bright);
+  letter-spacing: 3px;
+  display: inline-flex;
+  align-items: center;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.pulse-node {
+  width: 10px;
+  height: 10px;
+  background-color: var(--neon-cyan);
+  margin-right: 12px;
+  display: inline-block;
+  box-shadow: 0 0 10px var(--neon-cyan);
+  animation: signalHeartbeat 1.5s infinite ease-in-out;
+}
+
+/* Master Action Controls Injector Button */
+.btn-gaming-lg {
+  background: var(--neon-amber) !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 0px !important;
+  color: #000000 !important;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 0.85rem !important;
+  letter-spacing: 1px;
+  padding: 12px 24px !important;
+  box-shadow: 4px 4px 0px #000;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-gaming-lg:hover {
+  background: #ffffff !important;
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.4), 4px 4px 0px #000;
+}
+
+.btn-gaming-lg:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+.btn-gaming-lg i {
+  margin-right: 8px;
+}
+
+/* Terminal Forms Layout Utilities */
+.search-input-wrapper {
+  position: relative;
+  max-width: 280px;
+  width: 100%;
+}
+
+.search-icon-accent {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--neon-cyan);
+  pointer-events: none;
+  font-size: 0.85rem;
+}
+
+.search-input-wrapper .gaming-input {
+  padding-left: 36px;
+}
+
+.select-input-wrapper {
+  max-width: 220px;
+  width: 100%;
+}
+
+/* Standardized Control Input Replacements */
+.gaming-input,
+.gaming-select {
+  font-family: 'Share Tech Mono', monospace !important;
+  background-color: var(--panel-fill) !important;
+  border: 1px solid var(--border-dim) !important;
+  border-radius: 0px !important;
+  color: var(--neon-cyan) !important;
+  font-size: 0.95rem !important;
+  height: 42px;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Form Input Placeholder Adjustment */
+.gaming-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Component Interactive Glow Focusing overrides */
+.gaming-input:focus,
+.gaming-select:focus {
+  border-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.25), inset 0 0 8px rgba(0, 0, 0, 0.6) !important;
+  outline: none;
+}
+
+/* Cleans select native arrows to behave on retro palettes */
+.gaming-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2300f0ff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+/* Target List Block adjustments to cleanly mount future loaded child nodes */
+.gaming-card-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Automated Pulse Indicator Script */
+@keyframes signalHeartbeat {
+  0% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+/* ==========================================================================
+   HEADER VISIBILITY FIX: REMOVE GHOST WHITE CONTAINER BACKGROUND
+   ========================================================================== */
+
+/* Target the wrapper around your title block to force it dark */
+.panel-header-block,
+.col-lg-8.gaming-hub-container {
+  background-color: #0a0512 !important; /* Force deep retro-dark background */
+  padding: 15px;
+  border-radius: 0px;
+}
+
+/* Ensure the title text itself is perfectly legible with a high-contrast shadow */
+.terminal-hub-title {
+  color: #ffffff !important;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6); /* Adds a subtle cyan glow to pull it out from any light spots */
+}
+/* ==========================================================================
+   NUCLEAR OPTION: TOTAL ISOLATION FOR THE HEADER TEXT
+   ========================================================================== */
+
+/* 1. Force the container background to be completely dark, no matter what */
+.terminal-header-isolated-box {
+  background-color: #0a0512 !important; /* Midnight dark */
+  background: #0a0512 !important;
+  padding: 15px 20px !important;
+  border-left: 4px solid #ffaa00 !important; /* Tactical Amber strip */
+  border-bottom: 1px solid #2f1d47 !important;
+  border-radius: 0px !important;
+  width: 100% !important;
+  display: flex !important;
+}
+
+/* 2. Force the text wrapper to inherit absolutely zero light styles */
+.terminal-hub-title-forced {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  background: transparent !important;
+}
+
+/* 3. The Text itself: Absolute high-visibility white with a solid text-shadow */
+.title-text-forced {
+  color: #ffffff !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1.6rem !important;
+  letter-spacing: 3px !important;
+  
+  /* This text shadow creates a dark boundary around the letters, 
+     making it visible even if a light background sneaks in */
+  text-shadow: 2px 2px 0px #000000, 0 0 10px rgba(0, 240, 255, 0.6) !important;
+  -webkit-text-fill-color: #ffffff !important; /* Overrides aggressive webkit text fills */
+}
+
+/* 4. The pulsing icon block */
+.pulse-node-forced {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: #00f0ff !important; /* Neon Cyan */
+  margin-right: 15px !important;
+  display: inline-block !important;
+  box-shadow: 0 0 10px #00f0ff !important;
+  animation: forcedHeartbeat 1.5s infinite ease-in-out !important;
+}
+
+@keyframes forcedHeartbeat {
+  0% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --arcade-bg-dark: #0a0512;
+  --panel-fill-dark: #140d24;
+  --text-bright: #ffffff;
+  --text-muted-purple: #625375;
+  
+  /* Cyber Theme Accents */
+  --neon-cyan: #00f0ff;
+  --neon-purple: #bd00ff;
+  --neon-matrix: #39ff14;
+  --neon-amber: #ffaa00;
+}
+
+/* Master Sidebar Console Box Wrapper */
+.gaming-sidebar-console {
+  font-family: 'Orbitron', sans-serif;
+  background: transparent;
+}
+
+/* Sub-System Section Blocks */
+.terminal-section {
+  background-color: var(--panel-fill-dark) !important;
+  border: 1px solid rgba(117, 106, 133, 0.2) !important;
+  border-radius: 0px !important;
+  padding: 18px;
+  box-shadow: 4px 4px 0px #000000;
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* Hard Theme Interactive Glow Boundaries */
+.border-sub-purple:hover { border-color: var(--neon-purple) !important; }
+.border-sub-matrix:hover { border-color: var(--neon-matrix) !important; }
+.border-sub-amber:hover  { border-color: var(--neon-amber) !important; }
+
+/* Section Header Typography */
+.gaming-sidebar-header {
+  font-size: 0.85rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 2px;
+  color: var(--text-bright) !important;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* Icon Filters */
+.icon-purple { color: var(--neon-purple) !important; filter: drop-shadow(0 0 3px var(--neon-purple)); }
+.icon-matrix { color: var(--neon-matrix) !important; filter: drop-shadow(0 0 3px var(--neon-matrix)); }
+.icon-amber  { color: var(--neon-amber) !important;  filter: drop-shadow(0 0 3px var(--neon-amber)); }
+
+/* ==========================================================================
+   ANTI-GHOST TEXT ENGINE: FORCES ALL DYNAMIC INJECTIONS TO LIGHT UP
+   ========================================================================== */
+.gaming-terminal-list,
+.dynamic-visibility-wrapper {
+  color: var(--text-bright) !important;
+}
+
+/* Target dynamically spawned structural labels and metrics counters */
+.dynamic-visibility-wrapper h1,
+.dynamic-visibility-wrapper h2,
+.dynamic-visibility-wrapper h3,
+.dynamic-visibility-wrapper h4,
+.dynamic-visibility-wrapper h5,
+.dynamic-visibility-wrapper .stat-label,
+.gaming-terminal-list .list-group-item-heading {
+  color: var(--text-bright) !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+}
+
+/* Target dynamically spawned text or numeric data values */
+.dynamic-visibility-wrapper p,
+.dynamic-visibility-wrapper div,
+.dynamic-visibility-wrapper span,
+.dynamic-visibility-wrapper .stat-value,
+.gaming-terminal-list .list-group-item {
+  font-family: 'Share Tech Mono', monospace !important;
+  color: #e2dbe8 !important; /* Forces a crisp, high-contrast off-white terminal readout */
+}
+
+/* Clean list backgrounds so standard styles don't conflict */
+.gaming-terminal-list .list-group-item {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: 1px dashed rgba(117, 106, 133, 0.2) !important;
+  margin-bottom: 6px;
+  padding: 10px;
+}
+
+/* ==========================================================================
+   INTERACTIVE RELAY UTILITY BUTTON
+   ========================================================================== */
+.btn-gaming-share {
+  background-color: transparent !important;
+  border: 2px solid var(--neon-cyan) !important;
+  color: var(--neon-cyan) !important;
+  border-radius: 0px !important;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 0.8rem !important;
+  letter-spacing: 1px;
+  padding: 14px !important;
+  box-shadow: 4px 4px 0px #000000;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-gaming-share:hover {
+  background-color: var(--neon-cyan) !important;
+  color: #000000 !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4), 4px 4px 0px #000000;
+}
+
+.btn-gaming-share:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px #000000;
+}
+
+.btn-gaming-share i {
+  margin-right: 6px;
+}

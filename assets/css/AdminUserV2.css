@@ -1,0 +1,611 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --arcade-bg-dark: #0a0512;
+  --terminal-well: #0e071a;
+  --panel-border-dark: #2c1a42;
+  --text-bright: #ffffff;
+  --text-muted-purple: #756a85;
+  
+  /* Cyber Accent Palette */
+  --neon-cyan: #00f0ff;
+  --neon-matrix: #39ff14;
+  --neon-danger: #ff3131;
+}
+
+/* Master Panel Architecture */
+.gaming-roster-panel.card {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #140d24 !important;
+  border: 2px solid var(--panel-border-dark) !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0px #000000;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.gaming-roster-panel.card:hover {
+  border-color: var(--neon-cyan) !important;
+}
+
+.gaming-panel-title {
+  font-size: 0.95rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 2px;
+  color: var(--text-bright);
+  margin-bottom: 20px;
+}
+
+.icon-cyan {
+  color: var(--neon-cyan) !important;
+  filter: drop-shadow(0 0 4px var(--neon-cyan));
+}
+
+/* Data Table Grid Structure */
+.gaming-roster-container {
+  background-color: var(--terminal-well);
+  border: 1px solid rgba(117, 106, 133, 0.2);
+  padding: 6px;
+}
+
+.gaming-roster-table {
+  color: var(--text-bright) !important;
+  margin-bottom: 0px !important;
+}
+
+/* Column Header Cells */
+.gaming-roster-table .roster-terminal-header th {
+  background-color: rgba(44, 26, 66, 0.5) !important;
+  color: var(--text-muted-purple) !important;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--panel-border-dark) !important;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+.select-column {
+  width: 50px;
+}
+
+/* ==========================================================================
+   DYNAMIC INJECTION FIX: FORCES JS ROWS TO MATCH THE TERMINAL INTERFACE
+   ========================================================================== */
+
+/* Target table cells injected inside the roster block */
+.gaming-dynamic-roster-target tr {
+  border-bottom: 1px solid rgba(117, 106, 133, 0.1) !important;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.gaming-dynamic-roster-target tr:hover {
+  background-color: rgba(0, 240, 255, 0.04) !important; /* Cyber cursor scanner tracking line */
+}
+
+.gaming-dynamic-roster-target td {
+  background: transparent !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: #e2dbe8 !important; /* Anti-ghost text alignment tint */
+  padding: 12px 10px !important;
+}
+
+/* Emphasized identifiers (like usernames or IDs) */
+.gaming-dynamic-roster-target td strong,
+.gaming-dynamic-roster-target .player-callsign {
+  color: var(--text-bright) !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* Custom Retro Checkbox Tweak */
+.gaming-checkbox {
+  accent-color: var(--neon-cyan);
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+}
+
+/* ==========================================================================
+   ROSTER COMPONENT UTILITY STYLE PRESETS (For Dynamic JS Injection Use)
+   ========================================================================== */
+
+/* Dynamic Badge Framework styling */
+.gaming-dynamic-roster-target .badge {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.65rem !important;
+  border-radius: 0px !important;
+  padding: 4px 8px !important;
+  letter-spacing: 0.5px;
+}
+
+.gaming-dynamic-roster-target .bg-success, 
+.gaming-dynamic-roster-target .status-online {
+  background-color: rgba(57, 255, 20, 0.1) !important;
+  border: 1px solid var(--neon-matrix) !important;
+  color: var(--neon-matrix) !important;
+}
+
+.gaming-dynamic-roster-target .bg-secondary, 
+.gaming-dynamic-roster-target .status-offline {
+  background-color: rgba(117, 106, 133, 0.1) !important;
+  border: 1px solid var(--text-muted-purple) !important;
+  color: var(--text-muted-purple) !important;
+}
+
+/* Action Control Button Overrides inside table lists */
+.gaming-dynamic-roster-target .btn {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.7rem !important;
+  border-radius: 0px !important;
+  padding: 4px 8px !important;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.gaming-dynamic-roster-target .btn-primary {
+  background-color: transparent !important;
+  border: 1px solid var(--neon-cyan) !important;
+  color: var(--neon-cyan) !important;
+}
+
+.gaming-dynamic-roster-target .btn-primary:hover {
+  background-color: var(--neon-cyan) !important;
+  color: #000000 !important;
+}
+
+.gaming-dynamic-roster-target .btn-danger {
+  background-color: transparent !important;
+  border: 1px solid var(--neon-danger) !important;
+  color: var(--neon-danger) !important;
+}
+
+.gaming-dynamic-roster-target .btn-danger:hover {
+  background-color: var(--neon-danger) !important;
+  color: #ffffff !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --terminal-well-dark: #0e071a;
+  --panel-border-dark: #2c1a42;
+  --text-bright-white: #ffffff;
+  --text-muted-purple: #756a85;
+  
+  /* Admin Tier Accents */
+  --neon-amber: #ffaa00;       /* Warning Amber */
+  --neon-cyan: #00f0ff;        /* Command Cyan */
+  --neon-danger: #ff3131;      /* Drop Connection Red */
+  --neon-matrix: #39ff14;      /* Online Matrix Green */
+}
+
+/* Container Border Configuration Override */
+.border-amber:hover {
+  border-color: var(--neon-amber) !important;
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.15), 4px 4px 0px #000000;
+}
+
+.icon-amber {
+  color: var(--neon-amber) !important;
+  filter: drop-shadow(0 0 4px var(--neon-amber));
+}
+
+/* Admin Table Header Cell Coloring */
+.gaming-roster-table .roster-terminal-header-admin th {
+  background-color: rgba(66, 44, 26, 0.4) !important; /* Muted amber-tinted banner background */
+  color: var(--text-muted-purple) !important;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--panel-border-dark) !important;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   ANTI-GHOST TEXT ENGINE: FORCES ALL ADMIN JS ROW INJECTIONS TO LIGHT UP
+   ========================================================================== */
+
+/* Structure parameters targeting dynamically generated rows */
+.gaming-dynamic-admin-target tr {
+  border-bottom: 1px solid rgba(117, 106, 133, 0.1) !important;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.gaming-dynamic-admin-target tr:hover {
+  background-color: rgba(255, 170, 0, 0.04) !important; /* Gold horizontal cursor tracker tracking line */
+}
+
+.gaming-dynamic-admin-target td {
+  background: transparent !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: #e2dbe8 !important; /* Eliminates ghost-text by forcing readable off-white tint */
+  padding: 12px 10px !important;
+}
+
+/* Bold structural markers (such as administrator identifiers) */
+.gaming-dynamic-admin-target td strong,
+.gaming-dynamic-admin-target .admin-callsign {
+  color: var(--text-bright-white) !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* Custom Admin Checkbox Properties */
+.gaming-checkbox-admin {
+  accent-color: var(--neon-amber);
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+}
+
+/* ==========================================================================
+   DYNAMIC CHILD COMPONENT HOOKS (For Badges and Actions inside rows)
+   ========================================================================== */
+
+/* Dynamic Badges styling injected inside the cells */
+.gaming-dynamic-admin-target .badge {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.65rem !important;
+  border-radius: 0px !important;
+  padding: 4px 8px !important;
+  letter-spacing: 0.5px;
+}
+
+/* High-priority admin badge overrides */
+.gaming-dynamic-admin-target .badge.bg-danger,
+.gaming-dynamic-admin-target .role-root-admin {
+  background-color: rgba(255, 49, 49, 0.1) !important;
+  border: 1px solid var(--neon-danger) !important;
+  color: var(--neon-danger) !important;
+  text-shadow: 0 0 4px var(--neon-danger);
+}
+
+.gaming-dynamic-admin-target .bg-success, 
+.gaming-dynamic-admin-target .status-active {
+  background-color: rgba(57, 255, 20, 0.1) !important;
+  border: 1px solid var(--neon-matrix) !important;
+  color: var(--neon-matrix) !important;
+}
+
+/* Action Control Button Overrides inside admin list rows */
+.gaming-dynamic-admin-target .btn {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.7rem !important;
+  border-radius: 0px !important;
+  padding: 4px 8px !important;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Edit / Modify Config Controls Button */
+.gaming-dynamic-admin-target .btn-warning,
+.gaming-dynamic-admin-target .btn-admin-modify {
+  background-color: transparent !important;
+  border: 1px solid var(--neon-amber) !important;
+  color: var(--neon-amber) !important;
+}
+
+.gaming-dynamic-admin-target .btn-warning:hover,
+.gaming-dynamic-admin-target .btn-admin-modify:hover {
+  background-color: var(--neon-amber) !important;
+  color: #000000 !important;
+}@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --terminal-well-dark: #0e071a;
+  --panel-border-dark: #2c1a42;
+  --text-bright-white: #ffffff;
+  --text-muted-purple: #756a85;
+  
+  /* Admin Tier Accents */
+  --neon-amber: #ffaa00;       /* Warning Amber */
+  --neon-cyan: #00f0ff;        /* Command Cyan */
+  --neon-danger: #ff3131;      /* Drop Connection Red */
+  --neon-matrix: #39ff14;      /* Online Matrix Green */
+}
+
+/* Container Border Configuration Override */
+.border-amber:hover {
+  border-color: var(--neon-amber) !important;
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.15), 4px 4px 0px #000000;
+}
+
+.icon-amber {
+  color: var(--neon-amber) !important;
+  filter: drop-shadow(0 0 4px var(--neon-amber));
+}
+
+/* Admin Table Header Cell Coloring */
+.gaming-roster-table .roster-terminal-header-admin th {
+  background-color: rgba(66, 44, 26, 0.4) !important; /* Muted amber-tinted banner background */
+  color: var(--text-muted-purple) !important;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--panel-border-dark) !important;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   ANTI-GHOST TEXT ENGINE: FORCES ALL ADMIN JS ROW INJECTIONS TO LIGHT UP
+   ========================================================================== */
+
+/* Structure parameters targeting dynamically generated rows */
+.gaming-dynamic-admin-target tr {
+  border-bottom: 1px solid rgba(117, 106, 133, 0.1) !important;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.gaming-dynamic-admin-target tr:hover {
+  background-color: rgba(255, 170, 0, 0.04) !important; /* Gold horizontal cursor tracker tracking line */
+}
+
+.gaming-dynamic-admin-target td {
+  background: transparent !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: #e2dbe8 !important; /* Eliminates ghost-text by forcing readable off-white tint */
+  padding: 12px 10px !important;
+}
+
+/* Bold structural markers (such as administrator identifiers) */
+.gaming-dynamic-admin-target td strong,
+.gaming-dynamic-admin-target .admin-callsign {
+  color: var(--text-bright-white) !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* Custom Admin Checkbox Properties */
+.gaming-checkbox-admin {
+  accent-color: var(--neon-amber);
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+}
+
+/* ==========================================================================
+   DYNAMIC CHILD COMPONENT HOOKS (For Badges and Actions inside rows)
+   ========================================================================== */
+
+/* Dynamic Badges styling injected inside the cells */
+.gaming-dynamic-admin-target .badge {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.65rem !important;
+  border-radius: 0px !important;
+  padding: 4px 8px !important;
+  letter-spacing: 0.5px;
+}
+
+/* High-priority admin badge overrides */
+.gaming-dynamic-admin-target .badge.bg-danger,
+.gaming-dynamic-admin-target .role-root-admin {
+  background-color: rgba(255, 49, 49, 0.1) !important;
+  border: 1px solid var(--neon-danger) !important;
+  color: var(--neon-danger) !important;
+  text-shadow: 0 0 4px var(--neon-danger);
+}
+
+.gaming-dynamic-admin-target .bg-success, 
+.gaming-dynamic-admin-target .status-active {
+  background-color: rgba(57, 255, 20, 0.1) !important;
+  border: 1px solid var(--neon-matrix) !important;
+  color: var(--neon-matrix) !important;
+}
+
+/* Action Control Button Overrides inside admin list rows */
+.gaming-dynamic-admin-target .btn {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.7rem !important;
+  border-radius: 0px !important;
+  padding: 4px 8px !important;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Edit / Modify Config Controls Button */
+.gaming-dynamic-admin-target .btn-warning,
+.gaming-dynamic-admin-target .btn-admin-modify {
+  background-color: transparent !important;
+  border: 1px solid var(--neon-amber) !important;
+  color: var(--neon-amber) !important;
+}
+
+.gaming-dynamic-admin-target .btn-warning:hover,
+.gaming-dynamic-admin-target .btn-admin-modify:hover {
+  background-color: var(--neon-amber) !important;
+  color: #000000 !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --terminal-well-deep: #08030f;
+  --panel-border-dark: #2c1a42;
+  --text-bright-white: #ffffff;
+  
+  /* Log Context Accent Colors */
+  --neon-purple: #bd00ff;       /* System Process Purple */
+  --neon-cyan: #00f0ff;         /* Variable Blueprint Cyan */
+  --neon-matrix: #39ff14;       /* System Complete Green */
+  --text-dim-purple: #625375;   /* Terminal Prompt Slate */
+}
+
+/* Base Panel Hover State Config Override */
+.border-purple:hover {
+  border-color: var(--neon-purple) !important;
+  box-shadow: 0 0 15px rgba(189, 0, 255, 0.15), 4px 4px 0px #000000;
+}
+
+.icon-purple {
+  color: var(--neon-purple) !important;
+  filter: drop-shadow(0 0 4px var(--neon-purple));
+}
+
+/* Master Inner Terminal Box Container */
+.gaming-action-log-container {
+  background-color: var(--terminal-well-deep);
+  border: 1px solid rgba(117, 106, 133, 0.2);
+  padding: 10px;
+}
+
+.gaming-action-log-list {
+  background: transparent !important;
+}
+
+/* ==========================================================================
+   ANTI-GHOST TEXT ENGINE: FORCES ALL ADMIN LOG LIST INJECTIONS TO LIGHT UP
+   ========================================================================== */
+
+/* Structure overrides for dynamic list items injected inside this container */
+.gaming-action-log-list .list-group-item {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  border-bottom: 1px dashed rgba(117, 106, 133, 0.15) !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: #e2dbe8 !important; /* Forces off-white text to destroy standard ghost text styling */
+  padding: 12px 14px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Remove border line from last child to clean the UI profile */
+.gaming-action-log-list .list-group-item:last-child {
+  border-bottom: none !important;
+}
+
+/* Styled initial loading state text */
+.gaming-action-log-list .streaming-placeholder {
+  color: var(--neon-cyan) !important;
+  font-weight: bold;
+}
+
+/* Custom terminal line prompt prefix design symbol ($) */
+.terminal-prompt {
+  color: var(--text-dim-purple);
+  user-select: none; /* Prevents user cursor highlight from catching structural characters */
+  font-weight: 900;
+}
+
+/* ==========================================================================
+   LOG INTERNALS COMPONENT COLOR HOOKS (For text inside dynamic dynamic templates)
+   ========================================================================== */
+.gaming-action-log-list .log-target-user {
+  color: var(--text-bright-white) !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.gaming-action-log-list .log-action-success {
+  color: var(--neon-matrix) !important;
+  font-weight: bold;
+}
+
+.gaming-action-log-list .log-timestamp {
+  color: var(--text-dim-purple) !important;
+  margin-left: auto; /* Pushes timestamps to the extreme right margin line */
+  font-size: 0.8rem;
+}@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --terminal-well-deep: #08030f;
+  --panel-border-dark: #2c1a42;
+  --text-bright-white: #ffffff;
+  
+  /* Log Context Accent Colors */
+  --neon-purple: #bd00ff;       /* System Process Purple */
+  --neon-cyan: #00f0ff;         /* Variable Blueprint Cyan */
+  --neon-matrix: #39ff14;       /* System Complete Green */
+  --text-dim-purple: #625375;   /* Terminal Prompt Slate */
+}
+
+/* Base Panel Hover State Config Override */
+.border-purple:hover {
+  border-color: var(--neon-purple) !important;
+  box-shadow: 0 0 15px rgba(189, 0, 255, 0.15), 4px 4px 0px #000000;
+}
+
+.icon-purple {
+  color: var(--neon-purple) !important;
+  filter: drop-shadow(0 0 4px var(--neon-purple));
+}
+
+/* Master Inner Terminal Box Container */
+.gaming-action-log-container {
+  background-color: var(--terminal-well-deep);
+  border: 1px solid rgba(117, 106, 133, 0.2);
+  padding: 10px;
+}
+
+.gaming-action-log-list {
+  background: transparent !important;
+}
+
+/* ==========================================================================
+   ANTI-GHOST TEXT ENGINE: FORCES ALL ADMIN LOG LIST INJECTIONS TO LIGHT UP
+   ========================================================================== */
+
+/* Structure overrides for dynamic list items injected inside this container */
+.gaming-action-log-list .list-group-item {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  border-bottom: 1px dashed rgba(117, 106, 133, 0.15) !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: #e2dbe8 !important; /* Forces off-white text to destroy standard ghost text styling */
+  padding: 12px 14px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Remove border line from last child to clean the UI profile */
+.gaming-action-log-list .list-group-item:last-child {
+  border-bottom: none !important;
+}
+
+/* Styled initial loading state text */
+.gaming-action-log-list .streaming-placeholder {
+  color: var(--neon-cyan) !important;
+  font-weight: bold;
+}
+
+/* Custom terminal line prompt prefix design symbol ($) */
+.terminal-prompt {
+  color: var(--text-dim-purple);
+  user-select: none; /* Prevents user cursor highlight from catching structural characters */
+  font-weight: 900;
+}
+
+/* ==========================================================================
+   LOG INTERNALS COMPONENT COLOR HOOKS (For text inside dynamic dynamic templates)
+   ========================================================================== */
+.gaming-action-log-list .log-target-user {
+  color: var(--text-bright-white) !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.gaming-action-log-list .log-action-success {
+  color: var(--neon-matrix) !important;
+  font-weight: bold;
+}
+
+.gaming-action-log-list .log-timestamp {
+  color: var(--text-dim-purple) !important;
+  margin-left: auto; /* Pushes timestamps to the extreme right margin line */
+  font-size: 0.8rem;
+}

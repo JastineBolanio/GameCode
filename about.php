@@ -7,7 +7,7 @@ require_once 'includes/track_visitor.php';
  * File: about.php
  * 
  * Description:
- *   - Enhanced About page for Code Gaming platform
+ *   - Enhanced About page for SkillForge platform
  *   - Northside festival 2013 inspired design with pastel teal background
  *   - Features:
  *       • Hero banner with project overview
@@ -26,9 +26,7 @@ require_once 'includes/track_visitor.php';
  *   - Clean grid layout with white cards
  *   - Bold typography with large sans-serif fonts
  *   - Interactive elements and social feeds
- * 
- * Author: Code Gaming Team
- * Last Updated: September 28, 2025
+ *
  * ==========================================================
  */
 
@@ -65,61 +63,71 @@ $pageTitle = "About Us";
       </div>
       <div class="col-md-4 text-end">
         <a href="home_page.php" class="home-btn"><i class="fas fa-home"></i></a>
-        <img src="assets/images/PTC.png" alt="PTC Logo" class="header-logo">
+        <img src="assets/images/MainLogos.png" alt="PTC Logo" class="header-logo">
       </div>
     </div>
   </div>
 </header>
 
 <!-- Hero Banner Section -->
-<section class="hero-section">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="hero-content">
-          <h1 class="hero-title">Code Gaming</h1>
-          <p class="hero-description">Our journey in creating a web-based gamified system for coding skills through interactive mini-games, tutorials, quizzes, and challenges.</p>
-              <div class="hero-stats">
-                <?php
-                try {
-                    // Fetch project statistics
-                    $statsQuery = $conn->prepare("SELECT stat_name, stat_value, stat_label, icon FROM project_statistics WHERE is_active = 1 ORDER BY display_order LIMIT 3");
-                    $statsQuery->execute();
-                    while ($stat = $statsQuery->fetch()) {
-                        echo "<div class='stat-item'>";
-                        echo "<i class='{$stat['icon']}'></i>";
-                        echo "<span class='stat-number'>{$stat['stat_value']}+</span>";
-                        echo "<span class='stat-label'>{$stat['stat_label']}</span>";
-                        echo "</div>";
-                    }
-                } catch (PDOException $e) {
-                    // Fallback stats if table doesn't exist
-                    echo "<div class='stat-item'>";
-                    echo "<i class='fas fa-users'></i>";
-                    echo "<span class='stat-number'>6+</span>";
-                    echo "<span class='stat-label'>Team Members</span>";
-                    echo "</div>";
-                    echo "<div class='stat-item'>";
-                    echo "<i class='fas fa-code'></i>";
-                    echo "<span class='stat-number'>100+</span>";
-                    echo "<span class='stat-label'>Hours Coded</span>";
-                    echo "</div>";
-                    echo "<div class='stat-item'>";
-                    echo "<i class='fas fa-trophy'></i>";
-                    echo "<span class='stat-number'>1+</span>";
-                    echo "<span class='stat-label'>Project</span>";
-                    echo "</div>";
-                }
-                ?>
-              </div>
+ <link rel="stylesheet" href="assets/css/AboutHero.css">
+<section class="hero-section gaming-hero-wrapper py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-md-6">
+                <div class="hero-content terminal-hero-content">
+                    <h1 class="hero-title forge-glitch-title">SkillForge</h1>
+                    
+                    <p class="hero-description forge-meta-body">
+                        Our journey in creating a web-based gamified system for coding skills through interactive mini-games, tutorials, quizzes, and challenges.
+                    </p>
+                    
+                    <div class="hero-stats forge-stats-row">
+                        <?php
+                        try {
+                            // Fetch project statistics
+                            $statsQuery = $conn->prepare("SELECT stat_name, stat_value, stat_label, icon FROM project_statistics WHERE is_active = 1 ORDER BY display_order LIMIT 3");
+                            $statsQuery->execute();
+                            while ($stat = $statsQuery->fetch()) {
+                                echo "<div class='stat-item forge-stat-node'>";
+                                echo "  <i class='" . htmlspecialchars($stat['icon']) . " stat-node-icon'></i>";
+                                echo "  <span class='stat-number forge-stat-count'>" . htmlspecialchars($stat['stat_value']) . "+</span>";
+                                echo "  <span class='stat-label forge-stat-desc'>" . htmlspecialchars($stat['stat_label']) . "</span>";
+                                echo "</div>";
+                            }
+                        } catch (PDOException $e) {
+                            // Fallback static strings with forced anti-ghost style hooks
+                            echo "<div class='stat-item forge-stat-node'>";
+                            echo "  <i class='fas fa-users stat-node-icon'></i>";
+                            echo "  <span class='stat-number forge-stat-count'>6+</span>";
+                            echo "  <span class='stat-label forge-stat-desc'>Team Members</span>";
+                            echo "</div>";
+                            
+                            echo "<div class='stat-item forge-stat-node'>";
+                            echo "  <i class='fas fa-code stat-node-icon'></i>";
+                            echo "  <span class='stat-number forge-stat-count'>100+</span>";
+                            echo "  <span class='stat-label forge-stat-desc'>Hours Coded</span>";
+                            echo "</div>";
+                            
+                            echo "<div class='stat-item forge-stat-node'>";
+                            echo "  <i class='fas fa-trophy stat-node-icon'></i>";
+                            echo "  <span class='stat-number forge-stat-count'>1+</span>";
+                            echo "  <span class='stat-label forge-stat-desc'>Project</span>";
+                            echo "</div>";
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div> <div class="col-md-6">
+                <div class="hero-image tactical-hero-frame">
+                    <img src="assets/images/anchor.png" alt="SkillForge Hero" class="img-fluid custom-hero-img">
+                    <div class="hero-scanline-overlay"></div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="hero-image">
-              <img src="assets/images/anchor.png" alt="Code Gaming Hero" class="img-fluid">
-            </div>
-          </div>
+            
         </div>
-      </div>
+    </div>
 </section>
 
 <main class="main-content">
@@ -526,10 +534,10 @@ $pageTitle = "About Us";
     <div class="row footer-content">
       <div class="col-md-6">
         <div class="footer-info">
-          <img src="assets/images/PTC.png" alt="PTC Logo" class="footer-logo">
-          <h4>Code Gaming</h4>
-          <p>Built with <span class="heart">❤️</span> by the Code Gaming Team</p>
-          <p>Pateros Technological College</p>
+          <img src="assets/images/MainLogos.png" alt="PTC Logo" class="footer-logo">
+          <h4>SkillForge</h4>
+          <p>Built with <span class="heart">❤️</span> by the SkillForge Team</p>
+          <p>Institute of Creative Computer Technology</p>
         </div>
       </div>
       <div class="col-md-6">
@@ -542,7 +550,7 @@ $pageTitle = "About Us";
             <a href="#" class="social-link"><i class="fab fa-github"></i></a>
           </div>
           <div class="footer-credits">
-            <p>&copy; 2025 Code Gaming Team. All rights reserved.</p>
+            <p>&copy; 2025 SkillForge Team. All rights reserved.</p>
             <p>Inspired by Northside festival 2013 design</p>
           </div>
         </div>

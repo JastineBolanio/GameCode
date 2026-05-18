@@ -153,7 +153,7 @@ INSERT INTO team_members (name, role, age, email, code, photo, bio, fun_fact, mi
 
 -- Insert timeline events (done)
 INSERT INTO timeline_events (title, description, event_date, category, is_featured, display_order) VALUES
-('Project Conception', 'Initial brainstorming and concept development for the Code Gaming platform', '2025-05-15', 'milestone', TRUE, 1),
+('Project Conception', 'Initial brainstorming and concept development for the coding_game platform', '2025-05-15', 'milestone', TRUE, 1),
 ('Team Formation', 'Assembly of the core development team and role assignments', '2025-05-20', 'milestone', TRUE, 2),
 ('Technical Planning', 'Architecture design and technology stack selection', '2025-05-23', 'development', FALSE, 3),
 ('UI/UX Design Phase', 'Creation of wireframes, mockups, and user experience design', '2025-06-30', 'development', TRUE, 4),
@@ -162,7 +162,7 @@ INSERT INTO timeline_events (title, description, event_date, category, is_featur
 ('Alpha Testing', 'Internal testing and bug fixing phase', '2025-09-15', 'testing', FALSE, 7),
 ('Beta Release', 'Limited beta release for user feedback', '2025-10-20', 'testing', TRUE, 8),
 ('Feature Enhancement', 'Addition of advanced features based on user feedback', '2025-10-27', 'development', FALSE, 9),
-('Public Launch', 'Official launch of the Code Gaming platform', '2025-11-10', 'launch', TRUE, 10);
+('Public Launch', 'Official launch of the coding_game platform', '2025-11-10', 'launch', TRUE, 10);
 
 -- Insert coding playlist (to be added)
 INSERT INTO coding_playlist (title, artist, file_path, genre, is_featured, display_order) VALUES
@@ -174,11 +174,11 @@ INSERT INTO coding_playlist (title, artist, file_path, genre, is_featured, displ
 
 -- Insert FAQ items (done) (can be added more)
 INSERT INTO faq_items (question, answer, category, tags, is_featured, display_order) VALUES
-('What is Code Gaming?', 'Code Gaming is an innovative educational platform that teaches programming through interactive games, quizzes, and challenges. We make learning to code fun and engaging for students of all levels.', 'project', 'about,platform,education', TRUE, 1),
+('What is coding_game?', 'coding_game is an innovative educational platform that teaches programming through interactive games, quizzes, and challenges. We make learning to code fun and engaging for students of all levels.', 'project', 'about,platform,education', TRUE, 1),
 ('What technologies do you use?', 'Our platform is built using modern web technologies including PHP, MySQL, JavaScript, HTML5, CSS3, Bootstrap 5, and various libraries like Three.js and ScrollReveal.js for enhanced user experience.', 'technology', 'tech,stack,php,javascript,mysql', TRUE, 2),
-('Who can use this platform?', 'Code Gaming is designed for students, educators, and anyone interested in learning programming. Whether you are a complete beginner or looking to enhance your coding skills, our platform adapts to your learning pace.', 'general', 'users,students,beginners', TRUE, 3),
+('Who can use this platform?', 'coding_game is designed for students, educators, and anyone interested in learning programming. Whether you are a complete beginner or looking to enhance your coding skills, our platform adapts to your learning pace.', 'general', 'users,students,beginners', TRUE, 3),
 ('How does the gamification work?', 'We use points, achievements, leaderboards, and interactive challenges to make learning programming feel like playing a game. Users earn rewards for completing tutorials, solving challenges, and participating in quizzes.', 'project', 'gamification,points,achievements', FALSE, 4),
-('Is the platform free to use?', 'Yes! Code Gaming is completely free to use. We believe in making quality programming education accessible to everyone.', 'general', 'free,cost,pricing', TRUE, 5),
+('Is the platform free to use?', 'Yes! coding_game is completely free to use. We believe in making quality programming education accessible to everyone.', 'general', 'free,cost,pricing', TRUE, 5),
 ('What programming languages are supported?', 'Currently, we focus on web development technologies including HTML, CSS, JavaScript, Bootstrap, AJAX, and PHP. We plan to expand to other languages based on user feedback and demand.', 'technology', 'languages,html,css,javascript,php', FALSE, 6);
 
 -- Insert project statistics (done)

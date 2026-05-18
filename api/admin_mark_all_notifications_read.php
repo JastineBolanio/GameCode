@@ -2,8 +2,6 @@
 /**
  * File: api/admin_mark_all_notifications_read.php
  * Purpose: Mark all notifications as read
- * Author: CodeGaming Team
- * Last Updated: October 21, 2025
  */
 
 session_start();

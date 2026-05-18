@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&display=swap');
+
+:root {
+  --arcade-bg: #11091c;
+  --panel-border-dark: #2c1a42;
+  --text-dim: #756a85;
+  
+  /* System Theme Palettes */
+  --neon-cyan: #00f0ff;
+  --neon-magenta: #ff007f;
+  --neon-yellow: #ffcc00;
+  --neon-red: #ff3131;
+  --neon-green: #39ff14;
+}
+
+/* Row-Level Configuration */
+.gaming-dashboard-row {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Master Panel Setup */
+.gaming-stat-panel.card {
+  background-color: var(--arcade-bg) !important;
+  border: 2px solid var(--panel-border-dark) !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0px #000000;
+  height: 100%;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.gaming-stat-panel.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px #000000;
+}
+
+/* Theme Color Mapping States */
+.border-cyan:hover    { border-color: var(--neon-cyan) !important;    box-shadow: 6px 6px 0px #000, 0 0 15px rgba(0, 240, 255, 0.25); }
+.border-magenta:hover { border-color: var(--neon-magenta) !important; box-shadow: 6px 6px 0px #000, 0 0 15px rgba(255, 0, 127, 0.25); }
+.border-yellow:hover  { border-color: var(--neon-yellow) !important;  box-shadow: 6px 6px 0px #000, 0 0 15px rgba(255, 204, 0, 0.25); }
+.border-red:hover     { border-color: var(--neon-red) !important;     box-shadow: 6px 6px 0px #000, 0 0 15px rgba(255, 49, 49, 0.25); }
+
+/* Icon Filters */
+.icon-cyan    { color: var(--neon-cyan) !important;    filter: drop-shadow(0 0 4px var(--neon-cyan)); }
+.icon-magenta { color: var(--neon-magenta) !important; filter: drop-shadow(0 0 4px var(--neon-magenta)); }
+.icon-yellow  { color: var(--neon-yellow) !important;  filter: drop-shadow(0 0 4px var(--neon-yellow)); }
+.icon-red     { color: var(--neon-red) !important;     filter: drop-shadow(0 0 4px var(--neon-red)); }
+
+/* Subtext & Metrics Labels */
+.stat-title {
+  font-size: 0.75rem !important;
+  font-weight: 900 !important;
+  color: var(--text-dim) !important;
+  letter-spacing: 2px;
+}
+
+.stat-counter {
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #ffffff;
+  display: block;
+  margin: 6px 0;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.stat-subtext {
+  font-size: 0.7rem !important;
+  letter-spacing: 1px;
+}
+
+/* Individual Data Highlight Elements */
+.stat-momentum-up {
+  font-size: 0.75rem !important;
+  color: var(--neon-green) !important;
+  font-weight: bold;
+}
+
+.stat-highlight-yellow {
+  font-size: 0.7rem !important;
+  color: var(--neon-yellow) !important;
+  font-weight: bold;
+}
+
+/* Custom Interactive Analytics Log Button */
+.btn-gaming-outline {
+  background: transparent;
+  border: 1px solid var(--neon-magenta) !important;
+  color: var(--neon-magenta) !important;
+  font-size: 0.7rem !important;
+  font-weight: bold;
+  border-radius: 0px !important;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-gaming-outline:hover {
+  background: var(--neon-magenta) !important;
+  color: #000000 !important;
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+}
+
+/* UI Divider Styling */
+.terminal-divider {
+  border-top: 1px dashed rgba(117, 106, 133, 0.3);
+}
+
+/* Status Interface Badge Configuration */
+.gaming-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-radius: 0px;
+}
+
+.badge-green {
+  background: rgba(57, 255, 20, 0.1);
+  border: 1px solid var(--neon-green);
+  color: var(--neon-green);
+}
+
+/* Animated Pulse Node */
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--neon-green);
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 8px var(--neon-green);
+  animation: radarBlink 1s infinite alternate;
+}
+
+@keyframes radarBlink {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&display=swap');
+
+:root {
+  --arcade-bg: #11091c;
+  --panel-border-dark: #2c1a42;
+  --text-main: #ffffff;
+  --text-muted: #756a85;
+  
+  /* System Theme Palettes */
+  --neon-cyan: #00f0ff;
+  --neon-amber: #ffaa00;
+  --neon-matrix: #39ff14;
+  --neon-purple: #bd00ff;
+}
+
+/* Row-Level Configuration */
+.gaming-dashboard-row {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Master Panel Setup */
+.gaming-action-panel.card {
+  background-color: var(--arcade-bg) !important;
+  border: 2px solid var(--panel-border-dark) !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0px #000000;
+  min-height: 250px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Theme Framing Outlines */
+.border-amber:hover { border-color: var(--neon-amber) !important; box-shadow: 6px 6px 0px #000, 0 0 15px rgba(255, 170, 0, 0.2); }
+.border-cyan:hover  { border-color: var(--neon-cyan) !important;  box-shadow: 6px 6px 0px #000, 0 0 15px rgba(0, 240, 255, 0.2); }
+
+/* Typography & Headers */
+.gaming-panel-title {
+  font-size: 0.95rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 2px;
+  color: var(--text-main);
+}
+
+.icon-amber  { color: var(--neon-amber) !important; filter: drop-shadow(0 0 4px var(--neon-amber)); }
+.icon-cyan   { color: var(--neon-cyan) !important;  filter: drop-shadow(0 0 4px var(--neon-cyan)); }
+
+/* Dynamic List Frame Styling */
+.gaming-terminal-list {
+  background: transparent !important;
+}
+
+/* Ensures dynamic list-group-items fit the interface design seamlessly */
+.gaming-terminal-list .list-group-item {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  border-color: rgba(117, 106, 133, 0.2) !important;
+  color: var(--text-main) !important;
+  font-size: 0.85rem;
+  padding: 12px 8px;
+}
+
+/* Small Header Transmit Button */
+.btn-gaming-primary {
+  background: transparent;
+  border: 1px solid var(--neon-amber) !important;
+  color: var(--neon-amber) !important;
+  border-radius: 0px !important;
+  font-size: 0.7rem !important;
+  font-weight: 900;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-gaming-primary:hover {
+  background: var(--neon-amber) !important;
+  color: #000000 !important;
+  box-shadow: 0 0 10px rgba(255, 170, 0, 0.4);
+}
+
+/* Console Menu Layout and Buttons */
+.gaming-console-menu {
+  gap: 10px !important;
+}
+
+.btn-gaming-action {
+  background: #190e29;
+  border-radius: 0px !important;
+  padding: 12px;
+  text-align: left;
+  position: relative;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.btn-gaming-action .action-text {
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.btn-gaming-action i {
+  margin-right: 8px;
+}
+
+.btn-gaming-action:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+/* Custom Interactive States Per Console Directives */
+.action-cyan { border: 1px solid var(--neon-cyan) !important; color: var(--neon-cyan) !important; }
+.action-cyan:hover { background: var(--neon-cyan) !important; color: #000000 !important; box-shadow: 0 0 10px rgba(0, 240, 255, 0.4), 3px 3px 0px #000; }
+
+.action-matrix { border: 1px solid var(--neon-matrix) !important; color: var(--neon-matrix) !important; }
+.action-matrix:hover { background: var(--neon-matrix) !important; color: #000000 !important; box-shadow: 0 0 10px rgba(57, 255, 20, 0.4), 3px 3px 0px #000; }
+
+.action-purple { border: 1px solid var(--neon-purple) !important; color: var(--neon-purple) !important; }
+.action-purple:hover { background: var(--neon-purple) !important; color: #ffffff !important; box-shadow: 0 0 10px rgba(189, 0, 255, 0.4), 3px 3px 0px #000; }
+
+.action-amber { border: 1px solid var(--neon-amber) !important; color: var(--neon-amber) !important; }
+.action-amber:hover { background: var(--neon-amber) !important; color: #000000 !important; box-shadow: 0 0 10px rgba(255, 170, 0, 0.4), 3px 3px 0px #000; }
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&display=swap');
+
+:root {
+  --arcade-bg: #11091c;
+  --terminal-dark: #090410;
+  --panel-border-dark: #2c1a42;
+  --text-main: #ffffff;
+  --text-muted: #756a85;
+  
+  /* Gaming Color Matrix */
+  --neon-matrix: #39ff14;   /* Toxic Green */
+  --neon-cyan: #00f0ff;     /* Laser Blue */
+  --neon-purple: #bd00ff;   /* Synth Violet */
+  --neon-amber: #ffaa00;    /* Alert Gold */
+}
+
+/* Base Panel Rules */
+.gaming-feed-panel.card {
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--arcade-bg) !important;
+  border: 2px solid var(--panel-border-dark) !important;
+  border-radius: 0px !important;
+  box-shadow: 4px 4px 0px #000000;
+  transition: all 0.2s ease-in-out;
+}
+
+.border-matrix:hover {
+  border-color: var(--neon-matrix) !important;
+  box-shadow: 6px 6px 0px #000, 0 0 15px rgba(57, 255, 20, 0.15);
+}
+
+.gaming-panel-title {
+  font-size: 0.95rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 2px;
+  color: var(--text-main);
+}
+
+.icon-matrix { color: var(--neon-matrix) !important; filter: drop-shadow(0 0 4px var(--neon-matrix)); }
+
+/* Table Framing Containment */
+.gaming-terminal-container {
+  background-color: var(--terminal-dark);
+  border: 1px solid rgba(117, 106, 133, 0.2);
+  padding: 5px;
+}
+
+.gaming-feed-table {
+  color: var(--text-main) !important;
+  margin-bottom: 0px !important;
+}
+
+/* Header Text Alignments */
+.gaming-feed-table .terminal-header th {
+  background-color: rgba(44, 26, 66, 0.4) !important;
+  color: var(--text-muted) !important;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--panel-border-dark) !important;
+  padding: 12px 10px;
+}
+
+/* Row-Level Configuration */
+.gaming-feed-table tbody tr {
+  border-bottom: 1px solid rgba(117, 106, 133, 0.1) !important;
+  transition: background-color 0.1s ease-in-out;
+}
+
+/* Subtle Row Highlight during scan inspection */
+.gaming-feed-table tbody tr:hover {
+  background-color: rgba(0, 240, 255, 0.05) !important;
+}
+
+.gaming-feed-table tbody td {
+  background: transparent !important;
+  font-size: 0.8rem;
+  padding: 14px 10px;
+  color: #e2dbe8;
+}
+
+/* Sub-Component Label Typography */
+.player-tag {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.player-tag i {
+  margin-right: 6px;
+}
+
+.icon-cyan   { color: var(--neon-cyan); }
+.icon-purple { color: var(--neon-purple); }
+.icon-amber  { color: var(--neon-amber); }
+
+.quest-highlight-cyan { color: var(--neon-cyan); font-weight: 900; }
+.quest-highlight-amber { color: var(--neon-amber); font-weight: 900; }
+
+.timestamp-text {
+  font-size: 0.75rem !important;
+  color: var(--text-muted);
+}
+
+/* Gaming Log State Badges */
+.feed-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-align: center;
+  border-radius: 0px;
+}
+
+.status-victory {
+  background: rgba(57, 255, 20, 0.1);
+  border: 1px solid var(--neon-matrix);
+  color: var(--neon-matrix);
+  text-shadow: 0 0 4px var(--neon-matrix);
+}
+
+.status-telemetry {
+  background: rgba(189, 0, 255, 0.1);
+  border: 1px solid var(--neon-purple);
+  color: var(--neon-purple);
+}
+
+.status-active {
+  background: rgba(255, 170, 0, 0.1);
+  border: 1px solid var(--neon-amber);
+  color: var(--neon-amber);
+}

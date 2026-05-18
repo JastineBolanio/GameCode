@@ -2,8 +2,6 @@
 /**
  * File: api/admin_get_notifications.php
  * Purpose: Fetch system notifications for admin dashboard
- * Author: CodeGaming Team
- * Last Updated: October 21, 2025
  */
 
 session_start();

@@ -129,10 +129,10 @@ CREATE TABLE `announcements` (
 --
 
 INSERT INTO `announcements` (`id`, `title`, `content`, `category`, `status`, `is_pinned`, `created_at`, `created_by`, `is_active`) VALUES
-(1, 'Welcome to Code Gaming!', 'We are excited to launch our new learning platform. Start your coding journey today!', 'system', 'published', 1, '2025-06-29 03:02:00', 1, 1),
+(1, 'Welcome to coding_game!', 'We are excited to launch our new learning platform. Start your coding journey today!', 'system', 'published', 1, '2025-06-29 03:02:00', 1, 1),
 (2, 'New Features Available', 'Check out our latest tutorials and interactive quizzes. More content coming soon!', 'general', 'published', 0, '2025-06-29 03:02:00', 1, 1),
 (3, 'System Maintenance', 'Scheduled maintenance on July 1st from 2-4 AM. We apologize for any inconvenience.', 'general', 'published', 0, '2025-06-29 03:02:00', 1, 1),
-(4, 'Welcome to Code Gaming! :)', 'Let me know your thoughts!', 'update', 'published', 1, '2025-07-04 11:38:20', 4, 1),
+(4, 'Welcome to coding_game! :)', 'Let me know your thoughts!', 'update', 'published', 1, '2025-07-04 11:38:20', 4, 1),
 (6, 'Almost There', 'Stay patient y\'all :)', 'system', 'published', 0, '2025-10-02 15:41:59', 6, 1);
 
 -- --------------------------------------------------------
@@ -436,11 +436,11 @@ CREATE TABLE `faq_items` (
 --
 
 INSERT INTO `faq_items` (`id`, `question`, `answer`, `category`, `tags`, `is_featured`, `view_count`, `display_order`, `created_at`, `updated_at`) VALUES
-(1, 'What is Code Gaming?', 'Code Gaming is an innovative educational platform that teaches programming through interactive games, quizzes, and challenges. We make learning to code fun and engaging for students of all levels.', 'project', 'about,platform,education', 1, 0, 1, '2025-09-29 07:21:28', '2025-09-29 07:21:28'),
+(1, 'What is coding_game?', 'coding_game is an innovative educational platform that teaches programming through interactive games, quizzes, and challenges. We make learning to code fun and engaging for students of all levels.', 'project', 'about,platform,education', 1, 0, 1, '2025-09-29 07:21:28', '2025-09-29 07:21:28'),
 (2, 'What technologies do you use?', 'Our platform is built using modern web technologies including PHP, MySQL, JavaScript, HTML5, CSS3, Bootstrap 5, and various libraries like Three.js and ScrollReveal.js for enhanced user experience.', 'technology', 'tech,stack,php,javascript,mysql', 1, 0, 2, '2025-09-29 07:21:28', '2025-09-29 07:21:28'),
-(3, 'Who can use this platform?', 'Code Gaming is designed for students, educators, and anyone interested in learning programming. Whether you are a complete beginner or looking to enhance your coding skills, our platform adapts to your learning pace.', 'general', 'users,students,beginners,experts', 1, 0, 3, '2025-09-29 07:21:28', '2025-09-29 07:21:28'),
+(3, 'Who can use this platform?', 'coding_game is designed for students, educators, and anyone interested in learning programming. Whether you are a complete beginner or looking to enhance your coding skills, our platform adapts to your learning pace.', 'general', 'users,students,beginners,experts', 1, 0, 3, '2025-09-29 07:21:28', '2025-09-29 07:21:28'),
 (4, 'How does the gamification work?', 'We use points, achievements, leaderboards, and interactive challenges to make learning programming feel like playing a game. Users earn rewards for completing tutorials, solving challenges, and participating in quizzes.', 'project', 'gamification,points,achievements', 0, 0, 4, '2025-09-29 07:21:28', '2025-09-29 07:21:28'),
-(5, 'Is the platform free to use?', 'Yes! Code Gaming is completely free to use. We believe in making quality programming education accessible to everyone.', 'general', 'free,cost,pricing', 1, 0, 5, '2025-09-29 07:21:28', '2025-09-29 07:21:28'),
+(5, 'Is the platform free to use?', 'Yes! coding_game is completely free to use. We believe in making quality programming education accessible to everyone.', 'general', 'free,cost,pricing', 1, 0, 5, '2025-09-29 07:21:28', '2025-09-29 07:21:28'),
 (6, 'What programming languages are supported?', 'Currently, we focus on web development technologies including HTML, CSS, JavaScript, Bootstrap, AJAX, and PHP. We plan to expand to other languages based on user feedback and demand.', 'technology', 'languages,html,css,javascript,bootsrap,php', 0, 0, 6, '2025-09-29 07:21:28', '2025-09-29 07:21:28');
 
 -- --------------------------------------------------------
@@ -1614,7 +1614,7 @@ CREATE TABLE `timeline_events` (
 --
 
 INSERT INTO `timeline_events` (`id`, `title`, `description`, `event_date`, `image_url`, `icon`, `category`, `is_featured`, `display_order`, `created_at`) VALUES
-(1, 'Project Conception', 'Initial brainstorming and concept development for the Code Gaming platform', '2025-05-15', NULL, 'fas fa-calendar', 'milestone', 1, 1, '2025-09-29 07:25:27'),
+(1, 'Project Conception', 'Initial brainstorming and concept development for the coding_game platform', '2025-05-15', NULL, 'fas fa-calendar', 'milestone', 1, 1, '2025-09-29 07:25:27'),
 (2, 'Team Formation', 'Assembly of the core development team and role assignments', '2025-05-20', NULL, 'fas fa-calendar', 'milestone', 1, 2, '2025-09-29 07:25:27'),
 (3, 'Technical Planning', 'Architecture design and technology stack selection', '2025-05-23', NULL, 'fas fa-calendar', 'development', 0, 3, '2025-09-29 07:25:27'),
 (4, 'UI/UX Design Phase', 'Creation of wireframes, mockups, and user experience design', '2025-06-30', NULL, 'fas fa-calendar', 'development', 1, 4, '2025-09-29 07:25:27'),
@@ -1623,7 +1623,7 @@ INSERT INTO `timeline_events` (`id`, `title`, `description`, `event_date`, `imag
 (7, 'Alpha Testing', 'Internal testing and bug fixing phase', '2025-09-15', NULL, 'fas fa-calendar', 'testing', 0, 7, '2025-09-29 07:25:27'),
 (8, 'Beta Release', 'Limited beta release for user feedback', '2025-10-20', NULL, 'fas fa-calendar', 'testing', 1, 8, '2025-09-29 07:25:27'),
 (9, 'Feature Enhancement', 'Addition of advanced features based on user feedback', '2025-10-27', NULL, 'fas fa-calendar', 'development', 0, 9, '2025-09-29 07:25:27'),
-(10, 'Public Launch', 'Official launch of the Code Gaming platform', '2025-11-10', NULL, 'fas fa-calendar', 'launch', 1, 10, '2025-09-29 07:25:27');
+(10, 'Public Launch', 'Official launch of the coding_game platform', '2025-11-10', NULL, 'fas fa-calendar', 'launch', 1, 10, '2025-09-29 07:25:27');
 
 -- --------------------------------------------------------
 

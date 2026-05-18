@@ -15,8 +15,6 @@
  * Included Files/Dependencies:
  *   - Bootstrap (modals, alerts)
  *   - ApexCharts.js (charts)
- * Author: CodeGaming Team
- * Last Updated: July 22, 2025
  */
 
 // Admin Dashboard JavaScript

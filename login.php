@@ -4,7 +4,7 @@
  * File: login.php
  * 
  * Description:
- *   - Handles user and admin login for Code Gaming platform
+ *   - Handles user and admin login for SkillForge platform
  *   - Features:
  *       • Accepts both JSON and form POST requests
  *       • Validates username/email and password
@@ -17,9 +17,6 @@
  *   - Called via AJAX or form submission for login
  *   - Used by both frontend and API clients
  * 
- * Author: [Santiago]
- * Last Updated: [July 22, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 

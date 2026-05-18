@@ -1,6 +1,6 @@
 # About the Team
 
-We're a group of BSIT students at Pateros Technological College, passionate about making coding education fun through gamification. This Capstone Project (2025-2026) is our collaborative effort to build "Code Gaming."
+We're a group of BSIT students at Pateros Technological College, passionate about making coding education fun through gamification. This Capstone Project (2025-2026) is our collaborative effort to build "coding_game."
 
 ![Proponents with Professor](images/proponents_with_professor.jpg)  
 *Figure 1: The team with our professor—guiding us through the Capstone journey.*

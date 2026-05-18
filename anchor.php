@@ -4,7 +4,7 @@
  * File: anchor.php
  * 
  * Description:
- *   - Welcome/landing page for Code Gaming platform
+ *   - Welcome/landing page for SkillForge platform
  *   - Features:
  *       • School logo and branding
  *       • Three.js animated background and GSAP/Typed.js effects
@@ -25,9 +25,6 @@
  *   - includes/footer.php
  *   - External: Bootstrap, Font Awesome, Three.js, GSAP, Typed.js
  * 
- * Author: [Santiago]
- * Last Updated: [July 22, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 require_once 'includes/ErrorHandler.php';
@@ -58,18 +55,18 @@ $currentUser = $auth->isLoggedIn() ? $auth->getCurrentUser() : null;
   <!-- SEO Meta Tags -->
   <meta name="description" content="Code Game is a gamified web-based educational platform for learning programming through interactive challenges, quizzes, tutorials, and mini-games. Track your progress and compete on leaderboards!">
   <meta name="keywords" content="coding, programming, game, challenges, quizzes, tutorials, leaderboard, education, learn to code">
-  <meta name="author" content="Code Gaming Team">
+  <meta name="author" content="SkillForge Team">
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Code Game | Gamified Programming Platform">
   <meta property="og:description" content="Learn programming with interactive challenges, quizzes, tutorials, and mini-games. Track your progress and rise on the leaderboard!">
-  <meta property="og:image" content="https://codegaming.example.com/images/PTC.png">
+  <meta property="og:image" content="https://codegaming.example.com/images/MainLogos.png">
   <meta property="og:url" content="https://codegaming.example.com/">
   <meta property="og:type" content="website">
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Code Game | Gamified Programming Platform">
   <meta name="twitter:description" content="Learn programming with interactive challenges, quizzes, tutorials, and mini-games. Track your progress and rise on the leaderboard!">
-  <meta name="twitter:image" content="https://codegaming.example.com/images/PTC.png">
+  <meta name="twitter:image" content="https://codegaming.example.com/images/MainLogos.png">
 
   <!-- Bootstrap 5 CSS -->
   <link
@@ -107,9 +104,9 @@ $currentUser = $auth->isLoggedIn() ? $auth->getCurrentUser() : null;
   <?php include 'api/track-visitor.php'; ?>
   
   <!-- School Logo -->
-  <a href="https://www.paterostechnologicalcollege.edu.ph/" target="_blank" rel="noopener noreferrer" aria-label="Visit Pateros Technological College website">
+  <a href="" target="_blank" rel="noopener noreferrer" aria-label="Visit Institute of Creative Computer Technology">
     <div class="school-logo" tabindex="0" aria-label="School logo">
-      <img src="assets/images/PTC.png" alt="Pateros Technological College Logo" class="logo-img">
+      <img src="assets/images/MainLogos.png" alt="Institute of Creative Computer Technology" class="logo-img">
     </div>
   </a>
 
@@ -134,7 +131,7 @@ $currentUser = $auth->isLoggedIn() ? $auth->getCurrentUser() : null;
                 <video autoplay loop muted playsinline class="video-bg">
                   <source src="videos/code-bg-1.mp4" type="video/mp4">
                 </video>
-                <span>CODE GAMING</span>
+                <span>SkillForge</span>
               </div>
             </div>
           </section>
@@ -673,10 +670,10 @@ body {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Code Gaming</title>
+    <title>SkillForge</title>
 </head>
 <body>
-    <h1>Welcome To Code Gaming!</h1>
+    <h1>Welcome To SkillForge!</h1>
     <p>Enjoy Your Day</p>
 </body>
 </html>`,
@@ -731,7 +728,7 @@ int subtract(int a, int b) {
     return a - b;
 }`,
         `// Python Name Calling
-print("Welcome to Code Gaming!")`,
+print("Welcome to SkillForge!")`,
         `// Bootstrap Column
 <div class="row">
     <div class="col-md-6">Column 1</div>

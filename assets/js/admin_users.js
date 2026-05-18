@@ -14,8 +14,6 @@
  * Included Files/Dependencies:
  *   - FontAwesome (icons)
  *   - Bootstrap (optional for modal styling)
- * Author: CodeGaming Team
- * Last Updated: October 2, 2025
  */
 
 // admin_users.js
@@ -29,8 +27,8 @@ function updateUserAvatar(userId, userType, newPic) {
     const timestamp = new Date().getTime();
     
     // Handle both full paths and filenames
-    const avatarFilename = newPic ? newPic.split('/').pop() : 'PTC.png';
-    const newAvatarPath = newPic ? `uploads/avatars/${avatarFilename}` : 'assets/images/PTC.png';
+    const avatarFilename = newPic ? newPic.split('/').pop() : 'MainLogos.png';
+    const newAvatarPath = newPic ? `uploads/avatars/${avatarFilename}` : 'assets/images/MainLogos.png';
     const newAvatarFullPath = `${basePath}/${newAvatarPath}?t=${timestamp}`;
 
     // Update avatars in the table
@@ -47,7 +45,7 @@ function updateUserAvatar(userId, userType, newPic) {
     });
 
     // Update any other instances in the UI
-    const fullAvatarPath = newPic ? `${basePath}/uploads/avatars/${avatarFilename}?t=${timestamp}` : `${basePath}/assets/images/PTC.png?t=${timestamp}`;
+    const fullAvatarPath = newPic ? `${basePath}/uploads/avatars/${avatarFilename}?t=${timestamp}` : `${basePath}/assets/images/MainLogos.png?t=${timestamp}`;
     
     // Update all matching user avatars in the page
     document.querySelectorAll(`img[data-user-id="${userId}"][data-user-type="${userType}"]`).forEach(img => {
@@ -402,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach(user => {
             const row = document.createElement('tr');
             const joinedDate = new Date(user.created_at).toLocaleDateString();
-            let profilePic = 'assets/images/PTC.png';
+            let profilePic = 'assets/images/MainLogos.png';
             if (user.profile_picture && user.profile_picture !== 'NULL') {
                 profilePic = basePath + '/uploads/avatars/' + user.profile_picture;
             }
@@ -798,7 +796,7 @@ function setupModalButtons(user) {
         const timestamp = new Date().getTime();
         const picUrl = user.profile_picture 
             ? `${basePath}/uploads/avatars/${user.profile_picture}?t=${timestamp}`
-            : `${basePath}/assets/images/PTC.png`;
+            : `${basePath}/assets/images/MainLogos.png`;
             
             const modalContent = `
             <div class="retro-modal">
@@ -823,7 +821,7 @@ function setupModalButtons(user) {
                              src="${picUrl}" 
                              alt="${user.username || 'User'}'s profile"
                              class="user-avatar"
-                             onerror="this.src='${basePath}/assets/images/PTC.png'">
+                             onerror="this.src='${basePath}/assets/images/MainLogos.png'">
                         <input type="file" id="modalProfilePicInput" accept="image/*" class="d-none">
                     </div>
                     <div class="file-details-container">

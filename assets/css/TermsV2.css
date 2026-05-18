@@ -1,0 +1,594 @@
+/* Master Hero Layout Wrapper Container */
+.terminal-hero-wrapper {
+  background-color: #0a0512 !important;
+  background: radial-gradient(circle at center, #180922 0%, #050209 100%) !important;
+  padding: 60px 0 50px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #4a121a;
+}
+
+/* Force layout contents forward over the background effects */
+.positional-index-forced {
+  position: relative;
+  z-index: 5;
+}
+
+/* Large Section Title */
+.terminal-hero-title {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 2.2rem !important;
+  letter-spacing: 3px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 0 15px rgba(255, 49, 49, 0.5);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Explicit Anti-Ghost Text Override for Hero Subtitle strings */
+.terminal-hero-subtitle {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  color: #ffb3b3 !important; /* Soft high-contrast coral pink limits legibility drop */
+  -webkit-text-fill-color: #ffb3b3 !important;
+  max-width: 680px;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+/* Meta Stamp Data Label */
+.terminal-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: #140d1a !important;
+  border: 1px solid rgba(255, 49, 49, 0.3) !important;
+  padding: 8px 16px !important;
+  border-radius: 4px;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.85rem !important;
+}
+
+.terminal-meta-badge .meta-label {
+  color: #756a85 !important;
+  margin-right: 6px;
+}
+
+.terminal-meta-badge .meta-date {
+  color: #ff3131 !important;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   FLOATING TEXT GLYPH CONFIGURATIONS (REPLACES EMOS)
+   ========================================================================== */
+.terminal-bg-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.terminal-glyph {
+  position: absolute;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  font-weight: bold;
+  color: #ff3131 !important;
+  opacity: 0.08 !important; /* Extremely muted backplate appearance */
+  user-select: none;
+}
+
+/* Spreading across layout dimensions */
+.terminal-glyph:nth-child(1) { top: 15%; left: 8%; }
+.terminal-glyph:nth-child(2) { top: 70%; left: 12%; }
+.terminal-glyph:nth-child(3) { top: 25%; right: 10%; }
+.terminal-glyph:nth-child(4) { top: 75%; right: 15%; }
+.terminal-glyph:nth-child(5) { top: 45%; left: 22%; }
+.terminal-glyph:nth-child(6) { top: 12%; left: 45%; }
+.terminal-glyph:nth-child(7) { top: 80%; left: 48%; }
+.terminal-glyph:nth-child(8) { top: 50%; right: 25%; }
+/* Core Structural Content Layout Hooks */
+.red-alert-body {
+  background-color: #0d0305 !important;
+  padding: 20px 20px !important;
+}
+
+.red-alert-body .red-contrast-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  color: #ffb3b3 !important; /* Soft high-contrast coral pink targets anti-ghost readability */
+  -webkit-text-fill-color: #ffb3b3 !important;
+  margin-bottom: 15px;
+}
+
+/* Enforced Warning Alert Container */
+.terminal-danger-well-box {
+  background-color: rgba(74, 13, 23, 0.3) !important;
+  border: 1px dashed #ff3131 !important;
+  padding: 14px 16px !important;
+}
+
+.terminal-danger-well-box .danger-strong-text {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.85rem !important;
+  color: #ff3131 !important;
+  letter-spacing: 1px;
+}
+
+.terminal-danger-well-box .danger-body-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Sub-items Typography and Lists */
+.terminal-body-subtitle {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 1px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  margin-bottom: 12px;
+}
+
+.terminal-protocol-list {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.terminal-protocol-list li {
+  margin-bottom: 8px;
+  color: #ff3131; /* Bullet indicator tint color matches crimson rules */
+}
+
+.terminal-protocol-list .list-body-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: #ffb3b3 !important;
+  -webkit-text-fill-color: #ffb3b3 !important;
+}
+/* Split Layout for Policy Metrics */
+.terminal-split-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Custom Color Border Extensions */
+.border-green-glow {
+  border-color: rgba(0, 255, 102, 0.2) !important;
+}
+.border-green-glow:hover {
+  border-color: #00ff66 !important;
+  box-shadow: 0 4px 12px rgba(0, 255, 102, 0.15) !important;
+}
+.border-red-glow {
+  border-color: rgba(255, 49, 49, 0.2) !important;
+}
+
+/* Functional Color Indicators */
+.text-success-neon {
+  color: #00ff66 !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900;
+}
+.text-danger-neon {
+  color: #ff3131 !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900;
+}
+
+/* Clean List Formats */
+.clean-bullets {
+  list-style-type: none !important;
+  padding-left: 0px !important;
+}
+.clean-bullets li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px !important;
+}
+.list-bullet-accent {
+  margin-right: 10px;
+  margin-top: 4px;
+  font-size: 0.8rem;
+}
+
+/* Consequence Rows Layout Stack */
+.terminal-tier-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.terminal-tier-row {
+  display: flex;
+  align-items: center;
+  background-color: #0a0305 !important;
+  border: 1px solid rgba(255, 49, 49, 0.1);
+  padding: 10px 14px !important;
+  border-radius: 4px;
+}
+
+@media (max-width: 576px) {
+  .terminal-tier-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* System Action Badges */
+.badge-terminal {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  border-radius: 3px;
+  min-width: 170px;
+  text-align: center;
+  display: inline-block;
+}
+
+.tag-orange {
+  background-color: rgba(255, 154, 0, 0.1);
+  border: 1px solid #ff9a00;
+  color: #ff9a00;
+}
+
+.tag-crimson {
+  background-color: rgba(255, 49, 49, 0.1);
+  border: 1px solid #ff3131;
+  color: #ff3131;
+}
+
+.tag-dead {
+  background-color: #ff3131;
+  border: 1px solid #ff3131;
+  color: #000000;
+  text-shadow: none;
+}
+
+/* Descriptive enforcement subtext strings */
+.tier-descriptive-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.85rem !important;
+  color: #ffb3b3 !important;
+  -webkit-text-fill-color: #ffb3b3 !important;
+  margin-left: 15px;
+  margin-bottom: 0px !important;
+}
+@media (max-width: 576px) {
+  .tier-descriptive-text {
+    margin-left: 0px;
+  }
+}
+/* Quad Grid Layout (4-Column Matrix for Data Usage) */
+.terminal-quad-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+/* Custom Tactical Hyperlink Hooks */
+.terminal-matrix-link {
+  color: #ff3131 !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-decoration: none !important;
+  border-bottom: 1px dashed rgba(255, 49, 49, 0.4);
+  padding-bottom: 1px;
+  transition: all 0.15s ease-in-out;
+}
+
+.terminal-matrix-link:hover {
+  color: #ffffff !important;
+  border-bottom-style: solid;
+  border-bottom-color: #ff3131;
+  text-shadow: 0 0 8px rgba(255, 49, 49, 0.6);
+}
+
+/* Header sub-border separator rule */
+.menu-header-border {
+  border-bottom: 1px solid rgba(255, 49, 49, 0.15);
+  padding-bottom: 8px;
+  margin-bottom: 15px !important;
+}
+/* Custom Icon Highlight Glow Effects */
+.icon-alert-glow {
+  color: #ff3131 !important;
+  text-shadow: 0 0 8px rgba(255, 49, 49, 0.6);
+}
+
+/* Secondary Action Well Box for Text Content */
+.terminal-action-well {
+  background-color: #08030b !important;
+  border: 1px solid rgba(255, 49, 49, 0.15) !important;
+  padding: 18px !important;
+  border-radius: 4px;
+}
+
+/* Vertical layout stack rule override for account terminations */
+.terminal-tier-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+/* Typography Framework rules for the Quiz Modules */
+.terminal-quiz-query {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5;
+  color: #ffffff !important;
+  letter-spacing: 0.5px;
+  border-left: 3px solid #ff3131;
+  padding-left: 12px;
+}
+
+/* Vertical Stack Setup for Answer Array Layout options */
+.terminal-quiz-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Tactical Crimson Interactive Console Button UI */
+.tactical-quiz-btn {
+  background: #140d1a !important;
+  border: 1px solid rgba(255, 49, 49, 0.2) !important;
+  color: #ffb3b3 !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.9rem !important;
+  padding: 12px 16px !important;
+  text-align: left !important;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.tactical-quiz-btn:hover {
+  background: linear-gradient(90deg, #220b12 0%, #140d1a 100%) !important;
+  border-color: #ff3131 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 8px rgba(255, 49, 49, 0.15);
+  transform: translateX(2px);
+}
+
+.tactical-quiz-btn:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px #ff3131 !important;
+}
+
+/* Core Evaluation Re-run Action Trigger Button Override */
+.tactical-action-trigger {
+  background-color: #ff3131 !important;
+  border: 1px solid #ff3131 !important;
+  color: #000000 !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 1px;
+  padding: 10px 20px !important;
+  border-radius: 4px;
+  transition: all 0.15s ease-in-out;
+}
+
+.tactical-action-trigger:hover {
+  background-color: transparent !important;
+  color: #ff3131 !important;
+  box-shadow: 0 0 12px rgba(255, 49, 49, 0.3);
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap');
+
+/* --- Gaming UI Container --- */
+.gaming-ui {
+    background: linear-gradient(135deg, #0d0e12 0%, #171a21 100%);
+    border: 1px solid #1f2633;
+    border-left: 4px solid #00f0ff; /* Neon cyan accent edge */
+    border-radius: 4px;
+    padding: 20px;
+    font-family: 'Rajdhani', sans-serif;
+    color: #c4cfde;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 240, 255, 0.05);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* --- Header Section --- */
+.gaming-ui .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.gaming-ui .section-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.gaming-ui .header-glow-icon {
+    color: #00f0ff;
+    margin-right: 12px;
+    filter: drop-shadow(0 0 5px #00f0ff);
+}
+
+.gaming-ui .sub-title {
+    font-size: 0.8rem;
+    color: #ff0055;
+    margin-left: 10px;
+    text-shadow: 0 0 5px #ff0055;
+    vertical-align: middle;
+}
+
+.gaming-ui .toggle-icon {
+    color: #00f0ff;
+    transition: transform 0.3s ease;
+}
+
+/* --- Timeline Layout --- */
+.gaming-ui .version-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+/* Vertical Timeline Track Line */
+.gaming-ui .version-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: linear-gradient(to bottom, #00f0ff, #1f2633 70%);
+}
+
+.gaming-ui .version-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Timeline Nodes/Dots */
+.gaming-ui .version-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    background: #171a21;
+    border: 2px solid #56637a;
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.gaming-ui .version-item.current::before {
+    background: #00f0ff;
+    border-color: #00f0ff;
+    box-shadow: 0 0 10px #00f0ff;
+}
+
+/* --- Patch Item Boxes --- */
+.gaming-ui .version-date-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.gaming-ui .version-date {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    color: #788a9e;
+    letter-spacing: 1px;
+}
+
+.gaming-ui .current .version-date {
+    color: #00f0ff;
+}
+
+.gaming-ui .version-content-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.gaming-ui .version-item:hover .version-content-box {
+    background: rgba(0, 240, 255, 0.03);
+    border-color: rgba(0, 240, 255, 0.2);
+}
+
+.gaming-ui .version-content-box h5 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.gaming-ui .accent-text {
+    color: #ff0055;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.gaming-ui .alpha-text {
+    color: #56637a;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+/* --- Gaming Lists (Square Crosshair Bullets) --- */
+.gaming-ui .patch-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gaming-ui .patch-list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.gaming-ui .patch-list li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: #00f0ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* --- Badges & Animations --- */
+.gaming-ui .status-badge {
+    background: #ff0055;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    box-shadow: 0 0 8px rgba(255, 0, 85, 0.6);
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+.gaming-ui .pulse-anim {
+    animation: pulse 1.5s infinite ease-in-out;
+}

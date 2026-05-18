@@ -12,8 +12,6 @@
  *   - Requires Database.php for DB access.
  * Included Files/Dependencies:
  *   - includes/Database.php
- * Author: CodeGaming Team
- * Last Updated: July 24, 2025
  */
 header('Content-Type: application/json');
 require_once '../includes/Database.php';

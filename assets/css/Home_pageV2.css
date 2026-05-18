@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --arcade-bg-card: #140d24;
+  --terminal-darkwell: #0a0512;
+  --panel-border-dark: #2c1a42;
+  --text-bright: #ffffff;
+  --text-slate: #756a85;
+  
+  /* Color Hooks */
+  --neon-cyan: #00f0ff;
+  --neon-purple: #bd00ff;
+  --neon-danger: #ff3131;
+}
+
+/* Base Wrapper Container Profile */
+.gaming-dashboard-container {
+  background-color: transparent;
+}
+
+/* Banner Core Framework Layout overrides */
+.terminal-banner-wrapper {
+  background-color: var(--arcade-bg-card);
+  border: 2px solid var(--panel-border-dark);
+  padding: 10px;
+  box-shadow: 4px 4px 0px #000000;
+  position: relative;
+}
+
+.gaming-cyber-banner {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border: 1px solid rgba(117, 106, 133, 0.3);
+}
+
+.banner-grid-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(rgba(20, 13, 36, 0.4) 50%, rgba(10, 5, 18, 0.8) 100%);
+}
+
+/* Text Block Alignments */
+.terminal-identity-block {
+  text-align: center;
+}
+
+/* ==========================================================================
+   ANTI-GHOST TEXT PARAMETERS: FORCING PROFILE HEADERS OUT OF THE DARK
+   ========================================================================== */
+
+/* Main Header Greetings Title Display formatting */
+.dynamic-username-text {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1.6rem !important;
+  letter-spacing: 2px;
+  color: var(--text-bright) !important;
+  -webkit-text-fill-color: var(--text-bright) !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 2px 2px 0px #000000 !important;
+  margin-bottom: 6px !important;
+}
+
+/* Operative Level Subtitle formatting */
+.dynamic-rank-badge {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 1rem !important;
+  font-weight: bold !important;
+  color: var(--text-slate) !important;
+  -webkit-text-fill-color: var(--text-slate) !important;
+  letter-spacing: 2px;
+}
+
+.rank-highlight-tint {
+  color: var(--neon-cyan) !important;
+  -webkit-text-fill-color: var(--neon-cyan) !important;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.4);
+}
+
+/* Section Journey Title Manifest Modules styling layout */
+.journey-title-container {
+  position: relative;
+  text-align: center;
+}
+
+.gaming-journey-heading {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 3px;
+  color: var(--text-bright) !important;
+  -webkit-text-fill-color: var(--text-bright) !important;
+  margin-bottom: 10px;
+}
+
+.heading-laser-line {
+  height: 2px;
+  width: 100px;
+  background-color: var(--neon-purple);
+  margin: 0 auto;
+  box-shadow: 0 0 8px var(--neon-purple);
+}
+
+/* AJAX Spinner Terminal adjustments styling variables */
+.streaming-loader-slot {
+  padding: 40px 0;
+}
+
+.terminal-spinner-cyan {
+  color: var(--neon-cyan) !important;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 0.25em;
+}
+
+.loader-terminal-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  color: var(--neon-cyan) !important;
+  -webkit-text-fill-color: var(--neon-cyan) !important;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* Noscript Fallback Warning Element Box styling attributes */
+.terminal-noscript-alert {
+  background-color: var(--terminal-darkwell) !important;
+  border: 1px solid var(--neon-danger) !important;
+  color: #ff9999 !important;
+  -webkit-text-fill-color: #ff9999 !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  border-radius: 0px !important;
+  font-weight: bold;
+}
+
+.text-danger-neon {
+  color: var(--neon-danger) !important;
+}

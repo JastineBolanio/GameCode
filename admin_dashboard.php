@@ -3,7 +3,7 @@
 // File: admin_dashboard.php
 //
 // Description:
-//   - Admin Dashboard for Code Gaming platform
+//   - Admin Dashboard for SkillForge platform
 //   - Features:
 //       • Stats cards for users, content, announcements, and system status
 //       • Analytics charts for user activity and content distribution
@@ -23,9 +23,6 @@
 //   - includes/admin_header.php, includes/admin_footer.php
 //   - External: Bootstrap, Font Awesome
 //
-// Author: [Santiago]
-// Last Updated: [July 22, 2025]
-// -- Code Gaming Team --
 // ===========================================================
 require_once 'includes/Auth.php';
 require_once 'includes/CSRFProtection.php';
@@ -185,125 +182,217 @@ $showLoginNotification = isset($_GET['login']) && $_GET['login'] === 'success';
 </div>
 <?php endif; ?>
 <div class="admin-main-content p-4">
+  <link rel="stylesheet" href="assets/css/StatCardAdmid.css">
   <!-- Stats Cards Row -->
-  <div class="row mb-4">
-    <div class="col-md-3">
-      <div class="card admin-card text-center small-stats-card">
-        <div class="card-body">
-          <div class="mb-2"><i class="fas fa-users fa-lg text-primary"></i></div>
-          <div class="fw-bold text-muted">Total Users</div>
-          <span class="display-7" id="totalUsersStat">1,234</span>
-          <div class="text-success small mt-1"><i class="fas fa-arrow-up"></i> 12% this week</div>
+  <div class="row mb-4 gaming-dashboard-row">
+  
+  <!-- CARD 1: Total Users (Guild Size) -->
+  <div class="col-md-3 mb-3 mb-md-0">
+    <div class="card admin-card text-center small-stats-card gaming-stat-panel border-cyan">
+      <div class="card-body">
+        <div class="mb-2 stat-icon-container">
+          <i class="fas fa-users-rays fa-lg icon-cyan"></i>
         </div>
-      </div>
-    </div>
-    
-    <!-- Visitor Stats Card -->
-    <div class="col-md-3">
-      <div class="card admin-card text-center small-stats-card">
-        <div class="card-body">
-          <div class="mb-2"><i class="fas fa-chart-line fa-lg text-info"></i></div>
-          <div class="fw-bold text-muted">Today's Visitors</div>
-          <span class="display-7" id="todayVisitors">0</span>
-          <div class="text-muted small mt-1"><span id="uniqueVisitors">0</span> unique</div>
-          <div class="mt-2">
-            <a href="admin_analytics.php" class="btn btn-sm btn-outline-info">View Analytics</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card admin-card text-center small-stats-card">
-        <div class="card-body">
-          <div class="mb-2"><i class="fas fa-book-open fa-lg text-warning"></i></div>
-          <div class="fw-bold text-muted">Total Content</div>
-          <span class="display-7" id="totalContentStat">56</span>
-          <div class="text-warning small mt-1">Tutorials, Quizzes & Challenges</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card admin-card text-center small-stats-card">
-        <div class="card-body">
-          <div class="mb-2"><i class="fas fa-bullhorn fa-lg text-danger"></i></div>
-          <div class="fw-bold text-muted">Total Announcements</div>
-          <span class="display-7" id="totalAnnouncementsStat">0</span>
-          <div class="text-muted small mt-1"><span id="publishedAnnouncementsStat">0</span> published, <span id="draftAnnouncementsStat">0</span> drafts</div>
-          <hr class="my-2">
-          <div class="fw-bold text-muted mt-2">System Status</div>
-          <span class="badge bg-success fs-7" id="systemStatusStat">Online</span>
-          <div class="text-muted small mt-1">All systems operational</div>
+        <div class="fw-bold text-muted stat-title">REGISTERED GUILD</div>
+        <span class="display-7 stat-counter" id="totalUsersStat">1,234</span>
+        <div class="small mt-1 stat-momentum-up">
+          <i class="fas fa-chart-line"></i> +12% MOMENTUM
         </div>
       </div>
     </div>
   </div>
+  
+  <!-- CARD 2: Today's Visitors (Live Pings) -->
+  <div class="col-md-3 mb-3 mb-md-0">
+    <div class="card admin-card text-center small-stats-card gaming-stat-panel border-magenta">
+      <div class="card-body d-flex flex-column justify-content-between h-100">
+        <div>
+          <div class="mb-2 stat-icon-container">
+            <i class="fas fa-satellite-dish fa-lg icon-magenta"></i>
+          </div>
+          <div class="fw-bold text-muted stat-title">CURRENT PINGS</div>
+          <span class="display-7 stat-counter" id="todayVisitors">0</span>
+          <div class="text-muted small mt-1 stat-subtext">
+            <span id="uniqueVisitors" class="text-white fw-bold">0</span> UNIQUE SIGNALS
+          </div>
+        </div>
+        <div class="mt-3">
+          <a href="admin_analytics.php" class="btn btn-sm btn-gaming-outline">
+            <i class="fas fa-chart-pie"></i> ANALYTICS LOG
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- CARD 3: Total Content (Map Pool) -->
+  <div class="col-md-3 mb-3 mb-md-0">
+    <div class="card admin-card text-center small-stats-card gaming-stat-panel border-yellow">
+      <div class="card-body">
+        <div class="mb-2 stat-icon-container">
+          <i class="fas fa-dungeon fa-lg icon-yellow"></i>
+        </div>
+        <div class="fw-bold text-muted stat-title">MAP INSTANCES</div>
+        <span class="display-7 stat-counter" id="totalContentStat">56</span>
+        <div class="small mt-1 stat-highlight-yellow">
+          TUTORIALS, QUIZZES & RAIDS
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- CARD 4: System Status & Announcements (Global Broadcasts) -->
+  <div class="col-md-3">
+    <div class="card admin-card text-center small-stats-card gaming-stat-panel border-red">
+      <div class="card-body">
+        <div class="mb-2 stat-icon-container">
+          <i class="fas fa-tower-broadcast fa-lg icon-red"></i>
+        </div>
+        <div class="fw-bold text-muted stat-title">GLOBAL LOGS</div>
+        <span class="display-7 stat-counter" id="totalAnnouncementsStat">0</span>
+        <div class="text-muted small mt-1 stat-subtext">
+          <span id="publishedAnnouncementsStat" class="text-white">0</span> LIVE / <span id="draftAnnouncementsStat" class="text-white">0</span> QUEUED
+        </div>
+        
+        <div class="terminal-divider my-2"></div>
+        
+        <div class="fw-bold text-muted stat-title mt-2">SERVER CORE</div>
+        <div class="status-badge-container mt-1">
+          <span class="gaming-badge badge-green" id="systemStatusStat">
+            <span class="pulse-dot"></span> OPERATIONAL
+          </span>
+        </div>
+        <div class="text-muted small mt-1 stat-subtext">ALL SECTORS ONLINE</div>
+      </div>
+    </div>
+  </div>
+  
+</div>
   <!-- Announcements & Quick Actions -->
-  <div class="row mb-4">
-    <div class="col-lg-6 mb-4 mb-lg-0">
-      <div class="card admin-card">
-        <div class="card-body">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <h5 class="mb-0"><i class="fas fa-bullhorn me-2 text-warning"></i>Recent Announcements</h5>
-            <button class="btn btn-sm btn-primary" id="openAnnouncementModalBtn" data-bs-toggle="modal" data-bs-target="#newAnnouncementModal"><i class="fas fa-plus"></i> New</button>
-          </div>
-          <ul class="list-group list-group-flush" id="dashboardAnnouncementsList">
-            <!-- Announcements will be loaded here dynamically -->
-          </ul>
+  <div class="row mb-4 gaming-dashboard-row">
+  
+  <!-- LEFT COLUMN: Recent Announcements (Global Broadcasts) -->
+  <div class="col-lg-6 mb-4 mb-lg-0">
+    <div class="card admin-card gaming-action-panel border-amber">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3 panel-header-container">
+          <h5 class="mb-0 gaming-panel-title">
+            <i class="fas fa-tower-broadcast icon-amber"></i> GLOBAL BROADCASTS
+          </h5>
+          <button class="btn btn-sm btn-gaming-primary" id="openAnnouncementModalBtn" data-bs-toggle="modal" data-bs-target="#newAnnouncementModal">
+            <i class="fas fa-plus-microchip"></i> TRANSMIT
+          </button>
         </div>
-      </div>
-    </div>
-    <div class="col-lg-6">
-      <div class="card admin-card">
-        <div class="card-body">
-          <h5 class="mb-3"><i class="fas fa-bolt me-2 text-success"></i>Quick Actions</h5>
-          <div class="d-grid gap-2 compact-quick-actions">
-            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#newAnnouncementModal"><i class="fas fa-bullhorn me-2"></i>New Announcement</button>
-            <button class="btn btn-success btn-sm"><i class="fas fa-plus me-2"></i>Add Content</button>
-            <button class="btn btn-info btn-sm"><i class="fas fa-users me-2"></i>Generate Report</button>
-            <button class="btn btn-warning btn-sm"><i class="fas fa-cog me-2"></i>System Settings</button>
-          </div>
-        </div>
+        
+        <!-- Dynamic Target List Box -->
+        <ul class="list-group list-group-flush gaming-terminal-list" id="dashboardAnnouncementsList">
+          <!-- Announcements will be loaded here dynamically -->
+          <!-- Note: Make sure your dynamic list items contain text/classes matching this aesthetic! -->
+        </ul>
       </div>
     </div>
   </div>
+  
+  <!-- RIGHT COLUMN: Quick Actions (Command Console) -->
+  <div class="col-lg-6">
+    <div class="card admin-card gaming-action-panel border-cyan">
+      <div class="card-body">
+        <h5 class="mb-3 gaming-panel-title">
+          <i class="fas fa-terminal icon-cyan"></i> COMMAND CONSOLE
+        </h5>
+        
+        <div class="d-grid gap-2 compact-quick-actions gaming-console-menu">
+          <!-- Action 1: Transmit Broadcast -->
+          <button class="btn btn-gaming-action action-cyan" data-bs-toggle="modal" data-bs-target="#newAnnouncementModal">
+            <span class="action-text"><i class="fas fa-bullhorn"></i> NEW BROADCAST</span>
+          </button>
+          
+          <!-- Action 2: Add Content -->
+          <button class="btn btn-gaming-action action-matrix">
+            <span class="action-text"><i class="fas fa-folder-plus"></i> INJECT CONTENT MAP</span>
+          </button>
+          
+          <!-- Action 3: Generate Report -->
+          <button class="btn btn-gaming-action action-purple">
+            <span class="action-text"><i class="fas fa-database"></i> COMPILE METRIC LOGS</span>
+          </button>
+          
+          <!-- Action 4: System Settings -->
+          <button class="btn btn-gaming-action action-amber">
+            <span class="action-text"><i class="fas fa-sliders"></i> CORE CONFIGURATION</span>
+          </button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
   <!-- Recent Activity Table -->
-  <div class="card admin-card mb-4">
-    <div class="card-body">
-      <h5 class="mb-3"><i class="fas fa-history me-2 text-secondary"></i>Recent Activity</h5>
-      <div class="table-responsive">
-        <table class="table table-hover align-middle mb-0">
-          <thead class="table-light">
-            <tr>
-              <th>User</th>
-              <th>Action</th>
-              <th>Time</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><i class="fas fa-user-circle text-primary"></i> Jane Doe</td>
-              <td>Completed Quiz: <span class="fw-bold">JavaScript Basics</span></td>
-              <td>5 min ago</td>
-              <td><span class="badge bg-success">Success</span></td>
-            </tr>
-            <tr>
-              <td><i class="fas fa-user-circle text-primary"></i> John Smith</td>
-              <td>Submitted Feedback</td>
-              <td>12 min ago</td>
-              <td><span class="badge bg-info">Info</span></td>
-            </tr>
-            <tr>
-              <td><i class="fas fa-user-circle text-primary"></i> Alice Lee</td>
-              <td>Started Challenge: <span class="fw-bold">Python Loops</span></td>
-              <td>30 min ago</td>
-              <td><span class="badge bg-warning">Pending</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="card admin-card mb-4 gaming-feed-panel border-matrix">
+  <div class="card-body">
+    <!-- Panel Header styled like a Battle Log -->
+    <h5 class="mb-3 gaming-panel-title">
+      <i class="fas fa-satellite-dish icon-matrix"></i> LIVE EVENT LOGS
+    </h5>
+    
+    <div class="table-responsive gaming-terminal-container">
+      <table class="table align-middle mb-0 gaming-feed-table">
+        <thead class="terminal-header">
+          <tr>
+            <th><i class="fas fa-user-shield"></i> OPERATIVE</th>
+            <th><i class="fas fa-gamepad"></i> MISSION EVENT</th>
+            <th><i class="fas fa-clock"></i> TIMELINE</th>
+            <th><i class="fas fa-heartbeat"></i> OUTCOME</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Entry 1: Success State -->
+          <tr>
+            <td class="player-tag">
+              <i class="fas fa-headset icon-cyan"></i> Jane Doe
+            </td>
+            <td>
+              COMPLETED TRIAL: <span class="quest-highlight-cyan">JavaScript Basics</span>
+            </td>
+            <td class="timestamp-text">00:05:00 AGO</td>
+            <td>
+              <span class="feed-badge status-victory">CRITICAL HIT</span>
+            </td>
+          </tr>
+          
+          <!-- Entry 2: Info State -->
+          <tr>
+            <td class="player-tag">
+              <i class="fas fa-headset icon-purple"></i> John Smith
+            </td>
+            <td>
+              TRANSMITTED FIELD REPORT (FEEDBACK)
+            </td>
+            <td class="timestamp-text">00:12:00 AGO</td>
+            <td>
+              <span class="feed-badge status-telemetry">TELEMETRY</span>
+            </td>
+          </tr>
+          
+          <!-- Entry 3: Pending State -->
+          <tr>
+            <td class="player-tag">
+              <i class="fas fa-headset icon-amber"></i> Alice Lee
+            </td>
+            <td>
+              ENGAGED INSTANCE: <span class="quest-highlight-amber">Python Loops</span>
+            </td>
+            <td class="timestamp-text">00:30:00 AGO</td>
+            <td>
+              <span class="feed-badge status-active">IN PROGRESS</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>
   <!-- System Notifications -->
   <div class="card admin-card mb-4">
     <div class="card-body">

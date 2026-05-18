@@ -16,8 +16,6 @@
  *   - includes/Database.php
  *   - includes/Auth.php
  * 
- * Author: CodeGaming Team
- * Last Updated: October 25, 2025
  */
 
 // Enable error reporting for debugging

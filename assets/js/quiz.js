@@ -15,8 +15,6 @@
  * Included Files/Dependencies:
  *   - Bootstrap (modals)
  *   - HTML/CSS for quiz UI
- * Author: CodeGaming Team
- * Last Updated: July 22, 2025
  */
 
 // assets/js/quiz.js - Interactive Quiz Logic

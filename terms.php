@@ -14,9 +14,6 @@
  *       • Print/Download options
  *       • Responsive design with accessibility
  * 
- * Author: [Santiago]
- * Last Updated: [October 24, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 // Start session if not already started
@@ -53,41 +50,47 @@ include 'includes/header.php';
 ?>
 
 <!-- Terms of Service Hero Section -->
-<section class="terms-hero">
+ <link rel="stylesheet" href="assets/css/TermsV2.css">
+<section class="terms-hero terminal-hero-wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center">
-                <div class="back-button-wrapper">
-                    <a href="anchor.php" class="btn btn-outline-light back-btn">
-                        <i class="fas fa-arrow-left"></i> Back to Home
+            <div class="col-12 text-center positional-index-forced">
+                
+                <div class="back-button-wrapper mb-4">
+                    <a href="anchor.php" class="btn console-action-trigger trigger-red-flash py-2 px-3">
+                        <i class="fas fa-arrow-left me-2"></i> BACK_TO_HOME
                     </a>
                 </div>
-                <h1 class="terms-title">
-                    <span class="terms-icon">⚖️</span>
-                    Terms of Service
-                    <span class="terms-icon">⚖️</span>
-                </h1>
-                <p class="terms-subtitle">Please read these terms carefully before using Code Gaming. By using our platform, you agree to these terms.</p>
                 
-                <!-- Last Updated Info -->
-                <div class="last-updated">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Last Updated: October 17, 2025</span>
+                <h1 class="terms-title terminal-hero-title">
+                    <i class="fas fa-gavel icon-alert-glow me-3"></i>
+                    TERMS_OF_SERVICE_MATRIX
+                    <i class="fas fa-gavel icon-alert-glow ms-3"></i>
+                </h1>
+                
+                <p class="terms-subtitle terminal-hero-subtitle mx-auto">
+                    Please evaluate these architectural conditions carefully prior to instantiating live connection sessions with SkillForge. Node initialization implies binding agreement to these system terms.
+                </p>
+                
+                <div class="last-updated terminal-meta-badge mt-4">
+                    <i class="fas fa-calendar-alt text-alert-neon me-2"></i>
+                    <span class="meta-label">LAST_SYSTEM_REVISION:</span> 
+                    <span class="meta-date">5/18/2026</span>
                 </div>
+                
             </div>
         </div>
     </div>
     
-    <!-- Floating Legal Elements (Rellax) -->
-    <div class="floating-elements">
-        <div class="legal-element" data-rellax-speed="2">📄</div>
-        <div class="legal-element" data-rellax-speed="-1">⚖️</div>
-        <div class="legal-element" data-rellax-speed="3">✅</div>
-        <div class="legal-element" data-rellax-speed="-2">🔒</div>
-        <div class="legal-element" data-rellax-speed="1">📋</div>
-        <div class="legal-element" data-rellax-speed="2">🛡️</div>
-        <div class="legal-element" data-rellax-speed="-3">📝</div>
-        <div class="legal-element" data-rellax-speed="1">🎯</div>
+    <div class="floating-elements terminal-bg-elements">
+        <div class="legal-element terminal-glyph" data-rellax-speed="2">/* FILE */</div>
+        <div class="legal-element terminal-glyph" data-rellax-speed="-1">&lt;SYS&gt;</div>
+        <div class="legal-element terminal-glyph" data-rellax-speed="3">[TRUE]</div>
+        <div class="legal-element terminal-glyph" data-rellax-speed="-2">::LOCK::</div>
+        <div class="legal-element terminal-glyph" data-rellax-speed="1">#CORE</div>
+        <div class="legal-element terminal-glyph" data-rellax-speed="2">//SECURE</div>
+        <div class="legal-element terminal-glyph" data-rellax-speed="-3">!CRIT</div>
+        <div class="legal-element terminal-glyph" data-rellax-speed="1">&amp;INIT</div>
     </div>
 </section>
 
@@ -106,382 +109,479 @@ include 'includes/header.php';
                 </div>
 
                 <!-- Acceptance Flow -->
-                <div class="acceptance-flow">
-                    <div class="acceptance-step active" data-step="1">
-                        <h3><i class="fas fa-user-check"></i> Step 1: Read the Terms</h3>
-                        <p>Please read through all sections below to understand our terms of service.</p>
+                    <div class="acceptance-flow">
+                        <div class="acceptance-step active" data-step="1">
+                            <h3><i class="fas fa-user-check"></i> Step 1: Read the Terms</h3>
+                            <p>Please read through all sections below to understand our terms of service.</p>
+                        </div>
+                        <div class="acceptance-step" data-step="2">
+                            <h3><i class="fas fa-question-circle"></i> Step 2: Take the Quiz</h3>
+                            <p>Complete a quick quiz to ensure you understand the key terms.</p>
+                        </div>
+                        <div class="acceptance-step" data-step="3">
+                            <h3><i class="fas fa-check-double"></i> Step 3: Accept Terms</h3>
+                            <p>Confirm your acceptance of the terms of service.</p>
+                        </div>
                     </div>
-                    <div class="acceptance-step" data-step="2">
-                        <h3><i class="fas fa-question-circle"></i> Step 2: Take the Quiz</h3>
-                        <p>Complete a quick quiz to ensure you understand the key terms.</p>
-                    </div>
-                    <div class="acceptance-step" data-step="3">
-                        <h3><i class="fas fa-check-double"></i> Step 3: Accept Terms</h3>
-                        <p>Confirm your acceptance of the terms of service.</p>
-                    </div>
-                </div>
 
                 <!-- Introduction Section -->
-                <div class="terms-section active" id="introduction">
-                    <div class="section-header" data-section="introduction">
-                        <h2><i class="fas fa-info-circle"></i> Acceptance of Terms</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <p>Welcome to Code Gaming! These Terms of Service ("Terms") govern your use of our platform and services. By accessing or using Code Gaming, you agree to be bound by these Terms.</p>
-                        <p>If you do not agree to these Terms, please do not use our platform. We reserve the right to modify these Terms at any time, and such modifications will be effective immediately upon posting.</p>
-                        
-                        <div class="terms-highlight">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <strong>Important:</strong> By using Code Gaming, you confirm that you are at least 18 years old and have the legal capacity to enter into these Terms.
-                        </div>
-                        
-                        <div class="key-points">
-                            <h4>Key Points:</h4>
-                            <ul>
-                                <li>You must be 18+ years old to use Code Gaming</li>
-                                <li>You are responsible for maintaining account security</li>
-                                <li>You agree not to violate any applicable laws</li>
-                                <li>We may terminate accounts for violations</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <div class="terms-section terminal-secure-card fully-expanded" id="introduction">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('introduction')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-info-circle icon-alert-glow me-2"></i> 01 // ACCEPTANCE OF TERMS PROTOCOL
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-introduction"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-introduction">
+        <p class="policy-body-text red-contrast-text">Welcome to SkillForge! These Terms of Service ("Terms") govern your operational authorization parameters across our live platform and services. Instantiating connection sessions implies definitive intent to be bound by these criteria.</p>
+        <p class="policy-body-text red-contrast-text">If you choose to dissent from these framework terms, terminate your session routing immediately. We reserve the right to recalibrate, modify, or update these rules instantly upon host deployment.</p>
+        
+        <div class="policy-highlight terminal-danger-well-box my-3">
+            <i class="fas fa-exclamation-triangle icon-alert-glow me-2"></i>
+            <strong class="danger-strong-text">CRITICAL_CAPACITY_MANDATE:</strong> 
+            <span class="danger-body-text">By proceeding on this host, you verify that your operating identity node represents an age threshold of 18+ years and holds the total legal capability to authenticate this agreement.</span>
+        </div>
+        
+        <div class="key-points mt-4">
+            <h4 class="terminal-body-subtitle"><i class="fas fa-terminal me-2 text-alert-neon"></i> KEY_COMPLIANCE_POINTS:</h4>
+            <ul class="terminal-protocol-list">
+                <li><strong class="danger-strong-text">AGE_VERIFICATION:</strong> <span class="list-body-text">Identity node metadata must certify an active status of 18+ years.</span></li>
+                <li><strong class="danger-strong-text">ACCOUNT_INSULATION:</strong> <span class="list-body-text">You maintain absolute liability for restricting access keys to your profile.</span></li>
+                <li><strong class="danger-strong-text">STATUTORY_COMPLIANCE:</strong> <span class="list-body-text">You swear under system token to commit no malicious network exploits.</span></li>
+                <li><strong class="danger-strong-text">TERMINATION_RIGHTS:</strong> <span class="list-body-text">Admin controllers retain system privilege to drop connections for rule updates.</span></li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
 
                 <!-- User Accounts Section -->
-                <div class="terms-section" id="user-accounts">
-                    <div class="section-header" data-section="user-accounts">
-                        <h2><i class="fas fa-user-circle"></i> User Accounts & Registration</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <h4>Account Creation</h4>
-                        <p>To access certain features of Code Gaming, you must create an account. You agree to provide accurate, current, and complete information during registration.</p>
-                        
-                        <div class="account-requirements">
-                            <div class="requirement-card">
-                                <i class="fas fa-user-plus"></i>
-                                <h5>Registration</h5>
-                                <p>Provide valid email and username</p>
-                            </div>
-                            <div class="requirement-card">
-                                <i class="fas fa-shield-alt"></i>
-                                <h5>Security</h5>
-                                <p>Keep credentials secure</p>
-                            </div>
-                            <div class="requirement-card">
-                                <i class="fas fa-edit"></i>
-                                <h5>Updates</h5>
-                                <p>Keep information current</p>
-                            </div>
-                        </div>
-                        
-                        <h4>Account Responsibilities</h4>
-                        <ul>
-                            <li>You are responsible for all activities under your account</li>
-                            <li>You must notify us immediately of any unauthorized use</li>
-                            <li>You may not share your account credentials with others</li>
-                            <li>You may not create multiple accounts for malicious purposes</li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="terms-section terminal-secure-card mb-3" id="user-accounts">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('user-accounts')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-user-circle icon-alert-glow me-2"></i> 02 // USER ACCOUNTS &amp; REGISTRATION
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-user-accounts"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-user-accounts">
+        
+        <h4 class="terminal-body-subtitle"><i class="fas fa-terminal me-2 text-alert-neon"></i> IDENTITY_NODE_CREATION</h4>
+        <p class="policy-body-text red-contrast-text">To gain access to specialized platform testing instances, you must register a unique operator profile. You pledge to submit authentic, current, and verified data values across all directory fields during registration.</p>
+        
+        <div class="account-requirements terminal-usage-grid mt-3 mb-4">
+            <div class="requirement-card terminal-sub-well-dark">
+                <i class="fas fa-user-plus icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">REGISTRATION_METRICS</h5>
+                <p class="sub-well-text-bright">Provide an authenticated email routing destination and profile identifier token.</p>
+            </div>
+            <div class="requirement-card terminal-sub-well-dark">
+                <i class="fas fa-shield-alt icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">CREDENTIAL_PROTECTION</h5>
+                <p class="sub-well-text-bright">Isolate and protect your administrative password access keys from all network nodes.</p>
+            </div>
+            <div class="requirement-card terminal-sub-well-dark">
+                <i class="fas fa-edit icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">SCHEMA_MAINTENANCE</h5>
+                <p class="sub-well-text-bright">Instantly refresh registered profile arrays if real-world operator data varies.</p>
+            </div>
+        </div>
+        
+        <h4 class="terminal-body-subtitle"><i class="fas fa-terminal me-2 text-alert-neon"></i> ACCOUNT_RESPONSIBILITIES</h4>
+        <ul class="terminal-protocol-list">
+            <li><strong class="danger-strong-text">RUNTIME_LIABILITY:</strong> <span class="list-body-text">You handle full liability for all calculations and commands executed under your identifier.</span></li>
+            <li><strong class="danger-strong-text">BREACH_NOTIFICATION:</strong> <span class="list-body-text">Alert security controllers immediately upon discovering credential leak vulnerabilities.</span></li>
+            <li><strong class="danger-strong-text">CREDENTIAL_ISOLATION:</strong> <span class="list-body-text">You are forbidden from proxying or distributing your access tokens to unauthorized third parties.</span></li>
+            <li><strong class="danger-strong-text">MULTIPLEX_RESTRICTION:</strong> <span class="list-body-text">Generating duplicate secondary accounts for malicious load routing is strictly blocked.</span></li>
+        </ul>
+    </div>
+</div>
 
-                <!-- Acceptable Use Section -->
-                <div class="terms-section" id="acceptable-use">
-                    <div class="section-header" data-section="acceptable-use">
-                        <h2><i class="fas fa-handshake"></i> Acceptable Use Policy</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="use-policy-grid">
-                            <div class="policy-item allowed">
-                                <i class="fas fa-check-circle"></i>
-                                <h5>Allowed Activities</h5>
-                                <ul>
-                                    <li>Learning and practicing coding</li>
-                                    <li>Participating in challenges</li>
-                                    <li>Sharing knowledge respectfully</li>
-                                    <li>Building a positive community</li>
-                                </ul>
-                            </div>
-                            <div class="policy-item prohibited">
-                                <i class="fas fa-times-circle"></i>
-                                <h5>Prohibited Activities</h5>
-                                <ul>
-                                    <li>Cheating or using unauthorized tools</li>
-                                    <li>Harassing other users</li>
-                                    <li>Sharing inappropriate content</li>
-                                    <li>Attempting to hack or disrupt services</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="consequences">
-                            <h4>Consequences of Violations</h4>
-                            <div class="consequence-levels">
-                                <div class="level">
-                                    <span class="level-badge warning">Warning</span>
-                                    <p>First-time minor violations</p>
-                                </div>
-                                <div class="level">
-                                    <span class="level-badge suspension">Suspension</span>
-                                    <p>Temporary account suspension</p>
-                                </div>
-                                <div class="level">
-                                    <span class="level-badge termination">Termination</span>
-                                    <p>Permanent account ban</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="terms-section terminal-secure-card mb-3" id="acceptable-use">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('acceptable-use')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-handshake icon-alert-glow me-2"></i> 03 // ACCEPTABLE USE POLICY
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-acceptable-use"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-acceptable-use">
+        
+        <div class="use-policy-grid terminal-split-dashboard">
+            
+            <div class="policy-item allowed terminal-sub-well-dark border-green-glow">
+                <h5 class="sub-well-title text-success-neon"><i class="fas fa-check-circle me-2"></i> PERMITTED_OPERATIONS</h5>
+                <ul class="terminal-protocol-list clean-bullets mt-3">
+                    <li><i class="fas fa-chevron-right list-bullet-accent text-success-neon"></i> <span class="list-body-text">Executing, compiling, and analyzing source packages for educational training.</span></li>
+                    <li><i class="fas fa-chevron-right list-bullet-accent text-success-neon"></i> <span class="list-body-text">Engaging in live structural debugging sprints and logical challenges.</span></li>
+                    <li><i class="fas fa-chevron-right list-bullet-accent text-success-neon"></i> <span class="list-body-text">Distributing peer advice and knowledge streams while respecting structural boundaries.</span></li>
+                    <li><i class="fas fa-chevron-right list-bullet-accent text-success-neon"></i> <span class="list-body-text">Fostering a productive development community space for emerging operators.</span></li>
+                </ul>
+            </div>
+            
+            <div class="policy-item prohibited terminal-sub-well-dark border-red-glow">
+                <h5 class="sub-well-title text-danger-neon"><i class="fas fa-times-circle me-2"></i> PROHIBITED_OPERATIONS</h5>
+                <ul class="terminal-protocol-list clean-bullets mt-3">
+                    <li><i class="fas fa-ban list-bullet-accent text-danger-neon"></i> <span class="list-body-text">Exploiting logic bugs or using unapproved automated scripting engines to bypass checks.</span></li>
+                    <li><i class="fas fa-ban list-bullet-accent text-danger-neon"></i> <span class="list-body-text">Harassing other profile operators or leaking metadata properties.</span></li>
+                    <li><i class="fas fa-ban list-bullet-accent text-danger-neon"></i> <span class="list-body-text">Transmitting unsafe media components or malicious code files.</span></li>
+                    <li><i class="fas fa-ban list-bullet-accent text-danger-neon"></i> <span class="list-body-text">Attempting reverse-engineering exploits or launching Denial of Service actions.</span></li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="consequences terminal-action-well mt-4">
+            <h4 class="terminal-body-subtitle menu-header-border"><i class="fas fa-shield-alt me-2 text-alert-neon"></i> ENFORCEMENT_MITIGATION_SCALES</h4>
+            
+            <div class="consequence-levels terminal-tier-stack">
+                <div class="level terminal-tier-row">
+                    <span class="badge-terminal tag-orange">LVL_01 // WARNING</span>
+                    <p class="tier-descriptive-text">Applied to initial, low-impact procedural mistakes. System remains green under probationary tracking.</p>
                 </div>
+                <div class="level terminal-tier-row">
+                    <span class="badge-terminal tag-crimson">LVL_02 // SUSPENSION</span>
+                    <p class="tier-descriptive-text">Temporary lockdown of session access credentials. Connection drops for a determined observation cycle.</p>
+                </div>
+                <div class="level terminal-tier-row">
+                    <span class="badge-terminal tag-dead">LVL_03 // TERMINATION</span>
+                    <p class="tier-descriptive-text">Permanent expulsion of the profile node identity. All tables dropped; host gateways are blacklisted.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
                 <!-- Intellectual Property Section -->
-                <div class="terms-section" id="intellectual-property">
-                    <div class="section-header" data-section="intellectual-property">
-                        <h2><i class="fas fa-copyright"></i> Intellectual Property Rights</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="ip-rights">
-                            <div class="ip-item">
-                                <i class="fas fa-code"></i>
-                                <h5>Our Content</h5>
-                                <p>Code Gaming owns all platform content, code, and design elements</p>
-                            </div>
-                            <div class="ip-item">
-                                <i class="fas fa-user-edit"></i>
-                                <h5>Your Content</h5>
-                                <p>You retain rights to content you create and share</p>
-                            </div>
-                            <div class="ip-item">
-                                <i class="fas fa-share-alt"></i>
-                                <h5>Licensing</h5>
-                                <p>You grant us license to display your shared content</p>
-                            </div>
-                        </div>
-                        
-                        <div class="copyright-notice">
-                            <h4>Copyright Notice</h4>
-                            <p>All content on Code Gaming is protected by copyright laws. You may not reproduce, distribute, or create derivative works without permission.</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="terms-section terminal-secure-card mb-3" id="intellectual-property">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('intellectual-property')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-copyright icon-alert-glow me-2"></i> 04 // INTELLECTUAL PROPERTY RIGHTS
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-intellectual-property"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-intellectual-property">
+        
+        <div class="ip-rights terminal-usage-grid mb-4">
+            
+            <div class="ip-item terminal-sub-well-dark">
+                <i class="fas fa-code icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">HOST_CONTENT</h5>
+                <p class="sub-well-text-bright">SkillForge retains absolute ownership over all source packages, telemetry code architectures, and user interface elements.</p>
+            </div>
+            
+            <div class="ip-item terminal-sub-well-dark">
+                <i class="fas fa-user-edit icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">OPERATOR_CONTENT</h5>
+                <p class="sub-well-text-bright">You retain proprietary rights to original scripts, custom payloads, and challenge solutions compiled by your node identity.</p>
+            </div>
+            
+            <div class="ip-item terminal-sub-well-dark">
+                <i class="fas fa-share-alt icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">SYSTEM_LICENSING</h5>
+                <p class="sub-well-text-bright">You grant our host clusters a perpetual, royalty-free operational token to index, display, and process your shared logs.</p>
+            </div>
+            
+        </div>
+        
+        <div class="copyright-notice terminal-action-well">
+            <h4 class="terminal-body-subtitle menu-header-border"><i class="fas fa-shield-alt me-2 text-alert-neon"></i> COPYRIGHT_ENFORCEMENT_NOTICE</h4>
+            <p class="policy-body-text red-contrast-text mb-0">
+                All materials deployed across SkillForge are insulated under international copyright frameworks. Unauthorized reproduction, decryption, transmission, or engineering of derivative codebases without explicit authorization tokens is strictly forbidden.
+            </p>
+        </div>
+        
+    </div>
+</div>
 
-                <!-- Privacy & Data Section -->
-                <div class="terms-section" id="privacy-data">
-                    <div class="section-header" data-section="privacy-data">
-                        <h2><i class="fas fa-user-shield"></i> Privacy & Data Protection</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <p>Your privacy is important to us. Our collection and use of your personal information is governed by our <a href="privacy.php" class="terms-link">Privacy Policy</a>.</p>
-                        
-                        <div class="data-usage">
-                            <h4>How We Use Your Data</h4>
-                            <div class="usage-categories">
-                                <div class="category">
-                                    <i class="fas fa-chart-line"></i>
-                                    <span>Improve Services</span>
-                                </div>
-                                <div class="category">
-                                    <i class="fas fa-bell"></i>
-                                    <span>Communications</span>
-                                </div>
-                                <div class="category">
-                                    <i class="fas fa-shield-alt"></i>
-                                    <span>Security</span>
-                                </div>
-                                <div class="category">
-                                    <i class="fas fa-cog"></i>
-                                    <span>Platform Operations</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="terms-section terminal-secure-card mb-3" id="privacy-data">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('privacy-data')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-user-shield icon-alert-glow me-2"></i> 05 // PRIVACY &amp; DATA PROTECTION
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-privacy-data"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-privacy-data">
+        <p class="policy-body-text red-contrast-text">
+            Isolating and securing your personal telemetry records is a baseline metric of our core architecture. The harvesting, processing, and distribution arrays for your personal dataset parameters are fully mapped inside our high-priority 
+            <a href="privacy.php" class="terminal-matrix-link">PRIVACY_POLICY_MANUAL</a>.
+        </p>
+        
+        <div class="data-usage mt-4">
+            <h4 class="terminal-body-subtitle"><i class="fas fa-terminal me-2 text-alert-neon"></i> INTERNAL_DATA_ROUTING_SCHEMAS</h4>
+            
+            <div class="usage-categories terminal-quad-dashboard mt-3">
+                
+                <div class="category terminal-sub-well-dark text-center">
+                    <i class="fas fa-chart-line icon-alert-glow mb-2"></i>
+                    <span class="sub-well-title d-block">METRIC_OPTIMIZATION</span>
                 </div>
-
+                
+                <div class="category terminal-sub-well-dark text-center">
+                    <i class="fas fa-bell icon-alert-glow mb-2"></i>
+                    <span class="sub-well-title d-block">SYSTEM_COMMS_ROUTING</span>
+                </div>
+                
+                <div class="category terminal-sub-well-dark text-center">
+                    <i class="fas fa-shield-alt icon-alert-glow mb-2"></i>
+                    <span class="sub-well-title d-block">THREAT_MITIGATION</span>
+                </div>
+                
+                <div class="category terminal-sub-well-dark text-center">
+                    <i class="fas fa-cog icon-alert-glow mb-2"></i>
+                    <span class="sub-well-title d-block">PLATFORM_OPERATIONS</span>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
                 <!-- Disclaimers Section -->
-                <div class="terms-section" id="disclaimers">
-                    <div class="section-header" data-section="disclaimers">
-                        <h2><i class="fas fa-exclamation-triangle"></i> Disclaimers & Limitations</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="disclaimer-grid">
-                            <div class="disclaimer-item">
-                                <i class="fas fa-server"></i>
-                                <h5>Service Availability</h5>
-                                <p>We strive for 99.9% uptime but cannot guarantee uninterrupted service</p>
-                            </div>
-                            <div class="disclaimer-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <h5>Educational Content</h5>
-                                <p>While we provide quality content, we cannot guarantee specific learning outcomes</p>
-                            </div>
-                            <div class="disclaimer-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <h5>Security</h5>
-                                <p>We implement security measures but cannot guarantee complete protection</p>
-                            </div>
-                        </div>
-                        
-                        <div class="limitation-notice">
-                            <h4>Limitation of Liability</h4>
-                            <p>Code Gaming shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our platform.</p>
-                        </div>
-                    </div>
-                </div>
+               <div class="terms-section terminal-secure-card mb-3" id="disclaimers">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('disclaimers')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-exclamation-triangle icon-alert-glow me-2"></i> 06 // DISCLAIMERS &amp; SYSTEM LIMITATIONS
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-disclaimers"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-disclaimers">
+        
+        <div class="disclaimer-grid terminal-usage-grid mb-4">
+            
+            <div class="disclaimer-item terminal-sub-well-dark">
+                <i class="fas fa-server icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">HOST_AVAILABILITY</h5>
+                <p class="sub-well-text-bright">We target a 99.9% uptime coefficient but cannot promise uninterrupted or lag-free packet routing streams.</p>
+            </div>
+            
+            <div class="disclaimer-item terminal-sub-well-dark">
+                <i class="fas fa-graduation-cap icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">TRAINING_OUTCOMES</h5>
+                <p class="sub-well-text-bright">While learning modules deliver production-grade code arrays, we offer no guarantee of individual competency outcomes.</p>
+            </div>
+            
+            <div class="disclaimer-item terminal-sub-well-dark">
+                <i class="fas fa-shield-alt icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">SECURITY_INSULATION</h5>
+                <p class="sub-well-text-bright">We enforce robust cryptographic firewalls but cannot promise absolute penetration protection against advanced threats.</p>
+            </div>
+            
+        </div>
+        
+        <div class="limitation-notice terminal-danger-well-box">
+            <h4 class="terminal-body-subtitle text-danger-neon mb-2"><i class="fas fa-gavel me-2"></i> ABSOLUTE_LIABILITY_LIMITATION</h4>
+            <p class="policy-body-text red-contrast-text mb-0">
+                SkillForge and its controllers shall not be held liable for any indirect, incidental, structural, consequential, or punitive damages, including data loss or compiler corruption, resulting from your connection sessions.
+            </p>
+        </div>
+        
+    </div>
+</div>
 
-                <!-- Termination Section -->
-                <div class="terms-section" id="termination">
-                    <div class="section-header" data-section="termination">
-                        <h2><i class="fas fa-user-times"></i> Termination & Suspension</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="termination-scenarios">
-                            <div class="scenario">
-                                <i class="fas fa-user-edit text-info"></i>
-                                <span><strong>By You:</strong> You may terminate your account at any time</span>
-                            </div>
-                            <div class="scenario">
-                                <i class="fas fa-gavel text-warning"></i>
-                                <span><strong>By Us:</strong> We may terminate for Terms violations</span>
-                            </div>
-                            <div class="scenario">
-                                <i class="fas fa-clock text-secondary"></i>
-                                <span><strong>Inactivity:</strong> Accounts inactive for 12+ months may be removed</span>
-                            </div>
-                        </div>
-                        
-                        <div class="termination-effects">
-                            <h4>Effects of Termination</h4>
-                            <ul>
-                                <li>Immediate loss of access to your account</li>
-                                <li>Deletion of personal data (subject to privacy policy)</li>
-                                <li>Loss of progress, achievements, and content</li>
-                                <li>No refund of any paid services</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<div class="terms-section terminal-secure-card mb-3" id="termination">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('termination')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-user-times icon-alert-glow me-2"></i> 07 // TERMINATION &amp; SUSPENSION PROTOCOLS
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-termination"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-termination">
+        
+        <div class="termination-scenarios terminal-tier-stack mb-4">
+            
+            <div class="scenario terminal-tier-row">
+                <span class="badge-terminal tag-orange"><i class="fas fa-user-edit me-2"></i> BY_YOU</span>
+                <p class="tier-descriptive-text">Operators retain absolute system clearance to kill their account connection and clear active variables at any time.</p>
+            </div>
+            
+            <div class="scenario terminal-tier-row">
+                <span class="badge-terminal tag-crimson"><i class="fas fa-gavel me-2"></i> BY_ADMINS</span>
+                <p class="tier-descriptive-text">Administrators reserve root privilege to drop user authorization keys instantly for confirmed policy violations.</p>
+            </div>
+            
+            <div class="scenario terminal-tier-row">
+                <span class="badge-terminal tag-dead"><i class="fas fa-clock me-2"></i> DORMANT_FLUSH</span>
+                <p class="tier-descriptive-text">Identity nodes remaining completely stale without active authentication for 12+ months are safely purged from standard tables.</p>
+            </div>
+            
+        </div>
+        
+        <div class="termination-effects terminal-action-well">
+            <h4 class="terminal-body-subtitle menu-header-border"><i class="fas fa-skull-crossbones me-2 text-alert-neon"></i> SYSTEM_EFFECTS_OF_DEPROVISIONING</h4>
+            <ul class="terminal-protocol-list">
+                <li><strong class="danger-strong-text">IMMEDIATE_DEAUTH:</strong> <span class="list-body-text">Instant removal of session tokens and account login permissions.</span></li>
+                <li><strong class="danger-strong-text">DATA_SCRUB:</strong> <span class="list-body-text">Purging of internal configuration records, subject to regulatory retention mandates.</span></li>
+                <li><strong class="danger-strong-text">PROGRESS_WIPE:</strong> <span class="list-body-text">Irreversible deletion of rank achievements, accumulated scores, and solution sets.</span></li>
+                <li><strong class="danger-strong-text">NON_REFUNDABLE:</strong> <span class="list-body-text">Total forfeiture of active commercial tokens or active premium service configurations.</span></li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
 
                 <!-- Governing Law Section -->
-                <div class="terms-section" id="governing-law">
-                    <div class="section-header" data-section="governing-law">
-                        <h2><i class="fas fa-balance-scale"></i> Governing Law & Disputes</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="legal-framework">
-                            <div class="framework-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <h5>Governing Law</h5>
-                                <p>These Terms are governed by the laws of [Jurisdiction]</p>
-                            </div>
-                            <div class="framework-item">
-                                <i class="fas fa-gavel"></i>
-                                <h5>Dispute Resolution</h5>
-                                <p>Disputes will be resolved through binding arbitration</p>
-                            </div>
-                            <div class="framework-item">
-                                <i class="fas fa-globe"></i>
-                                <h5>International Users</h5>
-                                <p>You agree to comply with local laws and regulations</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="terms-section terminal-secure-card mb-3" id="governing-law">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('governing-law')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-balance-scale icon-alert-glow me-2"></i> 08 // GOVERNING LAW &amp; JURISDICTIONAL DISPUTES
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-governing-law"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-governing-law">
+        
+        <div class="legal-framework terminal-usage-grid">
+            
+            <div class="framework-item terminal-sub-well-dark">
+                <i class="fas fa-map-marker-alt icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">APPLICABLE_STATUTES</h5>
+                <p class="sub-well-text-bright">These structural platform terms and connection frameworks are strictly governed by the localized legal codes of <strong class="text-alert-neon">[Jurisdiction]</strong>.</p>
+            </div>
+            
+            <div class="framework-item terminal-sub-well-dark">
+                <i class="fas fa-gavel icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">DISPUTE_RESOLUTION</h5>
+                <p class="sub-well-text-bright">Any systemic conflict or contractual divergence will be definitively settled under sealed, binding arbitration protocols rather than standard tribunals.</p>
+            </div>
+            
+            <div class="framework-item terminal-sub-well-dark">
+                <i class="fas fa-globe icon-alert-glow mb-2"></i>
+                <h5 class="sub-well-title">CROSS_BORDER_ROUTING</h5>
+                <p class="sub-well-text-bright">International remote network operators access this node under full personal obligation to remain compliant with regional boundary laws.</p>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
 
-                <!-- Interactive Terms Quiz -->
-                <div class="terms-section" id="terms-quiz">
-                    <div class="section-header" data-section="terms-quiz">
-                        <h2><i class="fas fa-question-circle"></i> Terms Knowledge Quiz</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="quiz-container">
-                            <div class="quiz-question" data-question="1">
-                                <h4>Question 1: What is the minimum age to use Code Gaming?</h4>
-                                <div class="quiz-options">
-                                    <button class="quiz-option" data-correct="true">13 years old</button>
-                                    <button class="quiz-option" data-correct="false">18 years old</button>
-                                    <button class="quiz-option" data-correct="false">16 years old</button>
-                                </div>
-                            </div>
-                            
-                            <div class="quiz-question" data-question="2" style="display: none;">
-                                <h4>Question 2: What happens if you violate the Terms of Service?</h4>
-                                <div class="quiz-options">
-                                    <button class="quiz-option" data-correct="false">Nothing, it's just a warning</button>
-                                    <button class="quiz-option" data-correct="true">Your account may be suspended or terminated</button>
-                                    <button class="quiz-option" data-correct="false">You get a free pass</button>
-                                </div>
-                            </div>
-                            
-                            <div class="quiz-question" data-question="3" style="display: none;">
-                                <h4>Question 3: Who is responsible for keeping your account secure?</h4>
-                                <div class="quiz-options">
-                                    <button class="quiz-option" data-correct="false">Code Gaming team</button>
-                                    <button class="quiz-option" data-correct="true">You are responsible</button>
-                                    <button class="quiz-option" data-correct="false">Your internet provider</button>
-                                </div>
-                            </div>
-                            
-                            <div class="quiz-result" style="display: none;">
-                                <h4>Quiz Complete!</h4>
-                                <p>You got <span class="quiz-score">0</span> out of 3 questions correct.</p>
-                                <button class="btn btn-primary" onclick="restartQuiz()">Try Again</button>
-                            </div>
-                        </div>
-                    </div>
+<div class="terms-section terminal-secure-card mb-3" id="terms-quiz">
+    
+    <div class="section-header terminal-secure-header" onclick="toggleTerminalAccordion('terms-quiz')">
+        <h2 class="terminal-secure-title">
+            <i class="fas fa-question-circle icon-alert-glow me-2"></i> 09 // MANDATORY TERMS KNOWLEDGE EVALUATION
+        </h2>
+        <i class="fas fa-chevron-down toggle-icon text-alert-neon" id="icon-terms-quiz"></i>
+    </div>
+    
+    <div class="section-content red-alert-body" id="body-terms-quiz">
+        <div class="quiz-container terminal-action-well">
+            
+            <div class="quiz-question" data-question="1">
+                <h4 class="terminal-quiz-query"><span class="text-alert-neon">CRITICAL_EVAL_01 //</span> What is the verified minimum age configuration to access SkillForge instances?</h4>
+                <div class="quiz-options terminal-quiz-stack mt-3">
+                    <button class="quiz-option tactical-quiz-btn" data-correct="false">13 years old</button>
+                    <button class="quiz-option tactical-quiz-btn" data-correct="true">18 years old</button>
+                    <button class="quiz-option tactical-quiz-btn" data-correct="false">16 years old</button>
                 </div>
+            </div>
+            
+            <div class="quiz-question" data-question="2" style="display: none;">
+                <h4 class="terminal-quiz-query"><span class="text-alert-neon">CRITICAL_EVAL_02 //</span> What mitigation protocol initiates if you compromise the platform's Acceptable Use Policies?</h4>
+                <div class="quiz-options terminal-quiz-stack mt-3">
+                    <button class="quiz-option tactical-quiz-btn" data-correct="false">Null sequence; no systemic action is logged.</button>
+                    <button class="quiz-option tactical-quiz-btn" data-correct="true">Your operator entry node may be temporarily suspended or permanently banned.</button>
+                    <button class="quiz-option tactical-quiz-btn" data-correct="false">The profile receives an automated reset exemption token.</button>
+                </div>
+            </div>
+            
+            <div class="quiz-question" data-question="3" style="display: none;">
+                <h4 class="terminal-quiz-query"><span class="text-alert-neon">CRITICAL_EVAL_03 //</span> Which node entity is held strictly liable for keeping your authentication credentials secure?</h4>
+                <div class="quiz-options terminal-quiz-stack mt-3">
+                    <button class="quiz-option tactical-quiz-btn" data-correct="false">The central SkillForge firewall array</button>
+                    <button class="quiz-option tactical-quiz-btn" data-correct="true">You (The Individual Connected Operator)</button>
+                    <button class="quiz-option tactical-quiz-btn" data-correct="false">The regional upstream internet gateway provider</button>
+                </div>
+            </div>
+            
+            <div class="quiz-result text-center py-3" style="display: none;">
+                <div class="icon-alert-glow display-4 mb-2"><i class="fas fa-terminal"></i></div>
+                <h4 class="terminal-body-subtitle text-white">EVALUATION SEQUENCE TERMINATED</h4>
+                <p class="policy-body-text red-contrast-text">Compliance metrics output: <span class="quiz-score text-alert-neon fw-bold">0</span> out of 3 protocol matrices correctly verified.</p>
+                <button class="btn tactical-action-trigger mt-2" onclick="restartQuiz()"><i class="fas fa-sync-alt me-2"></i> RE-INITIALIZE EVALUATION</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
 
                 <!-- Version History -->
-                <div class="terms-section" id="version-history">
-                    <div class="section-header" data-section="version-history">
-                        <h2><i class="fas fa-history"></i> Version History</h2>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="version-timeline">
-                            <div class="version-item current">
-                                <div class="version-date">June 17, 2025</div>
-                                <div class="version-content">
-                                    <h5>Current Version (v2.1)</h5>
-                                    <ul>
-                                        <li>Updated privacy and data protection terms</li>
-                                        <li>Added new acceptable use policies</li>
-                                        <li>Enhanced user rights and control sections</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="version-item">
-                                <div class="version-date">April 15, 2025</div>
-                                <div class="version-content">
-                                    <h5>Version 2.0</h5>
-                                    <ul>
-                                        <li>Major restructuring of terms</li>
-                                        <li>Added intellectual property section</li>
-                                        <li>Updated termination policies</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="version-item">
-                                <div class="version-date">March  1, 2025</div>
-                                <div class="version-content">
-                                    <h5>Version 1.0</h5>
-                                    <ul>
-                                        <li>Initial terms of service</li>
-                                        <li>Basic user agreement</li>
-                                        <li>Privacy policy integration</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="terms-section gaming-ui" id="version-history">
+    <div class="section-header" data-section="version-history">
+        <h2>
+            <i class="fas fa-gamepad header-glow-icon"></i> 
+            <span>PATCH NOTES <span class="sub-title">// SYSTEM_LOG</span></span>
+        </h2>
+        <div class="toggle-container">
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+    </div>
+    
+    <div class="section-content">
+        <div class="version-timeline">
+            <!-- Current Active Patch -->
+            <div class="version-item current">
+                <div class="version-date-wrapper">
+                    <span class="status-badge pulse-anim">LIVE</span>
+                    <div class="version-date">March - 18 - 2026</div>
                 </div>
+                <div class="version-content-box">
+                    <h5>PATCH v2.1 <span class="accent-text">[CURRENT_BUILD]</span></h5>
+                    <ul class="patch-list">
+                        <li>Updated privacy and data protection terms</li>
+                        <li>Added new acceptable use policies</li>
+                        <li>Enhanced user rights and control sections</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Legacy Patch 2.0 -->
+            <div class="version-item legacy">
+                <div class="version-date-wrapper">
+                    <div class="version-date">March - 18 - 2026</div>
+                </div>
+                <div class="version-content-box">
+                    <h5>PATCH v2.0</h5>
+                    <ul class="patch-list">
+                        <li>Major restructuring of terms</li>
+                        <li>Added intellectual property section</li>
+                        <li>Updated termination policies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Legacy Patch 1.0 -->
+            <div class="version-item legacy">
+                <div class="version-date-wrapper">
+                    <div class="version-date">March - 18 - 2026</div>
+                </div>
+                <div class="version-content-box">
+                    <h5>PATCH v1.0 <span class="alpha-text">[BASE_BUILD]</span></h5>
+                    <ul class="patch-list">
+                        <li>Initial terms of service</li>
+                        <li>Basic user agreement</li>
+                        <li>Privacy policy integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <!-- Final Acceptance -->
                 <div class="final-acceptance">
@@ -1209,13 +1309,13 @@ function acceptTerms() {
         
         // Show success message
         setTimeout(() => {
-            alert('Thank you for accepting our Terms of Service! You can now fully access Code Gaming.');
+            alert('Thank you for accepting our Terms of Service! You can now fully access SkillForge.');
         }, 500);
     }
 }
 
 function declineTerms() {
-    if (confirm('Declining the Terms of Service will limit your access to Code Gaming. Are you sure?')) {
+    if (confirm('Declining the Terms of Service will limit your access to SkillForge. Are you sure?')) {
         alert('You have declined the Terms of Service. Some features may be limited.');
     }
 }
@@ -1232,7 +1332,7 @@ function downloadPDF() {
 function shareTerms() {
     if (navigator.share) {
         navigator.share({
-            title: 'Code Gaming Terms of Service',
+            title: 'SkillForge Terms of Service',
             url: window.location.href
         });
     } else {

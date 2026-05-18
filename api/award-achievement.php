@@ -12,8 +12,6 @@
  * Included Files/Dependencies:
  *   - includes/Database.php
  *   - includes/Auth.php
- * Author: CodeGaming Team
- * Last Updated: July 24, 2025
  */
 
 header('Content-Type: application/json');

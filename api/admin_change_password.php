@@ -3,7 +3,6 @@
  * File: api/admin_change_password.php
  * Purpose: Change admin password
  * Author: CodeGaming Team
- * Last Updated: October 21, 2025
  */
 
 session_start();

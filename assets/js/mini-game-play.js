@@ -7,8 +7,6 @@
  *   - Score tracking and submission
  *   - Leaderboard updates
  * 
- * Author: CodeGaming Team
- * Last Updated: September 29, 2025
  */
 
 // Game state management

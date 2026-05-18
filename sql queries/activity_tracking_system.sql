@@ -1,5 +1,5 @@
 -- ==========================================================
--- Activity Tracking System for Code Gaming
+-- Activity Tracking System for coding_game
 -- 
 -- This script creates tables for tracking user activities
 -- and system notifications in the admin dashboard.

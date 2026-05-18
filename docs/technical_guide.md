@@ -1,4 +1,4 @@
-# Technical Guide for Code Gaming
+# Technical Guide for coding_game
 
 ![Team Collaboration](images/team_collaboration.jpg)  
 *Figure 2: Our team collaborating on the project—featuring Belza, Constantino, Sabangan, Santiago, Silvestre, and Valencia.*

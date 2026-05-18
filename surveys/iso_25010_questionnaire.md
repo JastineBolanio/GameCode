@@ -1,7 +1,7 @@
-# ISO/IEC 25010 System Evaluation Questionnaire for Code Gaming
+# ISO/IEC 25010 System Evaluation Questionnaire for coding_game
 
 ## Instructions
-Thank you for participating in this survey! This questionnaire evaluates the "Code Gaming" educational game system based on ISO/IEC 25010 quality characteristics (excluding Safety). Please rate each statement on a scale of 1-4:  
+Thank you for participating in this survey! This questionnaire evaluates the "coding_game" educational game system based on ISO/IEC 25010 quality characteristics (excluding Safety). Please rate each statement on a scale of 1-4:  
 - 1: Strongly Disagree  
 - 2: Disagree  
 - 3: Agree  
@@ -97,4 +97,4 @@ E24. The system prevents cheating or improper use.
 ## Additional Feedback  
 Open-ended: What did you like most about the system? What improvements would you suggest?  
 
-Thank you! Your input helps make "Code Gaming" better.
+Thank you! Your input helps make "coding_game" better.

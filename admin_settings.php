@@ -7,8 +7,6 @@
  *   - Configure dashboard settings
  *   - Set privacy options
  *   - Manage session settings
- * Author: CodeGaming Team
- * Last Updated: October 21, 2025
  */
 
 session_start();

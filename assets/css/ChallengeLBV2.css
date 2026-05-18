@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@600;700&family=Share+Tech+Mono&display=swap');
+
+/* Main Canvas Wrapper for Challenges */
+.hud-analytics-terminal-bg.challenge-theme {
+    position: relative;
+    background: rgba(14, 10, 6, 0.96);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    padding: 30px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.9), inset 0 0 40px rgba(245, 158, 11, 0.02);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    min-height: 500px;
+}
+
+/* Floating Mini Status Diagnostics Modules */
+.hud-analytics-terminal-bg.challenge-theme .hud-stat-panel {
+    background: rgba(30, 20, 11, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 15px 20px;
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 220px;
+    position: relative;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Left Accent Indicator Lines */
+.hud-analytics-terminal-bg.challenge-theme .hud-panel-edge-line {
+    position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px;
+    background-color: currentColor;
+    opacity: 0.5;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.hud-analytics-terminal-bg.challenge-theme .hud-panel-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hud-analytics-terminal-bg.challenge-theme .hud-panel-status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+    box-shadow: 0 0 8px currentColor;
+    display: inline-block;
+}
+
+.hud-analytics-terminal-bg.challenge-theme .hud-panel-value {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 8px 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hud-analytics-terminal-bg.challenge-theme .hud-panel-desc {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #a99682;
+}
+
+/* Panel Focus Adjustments */
+.hud-analytics-terminal-bg.challenge-theme .hud-stat-panel:hover {
+    transform: translateY(-4px);
+    background: rgba(48, 30, 15, 0.95);
+}
+.hud-analytics-terminal-bg.challenge-theme .hud-stat-panel:hover .hud-panel-edge-line {
+    width: 5px;
+    opacity: 1;
+}
+
+/* Targeted Competitive Amber Color Spec Targets */
+.diagnostic-ch-best { color: #f59e0b; border-color: rgba(245, 158, 11, 0.15); }
+.diagnostic-ch-best:hover { border-color: rgba(245, 158, 11, 0.4); box-shadow: 0 0 20px rgba(245, 158, 11, 0.15); }
+
+.diagnostic-ch-recent { color: #ef4444; border-color: rgba(239, 68, 68, 0.15); }
+.diagnostic-ch-recent:hover { border-color: rgba(239, 68, 68, 0.4); box-shadow: 0 0 20px rgba(239, 68, 68, 0.15); }
+
+.diagnostic-ch-top { color: #ff007f; border-color: rgba(255, 0, 127, 0.15); }
+.diagnostic-ch-top:hover { border-color: rgba(255, 0, 127, 0.4); box-shadow: 0 0 20px rgba(255, 0, 127, 0.15); }
+
+
+/* Main Interface Container Console Window */
+.hud-main-terminal-window.challenge-theme {
+    width: 100%;
+    background: rgba(24, 16, 9, 0.96);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-main-terminal-window.challenge-theme .hud-terminal-title-bar {
+    background: rgba(38, 25, 13, 0.98);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+    padding: 12px 20px;
+}
+
+.hud-main-terminal-window.challenge-theme .hud-terminal-glitch-text {
+    font-family: 'Orbitron', sans-serif;
+    color: #f59e0b;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+/* Interactive Sync Control Asset */
+.window-refresh-btn {
+    background: transparent;
+    border: none;
+    color: #a99682;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.3s ease;
+}
+.window-refresh-btn:hover {
+    color: #ff007f;
+    transform: rotate(180deg);
+}
+
+.hud-main-terminal-window.challenge-theme .hud-terminal-deco-lines span {
+    display: inline-block;
+    width: 15px; height: 2px;
+    background: #f59e0b;
+    margin-left: 4px;
+    opacity: 0.3;
+}
+.hud-main-terminal-window.challenge-theme .hud-terminal-deco-lines span:last-child { opacity: 0.7; width: 30px; background: #ff007f; }
+
+.hud-main-terminal-window.challenge-theme .hud-terminal-content {
+    padding: 20px;
+}
+
+/* Tab Control Array Framework */
+.hud-main-terminal-window.challenge-theme .hud-terminal-tabs {
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding-bottom: 15px;
+}
+
+.hud-main-terminal-window.challenge-theme .hud-terminal-tabs .analytics-tab {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #a99682;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    padding: 8px 18px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hud-main-terminal-window.challenge-theme .hud-terminal-tabs .analytics-tab.active,
+.hud-main-terminal-window.challenge-theme .hud-terminal-tabs .analytics-tab:hover {
+    color: #f59e0b;
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.04);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.1);
+}
+
+/* Static Log Output Terminal Screens */
+.hud-main-terminal-window.challenge-theme .hud-terminal-data-feed, 
+.hud-main-terminal-window.challenge-theme .hud-terminal-leader-matrix {
+    background: rgba(18, 11, 6, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    min-height: 60px;
+    margin-bottom: 12px;
+    padding: 10px;
+    font-family: 'Share Tech Mono', monospace;
+    color: #dacdbf;
+}
+
+/* Tactical Action Trigger Launcher Elements */
+.btn-hud-terminal-action.challenge-theme {
+    background: transparent;
+    border: 1px solid #f59e0b;
+    color: #f59e0b;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 12px 40px;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    clip-path: polygon(0 0, 94% 0, 100% 35%, 100% 100%, 6% 100%, 0% 65%);
+}
+
+.btn-hud-terminal-action.challenge-theme:hover {
+    background: #f59e0b;
+    color: #000000;
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+    font-weight: 700;
+}

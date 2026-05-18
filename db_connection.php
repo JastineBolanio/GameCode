@@ -4,7 +4,7 @@
  * File: db_connection.php
  * 
  * Description:
- *   - Database connection and utility functions for Code Gaming platform
+ *   - Database connection and utility functions for SkillForge platform
  *   - Features:
  *       • Connects to MySQL database using mysqli
  *       • Sets charset to utf8mb4 for full Unicode support
@@ -19,17 +19,14 @@
  *   - Used for session and user role management
  * 
  * 
- * Author: [Santiago]
- * Last Updated: [July 22, 2025]
- * -- Code Gaming Team --
  * ==========================================================
  */
 
 // Database configuration
-define('DB_HOST', 'localhost:1456'); // Change if not the same port
+define('DB_HOST', 'localhost:3306'); // Change if not the same port
 define('DB_USER', 'root');  // Change in production
 define('DB_PASS', '');      // Change in production
-define('DB_NAME', 'coding_game');
+define('DB_NAME', 'code_gaming');
 
 // Error reporting for development
 error_reporting(E_ALL);

@@ -13,8 +13,6 @@
  * Included Files/Dependencies:
  *   - FontAwesome (icons)
  *   - Bootstrap (optional for modal styling)
- * Author: CodeGaming Team
- * Last Updated: July 22, 2025
  */
 
 // announcements.js - User Announcements Page Logic
@@ -59,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Snippet: first 100 chars, no HTML tags
       const snippet = a.content.replace(/<[^>]+>/g, '').slice(0, 100) + (a.content.length > 100 ? '...' : '');
       // Avatar fallback
-      const avatar = a.author_avatar || 'assets/images/PTC.png';
+      const avatar = a.author_avatar || 'assets/images/MainLogos.png';
       // Date
       const date = a.created_at || '';
       // Badge
@@ -114,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <button class="modal-close" aria-label="Close">X</button>
         <div class="modal-title">${a.is_pinned ? '<span class=\'modal-badge\'>Pinned</span>' : ''}${a.title}</div>
         <div class="modal-meta">
-          <img src="${a.author_avatar || 'assets/images/PTC.png'}" class="modal-avatar" alt="${a.author_name || 'Admin'}'s avatar">
+          <img src="${a.author_avatar || 'assets/images/MainLogos.png'}" class="modal-avatar" alt="${a.author_name || 'Admin'}'s avatar">
           <span><i class="fa fa-user"></i> ${a.author_name || 'Admin'}</span>
           <span><i class="fa fa-calendar"></i> ${a.created_at || ''}</span>
         </div>

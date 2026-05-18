@@ -15,7 +15,7 @@
  *   - Bootstrap (for modals)
  *   - HTML structure for tutorial popups, modals, and sidebar.
  * Author: CodeGaming Team
- * Last Updated: July 22, 2025
+
  */
 // Helper function to capitalize the first letter of a string
 function capitalizeFirst(string) {

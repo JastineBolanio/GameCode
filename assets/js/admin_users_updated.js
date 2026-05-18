@@ -14,8 +14,6 @@
  * Included Files/Dependencies:
  *   - FontAwesome (icons)
  *   - Bootstrap (optional for modal styling)
- * Author: CodeGaming Team
- * Last Updated: October 3, 2025
  */
 
 // Create a self-executing function to handle modal functionality
@@ -108,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const userIdStr = String(userId);
         const basePath = window.location.pathname.split('/').slice(0, -1).join('/');
         const timestamp = new Date().getTime();
-        const newPicWithTimestamp = newPic ? `${basePath}/uploads/avatars/${newPic}?t=${timestamp}` : 'assets/images/PTC.png';
+        const newPicWithTimestamp = newPic ? `${basePath}/uploads/avatars/${newPic}?t=${timestamp}` : 'assets/images/MainLogos.png';
 
         // Find and update all instances of this user's avatar in the table
         const rows = tableBody.querySelectorAll('tr');
@@ -293,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const timestamp = new Date().getTime();
         const avatarPath = user.avatar 
             ? `uploads/avatars/${user.avatar}?t=${timestamp}` 
-            : 'assets/images/PTC.png';
+            : 'assets/images/MainLogos.png';
         modalProfilePic.src = avatarPath;
         
         // Set status
@@ -522,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (data.success && data.results.length > 0) {
                         const html = data.results.map(result => `
                             <div class="search-result-item" data-id="${result.id}" data-type="${result.type}">
-                                <img src="${result.avatar || 'assets/images/PTC.png'}" alt="${result.username}" class="search-result-avatar">
+                                <img src="${result.avatar || 'assets/images/MainLogos.png'}" alt="${result.username}" class="search-result-avatar">
                                 <div class="search-result-info">
                                     <div class="search-result-username">${result.username}</div>
                                     <div class="search-result-email">${result.email}</div>
@@ -687,7 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Handle avatar URL
             const basePath = window.location.pathname.split('/').slice(0, -1).join('/');
-            let avatarUrl = 'assets/images/default-avatar.png';
+            let avatarUrl = 'assets/images/Avatar.png';
             if (user.profile_picture && user.profile_picture !== 'NULL') {
                 avatarUrl = basePath + '/uploads/avatars/' + user.profile_picture;
             }

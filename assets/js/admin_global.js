@@ -9,8 +9,6 @@
  *   - Requires HTML elements for sidebar, toggler, overlay, and close button.
  * Included Files/Dependencies:
  *   - Bootstrap (optional for UI)
- * Author: CodeGaming Team
- * Last Updated: July 22, 2025
  */
 
 // admin_global.js
